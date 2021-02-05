@@ -3,9 +3,9 @@
   "copyright": "Copyright © 2021 [Mugnier & Thiebaud]. All Rights Reserved.",
   "navbarheader": "/header.html",
   "brandlink": "/vinyl/showdown.html?/README.md",
-  "icon": "/vinyl/svgs/vinyl_icon.svg",
-  "background": "/vinyl_record.svg",
-  "background_animated": "/vinyl_record_rotating.svg",
+  "icon": "/svgs/vinyl_icon.svg",
+  "background": "/svgs/vinyl.svg",
+  "background_animated": "/svgs/vinyl_rotating.svg",
 
   "no_recursion": "orange2",
   "order": [

@@ -41,4 +41,4 @@ Ideal budget:
 
 ## Labels
 
-[List of putatives labels](/vinyl/showdown.html?/labels.md)
+[List of putatives labels](/vinyl/showdown.html?/markdowns/labels.md)
