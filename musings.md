@@ -37,7 +37,7 @@ Ideal budget:
 
 ## Story telling
 
-[Mugnier&Thiebaud presentation page](/vinyl/showdown.html?/mugnierandthiebaud.md)
+[Mugnier & Thiebaud presentation page](/vinyl/showdown.html?/mugnierandthiebaud.md)
 
 ## Labels
 
