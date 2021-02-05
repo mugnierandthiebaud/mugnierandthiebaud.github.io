@@ -1,4 +1,4 @@
-# <a id="vinyl_brand" style="margin-right:.5rem;" title="Vinyl Title" href="https://mugnierandthiebaud.com/" target="_mugnier_et_thiebaud"><img src="/vinyl_icon.svg"></a> Mugnier & Thiebaud
+# <a id="vinyl_brand" style="margin-right:.5rem;" title="Vinyl Title" href="https://mugnierandthiebaud.com/" target="_mugnier_et_thiebaud"><img src="/svgs/vinyl_icon.svg"></a> Mugnier & Thiebaud
 
 <div class="row mb-2"><div class="col">
 
