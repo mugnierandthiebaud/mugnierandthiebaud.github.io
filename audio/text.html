@@ -34,37 +34,32 @@
             letter-spacing: 6px;
             line-height: 150%;
             perspective: 400px;
-            text-align: justify;
+            text-align: center;
         }
 
         .crawl {
             position: relative;
             top: 9999px;
             transform-origin: 50% 100%;
-            animation: crawl 60s linear;
+            animation: crawl 20s linear;
         }
 
-        .crawl>.title {
-            font-size: 90%;
-            text-align: center;
-        }
-
-        .crawl>.title h1 {
-            margin: 0 0 100px;
-            text-transform: uppercase;
+        .crawl p {
+            opacity: 0;
         }
 
         @keyframes crawl {
             0% {
-                top: 0;
-                transform: rotateX(20deg) translateZ(0);
+                top: -2000px;
+                transform: rotateX(25deg) translateZ(-1000px);
             }
 
             100% {
-                top: -6000px;
-                transform: rotateX(25deg) translateZ(-2500px);
+                top: 0px;
+                transform: rotateX(15deg) translateZ(0);
             }
         }
+
     </style>
 </head>
 
@@ -76,19 +71,63 @@
 
         <div class="crawl">
 
-            <div class="title">
-                <p>Arthur Rimbaud</p>
-                <h1>Sensation</h1>
-            </div>
-
-            <p>Par les soirs bleus d’été, j’irai dans les sentiers,</p>
-            <p>Picoté par les blés, fouler l’herbe menue :</p>
-            <p>Rêveur, j’en sentirai la fraîcheur à mes pieds.</p>
-            <p>Je laisserai le vent baigner ma tête nue.</p>
+            <p class="crawl3">Je laisserai le vent baigner ma tête nue.</p>
+            <p class="crawl2">Rêveur, j’en sentirai la fraîcheur à mes pieds.</p>
+            <p class="crawl1">Picoté par les blés, fouler l’herbe menue :</p>
+            <p class="crawl0">Par les soirs bleus d’été, j’irai dans les sentiers,</p>
 
         </div>
 
     </section>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+
+
+<script id="style-template" type="text/x-handlebars-template">
+    <style>
+        .crawl{{id}} {
+            opacity: 0;
+            animation: crawl{{id}} 20s linear;
+        }
+
+        @keyframes crawl{{id}} {
+            {{init}}% {
+                opacity: 0;
+            }
+            {{start}}% {
+                opacity: 1;
+            }
+            {{sustain}}% {
+                opacity: 1;
+            }
+            {{end}}% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</script>
+
+<script>
+    template = Handlebars.compile(document.getElementById("style-template").innerHTML);
+
+    const starts = [0, 72 / 3, 2 * (72 / 3), 72];
+
+    starts.forEach((s, i) => {
+        $('head').append(template({
+            id: i,
+            init: s + 0,
+            start: s + 5,
+            sustain: s + 20,
+            end: s + 28,
+        }));
+    });
+
+
+</script>
 
 </html>
