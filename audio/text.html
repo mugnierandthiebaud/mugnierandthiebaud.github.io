@@ -9,16 +9,16 @@
         body {
             width: 100%;
             height: 100%;
-            background: #000;
+            background: transparent;
             overflow: hidden;
         }
 
         .fade {
             position: relative;
             width: 100%;
-            min-height: 60vh;
+            min-height: 0vh;
             top: -25px;
-            background-image: linear-gradient(0deg, transparent, black 75%);
+            /* background-image: linear-gradient(0deg, transparent, black 75%); */
             z-index: 1;
         }
 
@@ -27,7 +27,7 @@
             justify-content: center;
             position: relative;
             height: 800px;
-            color: #feda4a;
+            color: black;
             font-family: 'Pathway Gothic One', sans-serif;
             font-size: 500%;
             font-weight: 600;
@@ -60,6 +60,12 @@
             }
         }
 
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -68,6 +74,11 @@
     <div class="fade"></div>
 
     <section class="star-wars">
+
+        <video id="source" controls playsinline autoplay muted loop id="bgvid" src="./qwe.mp4" type="video/webm">
+            <source src="./qwe.mp4" type="video/webm">
+        </video>
+        <video id="target"></video>
 
         <div class="crawl">
 
@@ -79,10 +90,32 @@
         </div>
 
     </section>
+
+    <div id="waveform">
+        <!-- Here be the waveform -->
+        <wave style="display: block; position: relative; user-select: none; height: 128px; overflow: auto hidden;">
+            <wave
+                style="position: absolute; z-index: 3; left: 0px; top: 0px; bottom: 0px; overflow: hidden; width: 880.5px; display: block; box-sizing: border-box; border-right: 1px solid rgb(51, 51, 51); pointer-events: none;">
+                <canvas width="1740" height="256" style="position: absolute; left: 0px; top: 0px; bottom: 0px; height: 100%; width: 870px;"></canvas>
+            </wave>
+            <!-- <canvas width="1740" height="256"
+                style="position: absolute; z-index: 2; left: 0px; top: 0px; bottom: 0px; height: 100%; pointer-events: none; width: 870px;"></canvas> -->
+        </wave>
+    </div>
+
+    <div>
+        <button id="record">Start Recording</button>
+        <button id="play" disabled>Play</button>
+        <button id="download" disabled>Download</button>
+    </div>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/wavesurfer.js@4.4.0/dist/wavesurfer.min.js"></script>
+<script src="main.js"></script>
 
 
 <script id="style-template" type="text/x-handlebars-template">
@@ -113,21 +146,34 @@
 </script>
 
 <script>
-    template = Handlebars.compile(document.getElementById("style-template").innerHTML);
+    const template = Handlebars.compile(document.getElementById("style-template").innerHTML);
+    const video = document.querySelector("video#source");
 
-    const starts = [0, 72 / 3, 2 * (72 / 3), 72];
+    $(document).ready(function () {
+        var wavesurfer = WaveSurfer.create({
+            container: document.querySelector('#waveform'),
+            waveColor: '#A8DBA8',
+            progressColor: '#3B8686',
+            backend: 'MediaElement'
+        });
 
-    starts.forEach((s, i) => {
-        $('head').append(template({
-            id: i,
-            init: s + 0,
-            start: s + 5,
-            sustain: s + 20,
-            end: s + 28,
-        }));
+        wavesurfer.load(video);
+
+        video.addEventListener('play', () => {
+            const starts = [0, 72 / 3, 2 * (72 / 3), 72];
+
+            starts.forEach((s, i) => {
+                $('head').append(template({
+                    id: i,
+                    init: s + 0,
+                    start: s + 5,
+                    sustain: s + 20,
+                    end: s + 28,
+                }));
+            });
+        })
+
     });
-
-
 </script>
 
 </html>
