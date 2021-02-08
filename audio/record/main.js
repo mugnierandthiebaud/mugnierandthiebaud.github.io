@@ -47,7 +47,7 @@ function main() {
         };
         var mediaRecorder = new MediaRecorder(stream, options);
 
-        console.log(mediaRecorder.mimeType); // would return 'video/mp4'
+        // console.log(mediaRecorder.mimeType); // would return 'video/mp4'
       })
       .catch(function (error) {
         console.log(error.message);

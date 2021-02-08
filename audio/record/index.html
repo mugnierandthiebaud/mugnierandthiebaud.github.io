@@ -46,12 +46,10 @@
       stroke-opacity: 1;
     }
 
-    video {
-      /* visibility: hidden; */
-    }
 
     .col {
-      border: #0e0 solid;
+      border: lightgray solid 1px;
+      padding: .5rem;
       display: inline-block;
     }
   </style>
@@ -60,17 +58,13 @@
 <body>
   <div class="container-fluid">
     <div>
-      <button class="btn btn-primary" data-action="play">
-        Play / Pause
-      </button>
-      <button id="record">Start Recording</button>
-      <button id="play" disabled>Play</button>
-      <button id="download" disabled>Download</button>
+      <button type="button" class="btn" id="record">Start Recording</button>
+      <button type="button" class="btn" id="play" disabled>Play</button>
+      <button type="button" class="btn" id="download" disabled>Download</button>
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <div class="col">
         <video id="source" class="img-fluid" controls muted id="bgvid" src="sensation.mp4" type="video/webm">
-          <!-- poster="/images/panoramix2.jpg" -->
           <source src="sensation.mp4" type="video/webm">
         </video>
       </div>
@@ -78,46 +72,21 @@
         <video id="target" class="img-fluid"></video>
       </div>
       <div class="col">
-        <!-- <canvas id="canvas" class="img-fluid" >
-      </canvas> -->
-        <div id="wavesurferContainer">
-
-        </div>
+        <canvas id="canvas" class="img-fluid">
+        </canvas>
       </div>
     </div>
   </div>
 </body>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/wavesurfer.js@4.4.0/dist/wavesurfer.min.js"></script>
-
 
 <script type="module">
 
   import { banner as banner } from './modules/banner.js';
   import { main as main } from './main.js';
 
-  {
-    var wavesurfer = WaveSurfer.create({
-      container: '#wavesurferContainer',
-      waveColor: '#A8DBA8',
-      progressColor: '#3B8686',
-      backend: 'MediaElement'
-    });
-
-    // Load audio from existing media element
-    var mediaElt = document.querySelector('video#source');
-
-    wavesurfer.load(mediaElt);
-    document
-      .querySelector('[data-action="play"]')
-      .addEventListener('click', wavesurfer.playPause.bind(wavesurfer));
-  }
-
-
-  /*  $('wavesurferContainer').append($("<canvas>")); */
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
@@ -125,23 +94,146 @@
   canvas.height = video.videoHeight; // 108*3; // 
   canvas.width = video.videoWidth; // 192*3; // 
 
-  // main();
+  main();
+
+  const poem = [
+    "Par les soirs bleus d’é-té, j’i-rai dans les sen-tiers,",
+    "Pi-co-té par les blés, fou-ler l’her-be me-nue" + String.fromCharCode(160) + ":",
+    "Rê-veur, j’en sen-ti-rai la fraî-cheur à mes pieds.",
+    "Je lais-se-rai le vent bai-gner ma tê-te nue.",
+  ];
+  const c = 9000 / 32;
+  const timestamps = [
+    0,
+    3 * c,
+    4 * c,
+    6 * c,
+    7 * c,
+    9 * c,
+    12 * c,
+    14 * c,
+    16 * c,
+    20 * c,
+    22 * c,
+    23 * c,
+
+    9000,
+    9000 + 3 * c,
+    9000 + 4 * c,
+    9000 + 6 * c,
+    9000 + 7 * c,
+    9000 + 9 * c,
+    9000 + 12 * c,
+    9000 + 14 * c,
+    9000 + 16 * c,
+    9000 + 20 * c,
+    9000 + 22 * c,
+    9000 + 23 * c,
+
+    18000 - 2 * c,
+    18000,
+    18000 + 4 * c,
+    18000 + 6 * c,
+    18000 + 7 * c,
+    18000 + 9 * c,
+    18000 + 12 * c,
+    18000 + 14 * c,
+    18000 + 16 * c,
+    18000 + 20 * c,
+    18000 + 22 * c,
+    18000 + 23 * c,
+
+    27000,
+    27000 + 3 * c,
+    27000 + 4 * c,
+    27000 + 6 * c,
+    27000 + 7 * c,
+    27000 + 9 * c,
+    27000 + 12 * c,
+    27000 + 14 * c,
+    27000 + 16 * c,
+    27000 + 20 * c,
+    27000 + 22 * c,
+    27000 + 23 * c,
+  ];
+
+  const fadeStart = 36000.0;
+  const fadeStop = 40000.0;
+  const fadeDuration = fadeStop - fadeStart;
+
+  let ouf = [];
+  let count = 0;
+  poem.forEach((line, a) => {
+    const words = line.split(/ /);
+    words.forEach((word, b) => {
+      const hyphens = word.split(/[\-]/);
+      hyphens.forEach((hyphen, c) => {
+        ouf.push({
+          word: hyphen,
+          line: a,
+          noSpaceAfter: 0 < hyphens.length && c != hyphens.length - 1,
+          threshold: timestamps[count++]
+        });
+      });
+    });
+  });
 
   let i = 0;
   let stop = false;
+  let startTime;
   video.addEventListener('play', () => {
+    startTime = Date.now();
     stop = false;
     function step() {
-      console.log(i++);
-      ctx.drawImage(video, 0, 0); // canvas.width, canvas.height); //  
+      // video
+      ctx.drawImage(video, 0, 0); 
+
+      // text
+      const elapsed = Date.now() - startTime;
+      const width = canvas.width;
+      const height = canvas.height;
+      ctx.font = '48px serif';
+      if (fadeStop <= elapsed) {
+        ctx.fillStyle = "rgba(255, 255, 255, 0)";
+      } else if (fadeStart <= elapsed) {
+        const opa = ((fadeDuration - (elapsed - fadeStart)) / fadeDuration);
+        ctx.fillStyle = "rgba(255, 255, 255, " + opa + ")";
+      } else {
+        ctx.fillStyle = "rgba(255, 255, 255, 1)";
+      }
+      const acc = poem.map((w) => 0);
+      let lastVisibleWord = null;
+      const x = 30;
+      ouf.forEach((w) => {
+        const y = height - 50 * ((poem.length - w.line));
+
+        if (w.threshold < elapsed) {
+          ctx.fillText(w.word, x + acc[w.line], y);
+        }
+        if (w.noSpaceAfter) {
+          acc[w.line] += ctx.measureText(w.word).width;
+        } else {
+          acc[w.line] += ctx.measureText(w.word + String.fromCharCode(160)).width;
+        }
+        if (w.threshold < elapsed) {
+          lastVisibleWord = w;
+          lastVisibleWord.acc = acc[w.line];
+        }
+      });
+      if (lastVisibleWord && lastVisibleWord.noSpaceAfter) {
+        ctx.fillText("-", x + lastVisibleWord.acc, height - 50 * ((4 - lastVisibleWord.line)));
+      }
       if (!stop) {
         requestAnimationFrame(step);
       }
     }
     requestAnimationFrame(step);
   })
+
   video.addEventListener('pause', () => {
     stop = true;
   })
+
+  $('body').on('click', (e) => console.log(Date.now() - startTime));
 
 </script>
