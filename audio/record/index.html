@@ -14,7 +14,8 @@
       padding: .5rem;
       display: inline-block;
     }
-/* 
+
+    /* 
     @font-face {
       font-family: Butterfly;
       src: url("./Butterfly-OVdq8.otf") format("opentype");
@@ -26,7 +27,7 @@
       font-weight: normal;
       font-style: normal;
     }
- */    
+ */
   </style>
 </head>
 
@@ -189,6 +190,7 @@
       const height = canvas.height;
       const xOffsets = poem.map((w) => 0);
       let lastVisibleWord = null;
+      let firstInvisibleWord = null;
       const x = 30;
       var fontHeight = parseInt(ctx.font) * 1.2;  // https://stackoverflow.com/a/47725619/1070215
       const getY = (height, size, line) => height - fontHeight * (size - line);
@@ -202,11 +204,25 @@
         if (token.threshold < elapsed) {
           lastVisibleWord = token;
           lastVisibleWord.offset = xOffsets[token.line];
-          drawer.drawStrokedText(token.text, thisX, y);
+          drawer.drawShadowedText(token.text, thisX, y, 5);
+        } else {
+          if (!firstInvisibleWord) {
+            firstInvisibleWord = token;
+          }
         }
       });
       if (lastVisibleWord && lastVisibleWord.noSpaceAfter) {
-        drawer.drawStrokedText("-", x + lastVisibleWord.offset, getY(height, poem.length, lastVisibleWord.line));
+        drawer.drawShadowedText("-", x + lastVisibleWord.offset, getY(height, poem.length, lastVisibleWord.line), 5);
+        lastVisibleWord.offset += ctx.measureText("-").width;
+      }
+      const blink = Math.round(((elapsed + 300) / 2.) / c);
+      // console.log(blink);
+      if ((blink % 2) && lastVisibleWord.text != "nue." && firstInvisibleWord) {
+        const newLine = (firstInvisibleWord.line != lastVisibleWord.line);
+        drawer.drawShadowedText(
+          (newLine ? "" : " ") + String.fromCharCode(8248),
+          x + (newLine ? 0 : lastVisibleWord.offset), 
+          getY(height, poem.length, firstInvisibleWord.line));
       }
       if (!stop) {
         requestAnimationFrame(step);

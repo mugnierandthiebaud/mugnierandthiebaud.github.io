@@ -16,10 +16,10 @@ class DT {
     this.ctx.restore();
   }
 
-  drawShadowedText(text, x, y, shadowBlur = 3) {
+  drawShadowedText(text, x, y, shadowBlur = 3, shadowColor = "black") {
     this.ctx.save();
     this.ctx.shadowBlur = shadowBlur;
-    this.ctx.shadowColor = "#000000";
+    this.ctx.shadowColor = shadowColor;
     this.ctx.shadowOffsetX = 4;
     this.ctx.shadowOffsetY = 4;
     this.ctx.fillText(text, x, y);
