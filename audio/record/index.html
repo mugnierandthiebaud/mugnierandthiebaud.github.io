@@ -58,12 +58,12 @@
 
   import { banner as banner } from './modules/banner.js';
   import { main as main } from './main.js';
-  import { default as DT } from './drawText.js';
+  import { default as TextDrawer } from './drawText.js';
 
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
-  const dt = DT(ctx);
+  const drawer = TextDrawer(ctx);
 
   canvas.height = video.videoHeight; // 108*3; // 
   canvas.width = video.videoWidth; // 192*3; // 
@@ -135,17 +135,17 @@
   const fadeStop = 40000.0;
   const fadeDuration = fadeStop - fadeStart;
 
-  let ouf = [];
+  let tokens = [];
   let count = 0;
   poem.forEach((line, a) => {
     const words = line.split(/ /);
     words.forEach((word, b) => {
-      const hyphens = word.split(/[\-]/);
-      hyphens.forEach((hyphen, c) => {
-        ouf.push({
-          word: hyphen,
+      const hyphenizeds = word.split(/[\-]/);
+      hyphenizeds.forEach((hyphenized, c) => {
+        tokens.push({
+          text: hyphenized,
           line: a,
-          noSpaceAfter: 0 < hyphens.length && c != hyphens.length - 1,
+          noSpaceAfter: 0 < hyphenizeds.length && c != hyphenizeds.length - 1,
           threshold: timestamps[count++]
         });
       });
@@ -164,36 +164,46 @@
 
       // text
       const elapsed = Date.now() - startTime;
-      const width = canvas.width;
-      const height = canvas.height;
       ctx.font = "28px 'Courier Prime'";
       if (fadeStop <= elapsed) {
+        if (!stop) {
+          requestAnimationFrame(step);
+        }
+        return;
+        /*         
+        ctx.strokeStyle = "rgba(0, 0, 0, 0)";
         ctx.fillStyle = "rgba(255, 255, 255, 0)";
+        */
       } else if (fadeStart <= elapsed) {
         const opa = ((fadeDuration - (elapsed - fadeStart)) / fadeDuration);
+        ctx.strokeStyle = "rgba(0, 0, 0, " + opa + ")";
         ctx.fillStyle = "rgba(255, 255, 255, " + opa + ")";
       } else {
+        ctx.strokeStyle = "rgba(0, 0, 0, 1)";
         ctx.fillStyle = "rgba(255, 255, 255, 1)";
       }
-      const acc = poem.map((w) => 0);
+      const width = canvas.width;
+      const height = canvas.height;
+      const xOffsets = poem.map((w) => 0);
       let lastVisibleWord = null;
       const x = 30;
-      ouf.forEach((w) => {
-        const y = height - 50 * ((poem.length - w.line));
-        const thisX = x + acc[w.line];
-        if (w.noSpaceAfter) {
-          acc[w.line] += ctx.measureText(w.word).width;
-        } else {
-          acc[w.line] += ctx.measureText(w.word + String.fromCharCode(160)).width;
+      var fontHeight = parseInt(ctx.font) * 1.2;  // https://stackoverflow.com/a/47725619/1070215
+      const getY = (height, size, line) => height - fontHeight * (size - line);
+      tokens.forEach((token) => {
+        const y = getY(height, poem.length, token.line);
+        const thisX = x + xOffsets[token.line];
+        xOffsets[token.line] += ctx.measureText(token.text).width;
+        if (!token.noSpaceAfter) {
+          xOffsets[token.line] += ctx.measureText(String.fromCharCode(160)).width;
         }
-        if (w.threshold < elapsed) {
-          lastVisibleWord = w;
-          lastVisibleWord.acc = acc[w.line];
-          dt.drawStrokedText(w.word, thisX, y);
+        if (token.threshold < elapsed) {
+          lastVisibleWord = token;
+          lastVisibleWord.offset = xOffsets[token.line];
+          drawer.drawStrokedText(token.text, thisX, y);
         }
       });
       if (lastVisibleWord && lastVisibleWord.noSpaceAfter) {
-        dt.drawStrokedText("-", x + lastVisibleWord.acc, height - 50 * ((4 - lastVisibleWord.line)));
+        drawer.drawStrokedText("-", x + lastVisibleWord.offset, getY(height, poem.length, lastVisibleWord.line));
       }
       if (!stop) {
         requestAnimationFrame(step);
