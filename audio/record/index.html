@@ -7,50 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
   <style>
-    body {}
-
-    canvas {
-      /* font-smooth: never; */
-      /* -webkit-font-smoothing: subpixel-antialiased; */
-      /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */
-    }
-
-    svg {
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      width: 400px;
-      height: 100px;
-    }
-
-    #underlay path,
-    #underlay circle {
-      fill: none;
-    }
-
-    #underlay .lit {
-      fill: #0e0;
-      stroke: #0e0;
-    }
-
-    #overlay path,
-    #overlay circle {
-      fill: rgba(199, 199, 199, 0.756);
-      /* #222;*/
-      stroke: #5f0;
-      stroke-opacity: 0;
-    }
-
-    #overlay .lit {
-      fill: #0e0;
-      stroke-opacity: 1;
-    }
-
-
     .col {
       border: lightgray solid 1px;
       padding: .5rem;
       display: inline-block;
+    }
+
+    @font-face {
+      font-family: Butterfly;
+      src: url("./Butterfly-OVdq8.otf") format("opentype");
+    }
+
+    @font-face {
+      font-family: 'Courier Prime';
+      src: url('./Courier Prime.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
   </style>
 </head>
@@ -86,10 +58,12 @@
 
   import { banner as banner } from './modules/banner.js';
   import { main as main } from './main.js';
+  import { default as DT } from './drawText.js';
 
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
+  const dt = DT(ctx);
 
   canvas.height = video.videoHeight; // 108*3; // 
   canvas.width = video.videoWidth; // 192*3; // 
@@ -186,13 +160,13 @@
     stop = false;
     function step() {
       // video
-      ctx.drawImage(video, 0, 0); 
+      ctx.drawImage(video, 0, 0);
 
       // text
       const elapsed = Date.now() - startTime;
       const width = canvas.width;
       const height = canvas.height;
-      ctx.font = '48px serif';
+      ctx.font = "28px 'Courier Prime'";
       if (fadeStop <= elapsed) {
         ctx.fillStyle = "rgba(255, 255, 255, 0)";
       } else if (fadeStart <= elapsed) {
@@ -206,10 +180,7 @@
       const x = 30;
       ouf.forEach((w) => {
         const y = height - 50 * ((poem.length - w.line));
-
-        if (w.threshold < elapsed) {
-          ctx.fillText(w.word, x + acc[w.line], y);
-        }
+        const thisX = x + acc[w.line];
         if (w.noSpaceAfter) {
           acc[w.line] += ctx.measureText(w.word).width;
         } else {
@@ -218,10 +189,11 @@
         if (w.threshold < elapsed) {
           lastVisibleWord = w;
           lastVisibleWord.acc = acc[w.line];
+          dt.drawStrokedText(w.word, thisX, y);
         }
       });
       if (lastVisibleWord && lastVisibleWord.noSpaceAfter) {
-        ctx.fillText("-", x + lastVisibleWord.acc, height - 50 * ((4 - lastVisibleWord.line)));
+        dt.drawStrokedText("-", x + lastVisibleWord.acc, height - 50 * ((4 - lastVisibleWord.line)));
       }
       if (!stop) {
         requestAnimationFrame(step);
