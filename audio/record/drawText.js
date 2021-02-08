@@ -8,9 +8,9 @@ class DT {
     // https://stackoverflow.com/questions/7814398/a-glow-effect-on-html5-canvas
     this.ctx.save();
     //this.ctx.strokeStyle = "black";
-    this.ctx.lineWidth = 4;
-    this.ctx.lineJoin = "round";
-    this.ctx.miterLimit = 2;
+    this.ctx.lineWidth = 1;
+    this.ctx.lineJoin = "miter"; // ctx.lineJoin = "bevel" || "round" || "miter";
+    this.ctx.miterLimit = 1;
     this.ctx.strokeText(text, x, y);
     this.ctx.fillText(text, x, y);
     this.ctx.restore();
