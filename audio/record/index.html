@@ -215,16 +215,20 @@
         drawer.drawShadowedText("-", x + lastVisibleWord.offset, getY(height, poem.length, lastVisibleWord.line), 5);
         lastVisibleWord.offset += ctx.measureText("-").width;
       }
-      const blink = Math.round(((elapsed + 300) / 2.) / c);
-      // console.log(blink);
-      if ((blink % 2) && lastVisibleWord.text != "nue." && firstInvisibleWord) {
-        const newLine = (firstInvisibleWord.line != lastVisibleWord.line);
-        drawer.drawShadowedText(
-          (newLine ? "" : " ") + String.fromCharCode(8248),
-          x + (newLine ? 0 : lastVisibleWord.offset), 
-          getY(height, poem.length, firstInvisibleWord.line));
-      }
-      if (!stop) {
+      // caret
+      const showCaret = (firstInvisibleWord && lastVisibleWord && firstInvisibleWord.line != lastVisibleWord.line);
+      const caret = "|"; // String.fromCharCode(8248)
+      if (showCaret) {
+        const blink = Math.round(((elapsed + 300) / 2.) / c);
+        // console.log(blink);
+        if ((blink % 2) && lastVisibleWord.text != "nue." && firstInvisibleWord) {
+          const newLine = (firstInvisibleWord.line != lastVisibleWord.line);
+          drawer.drawShadowedText(
+            (newLine ? "" : " ") + caret,
+            x + (newLine ? 0 : lastVisibleWord.offset),
+            getY(height, poem.length, firstInvisibleWord.line));
+        }
+      } if (!stop) {
         requestAnimationFrame(step);
       }
     }
