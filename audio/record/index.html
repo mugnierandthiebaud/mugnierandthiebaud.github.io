@@ -14,20 +14,6 @@
       padding: .5rem;
       display: inline-block;
     }
-
-    /* 
-    @font-face {
-      font-family: Butterfly;
-      src: url("./Butterfly-OVdq8.otf") format("opentype");
-    }
-
-    @font-face {
-      font-family: 'Courier Prime';
-      src: url('./Courier Prime.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
- */
   </style>
 </head>
 
@@ -37,28 +23,63 @@
       <button type="button" class="btn" id="record">Start Recording</button>
       <button type="button" class="btn" id="play" disabled>Play</button>
       <button type="button" class="btn" id="download" disabled>Download</button>
+      <span class="timer" style="display: inline-block;">
+        <span aria-label="timer">00:00</span>
+      </span>
     </div>
+
+    <div>
+      <video id="live" controls autoplay playsinline></video>
+      <video id="source" class="img-fluid" controls muted id="bgvid">
+        <source src="sensation.mp4" type="video/webm">
+      </video>
+      <video id="playback" controls autoplay></video><br>
+      <canvas id="canvas" class="img-fluid">
+    </div>
+    <a id="downloadLink" download="mediarecorder.webm" name="mediarecorder.webm" href>qwe</a>
+    <p id="data"></p>
+    <!--    
+      
+        <div id="controls">
+          <button id="rec" onclick="onBtnRecordClicked()">Record</button>
+          <button id="pauseRes" onclick="onPauseResumeClicked()" disabled>Pause</button>
+          <button id="stop" onclick="onBtnStopClicked()" disabled>Stop</button>
+          <button id="stateButton" onclick="onStateClicked()">trace state</button>
+        </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <div class="col">
-        <video id="source" class="img-fluid" controls muted id="bgvid" src="sensation.mp4" type="video/webm">
-          <source src="sensation.mp4" type="video/webm">
-        </video>
       </div>
       <div class="col">
-        <video id="target" class="img-fluid"></video>
       </div>
       <div class="col">
-        <canvas id="canvas" class="img-fluid">
-        </canvas>
       </div>
     </div>
+    <video id="source" class="img-fluid" controls muted id="bgvid">
+      <source src="sensation.mp4" type="video/webm">
+    </video>
+    <video id="target" class="img-fluid"></video>
+  -->
+    </canvas>
   </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 
+<script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+<script src="./record.js"></script>
+<!-- 
+var recBtn = document.querySelector('button#rec');
+var pauseResBtn = document.querySelector('button#pauseRes');
+var stopBtn = document.querySelector('button#stop');
+
+var liveVideoElement = document.querySelector('#live');
+var playbackVideoElement = document.querySelector('#playback');
+var dataElement = document.querySelector('#data');
+var downloadLink = document.querySelector('a#downloadLink');
+-->
 <script type="module">
+  'use strict'
 
   import { banner as banner } from './modules/banner.js';
   import { main as main } from './main.js';
@@ -67,10 +88,12 @@
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
+  const livevideo = document.querySelector("video#live");
+
   const drawer = TextDrawer(ctx);
 
-  canvas.height = video.videoHeight; // 108*3; // 
-  canvas.width = video.videoWidth; // 192*3; // 
+  canvas.height = video.videoHeight;
+  canvas.width = video.videoWidth;
 
   main();
 
@@ -80,165 +103,247 @@
     "Rê-veur, j’en sen-ti-rai la fraî-cheur à mes pieds.",
     "Je lais-se-rai le vent bai-gner ma tê-te nue.",
   ];
-  const c = 9000 / 32;
+
+  const beatsPerMinute = 107.0;
+  const beatDuration = 60000.0 / beatsPerMinute;
+  const fourBars = 16.0 * beatDuration;
+  const croche = fourBars / 32.;
   const timestamps = [
-    0,
-    3 * c,
-    4 * c,
-    6 * c,
-    7 * c,
-    9 * c,
-    12 * c,
-    14 * c,
-    16 * c,
-    20 * c,
-    22 * c,
-    23 * c,
+    50, // not zero to get first image without text
+    3 * croche,
+    4 * croche,
+    6 * croche,
+    7 * croche,
+    9 * croche,
+    12 * croche,
+    14 * croche,
+    16 * croche,
+    20 * croche,
+    22 * croche,
+    23 * croche,
 
-    9000,
-    9000 + 3 * c,
-    9000 + 4 * c,
-    9000 + 6 * c,
-    9000 + 7 * c,
-    9000 + 9 * c,
-    9000 + 12 * c,
-    9000 + 14 * c,
-    9000 + 16 * c,
-    9000 + 20 * c,
-    9000 + 22 * c,
-    9000 + 23 * c,
+    fourBars,
+    fourBars + (3 * croche),
+    fourBars + (4 * croche),
+    fourBars + (6 * croche),
+    fourBars + (7 * croche),
+    fourBars + (9 * croche),
+    fourBars + (12 * croche),
+    fourBars + (14 * croche),
+    fourBars + (16 * croche),
+    fourBars + (20 * croche),
+    fourBars + (22 * croche),
+    fourBars + (23 * croche),
 
-    18000 - 2 * c,
-    18000,
-    18000 + 4 * c,
-    18000 + 6 * c,
-    18000 + 7 * c,
-    18000 + 9 * c,
-    18000 + 12 * c,
-    18000 + 14 * c,
-    18000 + 16 * c,
-    18000 + 20 * c,
-    18000 + 22 * c,
-    18000 + 23 * c,
+    (fourBars * 2) - (2 * croche),
+    (fourBars * 2),
+    (fourBars * 2) + (4 * croche),
+    (fourBars * 2) + (6 * croche),
+    (fourBars * 2) + (7 * croche),
+    (fourBars * 2) + (9 * croche),
+    (fourBars * 2) + (12 * croche),
+    (fourBars * 2) + (14 * croche),
+    (fourBars * 2) + (16 * croche),
+    (fourBars * 2) + (20 * croche),
+    (fourBars * 2) + (22 * croche),
+    (fourBars * 2) + (23 * croche),
 
-    27000,
-    27000 + 3 * c,
-    27000 + 4 * c,
-    27000 + 6 * c,
-    27000 + 7 * c,
-    27000 + 9 * c,
-    27000 + 12 * c,
-    27000 + 14 * c,
-    27000 + 16 * c,
-    27000 + 20 * c,
-    27000 + 22 * c,
-    27000 + 23 * c,
+    (fourBars * 3),
+    (fourBars * 3) + (3 * croche),
+    (fourBars * 3) + (4 * croche),
+    (fourBars * 3) + (6 * croche),
+    (fourBars * 3) + (7 * croche),
+    (fourBars * 3) + (9 * croche),
+    (fourBars * 3) + (12 * croche),
+    (fourBars * 3) + (14 * croche),
+    (fourBars * 3) + (16 * croche),
+    (fourBars * 3) + (20 * croche),
+    (fourBars * 3) + (22 * croche),
+    (fourBars * 3) + (23 * croche),
   ];
 
-  const fadeStart = 36000.0;
-  const fadeStop = 40000.0;
+  const fadeStart = (fourBars * 4.0);
+  const fadeStop = (fourBars * 4.5);
   const fadeDuration = fadeStop - fadeStart;
 
-  let tokens = [];
-  let count = 0;
-  poem.forEach((line, a) => {
+  const tokens = [];
+  poem.forEach((line, lineIndex) => {
     const words = line.split(/ /);
-    words.forEach((word, b) => {
+    words.forEach((word, wordIndex) => {
       const hyphenizeds = word.split(/[\-]/);
-      hyphenizeds.forEach((hyphenized, c) => {
+      const endOfLine = wordIndex === words.length - 1;
+      hyphenizeds.forEach((hyphenized, hyphenizedIndex) => {
+        const endOfWord = hyphenizedIndex === hyphenizeds.length - 1;
         tokens.push({
-          text: hyphenized,
-          line: a,
-          noSpaceAfter: 0 < hyphenizeds.length && c != hyphenizeds.length - 1,
-          threshold: timestamps[count++]
+          text: hyphenized + (endOfWord && !endOfLine ? String.fromCharCode(160) : ""),
+          line: lineIndex,
+          threshold: timestamps[tokens.length]
         });
       });
     });
   });
 
-  let i = 0;
   let stop = false;
-  let startTime;
   video.addEventListener('play', () => {
-    startTime = Date.now();
+
+    const hRatio = canvas.width / livevideo.videoWidth;
+    const vRatio = canvas.height / livevideo.videoHeight;
+    const ratio = Math.min(hRatio, vRatio) / 2;
+
+    ctx.font = "28px monospace";
+    // ctx.font = "48px 'EB Garamond'"; 
+
+    const xOffsets = poem.map((w) => 0);
+    const X = 30.0;
+    const fontHeight = parseInt(ctx.font) * 1.2;  // https://stackoverflow.com/a/47725619/1070215
+    const caret = "|";
+    const hyphen = "-";
+
+    const getY = (height, size, line) => height - fontHeight * (size - line);
+    const writeAllTokens = (videoCurrentTime) => {
+      let lastVisibleWordIndex = -1;
+      tokens.forEach((token, tokenIndex) => {
+        if (typeof token.width === "undefined") {
+          console.log("|" + token.text + "|");
+          token.width = ctx.measureText(token.text).width;
+        }
+        if (typeof token.y === "undefined") {
+          token.y = getY(canvas.height, poem.length, token.line);
+        }
+        if (typeof token.x === "undefined") {
+          if (tokenIndex == 0) {
+            token.x = X;
+          } else {
+            const prev = tokens[tokenIndex - 1];
+            if (token.line != prev.line) {
+              token.x = X;
+            } else {
+              token.x = prev.x + prev.width;
+            }
+          }
+        }
+        if (token.threshold < videoCurrentTime) {
+          lastVisibleWordIndex = tokenIndex;
+          drawer.drawShadowedText(token.text, token.x, token.y, 5);
+        }
+      });
+
+      if (-1 < lastVisibleWordIndex && lastVisibleWordIndex < tokens.length - 1) {
+
+        // hyphen
+        if (!tokens[lastVisibleWordIndex].text.endsWith(String.fromCharCode(160))) {
+          // if (!tokens[lastVisibleWordIndex].text.endsWith("_")) {
+          drawer.drawShadowedText(
+            hyphen,
+            tokens[lastVisibleWordIndex + 1].x,
+            tokens[lastVisibleWordIndex].y,
+            5
+          );
+        }
+
+        // caret
+        const showCaret = (tokens[lastVisibleWordIndex].line != tokens[lastVisibleWordIndex + 1].line);
+        if (showCaret) {
+          const blink = Math.round(((videoCurrentTime + 300) / 2.) / croche);
+          if (blink % 2) {
+            ctx.fillText(
+              caret,
+              X,
+              tokens[lastVisibleWordIndex + 1].y
+            );
+          }
+        }
+      }
+    }
+
     stop = false;
     function step() {
+      const videoCurrentTime = video.currentTime * 1000;
+
       // video
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(video, 0, 0);
 
-      // text
-      const elapsed = Date.now() - startTime;
-      ctx.font = "48px 'EB Garamond'";
-      if (fadeStop <= elapsed) {
+      // live video
+      {
+        const tmpCanvas = document.createElement('canvas');
+        tmpCanvas.width = livevideo.videoWidth * ratio;
+        tmpCanvas.height = livevideo.videoHeight * ratio;
+        const tmpCtx = tmpCanvas.getContext('2d');
+        tmpCtx.beginPath();
+        tmpCtx.arc(tmpCanvas.width / 2, tmpCanvas.height / 2, tmpCanvas.height / 2, 0, Math.PI * 2);
+        tmpCtx.closePath();
+        tmpCtx.clip();
+        tmpCtx.drawImage(livevideo, 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
+
+        const frame = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
+        for (let i = 0; i < frame.data.length / 4; i++) {
+          let r = frame.data[i * 4 + 0];
+          let g = frame.data[i * 4 + 1];
+          let b = frame.data[i * 4 + 2];
+          if (r < 90 && g < 90 && b < 90) {
+            frame.data[i * 4 + 3] = 0;
+          }
+        }
+        tmpCtx.putImageData(frame, 0, 0);
+
+        ctx.drawImage(tmpCanvas, canvas.width - tmpCanvas.width, 0); 
+      }
+
+      // fade 
+      if (fadeStop <= videoCurrentTime) {
         if (!stop) {
           requestAnimationFrame(step);
         }
         return;
-        /*         
-        ctx.strokeStyle = "rgba(0, 0, 0, 0)";
-        ctx.fillStyle = "rgba(255, 255, 255, 0)";
-        */
-      } else if (fadeStart <= elapsed) {
-        const opa = ((fadeDuration - (elapsed - fadeStart)) / fadeDuration);
+      } else if (fadeStart <= videoCurrentTime) {
+        const opa = ((fadeDuration - (videoCurrentTime - fadeStart)) / fadeDuration);
         ctx.strokeStyle = "rgba(0, 0, 0, " + opa + ")";
         ctx.fillStyle = "rgba(255, 255, 255, " + opa + ")";
       } else {
         ctx.strokeStyle = "rgba(0, 0, 0, 1)";
         ctx.fillStyle = "rgba(255, 255, 255, 1)";
       }
-      const width = canvas.width;
-      const height = canvas.height;
-      const xOffsets = poem.map((w) => 0);
-      let lastVisibleWord = null;
-      let firstInvisibleWord = null;
-      const x = 30;
-      var fontHeight = parseInt(ctx.font) * 1.2;  // https://stackoverflow.com/a/47725619/1070215
-      const getY = (height, size, line) => height - fontHeight * (size - line);
-      tokens.forEach((token) => {
-        const y = getY(height, poem.length, token.line);
-        const thisX = x + xOffsets[token.line];
-        xOffsets[token.line] += ctx.measureText(token.text).width;
-        if (!token.noSpaceAfter) {
-          xOffsets[token.line] += ctx.measureText(String.fromCharCode(160)).width;
-        }
-        if (token.threshold < elapsed) {
-          lastVisibleWord = token;
-          lastVisibleWord.offset = xOffsets[token.line];
-          drawer.drawShadowedText(token.text, thisX, y, 5);
-        } else {
-          if (!firstInvisibleWord) {
-            firstInvisibleWord = token;
-          }
-        }
-      });
-      if (lastVisibleWord && lastVisibleWord.noSpaceAfter) {
-        drawer.drawShadowedText("-", x + lastVisibleWord.offset, getY(height, poem.length, lastVisibleWord.line), 5);
-        lastVisibleWord.offset += ctx.measureText("-").width;
-      }
-      // caret
-      const showCaret = (firstInvisibleWord && lastVisibleWord && firstInvisibleWord.line != lastVisibleWord.line);
-      const caret = "|"; // String.fromCharCode(8248)
-      if (showCaret) {
-        const blink = Math.round(((elapsed + 300) / 2.) / c);
-        // console.log(blink);
-        if ((blink % 2) && lastVisibleWord.text != "nue." && firstInvisibleWord) {
-          const newLine = (firstInvisibleWord.line != lastVisibleWord.line);
-          drawer.drawShadowedText(
-            (newLine ? "" : " ") + caret,
-            x + (newLine ? 0 : lastVisibleWord.offset),
-            getY(height, poem.length, firstInvisibleWord.line));
-        }
-      } if (!stop) {
+
+      // text
+      writeAllTokens(videoCurrentTime);
+      
+      if (!stop) {
         requestAnimationFrame(step);
       }
     }
-    requestAnimationFrame(step);
+    if (!stop) {
+      requestAnimationFrame(step);
+    }
   })
 
   video.addEventListener('pause', () => {
     stop = true;
   })
 
-  /* $('body').on('click', (e) => console.log(Date.now() - startTime)); */
+  const timerWrapper = document.querySelector('.timer');
+  const timer = document.querySelector('.timer span');
+  function setTime() {
+    const videoCurrentTime = video.currentTime;
+    let minutes = Math.floor(videoCurrentTime / 60);
+    let seconds = Math.floor(videoCurrentTime - minutes * 60);
+    let minuteValue;
+    let secondValue;
 
+    if (minutes < 10) {
+      minuteValue = '0' + minutes;
+    } else {
+      minuteValue = minutes;
+    }
+
+    if (seconds < 10) {
+      secondValue = '0' + seconds;
+    } else {
+      secondValue = seconds;
+    }
+
+    let mediaTime = minuteValue + ':' + secondValue;
+    timer.textContent = mediaTime;
+  }
+  video.addEventListener("timeupdate", setTime);
 </script>

@@ -55,12 +55,12 @@ function main() {
   }
 
   canvas2 = document.querySelector("canvas");
-  video2 = document.querySelector("video#target");
+  video2 = document.querySelector("video#playback");
   recordButton.onclick = toggleRecording;
   playButton.onclick = play;
   downloadButton.onclick = download;
 
-  stream = canvas2.captureStream(25); // frames per second
+  stream = canvas2.captureStream(60); // frames per second
   console.log("Started stream capture from canvas element: ", stream);
 }
 function handleSourceOpen(event) {
@@ -124,11 +124,12 @@ function startRecording() {
   }
   /*
   mediaRecorder.setVideoSize(1280, 720);
+ 
   mediaRecorder.setVideoFrameRate(25); //might be auto-determined due to lighting
   mediaRecorder.setVideoEncodingBitRate(3000000);
   mediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);// MPEG_4_SP
   mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-  */
+   */
   console.log("Created MediaRecorder", mediaRecorder, "with options", options);
   recordButton.textContent = "Stop Recording";
   playButton.disabled = true;

@@ -59,7 +59,7 @@ downloadButton.onclick = download;
 // Start the GL teapot on the canvas
 // main();
 
-const stream = canvas2.captureStream(25); // frames per second
+const stream = canvas2.captureStream(60); // frames per second
 console.log('Started stream capture from canvas element: ', stream);
 
 function handleSourceOpen(event) {
