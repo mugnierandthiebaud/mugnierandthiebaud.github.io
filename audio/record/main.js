@@ -60,7 +60,7 @@ function main() {
   playButton.onclick = play;
   downloadButton.onclick = download;
 
-  stream = canvas2.captureStream(60); // frames per second
+  stream = canvas2.captureStream(25); // frames per second
   console.log("Started stream capture from canvas element: ", stream);
 }
 function handleSourceOpen(event) {
