@@ -54,7 +54,7 @@ function main() {
       });
   }
 
-  canvas2 = document.querySelector("canvas");
+  canvas2 = document.querySelector("canvas#canvas");
   video2 = document.querySelector("video#playback");
   recordButton.onclick = toggleRecording;
   playButton.onclick = play;
