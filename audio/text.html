@@ -6,173 +6,100 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-        }
-
-        .fade {
-            position: relative;
-            width: 100%;
-            min-height: 0vh;
-            top: -25px;
-            /* background-image: linear-gradient(0deg, transparent, black 75%); */
-            z-index: 1;
-        }
-
-        .star-wars {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            height: 800px;
-            color: black;
-            font-family: 'Pathway Gothic One', sans-serif;
-            font-size: 500%;
-            font-weight: 600;
-            letter-spacing: 6px;
-            line-height: 150%;
-            perspective: 400px;
-            text-align: center;
-        }
-
-        .crawl {
-            position: relative;
-            top: 9999px;
-            transform-origin: 50% 100%;
-            animation: crawl 20s linear;
-        }
-
-        .crawl p {
-            opacity: 0;
-        }
-
-        @keyframes crawl {
-            0% {
-                top: -2000px;
-                transform: rotateX(25deg) translateZ(-1000px);
-            }
-
-            100% {
-                top: 0px;
-                transform: rotateX(15deg) translateZ(0);
-            }
-        }
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
+        canvas#echo {
+            border: 2px solid red;
             width: 100%;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="fade"></div>
-
-    <section class="star-wars">
-
-        <video id="source" controls playsinline autoplay muted loop id="bgvid" src="./qwe.mp4" type="video/webm">
-            <source src="./qwe.mp4" type="video/webm">
-        </video>
-        <video id="target"></video>
-
-        <div class="crawl">
-
-            <p class="crawl3">Je laisserai le vent baigner ma tête nue.</p>
-            <p class="crawl2">Rêveur, j’en sentirai la fraîcheur à mes pieds.</p>
-            <p class="crawl1">Picoté par les blés, fouler l’herbe menue :</p>
-            <p class="crawl0">Par les soirs bleus d’été, j’irai dans les sentiers,</p>
-
-        </div>
-
-    </section>
-
-    <div id="waveform">
-        <!-- Here be the waveform -->
-        <wave style="display: block; position: relative; user-select: none; height: 128px; overflow: auto hidden;">
-            <wave
-                style="position: absolute; z-index: 3; left: 0px; top: 0px; bottom: 0px; overflow: hidden; width: 880.5px; display: block; box-sizing: border-box; border-right: 1px solid rgb(51, 51, 51); pointer-events: none;">
-                <canvas width="1740" height="256" style="position: absolute; left: 0px; top: 0px; bottom: 0px; height: 100%; width: 870px;"></canvas>
-            </wave>
-            <!-- <canvas width="1740" height="256"
-                style="position: absolute; z-index: 2; left: 0px; top: 0px; bottom: 0px; height: 100%; pointer-events: none; width: 870px;"></canvas> -->
-        </wave>
+    <div id="peaks-container">
+        <div id="zoomview-container"></div>
+        <div id="overview-container"></div>
     </div>
+    <audio id="apfigupahdfpg" controls style="display:block;">
+        <source src="par_les_soir_et_caetera.wav" type="audio/mpeg">
+    </audio>
+    <canvas id="echo">
 
-    <div>
-        <button id="record">Start Recording</button>
-        <button id="play" disabled>Play</button>
-        <button id="download" disabled>Download</button>
-    </div>
-
+    </canvas>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/peaks.js@latest/peaks.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/wavesurfer.js@4.4.0/dist/wavesurfer.min.js"></script>
-<script src="main.js"></script>
-
-
-<script id="style-template" type="text/x-handlebars-template">
-    <style>
-        .crawl{{id}} {
-            opacity: 0;
-            animation: crawl{{id}} 20s linear;
-        }
-
-        @keyframes crawl{{id}} {
-            {{init}}% {
-                opacity: 0;
-            }
-            {{start}}% {
-                opacity: 1;
-            }
-            {{sustain}}% {
-                opacity: 1;
-            }
-            {{end}}% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-    </style>
+<script id="blank-template" type="text/x-handlebars-template">
 </script>
 
-<script>
-    const template = Handlebars.compile(document.getElementById("style-template").innerHTML);
-    const video = document.querySelector("video#source");
-
+<script type="module">
+    const template = Handlebars.compile(document.getElementById("blank-template").innerHTML);
     $(document).ready(function () {
-        var wavesurfer = WaveSurfer.create({
-            container: document.querySelector('#waveform'),
-            waveColor: '#A8DBA8',
-            progressColor: '#3B8686',
-            backend: 'MediaElement'
-        });
 
-        wavesurfer.load(video);
+        (function (Peaks) {
+            const options = {
+                containers: {
+                    zoomview: document.getElementById('zoomview-container'),
+                    overview: document.getElementById('overview-container')
+                },
+                // HTML5 Media element containing an audio track
+                mediaElement: document.querySelector('audio'),
+                webAudio: {
+                    // A Web Audio AudioContext instance which can be used
+                    // to render the waveform if dataUri is not provided
+                    audioContext: new AudioContext(),
 
-        video.addEventListener('play', () => {
-            const starts = [0, 72 / 3, 2 * (72 / 3), 72];
+                    // Alternatively, provide an AudioBuffer containing the decoded audio
+                    // samples. In this case, an AudioContext is not needed
+                    audioBuffer: null,
 
-            starts.forEach((s, i) => {
-                $('head').append(template({
-                    id: i,
-                    init: s + 0,
-                    start: s + 5,
-                    sustain: s + 20,
-                    end: s + 28,
-                }));
+                    // If true, the waveform will show all available channels.
+                    // If false, the audio is shown as a single channel waveform.
+                    multiChannel: false
+                },
+            };
+
+            Peaks.init(options, function (err, peaks) {
+                if (err) {
+                    console.error('Failed to initialize Peaks instance: ' + err.message);
+                    return;
+                }
+                let stop = true;
+                const audio = document.getElementById('apfigupahdfpg');
+                const echo = document.getElementById('echo');
+                const overview = peaks.views.getView('overview');
+                const echoContext = echo.getContext('2d');
+                const echoWidth  = 300; // $(echo).width();
+                const echoHeight = 100;  // $(echo).height();
+                audio.addEventListener('play', () => {
+                    stop = false;
+                    function step() {
+                        echoContext.clearRect(0, 0, $(echo).width(), $(echo).height());
+                        $("#overview-container canvas").each((index, canvas) => {
+                            echoContext.drawImage(canvas,
+                                0, 0, overview._width*2, overview._height*2,
+                                0, 0, echoWidth, echoHeight);
+                            if (index == 3) {
+                                return false;
+                            }
+                        });
+                        if (!stop) {
+                            requestAnimationFrame(step);
+                        }
+                    }
+                    requestAnimationFrame(step);
+                })
+                audio.addEventListener('pause', () => {
+                    stop = true;
+                })
+                audio.addEventListener('stop', () => {
+                    stop = true;
+                })
+
             });
-        })
 
+        })(peaks);
     });
 </script>
 
