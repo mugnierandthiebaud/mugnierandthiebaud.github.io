@@ -8,7 +8,6 @@
     <style>
         canvas#echo {
             border: 2px solid red;
-            width: 100%;
         }
     </style>
 </head>
@@ -21,7 +20,7 @@
     <audio id="apfigupahdfpg" controls style="display:block;">
         <source src="par_les_soir_et_caetera.wav" type="audio/mpeg">
     </audio>
-    <canvas id="echo">
+    <canvas id="echo" width="1000px" height="400px">
 
     </canvas>
 </body>
@@ -66,21 +65,26 @@
                     return;
                 }
                 let stop = true;
+                const dpr = window.devicePixelRatio || 1;
                 const audio = document.getElementById('apfigupahdfpg');
                 const echo = document.getElementById('echo');
                 const overview = peaks.views.getView('overview');
                 const echoContext = echo.getContext('2d');
-                const echoWidth  = 300; // $(echo).width();
-                const echoHeight = 100;  // $(echo).height();
+                echoContext.scale(dpr, dpr);
+                const overviewWidth = $(overview._container).width();
+                const overviewHeight = $(overview._container).height();
+                const echoWidth  = $(echo).width(overviewWidth  ).width();
+                const echoHeight = $(echo).height(overviewHeight).width();
                 audio.addEventListener('play', () => {
                     stop = false;
                     function step() {
                         echoContext.clearRect(0, 0, $(echo).width(), $(echo).height());
                         $("#overview-container canvas").each((index, canvas) => {
+                            // echoContext.drawImage(canvas, 0, 0);
                             echoContext.drawImage(canvas,
-                                0, 0, overview._width*2, overview._height*2,
-                                0, 0, echoWidth, echoHeight);
-                            if (index == 3) {
+                                0, 0, overviewWidth, overviewHeight,
+                                0, 0, echoWidth, echoHeight );
+                            if (index == 12) {
                                 return false;
                             }
                         });

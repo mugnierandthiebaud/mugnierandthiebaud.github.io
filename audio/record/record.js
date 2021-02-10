@@ -6,6 +6,7 @@
 var constraints = {
   audio: false,
   video: {
+    facingMode: "environment",
     width: { min: 640, ideal: 640, max: 640 },
     height: { min: 480, ideal: 480, max: 480 },
     framerate: 60,
@@ -72,25 +73,25 @@ if (!navigator.mediaDevices.getUserMedia) {
         liveVideoElement.srcObject = localStream;
         liveVideoElement.play();
 
-        try {
-          window.AudioContext =
-            window.AudioContext || window.webkitAudioContext;
-          window.audioContext = new AudioContext();
-        } catch (e) {
-          log("Web Audio API not supported.");
-        }
+        //        try {
+        //          window.AudioContext =
+        //            window.AudioContext || window.webkitAudioContext;
+        //          window.audioContext = new AudioContext();
+        //        } catch (e) {
+        //          log("Web Audio API not supported.");
+        //	    }
 
-        soundMeter = window.soundMeter = new SoundMeter(window.audioContext);
-        soundMeter.connectToSource(localStream, function (e) {
-          if (e) {
-            log(e);
-            return;
-          } else {
-            /*setInterval(function() {
-						  log(Math.round(soundMeter.instant.toFixed(2) * 100));
-					  }, 100);*/
-          }
-        });
+        //        soundMeter = window.soundMeter = new SoundMeter(window.audioContext);
+        //        soundMeter.connectToSource(localStream, function (e) {
+        //          if (e) {
+        //            log(e);
+        //            return;
+        //          } else {
+        //            /*setInterval(function() {
+        //						  log(Math.round(soundMeter.instant.toFixed(2) * 100));
+        //					  }, 100);*/
+        //	      }
+        //	        });
       })
       .catch(function (err) {
         /* handle the error */

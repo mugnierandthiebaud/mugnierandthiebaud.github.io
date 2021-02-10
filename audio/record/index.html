@@ -30,11 +30,13 @@
 
     <div>
       <video id="live" controls autoplay playsinline></video>
+      <canvas id="face" class="img-fluid"></canvas>
       <video id="source" class="img-fluid" controls muted id="bgvid">
         <source src="sensation.mp4" type="video/webm">
       </video>
-      <video id="playback" controls autoplay></video><br>
-      <canvas id="canvas" class="img-fluid">
+      <video id="playback" controls autoplay></video>
+      <br>
+      <canvas id="canvas" class="img-fluid"></canvas>
     </div>
     <a id="downloadLink" download="mediarecorder.webm" name="mediarecorder.webm" href>qwe</a>
     <p id="data"></p>
@@ -84,8 +86,9 @@ var downloadLink = document.querySelector('a#downloadLink');
   import { banner as banner } from './modules/banner.js';
   import { main as main } from './main.js';
   import { default as TextDrawer } from './drawText.js';
+  import { detectFace as faceDetect } from './face.js';
 
-  const canvas = document.querySelector("canvas");
+  const canvas = document.querySelector("canvas#canvas");
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
   const livevideo = document.querySelector("video#live");
@@ -190,6 +193,8 @@ var downloadLink = document.querySelector('a#downloadLink');
     const vRatio = canvas.height / livevideo.videoHeight;
     const ratio = Math.min(hRatio, vRatio) / 2;
 
+    faceDetect();
+
     ctx.font = "28px monospace";
     // ctx.font = "48px 'EB Garamond'"; 
 
@@ -257,37 +262,80 @@ var downloadLink = document.querySelector('a#downloadLink');
     }
 
     stop = false;
+    const faceDetector = new FaceDetector({ fastMode: true });
     function step() {
+
       const videoCurrentTime = video.currentTime * 1000;
 
       // video
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(video, 0, 0);
+      
 
       // live video
       {
+        // face detection
+        /* {
+          Promise.all([
+            faceDetector.detect(livevideo).catch((error) => console.error(error))
+          ]).then(([detectedFaces = []]) => {
+            console.log(detectedFaces.length);
+            ctx.save();
+            ctx.strokeStyle = '#ffeb3b';
+            ctx.fillStyle = '#ffeb3b';
+            ctx.font = '16px Mononoki';
+            ctx.lineWidth = 5;
+
+            detectedFaces.forEach((detectedFace) => {
+              const { top, left, width, height } = detectedFace.boundingBox;
+              ctx.beginPath();
+              ctx.rect(left, top, width, height);
+              ctx.stroke();
+              ctx.fillText('face detected', left + 5, top - 8);
+
+              if (detectedFace.landmarks) {
+                detectedFace.landmarks.forEach((landmark) => {
+                  ctx.beginPath();
+                  ctx.arc(landmark.locations.x, landmark.locations.y, 5, 0, Math.PI * 2);
+                  ctx.fill();
+                  ctx.fillText(landmark.type, landmark.locations.x + 10, landmark.locations.y + 4);
+                });
+              }
+              ctx.restore();
+            });
+          });
+        } */
+
         const tmpCanvas = document.createElement('canvas');
         tmpCanvas.width = livevideo.videoWidth * ratio;
         tmpCanvas.height = livevideo.videoHeight * ratio;
+        // translate context to center of canvas
         const tmpCtx = tmpCanvas.getContext('2d');
+        // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate
+        tmpCtx.translate(tmpCanvas.width / 2, tmpCanvas.height / 2);
+        const rotation = Math.PI * 2 * ((videoCurrentTime % fourBars) / fourBars);
+        tmpCtx.rotate(rotation);
+        tmpCtx.translate(-tmpCanvas.width / 2, -tmpCanvas.height / 2);
         tmpCtx.beginPath();
         tmpCtx.arc(tmpCanvas.width / 2, tmpCanvas.height / 2, tmpCanvas.height / 2, 0, Math.PI * 2);
         tmpCtx.closePath();
         tmpCtx.clip();
-        tmpCtx.drawImage(livevideo, 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
+
+        tmpCtx.drawImage(document.querySelector("canvas#face"), 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
+        // tmpCtx.drawImage(livevideo, 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
 
         const frame = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
-        for (let i = 0; i < frame.data.length / 4; i++) {
-          let r = frame.data[i * 4 + 0];
-          let g = frame.data[i * 4 + 1];
-          let b = frame.data[i * 4 + 2];
-          if (r < 90 && g < 90 && b < 90) {
-            frame.data[i * 4 + 3] = 0;
-          }
-        }
+        /*  for (let i = 0; i < frame.data.length / 4; i++) {
+           let r = frame.data[i * 4 + 0];
+           let g = frame.data[i * 4 + 1];
+           let b = frame.data[i * 4 + 2];
+           if (r < 90 && g < 90 && b < 90) {
+             frame.data[i * 4 + 3] = 0;
+           }
+         } */
         tmpCtx.putImageData(frame, 0, 0);
 
-        ctx.drawImage(tmpCanvas, canvas.width - tmpCanvas.width, 0); 
+        ctx.drawImage(tmpCanvas, canvas.width - tmpCanvas.width, 0);
       }
 
       // fade 
@@ -307,7 +355,7 @@ var downloadLink = document.querySelector('a#downloadLink');
 
       // text
       writeAllTokens(videoCurrentTime);
-      
+
       if (!stop) {
         requestAnimationFrame(step);
       }
