@@ -29,14 +29,15 @@
     </div>
 
     <div>
-      <video id="live" controls autoplay playsinline></video>
-      <canvas id="face" class="img-fluid"></canvas>
+      <video id="live" controls autoplay playsinline width="1280" height="720"></video>
+      <canvas id="face" class="img-fluid" width="1280" height="720"></canvas>
+      <canvas id="svgcanvas" class="img-fluid" width="1280" height="720"></canvas>
       <video id="source" class="img-fluid" controls muted id="bgvid">
-        <source src="sensation.mp4" type="video/webm">
+        <source src="sensation.mp4" type="video/webm"> <!-- sensation.mp4 -->
       </video>
       <video id="playback" controls autoplay></video>
       <br>
-      <canvas id="canvas" class="img-fluid"></canvas>
+      <canvas id="canvas" class="img-fluid" width="1280" height="720"></canvas>
     </div>
     <a id="downloadLink" download="mediarecorder.webm" name="mediarecorder.webm" href>qwe</a>
     <p id="data"></p>
@@ -68,6 +69,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/canvg@latest/lib/index.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/canvg@3.0.7/lib/umd.js"></script>
+
 <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
 <script src="./record.js"></script>
 <!-- 
@@ -89,6 +93,7 @@ var downloadLink = document.querySelector('a#downloadLink');
   import { detectFace as faceDetect } from './face.js';
 
   const canvas = document.querySelector("canvas#canvas");
+  const svgcanvas = document.querySelector("canvas#svgcanvas");
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
   const livevideo = document.querySelector("video#live");
@@ -97,8 +102,30 @@ var downloadLink = document.querySelector('a#downloadLink');
 
   canvas.height = video.videoHeight;
   canvas.width = video.videoWidth;
+  svgcanvas.height = video.videoHeight;
+  svgcanvas.width = video.videoWidth;
 
   main();
+
+  let v = null;
+
+  const startSvgCanvas = async () => {
+
+    const ctx = svgcanvas.getContext('2d');
+
+    v = await canvg.Canvg.from(ctx, '../../svgs/vinyl_rotating.svg', {
+      enableRedraw: true,
+      ignoreMouse: true,
+    });
+
+    // Start SVG rendering with animations and mouse handling.
+    v.resize(video.videoWidth, video.videoHeight, 'xMidYMid meet');
+    v.start();
+  };
+
+  window.onbeforeunload = () => {
+    if (v) v.stop();
+  };
 
   const poem = [
     "Par les soirs bleus d’é-té, j’i-rai dans les sen-tiers,",
@@ -187,16 +214,18 @@ var downloadLink = document.querySelector('a#downloadLink');
   });
 
   let stop = false;
+  let detectFace = true;
   video.addEventListener('play', () => {
 
     const hRatio = canvas.width / livevideo.videoWidth;
     const vRatio = canvas.height / livevideo.videoHeight;
     const ratio = Math.min(hRatio, vRatio) / 2;
 
-    faceDetect();
+    if (detectFace) faceDetect();
+
+    startSvgCanvas();
 
     ctx.font = "28px monospace";
-    // ctx.font = "48px 'EB Garamond'"; 
 
     const xOffsets = poem.map((w) => 0);
     const X = 30.0;
@@ -262,7 +291,6 @@ var downloadLink = document.querySelector('a#downloadLink');
     }
 
     stop = false;
-    const faceDetector = new FaceDetector({ fastMode: true });
     function step() {
 
       const videoCurrentTime = video.currentTime * 1000;
@@ -270,42 +298,10 @@ var downloadLink = document.querySelector('a#downloadLink');
       // video
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(video, 0, 0);
-      
+
 
       // live video
-      {
-        // face detection
-        /* {
-          Promise.all([
-            faceDetector.detect(livevideo).catch((error) => console.error(error))
-          ]).then(([detectedFaces = []]) => {
-            console.log(detectedFaces.length);
-            ctx.save();
-            ctx.strokeStyle = '#ffeb3b';
-            ctx.fillStyle = '#ffeb3b';
-            ctx.font = '16px Mononoki';
-            ctx.lineWidth = 5;
-
-            detectedFaces.forEach((detectedFace) => {
-              const { top, left, width, height } = detectedFace.boundingBox;
-              ctx.beginPath();
-              ctx.rect(left, top, width, height);
-              ctx.stroke();
-              ctx.fillText('face detected', left + 5, top - 8);
-
-              if (detectedFace.landmarks) {
-                detectedFace.landmarks.forEach((landmark) => {
-                  ctx.beginPath();
-                  ctx.arc(landmark.locations.x, landmark.locations.y, 5, 0, Math.PI * 2);
-                  ctx.fill();
-                  ctx.fillText(landmark.type, landmark.locations.x + 10, landmark.locations.y + 4);
-                });
-              }
-              ctx.restore();
-            });
-          });
-        } */
-
+      if (true) {
         const tmpCanvas = document.createElement('canvas');
         tmpCanvas.width = livevideo.videoWidth * ratio;
         tmpCanvas.height = livevideo.videoHeight * ratio;
@@ -313,7 +309,7 @@ var downloadLink = document.querySelector('a#downloadLink');
         const tmpCtx = tmpCanvas.getContext('2d');
         // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate
         tmpCtx.translate(tmpCanvas.width / 2, tmpCanvas.height / 2);
-        const rotation = Math.PI * 2 * ((videoCurrentTime % fourBars) / fourBars);
+        const rotation = -Math.PI * 2 * ((videoCurrentTime % fourBars) / fourBars);
         tmpCtx.rotate(rotation);
         tmpCtx.translate(-tmpCanvas.width / 2, -tmpCanvas.height / 2);
         tmpCtx.beginPath();
@@ -321,10 +317,11 @@ var downloadLink = document.querySelector('a#downloadLink');
         tmpCtx.closePath();
         tmpCtx.clip();
 
-        tmpCtx.drawImage(document.querySelector("canvas#face"), 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
-        // tmpCtx.drawImage(livevideo, 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
+        let fromCanvas = detectFace ? document.querySelector("canvas#face") : livevideo;
+        tmpCtx.drawImage(fromCanvas, 0, 0, livevideo.videoWidth, livevideo.videoHeight, 0, 0, tmpCanvas.width, tmpCanvas.height);
 
         const frame = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
+        // transparency
         /*  for (let i = 0; i < frame.data.length / 4; i++) {
            let r = frame.data[i * 4 + 0];
            let g = frame.data[i * 4 + 1];
@@ -332,10 +329,15 @@ var downloadLink = document.querySelector('a#downloadLink');
            if (r < 90 && g < 90 && b < 90) {
              frame.data[i * 4 + 3] = 0;
            }
-         } */
+         } 
         tmpCtx.putImageData(frame, 0, 0);
+        */
 
-        ctx.drawImage(tmpCanvas, canvas.width - tmpCanvas.width, 0);
+        /* ctx.drawImage(tmpCanvas, canvas.width - tmpCanvas.width, 0); */
+        ctx.drawImage(svgcanvas, 0, 0);
+        const toWidth = tmpCanvas.width / 2;
+        const toHeight = tmpCanvas.height / 2;
+        ctx.drawImage(tmpCanvas, canvas.width / 2 - toWidth / 2, canvas.height / 2 - toHeight / 2, toWidth, toHeight);
       }
 
       // fade 
@@ -354,7 +356,7 @@ var downloadLink = document.querySelector('a#downloadLink');
       }
 
       // text
-      writeAllTokens(videoCurrentTime);
+      if (true) writeAllTokens(videoCurrentTime);
 
       if (!stop) {
         requestAnimationFrame(step);
