@@ -9,7 +9,7 @@ var constraints = {
     facingMode: "environment",
     width: { min: 640, ideal: 640, max: 640 },
     height: { min: 480, ideal: 480, max: 480 },
-    framerate: 60,
+    framerate: 30,
   },
 };
 

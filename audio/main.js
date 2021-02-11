@@ -32,8 +32,8 @@ if (navigator.mediaDevices) {
   navigator.mediaDevices.getUserMedia(constraints)
     .then(function (stream) {
       var options = {
-        audioBitsPerSecond: 128000,
-        videoBitsPerSecond: 2500000,
+        /* audioBitsPerSecond: 128000,
+        videoBitsPerSecond: 2500000, */
         mimeType: videoMimeType
       }
       var mediaRecorder = new MediaRecorder(stream, options);
