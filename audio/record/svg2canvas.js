@@ -6,34 +6,36 @@ class Svg2canvas {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
     this.stop = undefined;
-    this.img = new Image();
-    this.mugnierAndThiebaud = new Image();
+    this.mode = "cover";
+    this.svgImage = new Image();
+    this.imgImage = new Image();
   }
 
   /////////////////////
   render(start) {
-    const rotate = true;
-    const image = true;
     const currentTime = new Date().getTime();
 
-    if (rotate) {
+    // rotation and scale
+    {
       const rotation = ((Math.PI / 180) * (currentTime - start)) / 15;
       const center = {
         x: canvas.width / 2,
         y: canvas.height / 2,
       };
 
-        this.ctx.translate(center.x, center.y);
-        const scale = Math.max(
-          (canvas.width/this.img.width),
-          (canvas.height/this.img.height)
-        );
+      this.ctx.translate(center.x, center.y);
+      const coverOrContain = this.mode === "cover" ? Math.max : Math.min;
+      const scale = coverOrContain(
+        canvas.width / this.svgImage.width,
+        canvas.height / this.svgImage.height
+      );
       this.ctx.scale(scale, scale);
       this.ctx.rotate(rotation);
       this.ctx.translate(-center.x, -center.y);
     }
 
-    if (image) {
+    // imgImage
+    {
       this.ctx.save();
       this.ctx.beginPath();
       this.ctx.arc(canvas.width / 2, canvas.height / 2, 54, 0, Math.PI * 2);
@@ -49,60 +51,66 @@ class Svg2canvas {
         amplitude * Math.cos((currentTime - start) / lenteur);
 
       const offset = {
-        x:
-          (this.mugnierAndThiebaud.width -
-            this.mugnierAndThiebaud.width * reduc) /
-          2,
-        y:
-          (this.mugnierAndThiebaud.height -
-            this.mugnierAndThiebaud.height * reduc) /
-          2,
+        x: (this.imgImage.width - this.imgImage.width * reduc) / 2,
+        y: (this.imgImage.height - this.imgImage.height * reduc) / 2,
       };
+
       this.ctx.drawImage(
-        this.mugnierAndThiebaud,
-        offset.x + (canvas.width - this.mugnierAndThiebaud.width) / 2,
-        offset.y + (canvas.height - this.mugnierAndThiebaud.height) / 2,
-        this.mugnierAndThiebaud.width * reduc,
-        this.mugnierAndThiebaud.height * reduc
+        this.imgImage,
+        offset.x + (canvas.width - this.imgImage.width) / 2,
+        offset.y + (canvas.height - this.imgImage.height) / 2,
+        this.imgImage.width * reduc,
+        this.imgImage.height * reduc
       );
       this.ctx.restore();
+
       this.ctx.beginPath();
       this.ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, Math.PI * 2);
       this.ctx.closePath();
       this.ctx.stroke();
     }
 
-    this.ctx.drawImage(
-      this.img,
-      (canvas.width - this.img.width) / 2,
-      (canvas.height - this.img.height) / 2
-    );
-
-    /*     if (!this.stop) {
-      requestAnimationFrame(this.step.bind(this));
+    // svgImage
+    {
+      this.ctx.drawImage(
+        this.svgImage,
+        (canvas.width - this.svgImage.width) / 2,
+        (canvas.height - this.svgImage.height) / 2
+      );
     }
- */
   }
 
   /////////////////////
-  init(svgString) {
-    this.stop = false;
-
+  init(svgString, imgUrl, mode) {
     const _this = this;
+    _this.stop = false;
+    _this.mode = mode || _this.mode;
+
     return new Promise(function (resolve, reject) {
-      _this.mugnierAndThiebaud.onload = () => {
+      if (!svgString || !imgUrl) {
+        reject({
+          error: "Svg2canvas.init: wrong arguments",
+          arg1: svgString, arg2: imgUrl
+        });
+      }
+      _this.imgImage.onload = () => {
         const DOMURL = self.URL || self.webkitURL || self;
         const svg = new Blob([svgString], {
           type: "image/svg+xml;charset=utf-8",
         });
-        const url = DOMURL.createObjectURL(svg);
-        _this.img.onload = () => {
+        const svgUrl = DOMURL.createObjectURL(svg);
+        _this.svgImage.onload = () => {
           resolve(new Date().getTime());
         };
-        _this.img.src = url;
+        _this.svgImage.onerror = (e) => {
+          reject(e);
+        };
+        _this.svgImage.src = svgUrl;
       };
-
-      _this.mugnierAndThiebaud.src = "/mugnierAndThiebaud0_cropped.jpg"; // Set source path
+      _this.imgImage.onerror = (e) => {
+        reject(e);
+      };
+      _this.imgImage.src = imgUrl;
     });
   }
 }

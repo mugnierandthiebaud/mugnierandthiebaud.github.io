@@ -5,12 +5,17 @@
 <img src="/jpegs/Mugnier.jpg" alt="Mugnier" class="img-fluid mb-2">
 <img src="/jpegs/Thiebaud3.jpg" alt="Thiebaud" class="img-fluid">
 
-</div><div class="col">
+</div>
 
-<img src="/jpegs/Thiebaud.jpg" alt="Thiebaud" class="img-fluid mb-2">
-<img src="/jpegs/Mugnier2.jpg" alt="Mugnier" class="img-fluid float-end">
-
-</div></div>
+<div>
+  <div class="col">
+  <img src="/jpegs/Thiebaud.jpg" alt="Thiebaud" class="img-fluid float-begin mb-2">
+  </div><div class="col">
+  <img src="/mugnierandthiebaud0_cropped.jpg" alt="mugnierandthiebaud" class="img-fluid mb-2">
+  </div><div class="col">
+  <img src="/jpegs/Mugnier2.jpg" alt="Mugnier" class="img-fluid float-end">
+</div>
+</div>
 
 Mugnier & Thiebaud are a French music duo from [Chaumont](https://en.wikipedia.org/wiki/Chaumont,_Haute-Marne) ; Mugnier writes texts, composes music, and paints pictures, Thiebaud composes music, writes arrangements, and develops software ; though Thiebaud is supposed to be a learned musician, songs by Mugnier are much better, hence Thiebaud's bitter jealousness.
 

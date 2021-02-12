@@ -12,8 +12,11 @@
     </div>
 
     <canvas id="canvas" width="800" height="600" style="border: 1px solid gray; display:inline-block; vertical-align:top; margin: .5rem;"></canvas>
+
     <!-- 
+    <div id="png-container"></div>
     -->
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 
     <script type="module">
@@ -26,10 +29,14 @@
             const svgString = data;
             $("#svg-container").append(svgString);
             const svg2canvas = Svg2canvas(canvas);
-            svg2canvas.init(svgString).then((start) => {
+            svg2canvas.init(svgString, "/mugnierAndThiebaud0_cropped.jpg", "contain").then((start) => {
                 const step = () => {
                     canvas.width = canvas.width;
                     svg2canvas.render(start);
+                    // var png = canvas.toDataURL("image/png");
+                    // document.querySelector('#png-container').innerHTML = '<img src="' + png + '"/>';
+                    // var DOMURL = self.URL || self.webkitURL || self;
+                    // DOMURL.revokeObjectURL(png);
                     requestAnimationFrame(step);
                 }
                 requestAnimationFrame(step);

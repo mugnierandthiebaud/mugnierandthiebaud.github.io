@@ -68,25 +68,39 @@
                 const dpr = window.devicePixelRatio || 1;
                 const audio = document.getElementById('apfigupahdfpg');
                 const echo = document.getElementById('echo');
-                const overview = peaks.views.getView('overview');
+                const v = "overview";
+                const overview = peaks.views.getView(v);
                 const echoContext = echo.getContext('2d');
-                echoContext.scale(dpr, dpr);
+                // echoContext.scale(dpr, dpr);
                 const overviewWidth = $(overview._container).width();
                 const overviewHeight = $(overview._container).height();
-                const echoWidth  = $(echo).width(overviewWidth  ).width();
-                const echoHeight = $(echo).height(overviewHeight).width();
+                let echoWidth = 0;
+                let echoHeight = 0;
+                const heights= [];
+                const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"];
+                $("#" + v + "-container canvas").each((index, canvas) => {
+                    echoWidth = Math.max(echoWidth, canvas.width);
+                    heights.push(canvas.height);
+                    console.log(index);
+                    echoContext.strokeStyle = colors[index];
+                    echoContext.strokeRect(10, echoHeight, echoWidth-10, echoHeight + canvas.height);
+                    echoHeight += canvas.height;
+                });
+                $(echo).width(echoWidth);
+                $(echo).height(echoHeight);
                 audio.addEventListener('play', () => {
                     stop = false;
                     function step() {
-                        echoContext.clearRect(0, 0, $(echo).width(), $(echo).height());
-                        $("#overview-container canvas").each((index, canvas) => {
-                            // echoContext.drawImage(canvas, 0, 0);
+                        $("#" + v + "-container canvas").each((index, canvas) => {
                             echoContext.drawImage(canvas,
-                                0, 0, overviewWidth, overviewHeight,
-                                0, 0, echoWidth, echoHeight );
-                            if (index == 12) {
-                                return false;
-                            }
+                                0, 0, canvas.width, canvas.height,
+                                0, heights.reduce((accumulator, currentValue, currentIndex) => {
+                                    if (currentIndex<=index) {
+                                        return accumulator + currentValue;
+                                    } 
+                                    return accumulator;
+                                }), echoWidth, canvas.height);
+                            return false;
                         });
                         if (!stop) {
                             requestAnimationFrame(step);
