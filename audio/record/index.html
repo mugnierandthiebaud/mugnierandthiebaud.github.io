@@ -43,8 +43,10 @@
   'use strict'
 
   import { main as main } from './main.js';
+  import { default as Svg2canvas } from './svg2canvas.js';
 
   const canvas = document.querySelector("canvas#canvas");
+  const svg2canvas = Svg2canvas(canvas);
   const ctx = canvas.getContext("2d");
   const video = document.querySelector("video#source");
 
@@ -53,35 +55,49 @@
 
   main();
 
-  let stop = false;
-  video.addEventListener('play', () => {
+  $.get("vinyl_special.svg", function (data) {
+    const svgString = data;
+    const svg2canvas = Svg2canvas(canvas);
+    svg2canvas.init(svgString).then(
 
-    stop = false;
+    (start) => {
 
-    function step() {
-      canvas.width = canvas.width;
+        let stop = false;
+        video.addEventListener('play', () => {
 
-      const videoCurrentTime = video.currentTime * 1000;
+          stop = false;
+          const videoStart = new Date().getTime();
 
-      // video
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(video, 0, 0);
+          function step() {
+            canvas.width = canvas.width;
 
-      if (!stop) {
-        requestAnimationFrame(step);
-      }
-    }
-    if (!stop) {
-      requestAnimationFrame(step);
-    }
-  })
+            const videoCurrentTime = video.currentTime * 1000;
 
-  video.addEventListener('pause', () => {
-    stop = true;
-  })
+            // video
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0);
 
-  video.addEventListener('stop', () => {
-    stop = true;
-  })
+            svg2canvas.render(videoStart);
+
+            if (!stop) {
+              requestAnimationFrame(step);
+            }
+          }
+          if (!stop) {
+            requestAnimationFrame(step);
+          }
+        })
+
+        video.addEventListener('pause', () => {
+          stop = true;
+        })
+
+        video.addEventListener('stop', () => {
+          stop = true;
+        })
+
+      });
+  }, "text");
+
 
 </script>
