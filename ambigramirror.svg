@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" id="ambigram" version="1.0" viewBox="0 0 100 100">
+   <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="ambigramirror.css" type="text/css" />
+   <metadata id="metadata7">
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title>ambigram</dc:title>
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <!--    <defs>
+      <radialGradient id="gradient">
+         <stop offset="0%" stop-color="#8cffa0" />
+         <stop offset="100%" stop-color="#8ca0ff" />
+      </radialGradient>
+   </defs>
+
+   <circle r="50" cx="180" cy="50" style="fill:url(#gradient)" />
+
+   <view id="halfSizeView" viewBox="0 0 1200 400" />
+   <view id="normalSizeView" viewBox="0 0 600 200" />
+   <view id="doubleSizeView" viewBox="0 0 300 100" />
+
+   <a xlink:href="#halfSizeView">
+      <text x="5" y="20" font-size="20">half size</text>
+   </a>
+   <a xlink:href="#normalSizeView">
+      <text x="5" y="40" font-size="20">normal size</text>
+   </a>
+   <a xlink:href="#doubleSizeView">
+      <text x="5" y="60" font-size="20">double size</text>
+   </a> -->
+   <g id="g">
+      <rect name="r" id="r" x="10" y="30" width="80" height="40" fill="#006dae" />
+      <text name="a" id="a" x="50" y="50" fill="#FFA500" dominant-baseline="middle" text-anchor="middle">15052021</text>
+   </g>
+   <!-- How to place and center text in an SVG rectangle : https://stackoverflow.com/a/31522006/1070215 -->
+   <!--
+   -->
+   <script type="text/javascript">
+      <![CDATA[
+         // document.querySelector('#a').style.transform = "rotateY(50deg)";
+      ]]>
+   </script>
+</svg>

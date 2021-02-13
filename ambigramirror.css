@@ -1,0 +1,49 @@
+svg {
+  background-color: #343434;
+}
+@font-face {
+  font-family: "Digital";
+  src: url("/digital-7.otf") format("woff");
+}
+text {
+  font-family: "Digital";
+}
+
+g#g, rect#r {
+  animation-fill-mode: forwards;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+g#g {
+  animation-name: qwetext;
+}
+rect#r {
+  animation-name: qwerect;
+}
+
+@keyframes qwetext {
+  from {
+    transform: translate(0, 0) rotate3d(0, 1, 0, 0deg);
+  }
+
+  50% {
+    transform: translate(100%, 0) rotate3d(0, 1, 0, 180deg);
+  }
+
+  to {
+    transform: translate(0, 0) rotate3d(0, 1, 0, 360deg);
+  }
+}
+@keyframes qwerect {
+  from {
+    fill: #006dae;
+  }
+
+  50% {
+    fill: #00ae6d;
+  }
+
+  to {
+    fill: #006dae;
+  }
+}
