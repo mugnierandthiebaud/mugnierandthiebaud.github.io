@@ -1,4 +1,4 @@
-# <a id="vinyl_brand" style="margin-right:.5rem;" title="Vinyl Title" href="https://mugnierandthiebaud.com/" target="_mugnier_et_thiebaud"><img src="/svgs/vinyl_icon.svg" style="width:30px; height: auto;"></a> Mugnier & Thiebaud<a id="bithub" style="margin-left:.5rem;float: right;" title="Github" href="https://github.com/mugnierandthiebaud/mugnierandthiebaud.github.io" target="_mugnier_et_thiebaud"><img src="/svgs/github.svg" style="width:30px; height: auto;"></a>
+# <a id="vinyl_brand" style="margin-right:.5rem;" title="Vinyl Title" href="https://mugnierandthiebaud.com/" target="_mugnier_et_thiebaud"><img src="/svgs/vinyl_icon.svg" style="width:30px; height: auto;"></a> Mugnier & Thiebaud<a id="bithub" style="margin-left:.5rem;float: right; width:30px; height: auto;" title="Github" href="https://github.com/mugnierandthiebaud/mugnierandthiebaud.github.io" target="_mugnier_et_thiebaud"><img src="/svgs/github.svg" style="width:30px; height: auto;"></a>
 
 <div class="d-flex justify-content-center">
   <div class="col" style="padding-right: .7rem;">
