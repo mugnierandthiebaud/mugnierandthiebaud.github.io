@@ -12,17 +12,40 @@
          text {
             font-family:"Digital";
          }
-   </style>
+      </style>
+      <animateTransform type="rotate" fill="remove" restart="always" calcMode="linear" accumulate="none" additive="sum" xlink:href="#iconic-anim-clock-second-hand" repeatCount="indefinite" dur="8s" to="360 50 50" from="0 50 50" attributeName="transform" attributeType="xml"></animateTransform>
    </defs>
    <g>
 
       <circle cx="50" cy="50" r="48" stroke="black" stroke-width="0" fill="#006dae" />
-      <text name="a" id="a" x="50%" y="50%" fill="#FFA500" dominant-baseline="middle" text-anchor="middle">12022021</text>
-      <!-- <text name="b" id="b" x="50%" y="60%" fill="#FFA500" dominant-baseline="middle" text-anchor="middle">22:22</text> -->
 
-      <animateTransform id="sin" attributeType="xml" attributeName="transform" type="rotate" from="0 50 50" to="180 50 50" begin="1s; cos.end + 2s" dur="3s" repeatCount="1" fill="freeze" />
-      <animateTransform id="cos" attributeType="xml" attributeName="transform" type="rotate" from="180 50 50" to="360 50 50" begin="sin.end + 2s" dur="3s" repeatCount="1" fill="freeze" />
 
+      <g class="iconic-clock-second-hand" id="iconic-anim-clock-second-hand">
+         <line class="iconic-clock-second-hand-arm" fill="none" stroke="#343434" stroke-width="1.5" stroke-miterlimit="10" x1="50" y1="50" x2="50" y2="0" />
+         <circle class="iconic-clock-second-hand-axis" fill="#343434" cx="50" cy="50" r="4" />
+      </g>
+
+      <g>
+         <text name="a" id="a" x="50%" y="50%" fill="#FFA500" dominant-baseline="middle" text-anchor="middle">12022021</text>
+         <!-- <text name="b" id="b" x="50%" y="60%" fill="#FFA500" dominant-baseline="middle" text-anchor="middle">22:22</text> -->
+
+         <!-- How to place and center text in an SVG rectangle : https://stackoverflow.com/a/31522006/1070215 -->
+         <animateTransform id="sin" attributeType="xml" attributeName="transform" type="rotate" from="0 50 50" to="180 50 50" begin="1s; cos.end + 1s" dur="3s" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.58 0 0.42 1" keyTimes="0;1" />
+         <animateTransform id="cos" attributeType="xml" attributeName="transform" type="rotate" from="180 50 50" to="360 50 50" begin="sin.end + 1s" dur="3s" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.42 0 0.58 1" keyTimes="0;1" />
+      </g>
    </g>
-   <!-- How to place and center text in an SVG rectangle : https://stackoverflow.com/a/31522006/1070215 -->
+   <script type="text/javascript">
+      <![CDATA[
+      var date = new Date;
+      var seconds = date.getSeconds();
+      var minutes = date.getMinutes();
+      var hours = date.getHours();
+      hours = (hours > 12) ? hours - 12 : hours;
+
+      minutes = (minutes * 60) + seconds;
+      hours = (hours * 3600) + minutes;
+
+      // document.querySelector('.iconic-clock-second-hand').setAttribute('transform', 'rotate('+360*(seconds/60)+',50,50)');
+  ]]>
+   </script>
 </svg>
