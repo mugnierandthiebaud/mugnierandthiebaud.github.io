@@ -1,20 +1,24 @@
-# <a id="vinyl_brand" style="margin-right:.5rem;" title="Vinyl Title" href="https://mugnierandthiebaud.com/" target="_mugnier_et_thiebaud"><img src="/svgs/vinyl_icon.svg"></a> Mugnier & Thiebaud
+# <a id="vinyl_brand" style="margin-right:.5rem;" title="Vinyl Title" href="https://mugnierandthiebaud.com/" target="_mugnier_et_thiebaud"><img src="/svgs/vinyl_icon.svg" style="width:30px; height: auto;"></a> Mugnier & Thiebaud<a id="bithub" style="margin-left:.5rem;float: right;" title="Github" href="https://github.com/mugnierandthiebaud/mugnierandthiebaud.github.io" target="_mugnier_et_thiebaud"><img src="/svgs/github.svg" style="width:30px; height: auto;"></a>
 
-<div class="row mb-2"><div class="col">
-
-<img src="/jpegs/Mugnier.jpg" alt="Mugnier" class="img-fluid mb-2">
-<img src="/jpegs/Thiebaud3.jpg" alt="Thiebaud" class="img-fluid">
-
+<div class="d-flex justify-content-center">
+  <div class="col" style="padding-right: .7rem;">
+    <img src="/jpegs/Mugnier.jpg" alt="MugnierJeune" class="img-fluid">
+  </div>
+  <div class="col" style="padding-left: .7rem;">
+    <img src="/jpegs/Thiebaud.jpg" alt="ThiebaudJeune" class="img-fluid">
+  </div>
 </div>
-
-<div>
+</div>
+<div class="row">
   <div class="col">
-  <img src="/jpegs/Thiebaud.jpg" alt="Thiebaud" class="img-fluid float-begin mb-2">
-  </div><div class="col">
-  <img src="/mugnierandthiebaud0_cropped.jpg" alt="mugnierandthiebaud" class="img-fluid mb-2">
-  </div><div class="col">
-  <img src="/jpegs/Mugnier2.jpg" alt="Mugnier" class="img-fluid float-end">
-</div>
+    <img src="/jpegs/Thiebaud3.jpg" alt="ThiebaudVieux" class="img-fluid">
+  </div>
+  <div class="col">
+    <img src="/mugnierandthiebaud0_cropped.jpg" alt="mugnierandthiebaud" class="img-fluid">
+  </div>
+  <div class="col">
+    <img src="/jpegs/Mugnier2.jpg" alt="MugnierVieux" class="img-fluid">
+  </div>
 </div>
 
 Mugnier & Thiebaud are a French music duo from [Chaumont](https://en.wikipedia.org/wiki/Chaumont,_Haute-Marne) ; Mugnier writes texts, composes music, and paints pictures, Thiebaud composes music, writes arrangements, and develops software ; though Thiebaud is supposed to be a learned musician, songs by Mugnier are much better, hence Thiebaud's bitter jealousness.
