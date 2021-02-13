@@ -60,7 +60,7 @@
    </defs>
    <g>
 
-      <g opacity=".3">
+      <g id="disq" opacity="1">
          <!--
          -->
          <use x="0" y="0" xlink:href="#path3191" id="use31" transform="translate(2.71429,4)" width="100%" height="100%" style="fill-opacity:0.5;filter:url(#filter3315)" />
@@ -73,13 +73,14 @@
          <path id="path3230" d="m 243.95111,156.0489 c -7.06177,-7.06176 -15.40617,-12.05335 -24.2847,-15.00392 l -1.23744,3.71231 c 8.31532,2.76444 16.12455,7.46249 22.7379,14.07584 8.05626,8.05626 13.25594,17.88433 15.60055,28.24008 l 3.82279,-0.86178 c -2.50205,-11.05558 -8.03761,-21.56103 -16.6391,-30.16253 z" style="opacity:0.7425743;fill:#ffffff" />
          <path id="path3232" d="m 142.61386,190.25519 -3.88908,-0.66291 c -3.23715,19.17313 2.53847,39.5732 17.32411,54.35884 14.74595,14.74593 35.07597,20.5264 54.20416,17.34621 l -0.64082,-3.86699 c -17.92511,2.98388 -36.96183,-2.44619 -50.7791,-16.26346 -13.85228,-13.85228 -19.25338,-32.94694 -16.21927,-50.91169 z" style="opacity:0.7425743;fill:#ffffff" />
       </g>
-      <image clip-path="url(#centre)" href="/mugnierandthiebaud0_cropped.jpg" x="140" y="145" height="130" width="130" />
-      <g opacity=".3">
+      <image id="imag" opacity="1" clip-path=" url(#centre)" href="/mugnierandthiebaud0_cropped.jpg" x=" 140" y=" 145" height=" 130" width=" 130" />
+      <g id="cent" opacity="0.5">
          <path id="path3223" d="m 237.9628,162.03721 c -20.95262,-20.9526 -54.97299,-20.95261 -75.9256,0 -20.9526,20.95262 -20.9526,54.97299 0,75.92559 20.95262,20.9526 54.97299,20.95261 75.9256,0 20.9526,-20.95261 20.9526,-54.97298 0,-75.92559 z m -34.29468,34.29468 c 2.02688,2.02689 2.02688,5.30934 0,7.33623 -2.02689,2.02689 -5.30934,2.02688 -7.33624,0 -2.02688,-2.02688 -2.02688,-5.30934 0,-7.33623 2.02689,-2.02688 5.30934,-2.02688 7.33624,0 z" style="fill:url(#radialGradient3349)" />
       </g>
-      <g>
+      <g id="name" opacity="1" >
          <!--
          -->
+         <!-- How to place and center text in an SVG rectangle : https://stackoverflow.com/a/31522006/1070215 -->
          <g clip-path="url(#centre)">
             <text name="a" id="a" x="50%" y="40.5%" dominant-baseline="middle" text-anchor="middle">Mugnier</text>
             <text name="b" id="b" x="50%" y="50.75%" dominant-baseline="middle" text-anchor="middle">&amp;</text>
@@ -92,5 +93,31 @@
       </g>
       <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" begin="0" dur="8.971" repeatCount="indefinite" fill="freeze" />
    </g>
-   <!-- How to place and center text in an SVG rectangle : https://stackoverflow.com/a/31522006/1070215 -->
+   
+   <script type="text/javascript">
+      <![CDATA[
+
+/* e.g. 
+   /vinyl.svg?opas=1;.8;.6;.4 
+   /vinyl.svg?opas=;.9 
+*/
+
+const urlParams = new URLSearchParams(window.location.search);
+const opas = urlParams.get('opas');
+const elems = [
+   "disq",
+   "imag",
+   "cent",
+   "name",
+]
+if (opas) {
+   opas.split(';').forEach((opa, i) => {
+      console.log(opa, i, '#'+elems[i]);
+      if (opa) {
+         document.querySelector('#'+elems[i]).setAttribute('opacity', opa);
+      }
+   });
+}
+        ]]>
+   </script>
 </svg>
