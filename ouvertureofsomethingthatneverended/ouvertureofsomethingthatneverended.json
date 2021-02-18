@@ -1,0 +1,101 @@
+{
+  "id": "ouvertureofsomethingthatneverended",
+  "copyright": "?",
+  "navbarheader": "./header.html",
+  "brandlink": "/vinyl/showdown.html?/ouvertureofsomethingthatneverended/README.md",
+  "icon": "",
+  "background": "",
+  "background_animated": "",
+
+  "no_recursion": "",
+  "order": [
+    "episode1",
+    "episode2",
+    "episode3",
+    "episode4", 
+    "episode5",
+    "episode6",
+    "episode7"
+  ],
+  "songs": {
+    "episode1": {
+      "text": "Episode 1: At Home",
+      "duration": "18:43",
+      "watch": [
+        {
+          "url": "https://youtu.be/zKqbG6TLYnc",
+          "id": "zKqbG6TLYnc",
+          "title": "Silvia Calderoni and Paul B. Preciado"
+        }
+      ]
+    },
+    "episode2": {
+      "text": "Episode 2: ‘At The Café’",
+      "duration": "11:37",
+      "watch": [
+        {
+          "url": "https://youtu.be/kIMU-xYIih4",
+          "id": "kIMU-xYIih4",
+          "title": "Featuring Arlo Parks"
+        }
+      ]
+    },
+    "episode3": {
+      "text": "Episode 3: ‘At The Post Office’",
+      "duration": "10:02",
+      "watch": [
+        {
+          "url": "https://youtu.be/9UR2cr6ke_A",
+          "id": "9UR2cr6ke_A",
+          "title": "Featuring Harry Styles"
+        }
+      ]
+    },
+    "episode4": {
+      "text": "Episode 4: ‘The Theatre’",
+      "duration": "15:39",
+      "watch": [
+        {
+          "url": "https://youtu.be/6mnrHWbrHyo",
+          "id": "6mnrHWbrHyo",
+          "title": "Featuring Jeremy O. Harris"
+        }
+      ]
+    },
+    "episode5": {
+      "text": "Episode 5: ‘The Neighbours'",
+      "duration": "12:47",
+      "watch": [
+        {
+          "url": "https://youtu.be/Ro8nWAgWLxQ",
+          "id": "Ro8nWAgWLxQ",
+          "title": "Featuring Billie Eilish"
+        }
+      ]
+    },
+    "episode6": {
+      "text": "Episode 6: At The Vintage Shop",
+      "duration": "10:08",
+      "watch": [
+        {
+          "url": "https://youtu.be/UyNmQwQkUhI",
+          "id": "UyNmQwQkUhI",
+          "title": "Featuring Florence Welch"
+        }
+      ]
+    },
+    "episode7": {
+      "text": "Episode 7: ‘A Nightly Walk'",
+      "duration": "8:29",
+      "watch": [
+        {
+          "url": "https://youtu.be/HbZMquT7O_A",
+          "id": "HbZMquT7O_A",
+          "title": "Featuring Lu Han"
+        }
+      ]
+    }
+
+  }
+}
+
