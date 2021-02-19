@@ -148,10 +148,10 @@
     "supplique": {
       "text": "Supplique Pour Être Enterré À La Plage De Sète (GB)",
       "duration": "8:00",
-      "listen_": [
+      "listen": [
         {
-          "url": "https://soundcloud.com/christophe-thiebaud/supplique-pour-etre-enterre-a/s-1ON0iP3KZ2d",
-          "id": "811603621%3Fsecret_token%3Ds-1ON0iP3KZ2d",
+          "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/811603621",
+          "id": "811603621",
           "title": "dans le futur"
         }
       ],
