@@ -25,7 +25,7 @@
 
     <div>
       <video id="source" class="img-fluid" controls muted id="bgvid">
-        <source src="Frantic Trailer.mp4" type="video/webm"> <!-- sensation.mp4 -->
+        <source src="20s of black.mp4" type="video/webm"> <!-- sensation.mp4 -->
       </video>
       <video id="playback" controls autoplay></video>
       <br>
@@ -58,7 +58,7 @@
   $.get("vinyl_special.svg", function (data) {
     const svgString = data;
     const svg2canvas = Svg2canvas(canvas);
-    svg2canvas.init(svgString).then(
+    svg2canvas.init(svgString, "/mugnierAndThiebaud0_cropped.jpg", "contain").then(
 
     (start) => {
 
