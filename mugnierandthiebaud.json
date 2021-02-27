@@ -166,7 +166,8 @@
           "id": "994206232",
           "title": "Vidéo encore à inventer"
         }
-      ]
+      ],
+      "markdown": true
     },
     "tour": {
       "text": "Chanson de la plus haute tour (AR)",
