@@ -160,11 +160,16 @@
     "botanist": {
       "text": "After The Chinese Botanist's Daughters",
       "duration": "4:54",
+      "watch": [
+        {
+          "url": "https://youtu.be/ZMV21xBMvkk",
+          "id": "ZMV21xBMvkk"
+        }
+      ],
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/after-the-chinese-botanists-daughters",
-          "id": "994685077",
-          "title": "Vidéo encore à inventer"
+          "id": "994685077"
         }
       ],
       "markdown": true
