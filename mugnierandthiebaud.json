@@ -14,6 +14,7 @@
     "brouillard",
     "bwv",
     "dancing",
+    "furieux",
     "larme",
     "matin",
     "matsubaba",
@@ -152,6 +153,18 @@
         {
           "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/811603621",
           "id": "811603621",
+          "title": ""
+        }
+      ],
+      "markdown": "http://www.analysebrassens.com/?page=texte&id=94&%23"
+    },
+    "furieux": {
+      "text": "Musique Pour Les Furieux",
+      "duration": "4:25",
+      "listen": [
+        {
+          "url": "https://soundcloud.com/christophe-thiebaud/musique-pour-les-furieux/s-4GmknjedNE7",
+          "id": "1000899976%3Fsecret_token%3Ds-4GmknjedNE7",
           "title": ""
         }
       ],
