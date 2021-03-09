@@ -159,12 +159,18 @@
       "markdown": "http://www.analysebrassens.com/?page=texte&id=94&%23"
     },
     "furieux": {
-      "text": "Musique Pour Les Furieux",
-      "duration": "4:25",
+      "text": "Music for the Furious",
+      "duration": "4:54",
+      "watch": [
+        {
+          "url": "https://youtu.be/KV3JTbI3PeM",
+          "id": "KV3JTbI3PeM"
+        }
+      ],
       "listen": [
         {
-          "url": "https://soundcloud.com/christophe-thiebaud/musique-pour-les-furieux/s-4GmknjedNE7",
-          "id": "1000899976%3Fsecret_token%3Ds-4GmknjedNE7",
+          "url": "https://soundcloud.com/christophe-thiebaud/musique-pour-les-furieux/s-LAS79fWkwB3",
+          "id": "1002445492%3Fsecret_token%3Ds-LAS79fWkwB3",
           "title": ""
         }
       ],
