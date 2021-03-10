@@ -240,7 +240,7 @@
       "text": "This page intentionally left orange.",
       "extension": ".svg",
       "duration": "&infin;",
-      "url": "/vinyl?no_recursion=true"
+      "url": "/?no_recursion=true"
     },
     "bwv": {
       "text": "Johann Sebastian Bach",
