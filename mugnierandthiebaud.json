@@ -27,7 +27,7 @@
   "songs": {
     "bateau": {
       "text": "Le Bateau ivre (AR)",
-      "duration": "6:33",
+      "duration": "6:33 ~70bpm",
       "watch": [
         {
           "url": "https://youtu.be/a3Ek2EYkGsw",
@@ -51,7 +51,7 @@
     },
     "dancing": {
       "text": "Socially Distant Dancing",
-      "duration": "3:49",
+      "duration": "3:49 128bpm",
       "watch": [
         {
           "url": "https://youtu.be/K6rk5tG71rI",
@@ -74,7 +74,7 @@
     },
     "larme": {
       "text": "Larme (AR)",
-      "duration": "3:47",
+      "duration": "3:47 55bpm",
       "watch": [
         {
           "url": "https://youtu.be/Zk_YubAnJmM",
@@ -86,7 +86,7 @@
     },
     "matin": {
       "text": "Bonne pensée du matin (AR)",
-      "duration": "3:17",
+      "duration": "3:17 60bpm",
       "watch": [
         {
           "url": "https://youtu.be/KHRBZ7buOFk",
@@ -105,7 +105,7 @@
     },
     "matsubaba": {
       "text": "Matsubaba Cantata",
-      "duration": "6:08",
+      "duration": "6:08 128bpm",
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/matsubaba_cantata",
@@ -116,7 +116,7 @@
     },
     "poux": {
       "text": "Les chercheuses de poux (AR)",
-      "duration": "2:24",
+      "duration": "2:24 72bpm",
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/les-chercheuses-de-poux/s-kZTIT",
@@ -128,7 +128,7 @@
     },
     "sensation": {
       "text": "Sensation (AR)",
-      "duration": "5:21",
+      "duration": "5:21 107bpm",
       "watch": [
         {
           "url": "https://youtu.be/tkK7Bi7c7Wc",
@@ -148,7 +148,7 @@
     },
     "supplique": {
       "text": "Supplique Pour Être Enterré À La Plage De Sète (GB)",
-      "duration": "8:00",
+      "duration": "8:00 61pbm",
       "listen": [
         {
           "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/811603621",
@@ -160,7 +160,7 @@
     },
     "furieux": {
       "text": "Music for the Furious",
-      "duration": "4:54",
+      "duration": "4:54 74bpm",
       "watch": [
         {
           "url": "https://youtu.be/KV3JTbI3PeM",
@@ -178,7 +178,7 @@
     },
     "botanist": {
       "text": "After The Chinese Botanist's Daughters",
-      "duration": "4:54",
+      "duration": "4:54 87bpm",
       "watch": [
         {
           "url": "https://youtu.be/ZMV21xBMvkk",
@@ -195,7 +195,7 @@
     },
     "tour": {
       "text": "Chanson de la plus haute tour (AR)",
-      "duration": "5:09",
+      "duration": "5:09 104bpm",
       "watch": [
         {
           "url": "https://youtu.be/7lKeQ91LtFk",
@@ -214,7 +214,7 @@
     },
     "brouillard": {
       "text": "Psycho Brouillard",
-      "duration": "3:54",
+      "duration": "3:54 75bpm",
       "watch": [
         {
           "url": "https://youtu.be/ehCW0AkOp2Q",
