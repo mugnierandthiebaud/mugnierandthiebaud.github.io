@@ -22,7 +22,8 @@
     "poux",
     "sensation",
     "supplique",
-    "tour"
+    "tour",
+    "wickedness"
   ],
   "songs": {
     "bateau": {
@@ -241,6 +242,24 @@
       "extension": ".svg",
       "duration": "&infin;",
       "url": "/?no_recursion=true"
+    },
+    "wickedness": {
+      "text": "Wickedness",
+      "duration": "3:45 99bpm",
+      "watch": [
+        {
+          "url": "https://youtu.be/Y873pZRRozw",
+          "id": "Y873pZRRozw",
+          "title": "Persona, Ingmar Bergman, 1966"
+        }
+      ],
+      "listen": [
+        {
+          "url": "https://soundcloud.com/christophe-thiebaud/wickedness",
+          "id": "1009699870",
+          "title": ""
+        }
+      ]
     },
     "bwv": {
       "text": "Johann Sebastian Bach",
