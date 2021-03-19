@@ -12,16 +12,13 @@
     "bateau",
     "botanist",
     "brouillard",
-    "bwv",
     "dancing",
     "furieux",
     "larme",
     "matin",
     "matsubaba",
-    "orange2",
     "poux",
     "sensation",
-    "supplique",
     "tour",
     "wickedness"
   ],
@@ -230,12 +227,6 @@
         }
       ],
       "markdown": "https://youtu.be/OZuS8QQsQK8"
-    },
-    "orange2": {
-      "text": "This page intentionally left orange.",
-      "extension": ".svg",
-      "duration": "&infin;",
-      "url": "/?no_recursion=true"
     },
     "wickedness": {
       "text": "Wickedness",
