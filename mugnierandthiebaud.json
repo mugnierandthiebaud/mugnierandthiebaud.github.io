@@ -139,6 +139,12 @@
       "markdown": "https://www.poetica.fr/poeme-533/arthur-rimbaud-sensation/",
       "instagram": true
     },
+    "orange2": {
+      "text": "This page intentionally left orange.",
+      "extension": ".svg",
+      "duration": "&infin;",
+      "url": "/?no_recursion=true"
+    },
     "supplique": {
       "text": "Supplique Pour Être Enterré À La Plage De Sète (GB)",
       "duration": "8:00 61pbm",
