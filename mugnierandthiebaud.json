@@ -24,6 +24,7 @@
   ],
   "songs": {
     "bateau": {
+      "date": "2018",
       "text": "Le Bateau ivre (AR)",
       "duration": "6:33 ~70bpm",
       "watch": [
@@ -43,6 +44,7 @@
       "markdown": "https://www.poetica.fr/poeme-1906/arthur-rimbaud-le-bateau-ivre/"
     },
     "dancing": {
+      "date": "2020",
       "text": "Socially Distant Dancing",
       "duration": "3:49 128bpm",
       "watch": [
@@ -66,6 +68,7 @@
       ]
     },
     "larme": {
+      "date": "2016",
       "text": "Larme (AR)",
       "duration": "3:47 55bpm",
       "watch": [
@@ -78,6 +81,7 @@
       "markdown": "https://www.poetica.fr/poeme-899/arthur-rimbaud-larme/"
     },
     "matin": {
+      "date": "2020",
       "text": "Bonne pensée du matin (AR)",
       "duration": "3:17 60bpm",
       "watch": [
@@ -97,6 +101,7 @@
       "markdown": "https://www.poetica.fr/poeme-646/arthur-rimbaud-bonne-pensee-du-matin/"
     },
     "matsubaba": {
+      "date": "1984",
       "text": "Matsubaba Cantata",
       "duration": "6:08 128bpm",
       "listen": [
@@ -108,6 +113,7 @@
       ]
     },
     "poux": {
+      "date": "2015",
       "text": "Les chercheuses de poux (AR)",
       "duration": "2:24 72bpm",
       "listen": [
@@ -120,6 +126,7 @@
       "markdown": "https://www.poetica.fr/poeme-138/arthur-rimbaud-les-chercheuses-de-poux/"
     },
     "sensation": {
+      "date": "2021",
       "text": "Sensation (AR)",
       "duration": "5:21 107bpm",
       "watch": [
@@ -158,6 +165,7 @@
       "markdown": "http://www.analysebrassens.com/?page=texte&id=94&%23"
     },
     "furieux": {
+      "date": "2021",
       "text": "Music for the Furious",
       "duration": "4:54 74bpm",
       "watch": [
@@ -176,6 +184,7 @@
       "markdown": "http://www.analysebrassens.com/?page=texte&id=94&%23"
     },
     "botanist": {
+      "date": "2021",
       "text": "After The Chinese Botanist's Daughters",
       "duration": "4:54 87bpm",
       "watch": [
@@ -192,6 +201,7 @@
       ]
     },
     "tour": {
+      "date": "2015",
       "text": "Chanson de la plus haute tour (AR)",
       "duration": "5:09 104bpm",
       "watch": [
@@ -211,6 +221,7 @@
       "markdown": "http://courses.logos.it/plscourses/linguistic_resources.laboratorio5?lang=en"
     },
     "brouillard": {
+      "date": "1984",
       "text": "Psycho Brouillard",
       "duration": "3:54 75bpm",
       "watch": [
@@ -235,6 +246,7 @@
       "markdown": "https://youtu.be/OZuS8QQsQK8"
     },
     "wickedness": {
+      "date": "2021",
       "text": "Wickedness",
       "duration": "4:19 98bpm",
       "watch": [
