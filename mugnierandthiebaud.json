@@ -12,6 +12,7 @@
     "bateau",
     "botanist",
     "brouillard",
+    "bwv1006",
     "dancing",
     "furieux",
     "larme",
@@ -271,20 +272,26 @@
         }
       ]
     },
-    "bwv": {
-      "text": "Johann Sebastian Bach",
-      "extension": ".svg",
+    "bwv1006": {
+      "date" : "2019",
+      "text": "Preludio from Partita No. 3 in E major for solo violin, BWV 1006, Johann Sebastian Bach, 1720.",
+      "duration": "4:23",
+      "watch": [
+        {
+          "url": "https://youtu.be/OHp12oUx81A",
+          "id": "OHp12oUx81A",
+          "title": "BWV 1006 (w/o 'a') with some borrowings from BWV 29 - 2020"
+        }
+      ]
+    },
+    "some_other_bach": {
+      "text": "JS Bach",
       "duration": "",
       "watch": [
         {
           "url": "https://youtu.be/p9Cc4amUnHw",
           "id": "p9Cc4amUnHw",
           "title": "Largo from sonata #3 in C major BWV 1005 for solo violin - 2020"
-        },
-        {
-          "url": "https://youtu.be/OHp12oUx81A",
-          "id": "OHp12oUx81A",
-          "title": "BWV 1006 (w/o 'a') with some borrowings from BWV 29 - 2020"
         },
         {
           "url": "https://youtu.be/UWXZn5jskEM",
