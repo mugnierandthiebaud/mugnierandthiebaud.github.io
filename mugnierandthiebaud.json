@@ -15,6 +15,7 @@
     "bwv1006",
     "dancing",
     "furieux",
+    "jingle",
     "larme",
     "matin",
     "matsubaba",
@@ -268,6 +269,32 @@
         {
           "url": "https://www.bandlab.com/aequologica/wickedness-12e2cfe1?revId=5851c3a0-4989-eb11-85aa-0050f28a50ba",
           "id": "5851c3a0-4989-eb11-85aa-0050f28a50ba",
+          "title": "Méchanceté"
+        }
+      ]
+    },
+    "jingle": {
+      "date": "2021",
+      "text": "Jingle Ducks",
+      "duration": "0:42 80bpm",
+      "watch": [
+        {
+          "url": "https://youtu.be/Zz24nVDp-A0",
+          "id": "Zz24nVDp-A0",
+          "title": ""
+        }
+      ],
+      "listen": [
+        {
+          "url": "https://soundcloud.com/christophe-thiebaud/jingle",
+          "id": "1015327303",
+          "title": "Jingle Ducks"
+        }
+      ],
+      "bandlab": [
+        {
+          "url": "https://www.bandlab.com/aequologica/jingle-ducks-ba98f197?revId=0948539b-8c8c-eb11-85aa-0050f28a50ba",
+          "id": "0948539b-8c8c-eb11-85aa-0050f28a50ba",
           "title": "Méchanceté"
         }
       ]
