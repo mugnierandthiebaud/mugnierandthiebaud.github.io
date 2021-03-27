@@ -20,6 +20,7 @@
     "matin",
     "matsubaba",
     "poux",
+    "romantik",
     "sensation",
     "tour",
     "wickedness"
@@ -299,8 +300,34 @@
         }
       ]
     },
+    "romantik": {
+      "date": "2021",
+      "text": "Romantik Funk",
+      "duration": "2:44 72bpm",
+      "watch": [
+        {
+          "url": "https://youtu.be/rse1LI8Rkxg",
+          "id": "rse1LI8Rkxg",
+          "title": ""
+        }
+      ],
+      "listen": [
+        {
+          "url": "https://soundcloud.com/christophe-thiebaud/romantik-funk",
+          "id": "1017119236",
+          "title": ""
+        }
+      ],
+      "bandlab": [
+        {
+          "url": "https://www.bandlab.com/aequologica/romantic-funk-b0f6e326?revId=07c45d7c-9a8e-eb11-85aa-0050f28a50ba",
+          "id": "07c45d7c-9a8e-eb11-85aa-0050f28a50ba",
+          "title": ""
+        }
+      ]
+    },
     "bwv1006": {
-      "date" : "2019",
+      "date": "2019",
       "text": "Preludio from Partita No. 3 in E major for solo violin, BWV 1006, Johann Sebastian Bach, 1720.",
       "duration": "4:23",
       "watch": [
