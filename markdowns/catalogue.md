@@ -1,6 +1,6 @@
 # Catalogue
 
-| first | done  | who   | what                                    |
+| conceived | concocted  | who   | what                                    |
 |---    |---    |---    |---                                      |
 | 1982  | 2021  | CT    | Romantik Funk                           |
 | 1984  | 2020  | EM    | Matsubaba                               |
