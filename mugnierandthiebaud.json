@@ -28,7 +28,7 @@
   "songs": {
     "bateau": {
       "date": "2018-06-11",
-      "text": "Le Bateau ivre (AR)",
+      "text": "Le Bateau ivre",
       "duration": "6:33 ~70bpm",
       "watch": [
         {
@@ -72,7 +72,7 @@
     },
     "larme": {
       "date": "2016-06-01",
-      "text": "Larme (AR)",
+      "text": "Larme",
       "duration": "3:47 55bpm",
       "watch": [
         {
@@ -85,7 +85,7 @@
     },
     "matin": {
       "date": "2020-04-28",
-      "text": "Bonne pensée du matin (AR)",
+      "text": "Bonne pensée du matin",
       "duration": "3:17 60bpm",
       "watch": [
         {
@@ -117,7 +117,7 @@
     },
     "poux": {
       "date": "2015",
-      "text": "Les chercheuses de poux (AR)",
+      "text": "Les chercheuses de poux",
       "duration": "2:24 72bpm",
       "listen": [
         {
@@ -130,7 +130,7 @@
     },
     "sensation": {
       "date": "2021-01-22",
-      "text": "Sensation (AR)",
+      "text": "Sensation",
       "duration": "5:21 107bpm",
       "watch": [
         {
@@ -206,7 +206,7 @@
     },
     "tour": {
       "date": "2015",
-      "text": "Chanson de la plus haute tour (AR)",
+      "text": "Chanson de la plus haute tour",
       "duration": "5:09 104bpm",
       "watch": [
         {
