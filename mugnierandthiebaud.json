@@ -9,21 +9,21 @@
 
   "no_recursion": "orange2",
   "order": [
-    "bateau",
-    "botanist",
-    "brouillard",
-    "bwv1006",
-    "dancing",
+    "romantik",
+    "wickedness",
     "furieux",
+    "sensation",
+    "botanist",
+    "dancing",
     "jingle",
-    "larme",
     "matin",
+    "larme",
     "matsubaba",
     "poux",
-    "romantik",
-    "sensation",
     "tour",
-    "wickedness"
+    "bateau",
+    "brouillard",
+    "bwv1006"
   ],
   "songs": {
     "bateau": {
