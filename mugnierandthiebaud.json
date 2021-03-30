@@ -11,9 +11,9 @@
   "order": [
     "romantik",
     "wickedness",
-    "furieux",
     "sensation",
     "botanist",
+    "furieux",
     "dancing",
     "jingle",
     "matin",
@@ -27,7 +27,7 @@
   ],
   "songs": {
     "bateau": {
-      "date": "2018",
+      "date": "2018-06-11",
       "text": "Le Bateau ivre (AR)",
       "duration": "6:33 ~70bpm",
       "watch": [
@@ -47,7 +47,7 @@
       "markdown": "https://www.poetica.fr/poeme-1906/arthur-rimbaud-le-bateau-ivre/"
     },
     "dancing": {
-      "date": "2020",
+      "date": "2020-03-25",
       "text": "Socially Distant Dancing",
       "duration": "3:49 128bpm",
       "watch": [
@@ -71,7 +71,7 @@
       ]
     },
     "larme": {
-      "date": "2016",
+      "date": "2016-06-01",
       "text": "Larme (AR)",
       "duration": "3:47 55bpm",
       "watch": [
@@ -84,7 +84,7 @@
       "markdown": "https://www.poetica.fr/poeme-899/arthur-rimbaud-larme/"
     },
     "matin": {
-      "date": "2020",
+      "date": "2020-04-28",
       "text": "Bonne pensée du matin (AR)",
       "duration": "3:17 60bpm",
       "watch": [
@@ -129,7 +129,7 @@
       "markdown": "https://www.poetica.fr/poeme-138/arthur-rimbaud-les-chercheuses-de-poux/"
     },
     "sensation": {
-      "date": "2021",
+      "date": "2021-01-22",
       "text": "Sensation (AR)",
       "duration": "5:21 107bpm",
       "watch": [
@@ -156,6 +156,7 @@
       "url": "/?no_recursion=true"
     },
     "supplique": {
+      "date": "2020-04-01",
       "text": "Supplique Pour Être Enterré À La Plage De Sète (GB)",
       "duration": "8:00 61pbm",
       "listen": [
@@ -168,7 +169,7 @@
       "markdown": "http://www.analysebrassens.com/?page=texte&id=94&%23"
     },
     "furieux": {
-      "date": "2021",
+      "date": "2021-03-17",
       "text": "Music for the Furious",
       "duration": "4:54 74bpm",
       "watch": [
@@ -187,7 +188,7 @@
       "markdown": "http://www.analysebrassens.com/?page=texte&id=94&%23"
     },
     "botanist": {
-      "date": "2021",
+      "date": "2021-02-28",
       "text": "After The Chinese Botanist's Daughters",
       "duration": "4:54 87bpm",
       "watch": [
@@ -249,7 +250,7 @@
       "markdown": "https://youtu.be/OZuS8QQsQK8"
     },
     "wickedness": {
-      "date": "2021",
+      "date": "2021-03-20",
       "text": "Wickedness",
       "duration": "4:19 98bpm",
       "watch": [
@@ -275,7 +276,7 @@
       ]
     },
     "jingle": {
-      "date": "2021",
+      "date": "2021-03-24",
       "text": "Jingle Ducks",
       "duration": "0:42 80bpm",
       "watch": [
@@ -301,7 +302,7 @@
       ]
     },
     "romantik": {
-      "date": "2021",
+      "date": "2021-03-27",
       "text": "Romantik Funk",
       "duration": "2:46 72bpm",
       "watch": [
@@ -327,7 +328,7 @@
       ]
     },
     "bwv1006": {
-      "date": "2019",
+      "date": "2019-11-01",
       "text": "Preludio from Partita No. 3 in E major for solo violin, BWV 1006, Johann Sebastian Bach, 1720.",
       "duration": "4:23",
       "watch": [
