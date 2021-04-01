@@ -29,7 +29,8 @@
     "bateau": {
       "date": "2018-06-11",
       "text": "Le Bateau ivre",
-      "duration": "6:33 ~70bpm",
+      "duration": "6:33",
+      "bpm": "70",
       "watch": [
         {
           "url": "https://youtu.be/a3Ek2EYkGsw",
@@ -49,7 +50,8 @@
     "dancing": {
       "date": "2020-03-25",
       "text": "Socially Distant Dancing",
-      "duration": "3:49 128bpm",
+      "duration": "3:49",
+      "bpm": "64",
       "watch": [
         {
           "url": "https://youtu.be/K6rk5tG71rI",
@@ -73,7 +75,8 @@
     "larme": {
       "date": "2016-06-01",
       "text": "Larme",
-      "duration": "3:47 55bpm",
+      "duration": "3:47",
+      "bpm": "55",
       "watch": [
         {
           "url": "https://youtu.be/Zk_YubAnJmM",
@@ -86,7 +89,8 @@
     "matin": {
       "date": "2020-04-28",
       "text": "Bonne pensée du matin",
-      "duration": "3:17 60bpm",
+      "duration": "3:17",
+      "bpm": "60",
       "watch": [
         {
           "url": "https://youtu.be/KHRBZ7buOFk",
@@ -106,7 +110,8 @@
     "matsubaba": {
       "date": "1984",
       "text": "Matsubaba Cantata",
-      "duration": "6:08 128bpm",
+      "duration": "6:08",
+      "bpm": "64",
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/matsubaba_cantata",
@@ -118,7 +123,8 @@
     "poux": {
       "date": "2015",
       "text": "Les chercheuses de poux",
-      "duration": "2:24 72bpm",
+      "duration": "2:24",
+      "bpm": "72",
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/les-chercheuses-de-poux/s-kZTIT",
@@ -131,7 +137,8 @@
     "sensation": {
       "date": "2021-01-22",
       "text": "Sensation",
-      "duration": "5:21 107bpm",
+      "duration": "5:21",
+      "bpm": "107",
       "watch": [
         {
           "url": "https://youtu.be/tkK7Bi7c7Wc",
@@ -159,6 +166,7 @@
       "date": "2020-04-01",
       "text": "Supplique Pour Être Enterré À La Plage De Sète (GB)",
       "duration": "8:00 61pbm",
+      "bpm": "61",
       "listen": [
         {
           "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/811603621",
@@ -171,7 +179,8 @@
     "furieux": {
       "date": "2021-03-17",
       "text": "Music for the Furious",
-      "duration": "4:54 74bpm",
+      "duration": "4:54",
+      "bpm": "50",
       "watch": [
         {
           "url": "https://youtu.be/KV3JTbI3PeM",
@@ -190,7 +199,8 @@
     "botanist": {
       "date": "2021-02-28",
       "text": "Seven Rain Windows",
-      "duration": "4:55 87bpm",
+      "duration": "4:55",
+      "bpm": "87",
       "watch": [
         {
           "url": "https://youtu.be/Zic-5mBlXKY",
@@ -207,7 +217,8 @@
     "tour": {
       "date": "2015",
       "text": "Chanson de la plus haute tour",
-      "duration": "5:09 104bpm",
+      "duration": "5:09",
+      "bpm": "70",
       "watch": [
         {
           "url": "https://youtu.be/7lKeQ91LtFk",
@@ -227,7 +238,8 @@
     "brouillard": {
       "date": "1984",
       "text": "Psycho Brouillard",
-      "duration": "3:54 75bpm",
+      "duration": "3:54",
+      "bpm": "75",
       "watch": [
         {
           "url": "https://youtu.be/ehCW0AkOp2Q",
@@ -252,7 +264,8 @@
     "wickedness": {
       "date": "2021-03-20",
       "text": "Wickedness",
-      "duration": "4:19 98bpm",
+      "duration": "4:19",
+      "bpm": "98",
       "watch": [
         {
           "url": "https://youtu.be/miJTYad2DPw",
@@ -278,7 +291,8 @@
     "jingle": {
       "date": "2021-03-24",
       "text": "Jingle Ducks",
-      "duration": "0:42 80bpm",
+      "duration": "0:42",
+      "bpm": "80",
       "watch": [
         {
           "url": "https://youtu.be/Zz24nVDp-A0",
@@ -304,7 +318,8 @@
     "romantik": {
       "date": "2021-03-27",
       "text": "Romantik Funk",
-      "duration": "2:46 72bpm",
+      "duration": "2:46",
+      "bpm": "72",
       "watch": [
         {
           "url": "https://youtu.be/PpFmCNtK8zU",
@@ -331,6 +346,7 @@
       "date": "2019-11-01",
       "text": "Preludio from Partita No. 3 in E major for solo violin, BWV 1006, Johann Sebastian Bach, 1720.",
       "duration": "4:23",
+      "bpm": "100",
       "watch": [
         {
           "url": "https://youtu.be/OHp12oUx81A",
