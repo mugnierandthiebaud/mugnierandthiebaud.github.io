@@ -9,12 +9,9 @@
   </div>
 </div>
 </div>
-<div class="row">
+<div class="row" >
   <div class="col">
     <img src="/jpegs/Thiebaud3.jpg" alt="ThiebaudVieux" class="img-fluid">
-  </div>
-  <div class="col">
-    <img src="/mugnierandthiebaud0_cropped.jpg" alt="mugnierandthiebaud" class="img-fluid">
   </div>
   <div class="col">
     <img src="/jpegs/Mugnier2.jpg" alt="MugnierVieux" class="img-fluid">
