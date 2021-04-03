@@ -20,7 +20,7 @@
 
 [Episode 7: ‘A Nightly Walk'| Featuring Lu Han](https://youtu.be/HbZMquT7O_A)
 
-## Opinion
+## Comments
 
 11 arguments to support watching and re-watching Gucci's serie "Ouverture Of Something That Never Ended", directed by Gus Van Sant and Alessandro Michele.
 
