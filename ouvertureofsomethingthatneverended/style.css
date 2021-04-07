@@ -1,0 +1,27 @@
+#vinyl_brand {
+    /* display: none !important; */
+}
+
+#vinyl_brand img {
+    /* display: none !important; */
+}
+
+select#mySelect option[value="default"], #bs-select-1-0 {
+    /* display: none !important;  */
+} 
+
+select#mySelect option[value="chronological"], #bs-select-1-1 {
+    /* display: none !important; */ 
+} 
+
+select#mySelect option[value="bpm"], #bs-select-1-2 {
+    display: none !important; 
+} 
+
+select#mySelect option[value="duration"], #bs-select-1-3 {
+    display: none !important; 
+} 
+
+select#mySelect option[value="shuffle"], #bs-select-1-4 {
+    /* display: none !important;  */
+} 

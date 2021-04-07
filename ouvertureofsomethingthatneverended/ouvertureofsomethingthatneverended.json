@@ -3,7 +3,7 @@
   "copyright": "?",
   "navbarheader": "./header.html",
   "brandlink": "/vinyl/showdown.html?/ouvertureofsomethingthatneverended/README.md",
-  "icon": "",
+  "brandLogo": "./gucci.svg",
   "background": "",
   "background_animated": "",
 
@@ -11,7 +11,7 @@
     "episode1",
     "episode2",
     "episode3",
-    "episode4", 
+    "episode4",
     "episode5",
     "episode6",
     "episode7"
@@ -94,7 +94,6 @@
         }
       ]
     }
-
   }
 }
 
