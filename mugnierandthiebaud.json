@@ -7,7 +7,6 @@
   "background": "/svgs/vinyl.svg?opas=.3;.75;.3;0",
   "background_animated": "/svgs/vinyl_rotating.svg?opas=.3;.75;.3;0",
 
-  "no_recursion": "orange2",
   "order": [
     "sensation",
     "botanist",
@@ -159,8 +158,7 @@
     "orange2": {
       "text": "This page intentionally left orange.",
       "extension": ".svg",
-      "duration": "&infin;",
-      "url": "/?no_recursion=true"
+      "duration": "&infin;"
     },
     "supplique": {
       "date": "2020-04-01",
