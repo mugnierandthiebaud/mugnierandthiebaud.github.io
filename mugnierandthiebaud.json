@@ -9,6 +9,7 @@
 
   "order": [
     "sensation",
+    "gaspard",
     "botanist",
     "romantik",
     "wickedness",
@@ -105,6 +106,19 @@
         }
       ],
       "markdown": "https://www.poetica.fr/poeme-646/arthur-rimbaud-bonne-pensee-du-matin/"
+    },
+    "gaspard" : {
+      "date": "2021",
+      "text": "O vous tous !",
+      "duration": "3:45",
+      "bpm": "118",
+      "listen": [
+        {
+          "url": "https://soundcloud.com/christophe-thiebaud/o-vous-tous-mastered",
+          "id": "1032425836",
+          "title": "« Gaspard Hauser chante »"
+        }
+      ]
     },
     "matsubaba": {
       "date": "1984",
