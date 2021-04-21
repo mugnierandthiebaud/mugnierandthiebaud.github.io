@@ -382,7 +382,7 @@ codaBasse = {
         \repeat volta 2 \couplet
         \repeat volta 2 \coupletRythme
         \repeat volta 8 \coupletRythme
-        \repeat volta 4 \coupletRythme
+        \repeat unfold 4 \coupletRythme
         \refrainRythme
         \repeat volta 2 \couplet
         \repeat volta 8 \coupletRythme
@@ -420,20 +420,38 @@ codaBasse = {
         \break
         <<
            \new Staff  \with {
-    instrumentName = "Flute"
-    shortInstrumentName = "Flute"
-    alignAboveContext = #"main"
-  } \relative d' {f8. d16~ d2 g16 f g a | f8. d16~ d2. | }
-          {
+            instrumentName = "Flute"
+            shortInstrumentName = "Flute"
+            alignAboveContext = #"main"
+          } \relative d' {
+          \key g \major
+          f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
+          f8. d16~ d2 g16 f g a | f2 r2| 
+          f8. d16~ d2 g16 f g a | f8. d16~ d2. | 
+          f8. d16~ d2 g16 f g a | f2 r8 d'16 a g f d8 | 
+          }
           \bar ":|.|:" 
-          \repeat volta 4 \coupletBasseSimple
+          \repeat unfold 4 \coupletBasseSimple
           % \mark \markup { \tiny  "4x"} 
           \break
-          }
         >>
+        <<
+           \new Staff  \with {
+            instrumentName = "Flute"
+            shortInstrumentName = "Flute"
+            alignAboveContext = #"main"
+          } \relative d' {
+          \key d \minor
+          f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
+          f2.         g16 f g a | f2 r2| 
+          f8. d16~ d2 g16 f g a | f2 r8 d'16 a g f d8 | 
+          f8. d16~ d2 g16 f g a | f2 r2| 
+          }
+
         \key d \minor
         \refrainBasseSimple
         \break
+        >>
         
         \key g \major
         \bar ".|:" 
@@ -510,23 +528,11 @@ codaBasse = {
             \set associatedVoice = "two"
             \textElevenAndAHalf
           }
-        >>
-        <<
-          \textTwelve
-
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwelveAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textThirteen
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textThirteenAndAHalf
-          }
-        >>
+        >> 
+        \textTwelve
+        \textTwelveAndAHalf
+        \textThirteen
+        \textThirteenAndAHalf
         \textFourteenFifteenSixteenSeventeen
         \textSilent
         <<
@@ -574,6 +580,9 @@ codaBasse = {
     \override LyricText.self-alignment-X = #LEFT
     \override Lyrics.LyricText.font-size = #-1
   
+  }
+  \midi { 
+    \tempo 4 = 70
   }
 }
 
