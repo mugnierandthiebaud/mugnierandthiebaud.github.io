@@ -3,42 +3,44 @@
 #(set-global-staff-size 18)
 
 \paper {
-  page-count = #3
+  page-count = #4
 }
+%{
+%}
 
 textOne = \lyricmode {
-  "Comme je descendais des Fleuves impassibles, "
-  "Je ne me sentis plus guidé par les haleurs ; "
+  "Comme je descendais des Fleuves impassibles, " " "
+  "Je ne me sentis plus guidé par les haleurs ; " " "
 } textOneAndAHalf = \lyricmode {
-  "Des Peaux-Rouges criards les avaient pris pour cibles, "
-  "Les ayant cloués nus aux poteaux de couleurs "
+  "Des Peaux-Rouges criards les avaient pris pour cibles, " " "
+  "Les ayant cloués nus aux poteaux de couleurs " " "
 } textTwo = \lyricmode {
-  "J’étais insoucieux de tous les équipages, "
-  "Porteur de blés flamands ou de cotons anglais. "
+  "J’étais insoucieux de tous les équipages, " " "
+  "Porteur de blés flamands ou de cotons anglais. " " "
 } textTwoAndAHalf = \lyricmode {
-  "Quand avec mes haleurs ont fini ces tapages, "
+  "Quand avec mes haleurs ont fini ces tapages, " " "
   "Les Fleuves m’ont laissé descendre où je voulais. " " "
 }
 
 textThreeFourFiveSix = \lyricmode {
-  "Dans les clapotements furieux des marées,"
-  "Moi, l’autre hiver, plus sourd que les cerveaux d’enfants,"
-  "Je courus ! Et les Péninsules démarrées,"
-  "N’ont pas subi tohu-bohus plus triomphants."
+  "Dans les clapotements furieux des marées," " "
+  "Moi, l’autre hiver, plus sourd que les cerveaux d’enfants," " "
+  "Je courus ! Et les Péninsules démarrées," " "
+  "N’ont pas subi tohu-bohus plus triomphants." " "
 
-  "La tempête a béni mes éveils maritimes."
-  "Plus léger qu’un bouchon j’ai dansé sur les flots"
-  "Qu’on appelle rouleurs éternels de victimes,"
-  "Dix nuits, sans regretter l’œil niais des falots."
+  "La tempête a béni mes éveils maritimes." " "
+  "Plus léger qu’un bouchon j’ai dansé sur les flots" " "
+  "Qu’on appelle rouleurs éternels de victimes," " "
+  "Dix nuits, sans regretter l’œil niais des falots." " "
 
-  "Plus douce qu’aux enfants la chair des pommes sures,"
-  "L’eau verte pénétra ma coque de sapin"
-  "Et des taches de vins bleus et des vomissures"
-  "Me lava, dispersant gouvernail et grappin."
+  "Plus douce qu’aux enfants la chair des pommes sures," " "
+  "L’eau verte pénétra ma coque de sapin" " "
+  "Et des taches de vins bleus et des vomissures" " "
+  "Me lava, dispersant gouvernail et grappin." " "
 
-  "Et dès lors, je me suis baigné dans le poème"
+  "Et dès lors, je me suis baigné dans le poème" " "
   "De la mer, infusé d’astres, et lactescent," " "
-  "Dévorant les azurs verts où, flottaison blême"
+  "Dévorant les azurs verts où, flottaison blême" " "
   "Et ravie, un noyé pensif parfois descend," " "
 }
 
@@ -52,9 +54,8 @@ textSeven=  \lyricmode {
 
 textSilent =  \lyricmode {
   % https://www.compart.com/fr/unicode/U+00A0
-  " "
-  " "
-  " "
+  " " " " 
+  " " " " " "
 }
 
 textHeight =  \lyricmode {
@@ -118,28 +119,28 @@ textFourteenFifteenSixteenSeventeen = \lyricmode {
 }
 
 textEighteen = \lyricmode {
-  "Or moi, bateau perdu sous les cheveux des anses,"
-  "Jeté par l’ouragan dans l’éther sans oiseau,"
+  "Or moi, bateau perdu sous les cheveux des anses," " "
+  "Jeté par l’ouragan dans l’éther sans oiseau," " "
 } textEighteenAndAHalf = \lyricmode {
-  "Moi dont les Monitors et les voiliers des Hanses"
-  "N’auraient pas repêché la carcasse ivre d’eau,"
+  "Moi dont les Monitors et les voiliers des Hanses" " "
+  "N’auraient pas repêché la carcasse ivre d’eau," " "
 } textNineteen = \lyricmode {
-  "Libre, fumant, monté de brumes violettes,"
-  "Moi qui trouais le ciel rougeoyant comme un mur"
+  "Libre, fumant, monté de brumes violettes," " "
+  "Moi qui trouais le ciel rougeoyant comme un mur" " "
 } textNineteenAndAHalf = \lyricmode {
-  "Qui porte, confiture exquise aux bons poètes,"
-  "Des lichens de soleil et des morves d’azur,"
+  "Qui porte, confiture exquise aux bons poètes," " "
+  "Des lichens de soleil et des morves d’azur," " "
 } textTwenty = \lyricmode {
-  "Qui courais taché de lunules électriques,"
-  "Plante folle, escorté des hippocampes noirs,"
+  "Qui courais taché de lunules électriques," " "
+  "Plante folle, escorté des hippocampes noirs," " "
 } textTwentyAndAHalf = \lyricmode {
-  "Quand les Juillets faisaient crouler à coups de triques"
-  "Les cieux ultramarins aux ardents entonnoirs,"
+  "Quand les Juillets faisaient crouler à coups de triques" " "
+  "Les cieux ultramarins aux ardents entonnoirs," " "
 } textTwentyOne = \lyricmode {
-  "Moi qui tremblais, sentant geindre à cinquante lieues"
-  "Le rut des Béhémots et les Maelstroms épais,"
+  "Moi qui tremblais, sentant geindre à cinquante lieues" " "
+  "Le rut des Béhémots et les Maelstroms épais," " "
 } textTwentyOneAndAHalf = \lyricmode {
-  "Fileur éternel des immobilités bleues,"
+  "Fileur éternel des immobilités bleues," " "
   "Je regrette l’Europe aux anciens parapets." " "
 }
 
@@ -165,59 +166,79 @@ textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
   "Ni nager sous les yeux horribles des pontons !" " "
 }
 
-reSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "o;o;4;5;3;x;"}}
-solSeptReBasse              = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "o;x;3;4;3;x;"}}
-doNeufReBasse               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "o;x;2;3;3;x;"}}
+reSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "o;o;4;5;3;x;"}}
+solSeptReBasse              = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "o;x;3;4;3;x;"}}
+doNeufReBasse               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "o;x;2;3;3;x;"}}
 
-solMineurSept               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
-doSeptNeufDieze             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;4;x;"}}
-faQuinteAugm                = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "3;x;x;2;2;o;"}}
-siSeptMaj                   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;1;x;2;3;1;"}}
-miMinSeptQuinteDimNeufDieze = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "2;x;x;3;3;2;"}}
-laSeptNeufBemol             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;3;2;3;"}}
-laBemolSeptQuinteDim        = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #8 {\fret-diagram-terse "6;x;o;5;7;4;"}}
-solNeuf                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;o;4;6;5;"}}
+solMineurSept               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
+doSeptNeufDieze             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;3;2;3;4;x;"}}
+faQuinteAugm                = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "3;x;x;2;2;o;"}}
+siSeptMaj                   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;1;x;2;3;1;"}}
+miMinSeptQuinteDimNeufDieze = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "2;x;x;3;3;2;"}}
+laSeptNeufBemol             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;o;2;3;2;3;"}}
+laBemolSeptQuinteDim        = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "6;x;o;5;7;4;"}}
+solNeuf                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "5;x;o;4;6;5;"}}
 
-solMinNeuf                  = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
-doSeptNeufDiezeQuinteAugm   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
-faQuinteAugmBis             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
-siSeptMajQuinteAugm         = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;1;x;2;3;2;"}}
-miMinSeptQuinteDimNeufBemol = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "2;1;o;o;3;1;"}}
-laSeptSusQuatre             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;o;3;o;"}}
-laSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;o;2;o;"}}
-laBemolSeptQuinteDimNeuf    = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #8 {\fret-diagram-terse "6;3;4;3;3;x;"}}
-solSept                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
-doNeuf                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;3;x;"}}
+solMinNeuf                  = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
+doSeptNeufDiezeQuinteAugm   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
+faQuinteAugmBis             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
+siSeptMajQuinteAugm         = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;1;x;2;3;2;"}}
+miMinSeptQuinteDimNeufBemol = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "2;1;o;o;3;1;"}}
+laSeptSusQuatre             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;o;2;o;3;o;"}}
+laSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;o;2;o;2;o;"}}
+laBemolSeptQuinteDimNeuf    = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "6;3;4;3;3;x;"}}
+solSept                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
+doNeuf                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #5 {\fret-diagram-terse "x;3;2;3;3;x;"}}
 
 
 couplet = \relative d {
-
-  <d a' fis' c' d>1-\reSept
-  <d f' b d>2-\solSeptReBasse
-  <d e' bes' d>2-\doNeufReBasse
+  \arpeggioArrowUp
+  <fis' c' d>1\arpeggio
+  <f b d>2\arpeggio <e bes' d>2\arpeggio
+}
+coupletBasse = \relative d {
+  <d a'>2-\reSept <d a'>
+  d-\solSeptReBasse d-\doNeufReBasse
 }
 
 refrain = \relative g {
 
-  <g f' bes d>1-\solMineurSept
-  <c e bes' dis>1-\doSeptNeufDieze
-  <f, a' cis e>1-\faQuinteAugm
-  <bes a' d f>1-\siSeptMaj
-  <e, bes'' d fis>1-\miMinSeptQuinteDimNeufDieze
-  <a e' bes' cis g'>1-\laSeptNeufBemol
-  <aes d c'ges'aes>1-\laBemolSeptQuinteDim
-  <g d'b'f'a>1-\solNeuf
+  <f' bes d>1\arpeggio
+  <e bes' dis>1\arpeggio
+  <a cis e>1\arpeggio
+  <a d f>1\arpeggio
+  <bes d fis>1\arpeggio
+  <e, bes' cis g'>1\arpeggio
+  <d c' ges' aes>1\arpeggio
+  <d b' f' a>1\arpeggio
+  <f bes d a'>1\arpeggio
+  <e bes' dis aes'>1\arpeggio
+  <e a cis g' >1\arpeggio
+  <a d fis>1\arpeggio
+  <bes, d g  d' f>1\arpeggio
+  <g' d' e>2\arpeggio
+  <g cis e>2\arpeggio
+  <c, ges' bes d >1\arpeggio
+  <d f b d >2\arpeggio <e bes' d >2\arpeggio
+}
+refrainBasse = \relative g {
+  g2-\solMineurSept g
+  c-\doSeptNeufDieze c
+  f,-\faQuinteAugm f
+  bes-\siSeptMaj bes
+  e,-\miMinSeptQuinteDimNeufDieze e
+  a-\laSeptNeufBemol a
+  aes-\laBemolSeptQuinteDim aes
+  g-\solNeuf g
 
-  <g f' bes d a'>1-\solMinNeuf
-  <c e bes' dis aes'>1-\doSeptNeufDiezeQuinteAugm
-  <f, e' a cis g' >1-\faQuinteAugmBis
-  <bes a' d fis>1-\siSeptMajQuinteAugm
-  <e, bes' d g  d' f>1-\miMinSeptQuinteDimNeufBemol
-  <a g' d' e>2-\laSeptSusQuatre
-  <a g' cis e>2-\laSept
-  <aes c ges' bes d >1-\laBemolSeptQuinteDimNeuf
-  <g d' f b d >2-\solSept
-  <c e bes' d >2-\doNeuf
+  g-\solMinNeuf g
+  c-\doSeptNeufDiezeQuinteAugm c
+  f,-\faQuinteAugmBis f
+  bes-\siSeptMajQuinteAugm bes
+  e,-\miMinSeptQuinteDimNeufBemol e
+  a-\laSeptSusQuatre a-\laSept
+  aes-\laBemolSeptQuinteDimNeuf aes
+  g-\solSept c-\doNeuf
 }
 
 \header
@@ -244,58 +265,83 @@ refrain = \relative g {
     <<
       \tempo 4 = 70
       \new Voice = "one" {
+        \voiceOne
         \override Score.RehearsalMark.break-visibility = #end-of-line-visible
         \override Score.RehearsalMark.self-alignment-X = #RIGHT
         \key g \major
+
         \bar ".|:" 
         \repeat volta 4 \couplet 
         \mark \markup {\tiny  "4x"} 
         \break
+        
         \key d \minor
         \refrain
         \break
+        
         \key g \major
         \bar ".|:" 
         \repeat volta 2 \couplet
         \mark \markup {\tiny  "2x"} 
         \break
-        \couplet
+        
+        \bar ".|:" 
+        \repeat volta 2 \couplet
+        \mark \markup {\tiny  "2x"} 
         \break
+        
         \bar ".|:" 
         \repeat volta 12 \couplet
         \mark \markup {\tiny  "12x"} 
         \break
+        
         \key d \minor
         \refrain
         \break
+        
         \key g \major
-        \pageBreak
-        \couplet
+        \bar ".|:" 
+        \repeat volta 2 \couplet
+        \mark \markup {\tiny  "2x"} 
         \break
+        
         \bar ".|:" 
         \repeat volta 8 \couplet
         \mark \markup {\tiny  "8x"} 
         \break
+        
         \key d \minor
         \refrain
         \break
+        
         \key g \major
-        \repeat unfold 4 < d a d' gis' d'' gis'' >1
+        \repeat unfold 2 < d a d' gis' d'' gis'' >1
       }
-
-      \new Lyrics \lyricsto "one" {
+      \new Voice = "two" {
+          \voiceTwo
+          \repeat volta 4 \coupletBasse
+          \refrainBasse
+          \repeat volta 2 \coupletBasse  
+          \repeat volta 2 \coupletBasse  
+          \repeat volta 12 \coupletBasse
+          \refrainBasse
+          \repeat volta 8 \coupletBasse
+          \refrainBasse
+          d2 d d d
+      }
+      \new Lyrics \lyricsto "two" {
         <<
           \textOne
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textOneAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwo
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwoAndAHalf
           }
         >>
@@ -304,7 +350,7 @@ refrain = \relative g {
           \textSeven
 
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textSevenAndAHalf
           }
         >>
@@ -313,47 +359,47 @@ refrain = \relative g {
           \textHeight
 
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textHeightndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textNine
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textNineAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTen
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTenAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textEleven
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textElevenAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwelve
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwelveAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textThirteen
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textThirteenAndAHalf
           }
         >>
@@ -363,31 +409,31 @@ refrain = \relative g {
           \textEighteen
 
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textEighteenAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textNineteen
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textNineteenAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwenty
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwentyAndAHalf
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwentyOne
           }
           \new Lyrics {
-            \set associatedVoice = "one"
+            \set associatedVoice = "two"
             \textTwentyOneAndAHalf
           }
         >>
