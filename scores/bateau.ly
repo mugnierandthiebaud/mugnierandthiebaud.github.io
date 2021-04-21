@@ -1,14 +1,9 @@
 \version "2.22"
-#(set-global-staff-size 16)
+
+#(set-global-staff-size 18)
+
 \paper {
   page-count = #3
-}
-\header
-{
-  title = "Le Bateau ivre"
-  subtitle = \markup { \abs-fontsize #10 "Lundi 11 juin 2018, 8 h 20 du matin"}
-  poet = "Poème de Arthur Rimbaud"
-  composer = "Musique de Christophe Thiebaud"
 }
 
 textOne = \lyricmode {
@@ -170,66 +165,79 @@ textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
   "Ni nager sous les yeux horribles des pontons !" " "
 }
 
-reSept                      = \markup {\hspace #6 {\fret-diagram-terse "o;o;4;5;3;x;"}}
-solSeptReBasse              = \markup {\hspace #6 {\fret-diagram-terse "o;x;3;4;3;x;"}}
-doNeufReBasse               = \markup {\hspace #6 {\fret-diagram-terse "o;x;2;3;3;x;"}}
+reSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "o;o;4;5;3;x;"}}
+solSeptReBasse              = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "o;x;3;4;3;x;"}}
+doNeufReBasse               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "o;x;2;3;3;x;"}}
 
-solMineurSept               = \markup {\hspace #6 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
-doSeptNeufDieze             = \markup {\hspace #6 {\fret-diagram-terse "x;3;2;3;4;x;"}}
-faQuinteAugm                = \markup {\hspace #6 {\fret-diagram-terse "3;x;x;2;2;o;"}}
-siSeptMaj                   = \markup {\hspace #6 {\fret-diagram-terse "x;1;x;2;3;1;"}}
-miMinSeptQuinteDimNeufDieze = \markup {\hspace #6 {\fret-diagram-terse "2;x;x;3;3;2;"}}
-laSeptNeufBemol             = \markup {\hspace #6 {\fret-diagram-terse "x;o;2;3;2;3;"}}
-laBemolSeptQuinteDim        = \markup {\hspace #8 {\fret-diagram-terse "6;x;o;5;7;4;"}}
-solNeuf                     = \markup {\hspace #6 {\fret-diagram-terse "5;x;o;4;6;5;"}}
+solMineurSept               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
+doSeptNeufDieze             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;4;x;"}}
+faQuinteAugm                = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "3;x;x;2;2;o;"}}
+siSeptMaj                   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;1;x;2;3;1;"}}
+miMinSeptQuinteDimNeufDieze = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "2;x;x;3;3;2;"}}
+laSeptNeufBemol             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;3;2;3;"}}
+laBemolSeptQuinteDim        = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #8 {\fret-diagram-terse "6;x;o;5;7;4;"}}
+solNeuf                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;o;4;6;5;"}}
 
-solMinNeuf                  = \markup {\hspace #6 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
-doSeptNeufDiezeQuinteAugm   = \markup {\hspace #6 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
-faQuinteAugmBis             = \markup {\hspace #6 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
-siSeptMajQuinteAugm         = \markup {\hspace #6 {\fret-diagram-terse "x;1;x;2;3;2;"}}
-miMinSeptQuinteDimNeufBemol = \markup {\hspace #6 {\fret-diagram-terse "2;1;o;o;3;1;"}}
-laSeptSusQuatre             = \markup {\hspace #6 {\fret-diagram-terse "x;o;2;o;3;o;"}}
-laSept                      = \markup {\hspace #6 {\fret-diagram-terse "x;o;2;o;2;o;"}}
-laBemolSeptQuinteDimNeuf    = \markup {\hspace #8 {\fret-diagram-terse "6;3;4;3;3;x;"}}
-solSept                     = \markup {\hspace #6 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
-doNeuf                      = \markup {\hspace #6 {\fret-diagram-terse "x;3;2;3;3;x;"}}
+solMinNeuf                  = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
+doSeptNeufDiezeQuinteAugm   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
+faQuinteAugmBis             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
+siSeptMajQuinteAugm         = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;1;x;2;3;2;"}}
+miMinSeptQuinteDimNeufBemol = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "2;1;o;o;3;1;"}}
+laSeptSusQuatre             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;o;3;o;"}}
+laSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;o;2;o;"}}
+laBemolSeptQuinteDimNeuf    = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #8 {\fret-diagram-terse "6;3;4;3;3;x;"}}
+solSept                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
+doNeuf                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;3;x;"}}
+
 
 couplet = \relative d {
 
-  <d a' fis' c' d>1^\reSept
-  <d f' b d>2^\solSeptReBasse
-  <d e' bes' d>2^\doNeufReBasse
+  <d a' fis' c' d>1-\reSept
+  <d f' b d>2-\solSeptReBasse
+  <d e' bes' d>2-\doNeufReBasse
 }
 
 refrain = \relative g {
 
-  <g f' bes d>1^\solMineurSept
-  <c e bes' dis>1^\doSeptNeufDieze
-  <f, a' cis e>1^\faQuinteAugm
-  <bes a' d f>1^\siSeptMaj
-  <e, bes'' d fis>1^\miMinSeptQuinteDimNeufDieze
-  <a e' bes' cis g'>1^\laSeptNeufBemol
-  <aes d c'ges'aes>1^\laBemolSeptQuinteDim
-  <g d'b'f'a>1^\solNeuf
+  <g f' bes d>1-\solMineurSept
+  <c e bes' dis>1-\doSeptNeufDieze
+  <f, a' cis e>1-\faQuinteAugm
+  <bes a' d f>1-\siSeptMaj
+  <e, bes'' d fis>1-\miMinSeptQuinteDimNeufDieze
+  <a e' bes' cis g'>1-\laSeptNeufBemol
+  <aes d c'ges'aes>1-\laBemolSeptQuinteDim
+  <g d'b'f'a>1-\solNeuf
 
-  <g f' bes d a'>1^\solMinNeuf
-  <c e bes' dis aes'>1^\doSeptNeufDiezeQuinteAugm
-  <f, e' a cis g' >1^\faQuinteAugmBis
-  <bes a' d fis>1^\siSeptMajQuinteAugm
-  <e, bes' d g  d' f>1^\miMinSeptQuinteDimNeufBemol
-  <a g' d' e>2^\laSeptSusQuatre
-  <a g' cis e>2^\laSept
-  <aes c ges' bes d >1^\laBemolSeptQuinteDimNeuf
-  <g d' f b d >2^\solSept
-  <c e bes' d >2^\doNeuf
+  <g f' bes d a'>1-\solMinNeuf
+  <c e bes' dis aes'>1-\doSeptNeufDiezeQuinteAugm
+  <f, e' a cis g' >1-\faQuinteAugmBis
+  <bes a' d fis>1-\siSeptMajQuinteAugm
+  <e, bes' d g  d' f>1-\miMinSeptQuinteDimNeufBemol
+  <a g' d' e>2-\laSeptSusQuatre
+  <a g' cis e>2-\laSept
+  <aes c ges' bes d >1-\laBemolSeptQuinteDimNeuf
+  <g d' f b d >2-\solSept
+  <c e bes' d >2-\doNeuf
 }
 
+\header
+{
+  title = "Le Bateau ivre"
+  subtitle = \markup { \abs-fontsize #10 "Lundi 11 juin 2018, 8 h 20 du matin"}
+  poet = "Poème de Arthur Rimbaud"
+  composer = "Musique de Christophe Thiebaud"
+}
+
+\markup {
+  \vspace #1
+}
+    
 \score {
 
   \new Staff {
     \set Staff.instrumentName = \markup \center-column {
         "Guitarre"
-        { \abs-fontsize #8 \italic "(6ème corde en ré)" }
+        { \abs-fontsize #7 \italic "6ème corde en ré" }
     }
     \set Staff.midiInstrument = "acoustic guitar (nylon)"
     
@@ -393,10 +401,6 @@ refrain = \relative g {
     \time 4/4
     \override LyricText.self-alignment-X = #LEFT
     \override Lyrics.LyricText.font-size = #-2
+  
   }
-  %{
-  \midi {
-    \tempo 4 = 70
-  }
-  %}
 }
