@@ -225,7 +225,7 @@ qweTwo= #(define-music-function
      r8. #mus1 \tabTable g8 d,8 r8. #mus2 \tabTable g8 d,8
    #})
 
-coupletRhytme = \relative d {
+coupletRythme = \relative d {
   \qweOne { <fis' c d,>16 } 
   \qweTwo { <f'   b  d>16 } { <e' bes' d>16 } 
 }
@@ -249,7 +249,8 @@ refrain = \relative g {
   <c, ges' bes d >1\arpeggio
   <d f b d >2\arpeggio <e bes' d >2\arpeggio
 }
-refrainRythme = \relative g {
+refrainRythme = \relative d {
+  %{
   \qweOne { <f bes d>16 } 
   \qweOne { <e bes dis>16 } 
   \qweOne { <a cis e>16 } 
@@ -266,6 +267,7 @@ refrainRythme = \relative g {
   \qweTwo { <g d e>16  }{<g cis e>16 } 
   \qweOne { <c ges bes d >16 } 
   \qweTwo { <d f b d >16 }{<e bes d >16 } 
+  %}
 }
 
 refrainBasse = \relative g {
@@ -335,12 +337,12 @@ refrainBasse = \relative g {
         \break
         
         \bar ".|:" 
-        \repeat volta 2 \coupletRhytme
+        \repeat volta 2 \coupletRythme
         \mark \markup {\tiny  "2x"} 
         \break
         
         \bar ".|:" 
-        \repeat volta 12 \couplet
+        \repeat volta 12 \coupletRythme
         \mark \markup {\tiny  "12x"} 
         \break
         
