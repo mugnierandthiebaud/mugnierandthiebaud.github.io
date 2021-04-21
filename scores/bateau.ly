@@ -1,12 +1,12 @@
-\version "2.19"
+\version "2.22"
 
 #(set-global-staff-size 18)
 
-\paper {
-  page-count = #4
-}
 %{
 %}
+\paper {
+  page-count = #3
+}
 
 textOne = \lyricmode {
   "Comme je descendais des Fleuves impassibles, " " "
@@ -97,24 +97,24 @@ textHeight =  \lyricmode {
 }
 
 textFourteenFifteenSixteenSeventeen = \lyricmode {
-  "Glaciers, soleils d’argent, flots nacreux, cieux de braises."
-  "Echouages hideux au fond des golfes bruns"
-  "Où les serpents géants dévorés des punaises"
-  "Choient des arbres tordus, avec de noirs parfums."
+  "Glaciers, soleils d’argent, flots nacreux, cieux de braises." " "
+  "Echouages hideux au fond des golfes bruns" " "
+  "Où les serpents géants dévorés des punaises" " "
+  "Choient des arbres tordus, avec de noirs parfums." " "
 
-  "J’aurais voulu montrer aux enfants ces dorades"
-  "Du flot bleu, ces poissons d’or, ces poissons chantants."
-  "Des écumes de fleurs ont béni mes dérades"
-  "Et d’ineffables vents m’ont ailé par instants."
+  "J’aurais voulu montrer aux enfants ces dorades" " "
+  "Du flot bleu, ces poissons d’or, ces poissons chantants." " "
+  "Des écumes de fleurs ont béni mes dérades" " "
+  "Et d’ineffables vents m’ont ailé par instants." " "
 
-  "Parfois, martyr lassé des pôles et des zones,"
-  "La mer dont le sanglot faisait mon roulis doux"
-  "Montait vers moi ses fleurs d’ombre aux ventouses jaunes"
-  "Et je restais, ainsi qu’une femme à genoux,"
+  "Parfois, martyr lassé des pôles et des zones," " "
+  "La mer dont le sanglot faisait mon roulis doux" " "
+  "Montait vers moi ses fleurs d’ombre aux ventouses jaunes" " "
+  "Et je restais, ainsi qu’une femme à genoux," " "
 
-  "Presqu’île, ballottant sur mes bords les querelles"
+  "Presqu’île, ballottant sur mes bords les querelles" " "
   "Et les fientes d’oiseaux clabaudeurs aux yeux blonds," " "
-  "Et je voguais, lorsqu’à travers mes liens frêles"
+  "Et je voguais, lorsqu’à travers mes liens frêles" " "
   "Des noyés descendaient dormir, à reculons." " "
 }
 
@@ -145,24 +145,24 @@ textEighteen = \lyricmode {
 }
 
 textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
-  "J’ai vu des archipels sidéraux ! Et des îles"
-  "Dont les cieux délirants sont ouverts au vogueur :"
-  "— Est-ce en ces nuits sans fonds que tu dors et t’exiles,"
-  "Million d’oiseaux d’or, ô future Vigueur ?"
+  "J’ai vu des archipels sidéraux ! Et des îles" " "
+  "Dont les cieux délirants sont ouverts au vogueur :" " "
+  "— Est-ce en ces nuits sans fonds que tu dors et t’exiles," " "
+  "Million d’oiseaux d’or, ô future Vigueur ?" " "
 
-  "Mais, vrai, j’ai trop pleuré ! Les aubes sont navrantes,"
-  "Toute lune est atroce et tout soleil amer."
-  "L’âcre amour m’a gonflé de torpeurs enivrantes."
-  "Oh ! que ma quille éclate ! Oh ! que j’aille à la mer !"
+  "Mais, vrai, j’ai trop pleuré ! Les aubes sont navrantes," " "
+  "Toute lune est atroce et tout soleil amer." " "
+  "L’âcre amour m’a gonflé de torpeurs enivrantes." " "
+  "Oh ! que ma quille éclate ! Oh ! que j’aille à la mer !" " "
 
-  "Si je désire une eau d’Europe, c’est la flache"
-  "Noire et froide où, vers le crépuscule embaumé,"
-  "Un enfant accroupi, plein de tristesse, lâche"
-  "Un bateau frêle comme un papillon de mai."
+  "Si je désire une eau d’Europe, c’est la flache" " "
+  "Noire et froide où, vers le crépuscule embaumé," " "
+  "Un enfant accroupi, plein de tristesse, lâche" " "
+  "Un bateau frêle comme un papillon de mai." " "
 
-  "Je ne puis plus, baigné de vos langueurs, ô lames,"
+  "Je ne puis plus, baigné de vos langueurs, ô lames," " "
   "Enlever leur sillage aux porteurs de cotons," " "
-  "Ni traverser l’orgueil des drapeaux et des flammes,"
+  "Ni traverser l’orgueil des drapeaux et des flammes," " "
   "Ni nager sous les yeux horribles des pontons !" " "
 }
 
@@ -202,72 +202,71 @@ tabTablePath =
 tabTable = \once \override NoteHead.stencil = 
     #(lambda (grob) (grob-interpret-markup grob tabTablePath))
 
-couplet = \relative d {
+couplet = {
   \arpeggioArrowUp
-  <fis' c' d>1\arpeggio
-  <f b d>2\arpeggio <e bes' d>2\arpeggio
+  <fis' c'' d''>1\arpeggio
+  <f' b' d''>2\arpeggio <e' bes' d''>2\arpeggio
 }
-coupletBasse = \relative d {
-  <d a'>2-\reSept <d a'>
+coupletBasse = {
+  <d a>2-\reSept <d a>
   d-\solSeptReBasse d-\doNeufReBasse
 }
 
 qweOne = #(define-music-function
-     (mus)
-     (string-or-music? )
+     (mus bas)
+     (string-or-music? string-or-music? )
    #{
-     r8. #mus \tabTable g8 d,8 r8. #mus \tabTable g8 d,8
+     r8. #mus \tabTable d''8 #bas r8. #mus \tabTable d''8 #bas
    #})
 qweTwo= #(define-music-function
-     (mus1 mus2)
-     (string-or-music? string-or-music?)
+     (mus1 bas1 mus2 bas2 )
+     (string-or-music? string-or-music? string-or-music? string-or-music?)
    #{
-     r8. #mus1 \tabTable g8 d,8 r8. #mus2 \tabTable g8 d,8
+     r8. #mus1 \tabTable d''8 #bas1 r8. #mus2 \tabTable d''8 #bas2
    #})
 
-coupletRythme = \relative d {
-  \qweOne { <fis' c d,>16 } 
-  \qweTwo { <f'   b  d>16 } { <e' bes' d>16 } 
+coupletRythme = {
+  \qweOne { <fis' c'' d''>16 } { d'8 }
+  \qweTwo { <f'   b'  d''>16 } { d'8 } { <e' bes' d''>16 } { d'8 }
 }
 
-refrain = \relative g {
-  <f' bes d>1\arpeggio
-  <e bes' dis>1\arpeggio
-  <a cis e>1\arpeggio
-  <a d f>1\arpeggio
-  <bes d fis>1\arpeggio
-  <e, bes' cis g'>1\arpeggio
-  <d c' ges' aes>1\arpeggio
-  <d b' f' a>1\arpeggio
+refrain = {
+  <f' bes' d''>1\arpeggio
+  <e' bes' dis''>1\arpeggio
+  <a' cis'' e''>1\arpeggio
+  <a' d'' f''>1\arpeggio
+  <bes' d'' fis''>1\arpeggio
+  <e' bes' cis'' g''>1\arpeggio
+  <d' c'' ges'' aes''>1\arpeggio
+  <d' b' f'' a''>1\arpeggio
 
-  <f bes d a'>1\arpeggio
-  <e bes' dis aes'>1\arpeggio
-  <e a cis g' >1\arpeggio
-  <a d fis>1\arpeggio
-  <bes, d g  d' f>1\arpeggio
-  <g' d' e>2\arpeggio  <g cis e>2\arpeggio
-  <c, ges' bes d >1\arpeggio
-  <d f b d >2\arpeggio <e bes' d >2\arpeggio
+  <f' bes' d'' a''>1\arpeggio
+  <e' bes' dis'' aes''>1\arpeggio
+  <e' a' cis'' g'' >1\arpeggio
+  <a' d'' fis''>1\arpeggio
+  <bes d' g' d'' f''>1\arpeggio
+  <g' d'' e''>2\arpeggio  <g' cis'' e''>2\arpeggio
+  <c' ges' bes' d'' >1\arpeggio
+  <d' f' b' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
 }
-refrainRythme = \relative d {
-  %{
-  \qweOne { <f bes d>16 } 
-  \qweOne { <e bes dis>16 } 
-  \qweOne { <a cis e>16 } 
-  \qweOne { <a d f>16 } 
-  \qweOne { <bes d fis>16 } 
-  \qweOne { <e bes cis g>16 } 
-  \qweOne { <d c ges aes>16 } 
-  \qweOne { <d b f a>16 } 
-  \qweOne { <f bes d a>16 } 
-  \qweOne { <e bes dis aes>16 } 
-  \qweOne { <e a cis g >16 } 
-  \qweOne { <a d fis>16 } 
-  \qweOne { <bes d g  d f>16 } 
-  \qweTwo { <g d e>16  }{<g cis e>16 } 
-  \qweOne { <c ges bes d >16 } 
-  \qweTwo { <d f b d >16 }{<e bes d >16 } 
-  %}
+refrainRythme =  {
+  \qweOne { <f' bes' d''>16 }  { g8 }
+  \qweOne { <e' bes' dis''>16 }  { c'8 }
+  \qweOne { <a' cis'' e''>16 }  { f8 }
+  \qweOne { <a' d'' f''>16 }  { bes8 }
+  \qweOne { <bes' d'' fis''>16 }  { e8 }
+  \qweOne { <e' bes' cis'' g''>16 }  { a8 }
+  \qweOne { <d' c'' ges'' aes''>16 }  { aes8 }
+  \qweOne { <d' b' f'' a''>16 }  { g8 }
+
+  \qweOne { <f' bes' d'' a''>16 }  { g8 }
+  \qweOne { <e' bes' dis'' aes''>16 }  { c'8 }
+  \qweOne { <e' a' cis'' g'' >16 }  { f8 }
+  \qweOne { <a' d'' fis''>16 }  { bes8 }
+  \qweOne { <bes d' g' d'' f''>16 }  { e8 }
+  \qweTwo { <g' d'' e''>16  }  { a8 } {<g' cis'' e''>16 }  { a8 }
+  \qweOne { <c' ges' bes' d'' >16 }  { aes8 }
+  \qweTwo { <d' f' b' d'' >16 }  { g8 } {<e' bes' d'' >16 } { c'8 }
 }
 
 refrainBasse = \relative g {
@@ -288,6 +287,17 @@ refrainBasse = \relative g {
   a-\laSeptSusQuatre a-\laSept
   aes-\laBemolSeptQuinteDimNeuf aes
   g-\solSept c-\doNeuf
+}
+
+codaRythme = {
+  \qweOne { <gis' d'' gis''>16 } { d'8 }
+  \qweOne { <gis' d'' gis''>16 } { d'8 }
+  <gis' d'' gis''>1\arpeggio
+}
+
+codaBasse = {
+  \repeat unfold 4 <d a d'>2 
+  <d a d'>1
 }
 
 
@@ -315,70 +325,72 @@ refrainBasse = \relative g {
     
     <<
       \tempo 4 = 70
+      %{
+      %}
       \new Voice = "one" {
         \voiceOne
+        \repeat volta 4 \couplet 
+        \refrain
+        \repeat volta 2 \couplet
+        \repeat volta 2 \coupletRythme
+        \repeat volta 12 \coupletRythme
+        \refrainRythme
+        \repeat volta 2 \couplet
+        \repeat volta 8 \coupletRythme
+        \refrainRythme
+        \codaRythme
+      }
+      \new Voice = "two" {
+        \voiceTwo
         \override Score.RehearsalMark.break-visibility = #end-of-line-visible
         \override Score.RehearsalMark.self-alignment-X = #RIGHT
         \key g \major
-
         \bar ".|:" 
-        \repeat volta 4 \couplet 
+        \repeat volta 4 \coupletBasse 
         \mark \markup {\tiny  "4x"} 
         \break
         
         \key d \minor
-        \refrain
+        \refrainBasse
         \break
         
         \key g \major
         \bar ".|:" 
-        \repeat volta 2 \couplet
-        \mark \markup {\tiny  "2x"} 
+        \repeat volta 2 \coupletBasse
+        \mark \markup { \tiny  "2x"} 
         \break
         
         \bar ".|:" 
-        \repeat volta 2 \coupletRythme
-        \mark \markup {\tiny  "2x"} 
+        \repeat volta 2 \coupletBasse
+        \mark \markup { \tiny  "2x"} 
         \break
         
         \bar ".|:" 
-        \repeat volta 12 \coupletRythme
-        \mark \markup {\tiny  "12x"} 
+        \repeat volta 12 \coupletBasse
+        \mark \markup { \tiny  "12x"} 
         \break
         
         \key d \minor
-        \refrain
+        \refrainBasse
         \break
         
         \key g \major
         \bar ".|:" 
-        \repeat volta 2 \couplet
-        \mark \markup {\tiny  "2x"} 
+        \repeat volta 2 \coupletBasse
+        \mark \markup { \tiny  "2x"} 
         \break
         
         \bar ".|:" 
-        \repeat volta 8 \couplet
-        \mark \markup {\tiny  "8x"} 
+        \repeat volta 8 \coupletBasse
+        \mark \markup { \tiny  "8x"} 
         \break
         
         \key d \minor
-        \refrain
+        \refrainBasse
         \break
         
         \key g \major
-        \repeat unfold 2 < d a d' gis' d'' gis'' >1
-      }
-      \new Voice = "two" {
-          \voiceTwo
-          \repeat volta 4 \coupletBasse
-          \refrainBasse
-          \repeat volta 2 \coupletBasse  
-          \repeat volta 2 \coupletBasse  
-          \repeat volta 12 \coupletBasse
-          \refrainBasse
-          \repeat volta 8 \coupletBasse
-          \refrainBasse
-          d2 d d d
+        \codaBasse
       }
       \new Lyrics \lyricsto "two" {
         <<
@@ -500,4 +512,8 @@ refrainBasse = \relative g {
     \override Lyrics.LyricText.font-size = #-2
   
   }
+  \midi { 
+    \tempo 4 = 70
+  }
 }
+
