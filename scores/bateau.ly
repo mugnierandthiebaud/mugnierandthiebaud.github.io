@@ -166,29 +166,31 @@ textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
   "Ni nager sous les yeux horribles des pontons !" " "
 }
 
-reSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #7 {\fret-diagram-terse "o;o;4;5;3;x;"}}
-solSeptReBasse              = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "o;x;3;4;3;x;"}}
-doNeufReBasse               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "o;x;2;3;3;x;"}}
+% \override #'(fret-diagram-details . ((orientation . landscape))) 
 
-solMineurSept               = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
-doSeptNeufDieze             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "x;3;2;3;4;x;"}}
-faQuinteAugm                = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "3;x;x;2;2;o;"}}
-siSeptMaj                   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "x;1;x;2;3;1;"}}
-miMinSeptQuinteDimNeufDieze = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #12 {\fret-diagram-terse "2;x;x;3;3;2;"}}
-laSeptNeufBemol             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "x;o;2;3;2;3;"}}
-laBemolSeptQuinteDim        = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "6;x;o;5;7;4;"}}
-solNeuf                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;x;o;4;6;5;"}}
+reSept                      = \markup {\hspace #7 {\fret-diagram-terse "o;o;4;5;3;x;"}}
+solSeptReBasse              = \markup {\hspace #7 {\fret-diagram-terse "o;o;3;4;3;x;"}}
+doNeufReBasse               = \markup {\hspace #7 {\fret-diagram-terse "o;o;2;3;3;x;"}}
 
-solMinNeuf                  = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #9 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
-doSeptNeufDiezeQuinteAugm   = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #14 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
-faQuinteAugmBis             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #10 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
-siSeptMajQuinteAugm         = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #10 {\fret-diagram-terse "x;1;x;2;3;2;"}}
-miMinSeptQuinteDimNeufBemol = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #12 {\fret-diagram-terse "2;1;o;o;3;1;"}}
-laSeptSusQuatre             = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #11 {\fret-diagram-terse "x;o;2;o;3;o;"}}
-laSept                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;o;2;o;2;o;"}}
-laBemolSeptQuinteDimNeuf    = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #11 {\fret-diagram-terse "6;3;4;3;3;x;"}}
-solSept                     = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
-doNeuf                      = \markup \override #'(fret-diagram-details . ((orientation . landscape))) {\hspace #6 {\fret-diagram-terse "x;3;2;3;3;x;"}}
+solMineurSept               = \markup {\hspace #7 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
+doSeptNeufDieze             = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;4;x;"}}
+faQuinteAugm                = \markup {\hspace #7 {\fret-diagram-terse "3;x;x;2;2;o;"}}
+siSeptMaj                   = \markup {\hspace #7 {\fret-diagram-terse "x;1;x;2;3;1;"}}
+miMinSeptQuinteDimNeufDieze = \markup {\hspace #7 {\fret-diagram-terse "2;x;x;3;3;2;"}}
+laSeptNeufBemol             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;3;2;3;"}}
+laBemolSeptQuinteDim        = \markup {\hspace #7 {\fret-diagram-terse "6;x;o;5;7;4;"}}
+solNeuf                     = \markup {\hspace #7 {\fret-diagram-terse "5;x;o;4;6;5;"}}
+
+solMinNeuf                  = \markup {\hspace #7 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
+doSeptNeufDiezeQuinteAugm   = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
+faQuinteAugmBis             = \markup {\hspace #7 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
+siSeptMajQuinteAugm         = \markup {\hspace #7 {\fret-diagram-terse "x;1;x;2;3;2;"}}
+miMinSeptQuinteDimNeufBemol = \markup {\hspace #7 {\fret-diagram-terse "2;1;o;o;3;1;"}}
+laSeptSusQuatre             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;3;o;"}}
+laSept                      = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;2;o;"}}
+laBemolSeptQuinteDimNeuf    = \markup {\hspace #7 {\fret-diagram-terse "6;3;4;3;3;x;"}}
+solSept                     = \markup {\hspace #7 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
+doNeuf                      = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;3;x;"}}
 
 tabTablePath = 
     \markup
@@ -202,37 +204,44 @@ tabTablePath =
 tabTable = \once \override NoteHead.stencil = 
     #(lambda (grob) (grob-interpret-markup grob tabTablePath))
 
+% couplet 
+
+coupletBasse = {
+  <d a>2-\reSept        <d a>
+  <d a>-\solSeptReBasse <d a>-\doNeufReBasse
+}
+
+coupletBasseSimple = {
+  <d a>2 <d a>
+  <d a>  <d a>
+}
+
 couplet = {
   \arpeggioArrowUp
   <fis' c'' d''>1\arpeggio
   <f' b' d''>2\arpeggio <e' bes' d''>2\arpeggio
 }
-coupletBasse = {
-  <d a>2^\reSept <d a>
-  d^\solSeptReBasse d^\doNeufReBasse
-}
-coupletBasseSimple = {
-  <d a>2  <d a>
-  d  d 
-}
 
-qweOne = #(define-music-function
-     (mus bas)
+strumOne = #(define-music-function
+     (chord bass)
      (string-or-music? string-or-music? )
    #{
-     r8. #mus \tabTable d''8 #bas r8. #mus \tabTable d''8 #bas
-   #})
-qweTwo= #(define-music-function
-     (mus1 bas1 mus2 bas2 )
-     (string-or-music? string-or-music? string-or-music? string-or-music?)
-   #{
-     r8. #mus1 \tabTable d''8 #bas1 r8. #mus2 \tabTable d''8 #bas2
+     r8. #chord r8 \tabTable #bass r8. #chord r8 \tabTable #bass
    #})
 
-coupletRythme = {
-  \qweOne { <fis' c'' d''>16 } { d'8 }
-  \qweTwo { <f'   b'  d''>16 } { d'8 } { <e' bes' d''>16 } { d'8 }
+strumTwo= #(define-music-function
+     (chord1 bass1 chord2 bass2 )
+     (string-or-music? string-or-music? string-or-music? string-or-music?)
+   #{
+     r8. #chord1 r8 \tabTable #bass1 r8. #chord2 r8 \tabTable #bass2
+   #})
+
+coupletStrum = {
+  \strumOne { <fis' c'' d''>16 } { d8 }
+  \strumTwo { <f'   b'  d''>16 } { d8 } { <e' bes' d''>16 } { d8 }
 }
+
+% refrain 
 
 refrain = {
   <f' bes' d''>1\arpeggio
@@ -253,68 +262,71 @@ refrain = {
   <c' ges' bes' eeses'' >1\arpeggio
   <d' f' b' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
 }
-refrainRythme =  {
-  \qweOne { <f' bes' d''>16 }  { g8 }
-  \qweOne { <e' bes' dis''>16 }  { c'8 }
-  \qweOne { <a' cis'' e''>16 }  { f8 }
-  \qweOne { <a' d'' f''>16 }  { bes8 }
-  \qweOne { <bes' d'' fis''>16 }  { e8 }
-  \qweOne { <e' bes' cis'' g''>16 }  { a8 }
-  \qweOne { <eeses' c'' ges'' aes''>16 }  { aes8 }
-  \qweOne { <d' b' f'' a''>16 }  { g8 }
 
-  \qweOne { <f' bes' d'' a''>16 }  { g8 }
-  \qweOne { <e' bes' dis'' aes''>16 }  { c'8 }
-  \qweOne { <e' a' cis'' g'' >16 }  { f8 }
-  \qweOne { <a' d'' fis''>16 }  { bes8 }
-  \qweOne { <bes d' g' d'' f''>16 }  { e8 }
-  \qweTwo { <g' d'' e''>16  }  { a8 } {<g' cis'' e''>16 }  { a8 }
-  \qweOne { <c' ges' bes' eeses'' >16 }  { aes8 }
-  \qweTwo { <d' f' b' d'' >16 }  { g8 } {<e' bes' d'' >16 } { c'8 }
+refrainRythme =  {
+  \strumOne { <f' bes' d''>16 }  { g8 }
+  \strumOne { <e' bes' dis''>16 }  { c'8 }
+  \strumOne { <a' cis'' e''>16 }  { f8 }
+  \strumOne { <a' d'' f''>16 }  { bes8 }
+  \strumOne { <bes' d'' fis''>16 }  { e8 }
+  \strumOne { <e' bes' cis'' g''>16 }  { a8 }
+  \strumOne { <eeses' c'' ges'' aes''>16 }  { aes8 }
+  \strumOne { <d' b' f'' a''>16 }  { g8 }
+
+  \strumOne { <f' bes' d'' a''>16 }  { g8 }
+  \strumOne { <e' bes' dis'' aes''>16 }  { c'8 }
+  \strumOne { <e' a' cis'' g'' >16 }  { f8 }
+  \strumOne { <a' d'' fis''>16 }  { bes8 }
+  \strumOne { <bes d' g' d'' f''>16 }  { e8 }
+  \strumTwo { <g' d'' e''>16  }  { a8 } {<g' cis'' e''>16 }  { a8 }
+  \strumOne { <c' ges' bes' eeses'' >16 }  { aes8 }
+  \strumTwo { <d' f' b' d'' >16 }  { g8 } {<e' bes' d'' >16 } { c'8 }
 }
 
-refrainBasse = \relative g {
-  g2^\solMineurSept g
-  c^\doSeptNeufDieze c
-  f,^\faQuinteAugm f
-  bes^\siSeptMaj bes
-  e,^\miMinSeptQuinteDimNeufDieze e
-  a^\laSeptNeufBemol a
-  aes^\laBemolSeptQuinteDim aes
-  g^\solNeuf g
+refrainBasse =  {
+  g2-\solMineurSept               g
+  c'-\doSeptNeufDieze             c'
+  f-\faQuinteAugm                 f
+  bes-\siSeptMaj                  bes
+  e-\miMinSeptQuinteDimNeufDieze  e
+  a-\laSeptNeufBemol              a
+  aes-\laBemolSeptQuinteDim       aes
+  g-\solNeuf                      g
 
-  g^\solMinNeuf g
-  c^\doSeptNeufDiezeQuinteAugm c
-  f,^\faQuinteAugmBis f
-  bes^\siSeptMajQuinteAugm bes
-  e,^\miMinSeptQuinteDimNeufBemol e
-  a^\laSeptSusQuatre a^\laSept
-  aes^\laBemolSeptQuinteDimNeuf aes
-  g^\solSept c^\doNeuf
+  g-\solMinNeuf                   g
+  c'-\doSeptNeufDiezeQuinteAugm   c'
+  f-\faQuinteAugmBis              f
+  bes-\siSeptMajQuinteAugm        bes
+  e-\miMinSeptQuinteDimNeufBemol  e
+  a-\laSeptSusQuatre              a-\laSept
+  aes-\laBemolSeptQuinteDimNeuf   aes
+  g-\solSept                      c-\doNeuf
 }
 refrainBasseSimple = \relative g {
-  g2    g
-  c     c
-  f,    f
-  bes   bes
-  e,  e
-  a  a
-  aes  aes
-  g  g
-
-  g  g
-  c  c
+  g2  g
+  c   c
   f,  f
-  bes  bes
+  bes bes
   e,  e
-  a  a 
-  aes  aes
-  g  c 
+  a   a
+  aes aes
+  g   g
+
+  g   g
+  c   c
+  f,  f
+  bes bes
+  e,  e
+  a   a 
+  aes aes
+  g   c 
 }
 
+% coda
+
 codaRythme = {
-  \qweOne { <gis' d'' gis''>16 } { d'8 }
-  \qweOne { <gis' d'' gis''>16 } { d'8 }
+  \strumOne { <gis' d'' gis''>16 } { d'8 }
+  \strumOne { <gis' d'' gis''>16 } { d'8 }
   <gis' d'' gis''>1\arpeggio
 }
 
@@ -323,6 +335,7 @@ codaBasse = {
   <d a d'>1
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \header
 {
@@ -338,31 +351,31 @@ codaBasse = {
 
 \score {
 
-<<
-  \new ChordNames {
-    \chordmode { 
-      d1:7 
-      g2:7/d c:9/d
+  <<
+    \new ChordNames {
+      \chordmode { 
+        d1:7 
+        g2:7/d c:9/d
 
-      g1:m7
-      c:7.9+
-      f:7+.5+
-      bes:7+
-      e:m7.5-.9
-      a:7.9-
-      aes:7.5-
-      g:7.9
-      
-      g:m7.9
-      c:7.9+.13-
-      f:7+.5+.9
-      bes:7+.5+
-      e:m7.5-.9-
-      a2:7sus4 a:7
-      aes1:7.5-.9
-      g2:7 c:9
-    } 
-  }
+        g1:m7
+        c:7.9+
+        f:7+.5+
+        bes:7+
+        e:m7.5-.9
+        a:7.9-
+        aes:7.5-
+        g:7.9
+        
+        g:m7.9
+        c:7.9+.13-
+        f:7+.5+.9
+        bes:7+.5+
+        e:m7.5-.9-
+        a2:7sus4 a:7
+        aes1:7.5-.9
+        g2:7 c:9
+      } 
+    }
 
   \new Staff = "main" {
     \set Staff.instrumentName = \markup \center-column {
@@ -380,12 +393,12 @@ codaBasse = {
         \repeat volta 4 \couplet 
         \refrain
         \repeat volta 2 \couplet
-        \repeat volta 2 \coupletRythme
-        \repeat volta 8 \coupletRythme
-        \repeat unfold 4 \coupletRythme
+        \repeat volta 2 \coupletStrum
+        \repeat volta 8 \coupletStrum
+        \repeat unfold 4 \coupletStrum
         \refrainRythme
         \repeat volta 2 \couplet
-        \repeat volta 8 \coupletRythme
+        \repeat volta 8 \coupletStrum
         \refrainRythme
         \codaRythme
       }
@@ -426,13 +439,12 @@ codaBasse = {
           } \relative d' {
           \key g \major
           f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
-          f8. d16~ d2 g16 f g a | f2 r2| 
-          f8. d16~ d2 g16 f g a | f8. d16~ d2. | 
+          f8. d16~ d2 g16 f g a | f2 r2 | 
+          f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
           f8. d16~ d2 g16 f g a | f2 r8 d'16 a g f d8 | 
           }
           \bar ":|.|:" 
           \repeat unfold 4 \coupletBasseSimple
-          % \mark \markup { \tiny  "4x"} 
           \break
         >>
         <<
@@ -581,6 +593,7 @@ codaBasse = {
     \override Lyrics.LyricText.font-size = #-1
   
   }
+
   \midi { 
     \tempo 4 = 70
   }
