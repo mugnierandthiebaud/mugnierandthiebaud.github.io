@@ -179,7 +179,7 @@ siSeptMaj                   = \markup {\hspace #7 {\fret-diagram-terse "x;1;x;2;
 miMinSeptQuinteDimNeufDieze = \markup {\hspace #7 {\fret-diagram-terse "2;x;x;3;3;2;"}}
 laSeptNeufBemol             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;3;2;3;"}}
 laBemolSeptQuinteDim        = \markup {\hspace #7 {\fret-diagram-terse "6;x;o;5;7;4;"}}
-solNeuf                     = \markup {\hspace #7 {\fret-diagram-terse "5;x;o;4;6;5;"}}
+solSept                     = \markup {\hspace #7 {\fret-diagram-terse "5;x;o;4;6;5;"}}
 
 solMinNeuf                  = \markup {\hspace #7 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
 doSeptNeufDiezeQuinteAugm   = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
@@ -189,7 +189,7 @@ miMinSeptQuinteDimNeufBemol = \markup {\hspace #7 {\fret-diagram-terse "2;1;o;o;
 laSeptSusQuatre             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;3;o;"}}
 laSept                      = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;2;o;"}}
 laBemolSeptQuinteDimNeuf    = \markup {\hspace #7 {\fret-diagram-terse "6;3;4;3;3;x;"}}
-solSept                     = \markup {\hspace #7 {\fret-diagram-terse "5;5;3-(;4;3-);x;"}}
+solNeuf                     = \markup {\hspace #7 {\fret-diagram-terse "5;2-(;3;2-);3;x;"}}
 doNeuf                      = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;3;x;"}}
 
 tabTablePath = 
@@ -260,7 +260,7 @@ refrain = {
   <bes d' g' d'' f''>1\arpeggio
   <g' d'' e''>2\arpeggio  <g' cis'' e''>2\arpeggio
   <c' ges' bes' eeses'' >1\arpeggio
-  <d' f' b' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
+  <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
 }
 
 refrainRythme =  {
@@ -280,7 +280,7 @@ refrainRythme =  {
   \strumOne { <bes d' g' d'' f''>16 }  { e8 }
   \strumTwo { <g' d'' e''>16  }  { a8 } {<g' cis'' e''>16 }  { a8 }
   \strumOne { <c' ges' bes' eeses'' >16 }  { aes8 }
-  \strumTwo { <d' f' b' d'' >16 }  { g8 } {<e' bes' d'' >16 } { c'8 }
+  \strumTwo { <b f' a' d'' >16 }  { g8 } {<e' bes' d'' >16 } { c'8 }
 }
 
 refrainBasse =  {
@@ -291,7 +291,7 @@ refrainBasse =  {
   e-\miMinSeptQuinteDimNeufDieze  e
   a-\laSeptNeufBemol              a
   aes-\laBemolSeptQuinteDim       aes
-  g-\solNeuf                      g
+  g-\solSept                      g
 
   g-\solMinNeuf                   g
   c'-\doSeptNeufDiezeQuinteAugm   c'
@@ -300,7 +300,7 @@ refrainBasse =  {
   e-\miMinSeptQuinteDimNeufBemol  e
   a-\laSeptSusQuatre              a-\laSept
   aes-\laBemolSeptQuinteDimNeuf   aes
-  g-\solSept                      c-\doNeuf
+  g-\solNeuf                      c-\doNeuf
 }
 
 refrainBasseSimple = \relative g {
