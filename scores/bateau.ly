@@ -302,6 +302,7 @@ refrainBasse =  {
   aes-\laBemolSeptQuinteDimNeuf   aes
   g-\solSept                      c-\doNeuf
 }
+
 refrainBasseSimple = \relative g {
   g2  g
   c   c
@@ -355,7 +356,7 @@ codaBasse = {
     \new ChordNames {
       \chordmode { 
         d1:7 
-        g2:7/d c:9/d
+        g2:7/d      c:9/d
 
         g1:m7
         c:7.9+
@@ -371,9 +372,9 @@ codaBasse = {
         f:7+.5+.9
         bes:7+.5+
         e:m7.5-.9-
-        a2:7sus4 a:7
+        a2:7sus4    a:7
         aes1:7.5-.9
-        g2:7 c:9
+        g2:9        c:9
       } 
     }
 
