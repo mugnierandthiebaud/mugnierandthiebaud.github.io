@@ -204,6 +204,40 @@ tabTablePath =
 tabTable = \once \override NoteHead.stencil = 
     #(lambda (grob) (grob-interpret-markup grob tabTablePath))
 
+strumOne = #(define-music-function
+     (chord)
+     (string-or-music?)
+   #{
+     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+   #})
+
+strumTwo= #(define-music-function
+     (chord1 chord2)
+     (string-or-music? string-or-music?)
+   #{
+     bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+     bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+   #})
+
+strumOneBis = #(define-music-function
+     (long short bass next)
+     (string-or-music? string-or-music? string-or-music? string-or-music?)
+   #{
+     #long #short a'8\rest #bass #short 
+     #long #short a'8.\rest      #next  
+   #})
+
+strumTwoBis= #(define-music-function
+     (long1 short1 bass long2 short2 short2bis next)
+     (string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music?)
+   #{
+     \arpeggioArrowDown
+     #long1 #short1 a'8\rest #bass #short2
+     #long2 #short2bis a'8.\rest      #next
+   #})
+
+
 % couplet 
 
 coupletBasse = {
@@ -221,22 +255,6 @@ couplet = {
   <fis' c'' d''>1\arpeggio
   <f' b' d''>2\arpeggio <e' bes' d''>2\arpeggio
 }
-
-strumOne = #(define-music-function
-     (chord)
-     (string-or-music?)
-   #{
-     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-   #})
-
-strumTwo= #(define-music-function
-     (chord1 chord2)
-     (string-or-music? string-or-music?)
-   #{
-     bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-     bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-   #})
 
 coupletStrum = {
   \strumOne { <fis' c'' d''>16 }
@@ -274,7 +292,7 @@ refrain = {
   <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
 }
 
-refrainRythme =  {
+refrainStrum =  {
   \strumOne { <f' bes' d''>16 } 
   \strumOne { <e' bes' dis''>16 } 
   \strumOne { <a' cis'' e''>16 } 
@@ -292,6 +310,80 @@ refrainRythme =  {
   \strumTwo { <g' d'' e''>16  }  {<g' cis'' e''>16 } 
   \strumOne { <c' ges' bes' d'' >16 } 
   \strumTwo { <b f' a' d'' >16 }  {<e' bes' d'' >16 }
+}
+
+% refrain 
+refrainStrunBis =  {
+  \strumOneBis { <f'     bes'  d''         >8.} 
+               { <f'     bes'  d''         >16~} 
+               { g16 }
+               { <e'     bes'  dis''       >16~\arpeggio } 
+  \strumOneBis { <e'     bes'  dis''       >8.} 
+               { <e'     bes'  dis''       >16~} 
+               { c'16 }
+               { <a'     cis'' e''         >16~\arpeggio} 
+  \strumOneBis { <a'     cis'' e''         >8.} 
+               { <a'     cis'' e''         >16~} 
+               { f16 }
+               { <a'     d''   f''         >16~\arpeggio} 
+  \strumOneBis { <a'     d''   f''         >8.}
+               { <a'     d''   f''         >16~} 
+               { bes16 }
+               { <bes'   d''   fis''       >16~\arpeggio} 
+  \strumOneBis { <bes'   d''   fis''       >8.} 
+               { <bes'   d''   fis''       >16~} 
+               { e16 }
+               { <e'     bes'  cis'' g''   >16~\arpeggio} 
+  \strumOneBis { <e'     bes'  cis'' g''   >8.} 
+               { <e'     bes'  cis'' g''   >16~} 
+               { a16 }
+               { <eeses' c''   ges'' aes'' >16~\arpeggio} 
+  \strumOneBis { <eeses' c''   ges'' aes'' >8.} 
+               { <eeses' c''   ges'' aes'' >16~} 
+               { aes16 }
+               { <d'     b'    f''   a''   >16~\arpeggio} 
+  \strumOneBis { <d'     b'    f''   a''   >8.} 
+               { <d'     b'    f''   a''   >16~} 
+               { g16 }
+               { <f'     bes'  d''   a''   >16~\arpeggio}
+  \strumOneBis { <f'     bes'  d''   a''   >8.}
+               { <f'     bes'  d''   a''   >16~} 
+               { g16 }
+               { <e'     bes'  dis'' aes'' >16~\arpeggio} 
+  \strumOneBis { <e'     bes'  dis'' aes'' >8.} 
+               { <e'     bes'  dis'' aes'' >16~} 
+               { c'16 }
+               { <e'     a'    cis'' g''   >16~\arpeggio} 
+  \strumOneBis { <e'     a'    cis'' g''   >8.} 
+               { <e'     a'    cis'' g''   >16~} 
+               { f16 }
+               { <a'     d''         fis'' >16~\arpeggio} 
+  \strumOneBis { <a'     d''         fis'' >8.} 
+               { <a'     d''         fis'' >16~} 
+               { bes16 }
+               { <bes d'     g'  d'' f''   >16~\arpeggio} 
+  \strumOneBis { <bes d'     g'  d'' f''   >8.} 
+               { <bes d'     g'  d'' f''   >16~} 
+               { e16 }
+               { <e' g'  d''   e''         >16~\arpeggio} 
+  \strumTwoBis { <e' g'  d''   e''         >8.} 
+               { <e' g'  d''   e''         >16~} 
+               { a16 }
+               { <e' g'  cis'' e''         >8.} 
+               { <e' g'  cis'' e''         >16~\arpeggio} 
+               { <e' g'  cis'' e''         >16} 
+               { <c'     ges'  bes' d''    >16~\arpeggio} 
+  \strumOneBis { <c'     ges'  bes' d''    >8.} 
+               { <c'     ges'  bes' d''    >16~} 
+               { aes16 }
+               { <b      f'    a' d''      >16~\arpeggio} 
+  \strumTwoBis { <b      f'    a' d''      >8.} 
+               { <b      f'    a' d''      >16~}
+               { g16 }
+               { <e'     bes'  d''         >8.}
+               { <e'     bes'  d''         >16~\arpeggio}
+               { <e'     bes'  d''         >16}
+               { <gis'   d''   gis''       >16~\arpeggio}
 }
 
 refrainBasse =  {
@@ -336,10 +428,18 @@ refrainBasseSimple = \relative g {
 
 % coda
 
-codaRythme = {
+codaStrum = {
   \strumOne { <gis' d'' gis''>16 }
   \strumOne { <gis' d'' gis''>16 }
   <d a d' gis' d'' gis''>1
+  \arpeggio 
+  \laissezVibrer
+}
+
+codaStrumBis = {
+  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { <gis' d'' gis''>16~ \arpeggio}
+  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { \once \override Accidental #'stencil = ##f \tabTable a'16 }
+  <d a d' gis' d'' gis''>1 
   \arpeggio 
   \laissezVibrer
 }
@@ -409,11 +509,52 @@ codaBasse = {
         \repeat volta 2 \coupletStrum
         \repeat volta 8 \coupletStrum
         \repeat unfold 4 \coupletStrum
-        \refrainRythme
-        \repeat volta 2 \couplet
-        \repeat volta 8 \coupletStrum
-        \refrainRythme
-        \codaRythme
+        \refrainStrum
+        \couplet
+        {
+          { <fis' c'' d''>1 \arpeggio }
+          { 
+            <f' b' d''>2 \arpeggio
+            <e' bes' d''>4.. \arpeggio
+            \arpeggioArrowDown
+            <fis' c''  d''>16~\arpeggio
+          }
+        }
+        \break
+        \repeat volta 8 {
+          {
+              <fis' c''  d''>8.
+              <fis' c''  d''>16 
+              a'8 \rest
+              d16
+              <fis' c''  d''>16~\arpeggio
+
+              <fis' c''  d''>8.
+              <fis' c''  d''>16
+              a'8. \rest
+              <f'   b'   d''>16~\arpeggio
+
+              <f'   b'   d''>8.
+              <f'   b'   d''>16
+              a'8 \rest
+              d16
+              <e'   bes' d''>16~\arpeggio
+
+              <e'   bes' d''>8.
+              <e'   bes' d''>16
+              a'8. \rest
+              % ...
+          } 
+        }
+        \alternative {
+          { <fis' c''  d''>16 \arpeggio
+          } 
+          { <f'   bes' d''>16~\arpeggio
+          } 
+        }
+        \break
+        \refrainStrunBis
+        \codaStrumBis
       }
       \new Voice = "two" {
         \voiceTwo
@@ -477,15 +618,17 @@ codaBasse = {
           \refrainBasseSimple
         >>
 
+        \break
         \key g \major
-        \bar ".|:" 
-        \repeat volta 2 \coupletBasseSimple
-        \mark \markup { \tiny  "2x"} 
+        \coupletBasseSimple
+        \coupletBasseSimple
         \break
         
-        \bar ":|.|:" 
-        \repeat volta 8 \coupletBasseSimple
-        \mark \markup { \tiny  "8x"} 
+        \repeat volta 8 {<d a>2 <d a> | <d a> <d a>4 \hideNotes r8. \unHideNotes } 
+        \alternative {
+          { \hideNotes r16 \unHideNotes \mark \markup { \tiny  "8x"} } 
+          { \hideNotes r16 \unHideNotes } 
+        }
         \break
         
         \key d \minor
@@ -558,6 +701,7 @@ codaBasse = {
         \textThirteen
         \textThirteenAndAHalf
         \textFourteenFifteenSixteenSeventeen
+        \textSilent
         \textSilent
         <<
           \textEighteen
