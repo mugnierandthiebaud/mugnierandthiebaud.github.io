@@ -2,10 +2,10 @@
 
 #(set-global-staff-size 18)
 
-%{
 \paper {
-  page-count = #3
+  page-count = #4
 }
+%{
 %}
 
 textOne = \lyricmode {
@@ -188,7 +188,7 @@ siSeptMajQuinteAugm         = \markup {\hspace #7 {\fret-diagram-terse "x;1;x;2;
 miMinSeptQuinteDimNeufBemol = \markup {\hspace #7 {\fret-diagram-terse "2;1;o;o;3;1;"}}
 laSeptSusQuatre             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;3;o;"}}
 laSept                      = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;2;o;"}}
-laBemolSeptQuinteDimNeuf    = \markup {\hspace #7 {\fret-diagram-terse "6;3;4;3;3;x;"}}
+laBemolNeufOnze             = \markup {\hspace #7 {\fret-diagram-terse "6;3;4;3;3;x;"}}
 solNeuf                     = \markup {\hspace #7 {\fret-diagram-terse "5;2-(;3;2-);3;x;"}}
 doNeuf                      = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;3;x;"}}
 
@@ -223,22 +223,24 @@ couplet = {
 }
 
 strumOne = #(define-music-function
-     (chord bass)
-     (string-or-music? string-or-music? )
+     (chord)
+     (string-or-music?)
    #{
-     r8. #chord r8 \tabTable #bass r8. #chord r8 \tabTable #bass
+     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
    #})
 
 strumTwo= #(define-music-function
-     (chord1 bass1 chord2 bass2 )
-     (string-or-music? string-or-music? string-or-music? string-or-music?)
+     (chord1 chord2)
+     (string-or-music? string-or-music?)
    #{
-     r8. #chord1 r8 \tabTable #bass1 r8. #chord2 r8 \tabTable #bass2
+     bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+     bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
    #})
 
 coupletStrum = {
-  \strumOne { <fis' c'' d''>16 } { d8 }
-  \strumTwo { <f'   b'  d''>16 } { d8 } { <e' bes' d''>16 } { d8 }
+  \strumOne { <fis' c'' d''>16 }
+  \strumTwo { <f'   b'  d''>16 } { <e' bes' d''>16 }
 }
 
 % refrain 
@@ -258,29 +260,38 @@ refrain = {
   <e' a' cis'' g'' >1\arpeggio
   <a' d'' fis''>1\arpeggio
   <bes d' g' d'' f''>1\arpeggio
-  <g' d'' e''>2\arpeggio  <g' cis'' e''>2\arpeggio
-  <c' ges' bes' eeses'' >1\arpeggio
+  <<
+    {
+      \voiceTwo
+        <g' e''>1\arpeggio
+    }
+    \new Voice {
+      \voiceOne
+      d''2. cis''4
+    }
+  >>
+  <c' ges' bes' d'' >1\arpeggio
   <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
 }
 
 refrainRythme =  {
-  \strumOne { <f' bes' d''>16 }  { g8 }
-  \strumOne { <e' bes' dis''>16 }  { c'8 }
-  \strumOne { <a' cis'' e''>16 }  { f8 }
-  \strumOne { <a' d'' f''>16 }  { bes8 }
-  \strumOne { <bes' d'' fis''>16 }  { e8 }
-  \strumOne { <e' bes' cis'' g''>16 }  { a8 }
-  \strumOne { <eeses' c'' ges'' aes''>16 }  { aes8 }
-  \strumOne { <d' b' f'' a''>16 }  { g8 }
+  \strumOne { <f' bes' d''>16 } 
+  \strumOne { <e' bes' dis''>16 } 
+  \strumOne { <a' cis'' e''>16 } 
+  \strumOne { <a' d'' f''>16 } 
+  \strumOne { <bes' d'' fis''>16 } 
+  \strumOne { <e' bes' cis'' g''>16 } 
+  \strumOne { <eeses' c'' ges'' aes''>16 } 
+  \strumOne { <d' b' f'' a''>16 } 
 
-  \strumOne { <f' bes' d'' a''>16 }  { g8 }
-  \strumOne { <e' bes' dis'' aes''>16 }  { c'8 }
-  \strumOne { <e' a' cis'' g'' >16 }  { f8 }
-  \strumOne { <a' d'' fis''>16 }  { bes8 }
-  \strumOne { <bes d' g' d'' f''>16 }  { e8 }
-  \strumTwo { <g' d'' e''>16  }  { a8 } {<g' cis'' e''>16 }  { a8 }
-  \strumOne { <c' ges' bes' eeses'' >16 }  { aes8 }
-  \strumTwo { <b f' a' d'' >16 }  { g8 } {<e' bes' d'' >16 } { c'8 }
+  \strumOne { <f' bes' d'' a''>16 } 
+  \strumOne { <e' bes' dis'' aes''>16 } 
+  \strumOne { <e' a' cis'' g'' >16 } 
+  \strumOne { <a' d'' fis''>16 } 
+  \strumOne { <bes d' g' d'' f''>16 } 
+  \strumTwo { <g' d'' e''>16  }  {<g' cis'' e''>16 } 
+  \strumOne { <c' ges' bes' d'' >16 } 
+  \strumTwo { <b f' a' d'' >16 }  {<e' bes' d'' >16 }
 }
 
 refrainBasse =  {
@@ -299,7 +310,7 @@ refrainBasse =  {
   bes-\siSeptMajQuinteAugm        bes
   e-\miMinSeptQuinteDimNeufBemol  e
   a-\laSeptSusQuatre              a-\laSept
-  aes-\laBemolSeptQuinteDimNeuf   aes
+  aes-\laBemolNeufOnze            aes
   g-\solNeuf                      c-\doNeuf
 }
 
@@ -326,8 +337,8 @@ refrainBasseSimple = \relative g {
 % coda
 
 codaRythme = {
-  \strumOne { <gis' d'' gis''>16 } { d'8 }
-  \strumOne { <gis' d'' gis''>16 } { d'8 }
+  \strumOne { <gis' d'' gis''>16 }
+  \strumOne { <gis' d'' gis''>16 }
   <gis' d'' gis''>1\arpeggio
 }
 
@@ -372,8 +383,8 @@ codaBasse = {
         f:7+.5+.9
         bes:7+.5+
         e:m7.5-.9-
-        a2:7sus4    a:7
-        aes1:7.5-.9
+        a2.:7sus4    a4:7
+        aes1:7.9.11+
         g2:9        c:9
       } 
     }
@@ -461,11 +472,10 @@ codaBasse = {
           f8. d16~ d2 g16 f g a | f2 r2| 
           }
 
-        \key d \minor
-        \refrainBasseSimple
-        \break
+          \key d \minor
+          \refrainBasseSimple
         >>
-        
+
         \key g \major
         \bar ".|:" 
         \repeat volta 2 \coupletBasseSimple
