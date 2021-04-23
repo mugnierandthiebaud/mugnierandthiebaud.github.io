@@ -339,12 +339,13 @@ refrainBasseSimple = \relative g {
 codaRythme = {
   \strumOne { <gis' d'' gis''>16 }
   \strumOne { <gis' d'' gis''>16 }
-  <gis' d'' gis''>1\arpeggio
+  <d a d' gis' d'' gis''>1
+  \arpeggio 
+  \laissezVibrer
 }
 
 codaBasse = {
   \repeat unfold 4 <d a d'>2 
-  <d a d'>1
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
