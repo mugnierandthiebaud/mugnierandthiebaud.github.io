@@ -10,7 +10,7 @@
 
 textOne = \lyricmode {
   "Comme je descendais des Fleuves impassibles, " " "
-  "Je ne me sentis plus guidé par les haleurs ; " " "
+  "Je ne me sentis plus guidé par les haleurs : " " "
 } textOneAndAHalf = \lyricmode {
   "Des Peaux-Rouges criards les avaient pris pour cibles, " " "
   "Les ayant cloués nus aux poteaux de couleurs " " "
@@ -23,33 +23,33 @@ textOne = \lyricmode {
 }
 
 textThreeFourFiveSix = \lyricmode {
-  "Dans les clapotements furieux des marées," " "
-  "Moi, l’autre hiver, plus sourd que les cerveaux d’enfants," " "
-  "Je courus ! Et les Péninsules démarrées," " "
-  "N’ont pas subi tohu-bohus plus triomphants." " "
+  "Dans les clapotements furieux des marées, " " "
+  "Moi, l’autre hiver, plus sourd que les cerveaux d’enfants,  " " "
+  "Je courus ! Et les Péninsules démarrées " " "
+  "N’ont pas subi tohu-bohus plus triomphants. " " "
 
-  "La tempête a béni mes éveils maritimes." " "
-  "Plus léger qu’un bouchon j’ai dansé sur les flots" " "
-  "Qu’on appelle rouleurs éternels de victimes," " "
-  "Dix nuits, sans regretter l’œil niais des falots." " "
+  "La tempête a béni mes éveils maritimes. " " "
+  "Plus léger qu’un bouchon j’ai dansé sur les flots " " "
+  "Qu’on appelle rouleurs éternels de victimes, " " "
+  "Dix nuits, sans regretter l’œil niais des falots ! " " "
 
-  "Plus douce qu’aux enfants la chair des pommes sures," " "
-  "L’eau verte pénétra ma coque de sapin" " "
-  "Et des taches de vins bleus et des vomissures" " "
-  "Me lava, dispersant gouvernail et grappin." " "
+  "Plus douce qu’aux enfants la chair des pommes sures, " " "
+  "L’eau verte pénétra ma coque de sapin " " "
+  "Et des taches de vins bleus et des vomissures " " "
+  "Me lava, dispersant gouvernail et grappin. " " "
 
-  "Et dès lors, je me suis baigné dans le poème" " "
-  "De la mer, infusé d’astres, et lactescent," " "
-  "Dévorant les azurs verts où, flottaison blême" " "
-  "Et ravie, un noyé pensif parfois descend," " "
+  "Et dès lors, je me suis baigné dans le Poème " " "
+  "De la Mer, infusé d’astres, et lactescent, " " "
+  "Dévorant les azurs verts ; où, flottaison blême " " "
+  "Et ravie, un noyé pensif parfois descend ; " " "
 }
 
 textSeven=  \lyricmode {
-  "Où, teignant tout à coup les bleuités, délires" " "
-  "Et rythmes lents sous les rutilements du jour," " "
+  "Où, teignant tout à coup les bleuités, délires " " "
+  "Et rythmes lents sous les rutilements du jour, " " "
 } textSevenAndAHalf =  \lyricmode {
-  "Plus fortes que l’alcool, plus vastes que nos lyres," " "
-  "Fermentent les rousseurs amères de l’amour." " "
+  "Plus fortes que l’alcool, plus vastes que nos lyres, " " "
+  "Fermentent les rousseurs amères de l’amour ! " " "
 }
 
 textSilent =  \lyricmode {
@@ -59,111 +59,111 @@ textSilent =  \lyricmode {
 }
 
 textHeight =  \lyricmode {
-  "Je sais les cieux crevant en éclairs, et les trombes," " "
-  "Et les ressacs, et les courants, je sais le soir," " "
+  "Je sais les cieux crevant en éclairs, et les trombes " " "
+  "Et les ressacs, et les courants : je sais le soir, " " "
 } textHeightndAHalf = \lyricmode {
-  "L’aube exaltée ainsi qu’un peuple de colombes," " "
-  "Et j’ai vu quelquefois ce que l’homme a cru voir." " "
+  "L’Aube exaltée ainsi qu’un peuple de colombes, " " "
+  "Et j’ai vu quelquefois ce que l’homme a cru voir ! " " "
 } textNine = \lyricmode {
-  "J’ai vu le soleil bas taché d’horreurs mystiques" " "
-  "Illuminant de longs figements violets," " "
+  "J’ai vu le soleil bas, taché d’horreurs mystiques, " " "
+  "Illuminant de longs figements violets, " " "
 } textNineAndAHalf = \lyricmode {
-  "Pareils à des acteurs de drames très antiques," " "
-  "Les flots roulant au loin leurs frissons de volets ;" " "
+  "Pareils à des acteurs de drames très antiques " " "
+  "Les flots roulant au loin leurs frissons de volets ! " " "
 } textTen = \lyricmode {
-  "J’ai rêvé la nuit verte aux neiges éblouies," " "
-  "Baisers montant aux yeux des mers avec lenteur," " "
+  "J’ai rêvé la nuit verte aux neiges éblouies, " " "
+  "Baisers montant aux yeux des mers avec lenteurs, " " "
 } textTenAndAHalf = \lyricmode {
-  "La circulation des sèves inouïes" " "
-  "Et l’éveil jaune et bleu des phosphores chanteurs." " "
+  "La circulation des sèves inouïes, " " "
+  "Et l’éveil jaune et bleu des phosphores chanteurs ! " " "
 } textEleven = \lyricmode {
-  "J’ai suivi des mois pleins, pareille aux vacheries" " "
-  "Hystériques, la houle à l’assaut des récifs," " "
+  "J’ai suivi, des mois pleins, pareille aux vacheries " " "
+  "Hystériques, la houle à l’assaut des récifs, " " "
 } textElevenAndAHalf = \lyricmode {
-  "Sans songer que les pieds lumineux des Maries" " "
-  "Pussent forcer le muffle aux Océans poussifs ;" " "
+  "Sans songer que les pieds lumineux des Maries " " "
+  "Pussent forcer le mufle aux Océans poussifs ! " " "
 } textTwelve = \lyricmode {
-  "J’ai heurté, savez-vous ? d’incroyables Florides," " "
-  "Mêlant aux fleurs des yeux de panthères, aux peaux" " "
+  "J’ai heurté, savez-vous, d’incroyables Florides " " "
+  "Mêlant aux fleurs des yeux de panthères à peaux " " "
 } textTwelveAndAHalf = \lyricmode {
-  "D’hommes, des arcs-en-ciel tendus comme des brides," " "
-  "Sous l’horizon des mers, à de glauques troupeaux ;" " "
+  "D’hommes ! Des arcs-en-ciel tendus comme des brides " " "
+  "Sous l’horizon des mers, à de glauques troupeaux ! " " "
 } textThirteen = \lyricmode {
-  "J’ai vu fermenter les marais énormes, nasses" " "
-  "Où pourrit dans les joncs tout un Léviathan," " "
+  "J’ai vu fermenter les marais énormes, nasses " " "
+  "Où pourrit dans les joncs tout un Léviathan ! " " "
 } textThirteenAndAHalf = \lyricmode {
-  "Des écroulements d’eaux au milieu des bonaces," " "
-  "Et les lointains vers les gouffres cataractant !" " "
+  "Des écroulements d’eaux au milieu des bonaces, " " "
+  "Et les lointains vers les gouffres cataractant ! " " "
 }
 
 textFourteenFifteenSixteenSeventeen = \lyricmode {
-  "Glaciers, soleils d’argent, flots nacreux, cieux de braises." " "
-  "Echouages hideux au fond des golfes bruns" " "
-  "Où les serpents géants dévorés des punaises" " "
-  "Choient des arbres tordus, avec de noirs parfums." " "
+  "Glaciers, soleils d’argent, flots nacreux, cieux de braises ! " " "
+  "Échouages hideux au fond des golfes bruns " " "
+  "Où les serpents géants dévorés des punaises " " "
+  "Choient, des arbres tordus, avec de noirs parfums ! " " "
 
-  "J’aurais voulu montrer aux enfants ces dorades" " "
-  "Du flot bleu, ces poissons d’or, ces poissons chantants." " "
-  "Des écumes de fleurs ont béni mes dérades" " "
-  "Et d’ineffables vents m’ont ailé par instants." " "
+  "J’aurais voulu montrer aux enfants ces dorades " " "
+  "Du flot bleu, ces poissons d’or, ces poissons chantants. " " "
+  "— Des écumes de fleurs ont bercé mes dérades " " "
+  "Et d’ineffables vents m’ont ailé par instants. " " "
 
-  "Parfois, martyr lassé des pôles et des zones," " "
-  "La mer dont le sanglot faisait mon roulis doux" " "
-  "Montait vers moi ses fleurs d’ombre aux ventouses jaunes" " "
-  "Et je restais, ainsi qu’une femme à genoux," " "
+  "Parfois, martyr lassé des pôles et des zones, " " "
+  "La mer dont le sanglot faisait mon roulis doux " " "
+  "Montait vers moi ses fleurs d’ombre aux ventouses jaunes " " "
+  "Et je restais, ainsi qu’une femme à genoux… " " "
 
-  "Presqu’île, ballottant sur mes bords les querelles" " "
-  "Et les fientes d’oiseaux clabaudeurs aux yeux blonds," " "
-  "Et je voguais, lorsqu’à travers mes liens frêles" " "
-  "Des noyés descendaient dormir, à reculons." " "
+  "Presque île, ballottant sur mes bords les querelles " " "
+  "Et les fientes d’oiseaux clabaudeurs aux yeux blonds. " " "
+  "Et je voguais, lorsqu’à travers mes liens frêles " " "
+  "Des noyés descendaient dormir, à reculons ! " " "
 }
 
 textEighteen = \lyricmode {
-  "Or moi, bateau perdu sous les cheveux des anses," " "
-  "Jeté par l’ouragan dans l’éther sans oiseau," " "
+  "Or moi, bateau perdu sous les cheveux des anses, " " "
+  "Jeté par l’ouragan dans l’éther sans oiseau, " " "
 } textEighteenAndAHalf = \lyricmode {
-  "Moi dont les Monitors et les voiliers des Hanses" " "
-  "N’auraient pas repêché la carcasse ivre d’eau," " "
+  "Moi dont les Monitors et les voiliers des Hanses " " "
+  "N’auraient pas repêché la carcasse ivre d’eau ; " " "
 } textNineteen = \lyricmode {
-  "Libre, fumant, monté de brumes violettes," " "
-  "Moi qui trouais le ciel rougeoyant comme un mur" " "
+  "Libre, fumant, monté de brumes violettes, " " "
+  "Moi qui trouais le ciel rougeoyant comme un mur " " "
 } textNineteenAndAHalf = \lyricmode {
-  "Qui porte, confiture exquise aux bons poètes," " "
-  "Des lichens de soleil et des morves d’azur," " "
+  "Qui porte, confiture exquise aux bons poètes, " " "
+  "Des lichens de soleil et des morves d’azur ; " " "
 } textTwenty = \lyricmode {
-  "Qui courais taché de lunules électriques," " "
-  "Plante folle, escorté des hippocampes noirs," " "
+  "Qui courais, taché de lunules électriques, " " "
+  "Planche folle, escorté des hippocampes noirs, " " "
 } textTwentyAndAHalf = \lyricmode {
-  "Quand les Juillets faisaient crouler à coups de triques" " "
-  "Les cieux ultramarins aux ardents entonnoirs," " "
+  "Quand les Juillets faisaient crouler à coups de triques " " "
+  "Les cieux ultramarins aux ardents entonnoirs ; " " "
 } textTwentyOne = \lyricmode {
-  "Moi qui tremblais, sentant geindre à cinquante lieues" " "
-  "Le rut des Béhémots et les Maelstroms épais," " "
+  "Moi qui tremblais, sentant geindre à cinquante lieues " " "
+  "Le rut des Béhémots et les Maelstroms épais, " " "
 } textTwentyOneAndAHalf = \lyricmode {
-  "Fileur éternel des immobilités bleues," " "
-  "Je regrette l’Europe aux anciens parapets." " "
+  "Fileur éternel des immobilités bleues, " " "
+  "Je regrette l’Europe aux anciens parapets ! " " "
 }
 
 textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
-  "J’ai vu des archipels sidéraux ! Et des îles" " "
-  "Dont les cieux délirants sont ouverts au vogueur :" " "
-  "— Est-ce en ces nuits sans fonds que tu dors et t’exiles," " "
-  "Million d’oiseaux d’or, ô future Vigueur ?" " "
+  "J’ai vu des archipels sidéraux ! Et des îles " " "
+  "Dont les cieux délirants sont ouverts au vogueur : " " "
+  "— Est-ce en ces nuits sans fonds que tu dors et t’exiles, " " "
+  "Million d’oiseaux d’or, ô future Vigueur ? " " "
 
-  "Mais, vrai, j’ai trop pleuré ! Les aubes sont navrantes," " "
-  "Toute lune est atroce et tout soleil amer." " "
-  "L’âcre amour m’a gonflé de torpeurs enivrantes." " "
-  "Oh ! que ma quille éclate ! Oh ! que j’aille à la mer !" " "
+  "Mais, vrai, j’ai trop pleuré ! Les Aubes sont navrantes. " " "
+  "Toute lune est atroce et tout soleil amer : " " "
+  "L’âcre amour m’a gonflé de torpeurs enivrantes. " " "
+  "Ô que ma quille éclate ! Ô que j’aille à la mer ! " " "
 
-  "Si je désire une eau d’Europe, c’est la flache" " "
-  "Noire et froide où, vers le crépuscule embaumé," " "
-  "Un enfant accroupi, plein de tristesse, lâche" " "
-  "Un bateau frêle comme un papillon de mai." " "
+  "Si je désire une eau d’Europe, c’est la flache " " "
+  "Noire et froide où vers le crépuscule embaumé " " "
+  "Un enfant accroupi, plein de tristesse, lâche " " "
+  "Un bateau frêle comme un papillon de mai. " " "
 
-  "Je ne puis plus, baigné de vos langueurs, ô lames," " "
-  "Enlever leur sillage aux porteurs de cotons," " "
-  "Ni traverser l’orgueil des drapeaux et des flammes," " "
-  "Ni nager sous les yeux horribles des pontons !" " "
+  "Je ne puis plus, baigné de vos langueurs, ô lames, " " "
+  "Enlever leur sillage aux porteurs de cotons, " " "
+  "Ni traverser l’orgueil des drapeaux et des flammes, " " "
+  "Ni nager sous les yeux horribles des pontons " " "
 }
 
 % \override #'(fret-diagram-details . ((orientation . landscape))) 
