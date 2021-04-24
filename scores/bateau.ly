@@ -317,73 +317,73 @@ refrainStrunBis =  {
   \strumOneBis { <f'     bes'  d''         >8.} 
                { <f'     bes'  d''         >16~} 
                { g16 }
-               { <e'     bes'  dis''       >16~\arpeggio } 
+               { <e'     bes'  dis''       >16~} 
   \strumOneBis { <e'     bes'  dis''       >8.} 
                { <e'     bes'  dis''       >16~} 
                { c'16 }
-               { <a'     cis'' e''         >16~\arpeggio} 
+               { <a'     cis'' e''         >16~} 
   \strumOneBis { <a'     cis'' e''         >8.} 
                { <a'     cis'' e''         >16~} 
                { f16 }
-               { <a'     d''   f''         >16~\arpeggio} 
+               { <a'     d''   f''         >16~} 
   \strumOneBis { <a'     d''   f''         >8.}
                { <a'     d''   f''         >16~} 
                { bes16 }
-               { <bes'   d''   fis''       >16~\arpeggio} 
+               { <bes'   d''   fis''       >16~} 
   \strumOneBis { <bes'   d''   fis''       >8.} 
                { <bes'   d''   fis''       >16~} 
                { e16 }
-               { <e'     bes'  cis'' g''   >16~\arpeggio} 
+               { <e'     bes'  cis'' g''   >16~} 
   \strumOneBis { <e'     bes'  cis'' g''   >8.} 
                { <e'     bes'  cis'' g''   >16~} 
                { a16 }
-               { <eeses' c''   ges'' aes'' >16~\arpeggio} 
+               { <eeses' c''   ges'' aes'' >16~} 
   \strumOneBis { <eeses' c''   ges'' aes'' >8.} 
                { <eeses' c''   ges'' aes'' >16~} 
                { aes16 }
-               { <d'     b'    f''   a''   >16~\arpeggio} 
+               { <d'     b'    f''   a''   >16~} 
   \strumOneBis { <d'     b'    f''   a''   >8.} 
                { <d'     b'    f''   a''   >16~} 
                { g16 }
-               { <f'     bes'  d''   a''   >16~\arpeggio}
+               { <f'     bes'  d''   a''   >16~}
   \strumOneBis { <f'     bes'  d''   a''   >8.}
                { <f'     bes'  d''   a''   >16~} 
                { g16 }
-               { <e'     bes'  dis'' aes'' >16~\arpeggio} 
+               { <e'     bes'  dis'' aes'' >16~} 
   \strumOneBis { <e'     bes'  dis'' aes'' >8.} 
                { <e'     bes'  dis'' aes'' >16~} 
                { c'16 }
-               { <e'     a'    cis'' g''   >16~\arpeggio} 
+               { <e'     a'    cis'' g''   >16~} 
   \strumOneBis { <e'     a'    cis'' g''   >8.} 
                { <e'     a'    cis'' g''   >16~} 
                { f16 }
-               { <a'     d''         fis'' >16~\arpeggio} 
+               { <a'     d''         fis'' >16~} 
   \strumOneBis { <a'     d''         fis'' >8.} 
                { <a'     d''         fis'' >16~} 
                { bes16 }
-               { <bes d'     g'  d'' f''   >16~\arpeggio} 
+               { <bes d'     g'  d'' f''   >16~} 
   \strumOneBis { <bes d'     g'  d'' f''   >8.} 
                { <bes d'     g'  d'' f''   >16~} 
                { e16 }
-               { <e' g'  d''   e''         >16~\arpeggio} 
+               { <e' g'  d''   e''         >16~} 
   \strumTwoBis { <e' g'  d''   e''         >8.} 
                { <e' g'  d''   e''         >16~} 
                { a16 }
                { <e' g'  cis'' e''         >8.} 
-               { <e' g'  cis'' e''         >16~\arpeggio} 
+               { <e' g'  cis'' e''         >16~} 
                { <e' g'  cis'' e''         >16} 
-               { <c'     ges'  bes' d''    >16~\arpeggio} 
+               { <c'     ges'  bes' d''    >16~} 
   \strumOneBis { <c'     ges'  bes' d''    >8.} 
                { <c'     ges'  bes' d''    >16~} 
                { aes16 }
-               { <b      f'    a' d''      >16~\arpeggio} 
+               { <b      f'    a' d''      >16~} 
   \strumTwoBis { <b      f'    a' d''      >8.} 
                { <b      f'    a' d''      >16~}
                { g16 }
                { <e'     bes'  d''         >8.}
-               { <e'     bes'  d''         >16~\arpeggio}
+               { <e'     bes'  d''         >16~}
                { <e'     bes'  d''         >16}
-               { <gis'   d''   gis''       >16~\arpeggio}
+               { <gis'   d''   gis''       >16~}
 }
 
 refrainBasse =  {
@@ -406,24 +406,24 @@ refrainBasse =  {
   g-\solNeuf                      c-\doNeuf
 }
 
-refrainBasseSimple = \relative g {
+refrainBasseSimple = {
   g2  g
-  c   c
-  f,  f
+  c'   c'
+  f  f
   bes bes
-  e,  e
+  e  e
   a   a
-  aes aes
+  as as
   g   g
 
   g   g
-  c   c
-  f,  f
+  c'   c'
+  f  f
   bes bes
-  e,  e
+  e  e
   a   a 
-  aes aes
-  g   c 
+  as as
+  g   c' 
 }
 
 % coda
@@ -450,10 +450,9 @@ codaBasse = {
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\header
-{
+\header {
   title = "Le Bateau ivre"
-  subtitle = \markup { \abs-fontsize #10 "Lundi 11 juin 2018, 8 h 20 du matin"}
+  subtitle = \markup { \abs-fontsize #10 "lundi 11 juin 2018, 8 h 20 du matin"}
   poet = "Poème de Arthur Rimbaud"
   composer = "Musique de Christophe Thiebaud"
 }
@@ -490,7 +489,7 @@ codaBasse = {
       } 
     }
 
-  \new Staff = "main" {
+  \new Staff = "main" \transpose c' c {
     \set Staff.instrumentName = \markup \center-column {
         "Guitarre"
         { \abs-fontsize #7 \italic "6ème corde en ré" }
@@ -499,10 +498,10 @@ codaBasse = {
 
     <<
       \tempo 4 = 70
-      %{
-      %}
+
       \new Voice = "one" {
         \voiceOne
+
         \repeat volta 4 \couplet 
         \refrain
         \repeat volta 2 \couplet
@@ -516,8 +515,7 @@ codaBasse = {
           { 
             <f' b' d''>2 \arpeggio
             <e' bes' d''>4.. \arpeggio
-            \arpeggioArrowDown
-            <fis' c''  d''>16~\arpeggio
+            <fis' c''  d''>16~
           }
         }
         \break
@@ -527,18 +525,18 @@ codaBasse = {
               <fis' c''  d''>16 
               a'8 \rest
               d16
-              <fis' c''  d''>16~\arpeggio
+              <fis' c''  d''>16~
 
               <fis' c''  d''>8.
               <fis' c''  d''>16
               a'8. \rest
-              <f'   b'   d''>16~\arpeggio
+              <f'   b'   d''>16~
 
               <f'   b'   d''>8.
               <f'   b'   d''>16
               a'8 \rest
               d16
-              <e'   bes' d''>16~\arpeggio
+              <e'   bes' d''>16~
 
               <e'   bes' d''>8.
               <e'   bes' d''>16
@@ -547,9 +545,11 @@ codaBasse = {
           } 
         }
         \alternative {
-          { <fis' c''  d''>16 \arpeggio
+          { 
+            <fis' c''  d''>16\laissezVibrer
           } 
-          { <f'   bes' d''>16~\arpeggio
+          { 
+            <f'   bes' d''>16~
           } 
         }
         \break
@@ -586,16 +586,22 @@ codaBasse = {
         \mark \markup { \tiny  "8x"} 
         \break
         <<
-           \new Staff  \with {
+           \new Staff \with {
             instrumentName = "Flute"
             shortInstrumentName = "Flute"
+            midiInstrument = "flute"
             alignAboveContext = #"main"
-          } \relative d' {
+          } \relative d''' {
           \key g \major
-          f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
-          f8. d16~ d2 g16 f g a | f2 r2 | 
-          f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
-          f8. d16~ d2 g16 f g a | f2 r8 d'16 a g f d8 | 
+          \clef treble
+          f8. d16~ d4  r4        g16 f g a | 
+          f8. d16~ d4  r2                  | 
+          f8. d16~ d4  r4        g16 f g a | 
+          f2           r2                  | 
+          f8. d16~ d4  r4        g16 f g a | 
+          f8. d16~ d4  r2                  | 
+          f8. d16~ d4  r4        g16 f g a | 
+          f2           r8 d'16 a g   f d8  | 
           }
           \bar ":|.|:" 
           \repeat unfold 4 \coupletBasseSimple
@@ -605,13 +611,19 @@ codaBasse = {
            \new Staff  \with {
             instrumentName = "Flute"
             shortInstrumentName = "Flute"
-            alignAboveContext = #"main"
-          } \relative d' {
+            midiInstrument = "flute"
+            alignAboveContext = #"main" 
+          } \relative d''' {
           \key d \minor
-          f8. d16~ d2 g16 f g a | f8. d16~ d2 r4 | 
-          f2.         g16 f g a | f2 r2| 
-          f8. d16~ d2 g16 f g a | f2 r8 d'16 a g f d8 | 
-          f8. d16~ d2 g16 f g a | f2 r2| 
+          \clef treble
+          f8. d16~ d4  r4        g16 f g a | 
+          f8. d16~ d4  r2                  | 
+          f2           r4        g16 f g a | 
+          f2           r2                  | 
+          f8. d16~ d4  r4        g16 f g a | 
+          f2           r8 d'16 a g   f d8  | 
+          f2           r4        g16 f g a | 
+          d,2          r2                  | 
           }
 
           \key d \minor
@@ -638,6 +650,7 @@ codaBasse = {
         \key g \major
         \codaBasse
       }
+      
       \new Lyrics \lyricsto "two" {
         <<
           \textOne
@@ -743,7 +756,7 @@ codaBasse = {
   }
   >>
   \layout {
-    \clef treble
+    \clef "treble_8"
     \time 4/4
     \override LyricText.self-alignment-X = #LEFT
     \override Lyrics.LyricText.font-size = #-1
