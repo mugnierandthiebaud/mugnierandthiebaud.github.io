@@ -193,49 +193,48 @@ solNeuf                     = \markup {\hspace #7 {\fret-diagram-terse "5;2-(;3;
 doNeuf                      = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;3;x;"}}
 
 tabTablePath = 
-    \markup
-    \with-dimensions #'(0 . 0) #'(-4.3 . 2)
-    \path #0.1 
-          #'((moveto    0.05   0.00)
-             (lineto    1.05   1.00)
-             (moveto    1.05   0.00)
-             (lineto    0.05   1.00))
-          
-tabTable = \once \override NoteHead.stencil = 
-    #(lambda (grob) (grob-interpret-markup grob tabTablePath))
+\markup
+\with-dimensions #'(0 . 0) #'(-4.3 . 2)
+\path #0.1 
+#'((moveto    0.05   0.00)
+   (lineto    1.05   1.00)
+   (moveto    1.05   0.00)
+   (lineto    0.05   1.00))
+
+tabTable = \once \override NoteHead.stencil = #(lambda (grob) (grob-interpret-markup grob tabTablePath))
 
 strumOne = #(define-music-function
-     (chord)
-     (string-or-music?)
-   #{
-     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-     bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-   #})
+             (chord)
+             (string-or-music?)
+             #{
+               bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+               bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+             #})
 
-strumTwo= #(define-music-function
-     (chord1 chord2)
-     (string-or-music? string-or-music?)
-   #{
-     bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-     bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-   #})
+strumTwo = #(define-music-function
+             (chord1 chord2)
+             (string-or-music? string-or-music?)
+             #{
+               bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+               bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+             #})
 
 strumOneBis = #(define-music-function
-     (long short bass next)
-     (string-or-music? string-or-music? string-or-music? string-or-music?)
-   #{
-     #long #short a'8\rest #bass #short 
-     #long #short a'8.\rest      #next  
-   #})
+                (long short bass next)
+                (string-or-music? string-or-music? string-or-music? string-or-music?)
+                #{
+                  #long #short a'8\rest #bass #short 
+                  #long #short a'8.\rest      #next  
+                #})
 
-strumTwoBis= #(define-music-function
-     (long1 short1 bass long2 short2 short2bis next)
-     (string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music?)
-   #{
-     \arpeggioArrowDown
-     #long1 #short1 a'8\rest #bass #short2
-     #long2 #short2bis a'8.\rest      #next
-   #})
+strumTwoBis = #(define-music-function
+                (long1 short1 bass long2 short2 short2bis next)
+                (string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music?)
+                #{
+                  \arpeggioArrowDown
+                  #long1 #short1 a'8\rest #bass #short2
+                  #long2 #short2bis a'8.\rest      #next
+                #})
 
 
 % couplet 
@@ -281,7 +280,7 @@ refrain = {
   <<
     {
       \voiceTwo
-        <g' e''>1\arpeggio
+      <g' e''>1\arpeggio
     }
     \new Voice {
       \voiceOne
@@ -408,21 +407,21 @@ refrainBasse =  {
 
 refrainBasseSimple = {
   g2  g
-  c'   c'
-  f  f
+  c'  c'
+  f   f
   bes bes
-  e  e
+  e   e
   a   a
-  as as
+  as  as
   g   g
 
   g   g
-  c'   c'
-  f  f
+  c'  c'
+  f   f
   bes bes
-  e  e
+  e   e
   a   a 
-  as as
+  as  as
   g   c' 
 }
 
@@ -489,38 +488,38 @@ codaBasse = {
       } 
     }
 
-  \new Staff = "main" \transpose c' c {
-    \set Staff.instrumentName = \markup \center-column {
+    \new Staff = "main" \transpose c' c {
+      \set Staff.instrumentName = \markup \center-column {
         "Guitarre"
         { \abs-fontsize #7 \italic "6ème corde en ré" }
-    }
-    \set Staff.midiInstrument = "acoustic guitar (nylon)"
+      }
+      \set Staff.midiInstrument = "acoustic guitar (nylon)"
 
-    <<
-      \tempo 4 = 70
+      <<
+        \tempo 4 = 70
 
-      \new Voice = "one" {
-        \voiceOne
+        \new Voice = "one" {
+          \voiceOne
 
-        \repeat volta 4 \couplet 
-        \refrain
-        \repeat volta 2 \couplet
-        \repeat volta 2 \coupletStrum
-        \repeat volta 8 \coupletStrum
-        \repeat unfold 4 \coupletStrum
-        \refrainStrum
-        \couplet
-        {
-          { <fis' c'' d''>1 \arpeggio }
-          { 
-            <f' b' d''>2 \arpeggio
-            <e' bes' d''>4.. \arpeggio
-            <fis' c''  d''>16~
-          }
-        }
-        \break
-        \repeat volta 8 {
+          \repeat volta 4 \couplet 
+          \refrain
+          \repeat volta 2 \couplet
+          \repeat volta 2 \coupletStrum
+          \repeat volta 8 \coupletStrum
+          \repeat unfold 4 \coupletStrum
+          \refrainStrum
+          \couplet
           {
+            { <fis' c'' d''>1 \arpeggio }
+            { 
+              <f' b' d''>2 \arpeggio
+              <e' bes' d''>4.. \arpeggio
+              <fis' c''  d''>16~
+            }
+          }
+          \break
+          \repeat volta 8 {
+            {
               <fis' c''  d''>8.
               <fis' c''  d''>16 
               a'8 \rest
@@ -542,218 +541,218 @@ codaBasse = {
               <e'   bes' d''>16
               a'8. \rest
               % ...
-          } 
-        }
-        \alternative {
-          { 
-            <fis' c''  d''>16\laissezVibrer
-          } 
-          { 
-            <f'   bes' d''>16~
-          } 
-        }
-        \break
-        \refrainStrunBis
-        \codaStrumBis
-      }
-      \new Voice = "two" {
-        \voiceTwo
-        \override Score.RehearsalMark.break-visibility = #end-of-line-visible
-        \override Score.RehearsalMark.self-alignment-X = #RIGHT
-        \key g \major
-        \bar ".|:" 
-        \repeat volta 4 \coupletBasse 
-        \mark \markup {\tiny  "4x"} 
-        \break
-        
-        \key d \minor
-        \refrainBasse
-        \break
-        
-        \key g \major
-        \bar ".|:" 
-        \repeat volta 2 \coupletBasse
-        \mark \markup { \tiny  "2x"} 
-        \break
-        
-        \bar ":|.|:" 
-        \repeat volta 2 \coupletBasseSimple
-        \mark \markup { \tiny  "2x"} 
-        \break
-        
-        \bar ":|.|:" 
-        \repeat volta 8 \coupletBasseSimple
-        \mark \markup { \tiny  "8x"} 
-        \break
-        <<
-           \new Staff \with {
-            instrumentName = "Flute"
-            shortInstrumentName = "Flute"
-            midiInstrument = "flute"
-            alignAboveContext = #"main"
-          } \relative d''' {
-          \key g \major
-          \clef treble
-          f8. d16~ d4  r4        g16 f g a | 
-          f8. d16~ d4  r2                  | 
-          f8. d16~ d4  r4        g16 f g a | 
-          f2           r2                  | 
-          f8. d16~ d4  r4        g16 f g a | 
-          f8. d16~ d4  r2                  | 
-          f8. d16~ d4  r4        g16 f g a | 
-          f2           r8 d'16 a g   f d8  | 
+            } 
           }
-          \bar ":|.|:" 
-          \repeat unfold 4 \coupletBasseSimple
+          \alternative {
+            { 
+              <fis' c''  d''>16\laissezVibrer
+            } 
+            { 
+              <f'   bes' d''>16~
+            } 
+          }
           \break
-        >>
-        <<
-           \new Staff  \with {
-            instrumentName = "Flute"
-            shortInstrumentName = "Flute"
-            midiInstrument = "flute"
-            alignAboveContext = #"main" 
-          } \relative d''' {
+          \refrainStrunBis
+          \codaStrumBis
+        }
+        \new Voice = "two" {
+          \voiceTwo
+          \override Score.RehearsalMark.break-visibility = #end-of-line-visible
+          \override Score.RehearsalMark.self-alignment-X = #RIGHT
+          \key g \major
+          \bar ".|:" 
+          \repeat volta 4 \coupletBasse 
+          \mark \markup {\tiny  "4x"} 
+          \break
+        
           \key d \minor
-          \clef treble
-          f8. d16~ d4  r4        g16 f g a | 
-          f8. d16~ d4  r2                  | 
-          f2           r4        g16 f g a | 
-          f2           r2                  | 
-          f8. d16~ d4  r4        g16 f g a | 
-          f2           r8 d'16 a g   f d8  | 
-          f2           r4        g16 f g a | 
-          d,2          r2                  | 
-          }
+          \refrainBasse
+          \break
+        
+          \key g \major
+          \bar ".|:" 
+          \repeat volta 2 \coupletBasse
+          \mark \markup { \tiny  "2x"} 
+          \break
+        
+          \bar ":|.|:" 
+          \repeat volta 2 \coupletBasseSimple
+          \mark \markup { \tiny  "2x"} 
+          \break
+        
+          \bar ":|.|:" 
+          \repeat volta 8 \coupletBasseSimple
+          \mark \markup { \tiny  "8x"} 
+          \break
+          <<
+            \new Staff \with {
+              instrumentName = "Flute"
+              shortInstrumentName = "Flute"
+              midiInstrument = "flute"
+              alignAboveContext = #"main"
+            } \relative d''' {
+              \key g \major
+              \clef treble
+              f8. d16~ d4  r4        g16 f g a | 
+              f8. d16~ d4  r2                  | 
+              f8. d16~ d4  r4        g16 f g a | 
+              f2           r2                  | 
+              f8. d16~ d4  r4        g16 f g a | 
+              f8. d16~ d4  r2                  | 
+              f8. d16~ d4  r4        g16 f g a | 
+              f2           r8 d'16 a g   f d8  | 
+            }
+            \bar ":|.|:" 
+            \repeat unfold 4 \coupletBasseSimple
+            \break
+          >>
+          <<
+            \new Staff  \with {
+              instrumentName = "Flute"
+              shortInstrumentName = "Flute"
+              midiInstrument = "flute"
+              alignAboveContext = #"main" 
+            } \relative d''' {
+              \key d \minor
+              \clef treble
+              f8. d16~ d4  r4        g16 f g a | 
+              f8. d16~ d4  r2                  | 
+              f2           r4        g16 f g a | 
+              f2           r2                  | 
+              f8. d16~ d4  r4        g16 f g a | 
+              f2           r8 d'16 a g   f d8  | 
+              f2           r4        g16 f g a | 
+              d,2          r2                  | 
+            }
 
+            \key d \minor
+            \refrainBasseSimple
+          >>
+
+          \break
+          \key g \major
+          \coupletBasseSimple
+          \coupletBasseSimple
+          \break
+        
+          \repeat volta 8 {<d a>2 <d a> | <d a> <d a>4 \hideNotes r8. \unHideNotes } 
+          \alternative {
+            { \hideNotes r16 \unHideNotes \mark \markup { \tiny  "8x"} } 
+            { \hideNotes r16 \unHideNotes } 
+          }
+          \break
+        
           \key d \minor
           \refrainBasseSimple
-        >>
-
-        \break
-        \key g \major
-        \coupletBasseSimple
-        \coupletBasseSimple
-        \break
+          \break
         
-        \repeat volta 8 {<d a>2 <d a> | <d a> <d a>4 \hideNotes r8. \unHideNotes } 
-        \alternative {
-          { \hideNotes r16 \unHideNotes \mark \markup { \tiny  "8x"} } 
-          { \hideNotes r16 \unHideNotes } 
+          \key g \major
+          \codaBasse
         }
-        \break
-        
-        \key d \minor
-        \refrainBasseSimple
-        \break
-        
-        \key g \major
-        \codaBasse
-      }
       
-      \new Lyrics \lyricsto "two" {
-        <<
-          \textOne
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textOneAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwo
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwoAndAHalf
-          }
-        >>
-        \textThreeFourFiveSix
-        <<
-          \textSeven
+        \new Lyrics \lyricsto "two" {
+          <<
+            \textOne
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textOneAndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTwo
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTwoAndAHalf
+            }
+          >>
+          \textThreeFourFiveSix
+          <<
+            \textSeven
 
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textSevenAndAHalf
-          }
-        >>
-        \textSilent
-        <<
-          \textHeight
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textSevenAndAHalf
+            }
+          >>
+          \textSilent
+          <<
+            \textHeight
 
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textHeightndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textNine
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textNineAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTen
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTenAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textEleven
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textElevenAndAHalf
-          }
-        >> 
-        \textTwelve
-        \textTwelveAndAHalf
-        \textThirteen
-        \textThirteenAndAHalf
-        \textFourteenFifteenSixteenSeventeen
-        \textSilent
-        \textSilent
-        <<
-          \textEighteen
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textHeightndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textNine
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textNineAndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTen
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTenAndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textEleven
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textElevenAndAHalf
+            }
+          >> 
+          \textTwelve
+          \textTwelveAndAHalf
+          \textThirteen
+          \textThirteenAndAHalf
+          \textFourteenFifteenSixteenSeventeen
+          \textSilent
+          \textSilent
+          <<
+            \textEighteen
 
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textEighteenAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textNineteen
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textNineteenAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwenty
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwentyAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwentyOne
-          }
-          \new Lyrics {
-            \set associatedVoice = "two"
-            \textTwentyOneAndAHalf
-          }
-        >>
-        \textTwentyTwoTwentyThreeTwentyFourTwentyFive
-      }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textEighteenAndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textNineteen
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textNineteenAndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTwenty
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTwentyAndAHalf
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTwentyOne
+            }
+            \new Lyrics {
+              \set associatedVoice = "two"
+              \textTwentyOneAndAHalf
+            }
+          >>
+          \textTwentyTwoTwentyThreeTwentyFourTwentyFive
+        }
 
-    >>
+      >>
 
-  }
+    }
   >>
   \layout {
     \clef "treble_8"
