@@ -167,30 +167,31 @@ textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
 }
 
 % \override #'(fret-diagram-details . ((orientation . landscape))) 
+qwe = #'(fret-diagram-details . ((number-type . roman-lower) (finger-code . in-dot) (barre-type . straight)))
 
-reSept                      = \markup {\hspace #7 {\fret-diagram-terse "o;o;4;5;3;x;"}}
-solSeptReBasse              = \markup {\hspace #7 {\fret-diagram-terse "o;o;3;4;3;x;"}}
-doNeufReBasse               = \markup {\hspace #7 {\fret-diagram-terse "o;o;2;3;3;x;"}}
-
-solMineurSept               = \markup {\hspace #7 {\fret-diagram-terse "5;x;3-(;3;3-);x;"}}
-doSeptNeufDieze             = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;4;x;"}}
-faQuinteAugm                = \markup {\hspace #7 {\fret-diagram-terse "3;x;x;2;2;o;"}}
-siSeptMaj                   = \markup {\hspace #7 {\fret-diagram-terse "x;1;x;2;3;1;"}}
-miMinSeptQuinteDimNeufDieze = \markup {\hspace #7 {\fret-diagram-terse "2;x;x;3;3;2;"}}
-laSeptNeufBemol             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;3;2;3;"}}
-laBemolSeptQuinteDim        = \markup {\hspace #7 {\fret-diagram-terse "6;x;o;5;7;4;"}}
-solSept                     = \markup {\hspace #7 {\fret-diagram-terse "5;x;o;4;6;5;"}}
-
-solMinNeuf                  = \markup {\hspace #7 {\fret-diagram-terse "5;x;3-(;3;3-);5;"}}
-doSeptNeufDiezeQuinteAugm   = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;4-(;4-);"}}
-faQuinteAugmBis             = \markup {\hspace #7 {\fret-diagram-terse "3;x;2-(;2;2-);3;"}}
-siSeptMajQuinteAugm         = \markup {\hspace #7 {\fret-diagram-terse "x;1;x;2;3;2;"}}
-miMinSeptQuinteDimNeufBemol = \markup {\hspace #7 {\fret-diagram-terse "2;1;o;o;3;1;"}}
-laSeptSusQuatre             = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;3;o;"}}
-laSept                      = \markup {\hspace #7 {\fret-diagram-terse "x;o;2;o;2;o;"}}
-laBemolNeufOnze             = \markup {\hspace #7 {\fret-diagram-terse "6;3;4;3;3;x;"}}
-solNeuf                     = \markup {\hspace #7 {\fret-diagram-terse "5;2-(;3;2-);3;x;"}}
-doNeuf                      = \markup {\hspace #7 {\fret-diagram-terse "x;3;2;3;3;x;"}}
+reSept                      = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "o;o;4-2;5-4;3-1;x;"}}
+solSeptReBasse              = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "o;o;3-1;4-4;3-2;x;"}}
+doNeufReBasse               = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "o;o;2-1;3-3;3-4;x;"}}
+\override \qwe 
+solMineurSept               = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-3;x;3-1-(;3-1;3-1-);x;"}}
+doSeptNeufDieze             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;3-2;2-1;3-3;4-4;x;"}}
+faQuinteAugm                = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "3-3;x;x;2-1;2-2;o;"}}
+siSeptMaj                   = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;1-1;x;2-3;3-4;1-2;"}}
+miMinSeptQuinteDimNeufDieze = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "2-1;x;x;3-3;3-4;2-2;"}}
+laSeptNeufBemol             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;o;2-1;3-2;2-3;3-4;"}}
+laBemolSeptQuinteDim        = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "6-3;x;o;5-2;7-4;4-1;"}}
+solSept                     = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;o;4-1;6-4;5-3;"}}
+\override \qwe 
+solMinNeuf                  = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;3-1-(;3-1;3-1-);5-3;"}}
+doSeptNeufDiezeQuinteAugm   = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;3-2;2-1;3-3;4-4-(;4-4-);"}}
+faQuinteAugmBis             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "3-2;x;2-1-(;2-1;2-1-);3-3;"}}
+siSeptMajQuinteAugm         = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;1-1;x;2-2;3-4;2-3;"}}
+miMinSeptQuinteDimNeufBemol = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "2-3;1-2;o;o;3-4;1-1;"}}
+laSeptSusQuatre             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;o;2-1;o;3-4;o;"}}
+laSept                      = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;o;2-1;o;2-2;o;"}}
+laBemolNeufOnze             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "6-4;3-1-(;4-2;3-1;3-1-);x;"}}
+solNeuf                     = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-4;2-1-(;3-2;2-1-);3-3;x;"}}
+doNeuf                      = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;3-2;2-1;3-3;3-4;x;"}}
 
 tabTablePath = 
 \markup
@@ -386,6 +387,7 @@ refrainStrunBis =  {
 }
 
 refrainBasse =  {
+  
   g2-\solMineurSept               g
   c'-\doSeptNeufDieze             c'
   f-\faQuinteAugm                 f
@@ -759,7 +761,8 @@ codaBasse = {
     \time 4/4
     \override LyricText.self-alignment-X = #LEFT
     \override Lyrics.LyricText.font-size = #-1
-  
+    \override FretBoard.fret-diagram-details.finger-code = #'in-dot
+    \override FretBoard.fret-diagram-details.dot-color = #'white  
   }
 
   \midi { 
