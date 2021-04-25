@@ -172,7 +172,7 @@ qwe = #'(fret-diagram-details . ((number-type . roman-lower) (finger-code . in-d
 reSept                      = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "o;o;4-2;5-4;3-1;x;"}}
 solSeptReBasse              = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "o;o;3-1;4-4;3-2;x;"}}
 doNeufReBasse               = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "o;o;2-1;3-3;3-4;x;"}}
-\override \qwe 
+
 solMineurSept               = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-3;x;3-1-(;3-1;3-1-);x;"}}
 doSeptNeufDieze             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;3-2;2-1;3-3;4-4;x;"}}
 faQuinteAugm                = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "3-3;x;x;2-1;2-2;o;"}}
@@ -181,7 +181,7 @@ miMinSeptQuinteDimNeufDieze = \markup {\hspace #7 \override \qwe {\fret-diagram-
 laSeptNeufBemol             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;o;2-1;3-2;2-3;3-4;"}}
 laBemolSeptQuinteDim        = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "6-3;x;o;5-2;7-4;4-1;"}}
 solSept                     = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;o;4-1;6-4;5-3;"}}
-\override \qwe 
+
 solMinNeuf                  = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;3-1-(;3-1;3-1-);5-3;"}}
 doSeptNeufDiezeQuinteAugm   = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;3-2;2-1;3-3;4-4-(;4-4-);"}}
 faQuinteAugmBis             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "3-2;x;2-1-(;2-1;2-1-);3-3;"}}
@@ -404,7 +404,7 @@ refrainBasse =  {
   e-\miMinSeptQuinteDimNeufBemol  e
   a-\laSeptSusQuatre              a-\laSept
   aes-\laBemolNeufOnze            aes
-  g-\solNeuf                      c-\doNeuf
+  g-\solNeuf                      c'-\doNeuf
 }
 
 refrainBasseSimple = {
