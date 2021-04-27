@@ -183,7 +183,7 @@ laSeptNeufBemol             = \markup {\hspace #7 \override \qwe {\fret-diagram-
 laBemolSeptQuinteDim        = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "6-3;x;o;5-2;7-4;4-1;"}}
 solSept                     = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;o;4-1;6-4;5-3;"}}
 
-solMinNeuf                  = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;3-1-(;3-1;3-1-);5-3;"}}
+solMinNeuf                  = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "5-2;x;o;3-1;6-4-);5-3;"}}
 doSeptNeufDiezeQuinteAugm   = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;3-2;2-1;3-3;4-4-(;4-4-);"}}
 faQuinteAugmBis             = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "3-2;x;2-1-(;2-1;2-1-);3-3;"}}
 siSeptMajQuinteAugm         = \markup {\hspace #7 \override \qwe {\fret-diagram-terse "x;1-1;x;2-2;3-4;2-3;"}}
@@ -207,9 +207,9 @@ tabTable = \once \override NoteHead.stencil = #(lambda (grob) (grob-interpret-ma
 
 strumOne = #(define-music-function
              (chord)
-             (string-or-music?)
+             (ly:music?)
              #{
-               bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+               bes'8.\rest #chord bes'8\rest \shiftDurations #-2 #0 { #chord }
                bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
              #})
 
@@ -275,7 +275,7 @@ refrain = {
   <eeses' c'' ges'' aes''>1\arpeggio
   <d' b' f'' a''>1\arpeggio
 
-  <f' bes' d'' a''>1\arpeggio
+  <d' bes' f'' a''>1\arpeggio
   <e' bes' dis'' aes''>1\arpeggio
   <e' a' cis'' g'' >1\arpeggio
   <a' d'' fis''>1\arpeggio
@@ -304,7 +304,7 @@ refrainStrum =  {
   \strumOne { <eeses' c'' ges'' aes''>16 } 
   \strumOne { <d' b' f'' a''>16 } 
 
-  \strumOne { <f' bes' d'' a''>16 } 
+  \strumOne { <d' bes' f'' a''>16 } 
   \strumOne { <e' bes' dis'' aes''>16 } 
   \strumOne { <e' a' cis'' g'' >16 } 
   \strumOne { <a' d'' fis''>16 } 
@@ -347,9 +347,9 @@ refrainStrunBis =  {
   \strumOneBis { <d'     b'    f''   a''   >8.} 
                { <d'     b'    f''   a''   >16~} 
                { g16 }
-               { <f'     bes'  d''   a''   >16~}
-  \strumOneBis { <f'     bes'  d''   a''   >8.}
-               { <f'     bes'  d''   a''   >16~} 
+               { <d'     bes'  f''   a''   >16~}
+  \strumOneBis { <d'     bes'  f''   a''   >8.}
+               { <d'     bes'  f''   a''   >16~} 
                { g16 }
                { <e'     bes'  dis'' aes'' >16~} 
   \strumOneBis { <e'     bes'  dis'' aes'' >8.} 
