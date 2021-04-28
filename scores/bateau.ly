@@ -206,48 +206,37 @@ doNeuf                      = \markup \fret-diag "x;3-2;2-1;3-3;3-4;x;"
 
 reSeptOnzeDieze             = \markup \fret-diag "o;o;4-2;5-4;3-1;4-3;"
 
-tabTablePath =
-\markup
-\with-dimensions #'(0 . 0) #'(-4.3 . 2)
-\path #0.15
-#'((moveto     0.45   0.40)
-   (lineto    -0.50  -0.45)
-   (moveto    -0.50   0.40)
-   (lineto     0.45  -0.45))
-
-tabTable = \once \override NoteHead.stencil = #(lambda (grob) (grob-interpret-markup grob tabTablePath))
-
 strumOne = #(define-music-function
              (chord)
              (ly:music?)
-             #{
-               bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-               bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+             #{               
+               r8. #chord r8 #chord r16
+               r8. #chord r8 #chord r16 |
              #})
 
 strumTwo = #(define-music-function
              (chord1 chord2)
              (ly:music? ly:music?)
              #{
-               bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
-               bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
+               r8. #chord1 r8 #chord1 r16
+               r8. #chord2 r8 #chord2 r16 |
              #})
 
 strumOneBis = #(define-music-function
                 (long short bass next)
                 (ly:music? ly:music? ly:music? ly:music?)
                 #{
-                  #long #short a'8\rest #bass #short
-                  #long #short a'8.\rest      #next
+                  #long #short r8 #bass #short
+                  #long #short r8.      #next
                 #})
 
 strumTwoBis = #(define-music-function
-                (long1 short1 bass long2 short2 short2bis next)
+                (long1 short1 bass short2 long2 short2bis next)
                 (ly:music? ly:music? ly:music? ly:music? ly:music? ly:music? ly:music?)
                 #{
                   \arpeggioArrowDown
-                  #long1 #short1 a'8\rest #bass #short2
-                  #long2 #short2bis a'8.\rest      #next
+                  #long1 #short1    r8 #bass #short2
+                  #long2 #short2bis r8.      #next
                 #})
 
 
@@ -389,8 +378,8 @@ refrainStrunBis =  {
   \strumTwoBis { <e' g'  d''   e''         >8.}
                { <e' g'  d''   e''         >16~}
                { a16 }
-               { <e' g'  cis'' e''         >8.}
                { <e' g'  cis'' e''         >16~}
+               { <e' g'  cis'' e''         >8.}
                { <e' g'  cis'' e''         >16}
                { <c'     ges'  bes' d''    >16~}
   \strumOneBis { <c'     ges'  bes' d''    >8.}
@@ -400,8 +389,8 @@ refrainStrunBis =  {
   \strumTwoBis { <b      f'    a' d''      >8.}
                { <b      f'    a' d''      >16~}
                { g16 }
-               { <e'     bes'  d''         >8.}
                { <e'     bes'  d''         >16~}
+               { <e'     bes'  d''         >8.}
                { <e'     bes'  d''         >16}
                { <gis'   d''   gis''       >16~}
 }
@@ -462,7 +451,7 @@ codaStrum = {
 codaStrumBis = {
   \arpeggioArrowUp
   \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { <gis' d'' gis''>16~ }
-  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { \once \override Accidental #'stencil = ##f \tabTable a'16 }
+  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { r16 }
   <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
