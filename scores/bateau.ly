@@ -414,7 +414,7 @@ refrainBasse =  {
   f-\faQuinteAugmBis              f           |
   bes-\siSeptMajQuinteAugm        bes         |
   e-\miMinSeptQuinteDimNeufBemol  e           |
-  a2.-\laSeptSusQuatre            a4-\laSept  |
+  a2-\laSeptSusQuatre             a4~ a4-\laSept  |
   aes2-\laBemolNeufOnze           aes         |
   g-\solNeuf                      c'-\doNeuf  |
 }
