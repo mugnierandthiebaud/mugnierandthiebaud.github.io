@@ -253,81 +253,81 @@ strumTwoBis = #(define-music-function
 
 coupletBasse = {
   \voiceTwo
-  <d a>2-\reSept        <d a>
-  <d a>-\solSeptReBasse <d a>-\doNeufReBasse
+  <d a>2-\reSept        <d a>                |
+  <d a>-\solSeptReBasse <d a>-\doNeufReBasse |
 }
 
 coupletBasseSimple = {
   \voiceTwo
-  <d a>2 <d a>
-  <d a>  <d a>
+  <d a>2 <d a> |
+  <d a>  <d a> |
 }
 
 couplet = {
   \voiceOne
   \arpeggioArrowUp
-  <fis' c'' d''>1\arpeggio
-  <f' b' d''>2\arpeggio <e' bes' d''>2\arpeggio
+  <fis' c'' d''>1\arpeggio                       |
+  <f' b' d''>2\arpeggio <e' bes' d''>2\arpeggio  |
 }
 
 coupletStrum = {
   \voiceOne
-  \strumOne { <fis' c'' d''>16 }
-  \strumTwo { <f'   b'  d''>16 } { <e' bes' d''>16 }
+  \strumOne { <fis' c'' d''>16 }                     |
+  \strumTwo { <f'   b'  d''>16 } { <e' bes' d''>16 } |
 }
 
 % refrain
 
 refrain = {
   \voiceOne
-  <f' bes' d''>1\arpeggio
-  <e' bes' dis''>1\arpeggio
-  <a' cis'' e''>1\arpeggio
-  <a' d'' f''>1\arpeggio
-  <bes' d'' fis''>1\arpeggio
-  <e' bes' cis'' g''>1\arpeggio
-  <eeses' c'' ges'' aes''>1\arpeggio
-  <d' b' f'' a''>1\arpeggio
+  <f' bes' d''>1\arpeggio             |
+  <e' bes' dis''>\arpeggio            |
+  <a' cis'' e''>\arpeggio             |
+  <a' d'' f''>\arpeggio               |
+  <bes' d'' fis''>\arpeggio           |
+  <e' bes' cis'' g''>\arpeggio        |
+  <eeses' c'' ges'' aes''>\arpeggio   |
+  <d' b' f'' a''>\arpeggio            |
 
-  <d' bes' f'' a''>1\arpeggio
-  <e' bes' dis'' aes''>1\arpeggio
-  <e' a' cis'' g'' >1\arpeggio
-  <a' d'' fis''>1\arpeggio
-  <bes d' g' d'' f''>1\arpeggio
+  <d' bes' f'' a''>\arpeggio          |
+  <e' bes' dis'' aes''>\arpeggio      |
+  <e' a' cis'' g'' >\arpeggio         |
+  <a' d'' fis''>\arpeggio             |
+  <bes d' g' d'' f''>\arpeggio        |
   <<
     {
       \voiceTwo
-      <g' e''>1\arpeggio
+      <g' e''>1\arpeggio              |
     }
     \new Voice {
       \voiceOne
-      d''2. cis''4
+      d''2. cis''4                    |
     }
   >>
-  <c' ges' bes' d'' >1\arpeggio
-  <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio
+  <c' ges' bes' d'' >1\arpeggio       |
+  <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio |
 }
 
 refrainStrum =  {
   \voiceOne
-  \strumOne { <f' bes' d''>16 }
-  \strumOne { <e' bes' dis''>16 }
-  \strumOne { <a' cis'' e''>16 }
-  \strumOne { <a' d'' f''>16 }
-  \strumOne { <bes' d'' fis''>16 }
-  \strumOne { <e' bes' cis'' g''>16 }
-  \strumOne { <eeses' c'' ges'' aes''>16 }
-  \strumOne { <d' b' f'' a''>16 }
+  \strumOne { <f' bes' d''>16 }                       |
+  \strumOne { <e' bes' dis''>16 }                     |
+  \strumOne { <a' cis'' e''>16 }                      |
+  \strumOne { <a' d'' f''>16 }                        |
+  \strumOne { <bes' d'' fis''>16 }                    |
+  \strumOne { <e' bes' cis'' g''>16 }                 |
+  \strumOne { <eeses' c'' ges'' aes''>16 }            |
+  \strumOne { <d' b' f'' a''>16 }                     |
 
-  \strumOne { <d' bes' f'' a''>16 }
-  \strumOne { <e' bes' dis'' aes''>16 }
-  \strumOne { <e' a' cis'' g'' >16 }
-  \strumOne { <a' d'' fis''>16 }
-  \strumOne { <bes d' g' d'' f''>16 }
-  \strumTwo { <g' d'' e''>16  }  {<g' cis'' e''>16 }
-  \strumOne { <c' ges' bes' d'' >16 }
-  \strumTwo { <b f' a' d'' >16 }  {<e' bes' d'' >16 }
-}
+  \strumOne { <d' bes' f'' a''>16 }                   |
+  \strumOne { <e' bes' dis'' aes''>16 }               |
+  \strumOne { <e' a' cis'' g'' >16 }                  |
+  \strumOne { <a' d'' fis''>16 }                      |
+  \strumOne { <bes d' g' d'' f''>16 }                 |
+  \strumTwo { <g' d'' e''>16  }  {<g' cis'' e''>16 }  |
+  \strumOne { <c' ges' bes' d'' >16 }                 |
+  \strumTwo { <b f' a' d'' >16 }  {<e' bes' d'' >16 } |
+}|
 
 % refrain
 refrainStrunBis =  {
