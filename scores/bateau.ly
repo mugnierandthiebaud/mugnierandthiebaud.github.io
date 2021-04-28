@@ -171,7 +171,7 @@ textTwentyTwoTwentyThreeTwentyFourTwentyFive = \lyricmode {
   (markup?) ( 
     interpret-markup layout props #{
       \markup {
-        \hspace #7 
+        \hspace #13
         \override #'(fret-diagram-details . ((number-type . roman-lower) (finger-code . in-dot) (barre-type . straight))) {
           \fret-diagram-terse #chord
         }
@@ -207,11 +207,11 @@ doNeuf                      = \markup \fret-diag "x;3-2;2-1;3-3;3-4;x;"
 tabTablePath = 
 \markup
 \with-dimensions #'(0 . 0) #'(-4.3 . 2)
-\path #0.1 
-#'((moveto    0.05   0.00)
-   (lineto    1.05   1.00)
-   (moveto    1.05   0.00)
-   (lineto    0.05   1.00))
+\path #0.15 
+#'((moveto     0.45   0.40)
+   (lineto    -0.50  -0.45)
+   (moveto    -0.50   0.40)
+   (lineto     0.45  -0.45))
 
 tabTable = \once \override NoteHead.stencil = #(lambda (grob) (grob-interpret-markup grob tabTablePath))
 
@@ -219,7 +219,7 @@ strumOne = #(define-music-function
              (chord)
              (ly:music?)
              #{
-               bes'8.\rest #chord bes'8\rest \shiftDurations #-2 #0 { #chord }
+               bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
                bes'8.\rest #chord bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
              #})
 
@@ -400,23 +400,23 @@ refrainStrunBis =  {
 
 refrainBasse =  {
   
-  g2-\solMineurSept               g
-  c'-\doSeptNeufDieze             c'
-  f-\faQuinteAugm                 f
-  bes-\siSeptMaj                  bes
-  e-\miMinSeptQuinteDimNeufDieze  e
-  a-\laSeptNeufBemol              a
-  aes-\laBemolSeptQuinteDim       aes
-  g-\solSept                      g
+  g2-\solMineurSept               g           |
+  c'-\doSeptNeufDieze             c'          |
+  f-\faQuinteAugm                 f           |
+  bes-\siSeptMaj                  bes         |
+  e-\miMinSeptQuinteDimNeufDieze  e           |
+  a-\laSeptNeufBemol              a           |
+  aes-\laBemolSeptQuinteDim       aes         |
+  g-\solSept                      g           |
 
-  g-\solMinNeuf                   g
-  c'-\doSeptNeufDiezeQuinteAugm   c'
-  f-\faQuinteAugmBis              f
-  bes-\siSeptMajQuinteAugm        bes
-  e-\miMinSeptQuinteDimNeufBemol  e
-  a-\laSeptSusQuatre              a-\laSept
-  aes-\laBemolNeufOnze            aes
-  g-\solNeuf                      c'-\doNeuf
+  g-\solMinNeuf                   g           |
+  c'-\doSeptNeufDiezeQuinteAugm   c'          |
+  f-\faQuinteAugmBis              f           |
+  bes-\siSeptMajQuinteAugm        bes         |
+  e-\miMinSeptQuinteDimNeufBemol  e           |
+  a2.-\laSeptSusQuatre            a4-\laSept  |
+  aes2-\laBemolNeufOnze           aes         |
+  g-\solNeuf                      c'-\doNeuf  |
 }
 
 refrainBasseSimple = {
@@ -804,8 +804,6 @@ codaBasse = {
     indent = #0
     \override LyricText.self-alignment-X = #LEFT
     % \override Lyrics.LyricText.font-size = #-1
-    \override FretBoard.fret-diagram-details.finger-code = #'in-dot
-    \override FretBoard.fret-diagram-details.dot-color = #'white  
   }
   %{
   %}
