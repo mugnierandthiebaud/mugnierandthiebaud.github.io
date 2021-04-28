@@ -225,7 +225,7 @@ strumOne = #(define-music-function
 
 strumTwo = #(define-music-function
              (chord1 chord2)
-             (string-or-music? string-or-music?)
+             (ly:music? ly:music?)
              #{
                bes'8.\rest #chord1 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
                bes'8.\rest #chord2 bes'8\rest \once \override Accidental #'stencil = ##f \tabTable a'8
@@ -233,7 +233,7 @@ strumTwo = #(define-music-function
 
 strumOneBis = #(define-music-function
                 (long short bass next)
-                (string-or-music? string-or-music? string-or-music? string-or-music?)
+                (ly:music? ly:music? ly:music? ly:music?)
                 #{
                   #long #short a'8\rest #bass #short 
                   #long #short a'8.\rest      #next  
@@ -241,7 +241,7 @@ strumOneBis = #(define-music-function
 
 strumTwoBis = #(define-music-function
                 (long1 short1 bass long2 short2 short2bis next)
-                (string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music? string-or-music?)
+                (ly:music? ly:music? ly:music? ly:music? ly:music? ly:music? ly:music?)
                 #{
                   \arpeggioArrowDown
                   #long1 #short1 a'8\rest #bass #short2
@@ -719,36 +719,28 @@ codaBasse = {
           
           {
             \voiceOne
-            <fis' c''  d''>8.
+            <fis' c''  d''>8.     <fis' c''  d''>16 
+            a'8 \rest         d16 <fis' c''  d''>16~
             
-            <fis' c''  d''>16 
-            a'8 \rest
-            d16
-            <fis' c''  d''>16~
-            
-            <fis' c''  d''>8.
-            <fis' c''  d''>16
-            a'8. \rest
-            <f'   b'   d''>16~
+            <fis' c''  d''>8.     <fis' c''  d''>16
+            a'8. \rest            <f'   b'   d''>16~
+
             |
-            <f'   b'   d''>8.
-            <f'   b'   d''>16
-            a'8 \rest
-            d16
-            <e'   bes' d''>16~
+
+            <f'   b'   d''>8.     <f'   b'   d''>16
+            a'8 \rest         d16 <e'   bes' d''>16~
             
-            <e'   bes' d''>8.
-            <e'   bes' d''>16
-            a'8. \rest 
-            % ...
+            <e'   bes' d''>8.     <e'   bes' d''>16
+            \partial 8. a'8. \rest 
+
           } 
         }
         \alternative {
           { 
-            <fis' c''  d''>16\laissezVibrer
+            \partial 16 <fis' c''  d''>16\laissezVibrer
           } 
           { 
-            <f'   bes' d''>16~
+            \partial 16 <f'   bes' d''>16~
           } 
         }
         \break
