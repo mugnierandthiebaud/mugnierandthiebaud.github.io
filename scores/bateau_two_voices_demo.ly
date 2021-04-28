@@ -1,10 +1,10 @@
 \version "2.19"
+
 upper = \relative c'' {
   \clef treble
   \key c \minor
   \time 4/4
   <<
-  
   \new Voice = "first"
     { \voiceOne 
     g2. g'4 |
@@ -24,7 +24,6 @@ upper = \relative c'' {
     b2 a |
     a gis |
     }
-  
   >>
 }
 
