@@ -204,6 +204,8 @@ laBemolNeufOnze             = \markup \fret-diag "6-4;3-1-(;4-2;3-1;3-1-);x;"
 solNeuf                     = \markup \fret-diag "5-4;2-1-(;3-2;2-1-);3-3;x;"
 doNeuf                      = \markup \fret-diag "x;3-2;2-1;3-3;3-4;x;"
 
+reSeptOnzeDieze             = \markup \fret-diag "o;o;4-2;5-4;3-1;4-3;"
+
 tabTablePath =
 \markup
 \with-dimensions #'(0 . 0) #'(-4.3 . 2)
@@ -449,17 +451,19 @@ refrainBasseSimple = {
 % coda
 
 codaStrum = {
+  \arpeggioArrowUp
   \strumOne { <gis' d'' gis''>16 }
   \strumOne { <gis' d'' gis''>16 }
-  <d a d' gis' d'' gis''>1
+  <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
 }
 
 codaStrumBis = {
-  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { <gis' d'' gis''>16~ \arpeggio}
+  \arpeggioArrowUp
+  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { <gis' d'' gis''>16~ }
   \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { \once \override Accidental #'stencil = ##f \tabTable a'16 }
-  <d a d' gis' d'' gis''>1
+  <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
 }
