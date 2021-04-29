@@ -5,24 +5,24 @@ upper = \relative c'' {
   \key c \minor
   \time 4/4
   <<
-  \new Voice = "first"
+    \new Voice = "first"
     { \voiceOne 
-    g2. g'4 |
-    g2.. f8 |
-    \break
-    \key fis \minor
-    cis1 |
-    cis2.. b8|
+      g2. g'4 |
+      g2.. f8 |
+      \break
+      \key fis \minor
+      cis1 |
+      cis2.. b8|
     }
-  \new Voice= "second"
+    \new Voice= "second"
     { \voiceTwo 
-  \override NoteHead.color = #red
-    f2 ees |
-    bes' aes |
-  \override NoteHead.color = #darkgreen
-    \key fis \minor
-    b2 a |
-    a gis |
+      \override NoteHead.color = #red
+      f2 ees |
+      bes' aes |
+      \override NoteHead.color = #darkgreen
+      \key fis \minor
+      b2 a |
+      a gis |
     }
   >>
 }
