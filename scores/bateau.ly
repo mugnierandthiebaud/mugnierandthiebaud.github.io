@@ -567,7 +567,7 @@ codaStrumBis = {
             f8. d16~ d4  r4        g16 f g a |
             f2           r8 d'16 a g   f d8  |
             f2           r4        g16 f g a |
-            d,2          r2                  |
+            f8. d16~ d4  r2                  |
           }
 
           \key d \minor
