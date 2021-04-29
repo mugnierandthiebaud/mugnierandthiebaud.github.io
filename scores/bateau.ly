@@ -245,12 +245,12 @@ rhythmTemplate =
 
 %%%%%%%%%%%%%%%%%%%%%%%
 
-strumOne     = \rhythmTemplate     { r8.     s16 r8   s8       r8. s16  r8  s8 }
+strumOne     = \rhythmTemplate     { r8.     s16 r8   s8       r8. s16 r8  s8 }
 strumOneHalf = \rhythmTemplate     { r8.     s16 r8   s8       }
-strumTwoInit = \rhythmTemplate     { s8.     s16 r8.      s16~ s8. s16  r8. }
-strumTwo     = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16  r8. }
+strumTwoInit = \rhythmTemplate     { s8.     s16 r8.      s16~ s8. s16 r8. }
+strumTwo     = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16 r8. }
 strumTwoHalf = \rhythmTemplate {s16~ s8.     s16 r8.      }
-strumTwoEnd  = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16~ s4     }
+strumTwoEnd  = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16 r4     }
 
 % couplet
 
@@ -429,13 +429,16 @@ codaStrumBis = {
 \score {
 
   \new Staff = "main" \transpose c' c {
-    % \set Staff.instrumentName = \markup \center-column { "Guitarre" { \abs-fontsize #7 \italic "6ème corde en ré" } }
-    % \set Staff.midiInstrument = "acoustic guitar (nylon)"
+
+    \set Staff.midiInstrument = "acoustic guitar (nylon)"
+    \set Voice.midiInstrument = "acoustic guitar (nylon)"
+    \set ChordNames.midiInstrument = "acoustic guitar (nylon)"
 
     \tempo 4 = 70
 
     % { part I
     <<
+      % {
       \new ChordNames {
         \chordmode {
           d1:7                  |
@@ -463,7 +466,9 @@ codaStrumBis = {
           g2:7/d        c:9/d   |
         }
       }
+      %}
       \new Voice = "basseI" {
+        \set midiInstrument = "acoustic bass"
         \voiceTwo
 
         \key g \major
@@ -482,6 +487,7 @@ codaStrumBis = {
         \break
       }
       \new Voice = "accordsI" {
+        \set midiInstrument = "acoustic guitar (nylon)"
         \voiceOne
 
         \repeat volta 4 \couplet
@@ -521,6 +527,7 @@ codaStrumBis = {
     % { part II
     <<
       \new Voice = "basseII" {
+        \set midiInstrument = "acoustic bass"
         \voiceTwo
         \bar ":|.|:"
         \repeat volta 2 \coupletBasseSimple
@@ -534,48 +541,54 @@ codaStrumBis = {
           \new Staff \with {
             instrumentName = "Flute"
             shortInstrumentName = "Flute"
-            midiInstrument = "flute"
             alignAboveContext = #"main"
           } \relative d''' {
-            \key g \major
-            \clef treble
-            f8. d16~ d4  r4        g16 f g a |
-            f8. d16~ d4  r2                  |
-            f8. d16~ d4  r4        g16 f g a |
-            f2           r2                  |
-            f8. d16~ d4  r4        g16 f g a |
-            f8. d16~ d4  r2                  |
-            f8. d16~ d4  r4        g16 f g a |
-            f2           r8 d'16 a g   f d8  |
+            \new Voice {
+              \set midiInstrument = "flute"
+              \voiceOne
+              \key g \major
+              \clef treble
+              f8. d16~ d4  r4        g16 f g a |
+              f8. d16~ d4  r2                  |
+              f8. d16~ d4  r4        g16 f g a |
+              f2           r2                  |
+              f8. d16~ d4  r4        g16 f g a |
+              f8. d16~ d4  r2                  |
+              f8. d16~ d4  r4        g16 f g a |
+              f2           r8 d'16 a g   f d8  |
+            }
           }
           \repeat unfold 4 \coupletBasseSimple
           \break
-        >>
+        >> 
         <<
-          \new Staff  \with {
+          \new Staff \with {
             instrumentName = "Flute"
             shortInstrumentName = "Flute"
-            midiInstrument = "flute"
             alignAboveContext = #"main"
           } \relative d''' {
-            \key d \minor
-            \clef treble
-            f8. d16~ d4  r4        g16 f g a |
-            f8. d16~ d4  r2                  |
-            f2           r4        g16 f g a |
-            f2           r2                  |
-            f8. d16~ d4  r4        g16 f g a |
-            f2           r8 d'16 a g   f d8  |
-            f2           r4        g16 f g a |
-            f8. d16~ d4  r2                  |
+            \new Voice {
+              \set midiInstrument = "flute"
+              \voiceOne
+              \key d \minor
+              \clef treble
+              f8. d16~ d4  r4        g16 f g a |
+              f8. d16~ d4  r2                  |
+              f2           r4        g16 f g a |
+              f2           r2                  |
+              f8. d16~ d4  r4        g16 f g a |
+              f2           r8 d'16 a g   f d8  |
+              f2           r4        g16 f g a |
+              f8. d16~ d4  r2                  |
+            }
           }
-
           \key d \minor
           \refrainBasseSimple
         >>
 
       }
       \new Voice = "accordsII" {
+        \set midiInstrument = "acoustic guitar (nylon)"
         \voiceOne
         \repeat volta 2 \coupletStrum
         \repeat volta 8 \coupletStrum
@@ -628,6 +641,7 @@ codaStrumBis = {
     % { part III
     <<
       \new Voice = "basseIII" {
+        \set midiInstrument = "acoustic bass"
         \voiceTwo
         \break
         \key g \major
@@ -650,6 +664,7 @@ codaStrumBis = {
         \codaBasse
       }
       \new Voice = "accordsIII" {
+        \set midiInstrument = "acoustic guitar (nylon)"
         \voiceOne
         \couplet
         {
@@ -738,6 +753,13 @@ codaStrumBis = {
 
   \midi {
     \tempo 4 = 70
-  }
+    \context {
+      \Staff
+      \remove "Staff_performer"
+    }
+    \context {
+      \Voice
+      \consists "Staff_performer"
+    }  }
 }
 
