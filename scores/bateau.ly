@@ -206,39 +206,57 @@ doNeuf                      = \markup \fret-diag "x;3-2;2-1;3-3;3-4;x;"
 
 reSeptOnzeDieze             = \markup \fret-diag "o;o;4-2;5-4;3-1;4-3;"
 
-strumOne = #(define-music-function
-             (chord)
-             (ly:music?)
-             #{               
-               r8. #chord r8 #chord r16
-               r8. #chord r8 #chord r16 |
-             #})
+%% http://lsr.di.unimi.it/LSR/Item?id=465
 
-strumTwo = #(define-music-function
-             (chord1 chord2)
-             (ly:music? ly:music?)
-             #{
-               r8. #chord1 r8 #chord1 r16
-               r8. #chord2 r8 #chord2 r16 |
-             #})
+%LSR This snippet was contributed by Jay Anderson
+%=> http://comments.gmane.org/gmane.comp.gnu.lilypond.general/37271
+%LSR upgraded by Harm on Feb.2014 for v2.18 
+%LSR upgraded by David Kastrup on Feb.2014 for v2.18 
+%=> http://lilypond.1069038.n5.nabble.com/LSR-v-2-18-quot-Easy-Rhythm-Template-Creation-quot-does-not-compile-tt159397.html#a159859
 
-strumOneBis = #(define-music-function
-                (long short bass next)
-                (ly:music? ly:music? ly:music? ly:music?)
-                #{
-                  #long #short r8 #bass #short
-                  #long #short r8.      #next
-                #})
+rhythmTemplate =
+#(define-scheme-function (parser location pattern) (ly:music?)
+   (define-music-function (parser location chord) (ly:music?)
+     (make-relative (chord) chord
+                    (map-some-music
+                     (lambda (m)
+                       (and (music-is-of-type? m 'skip-event)
+                            (let ((dur (ly:music-property m 'duration))
+                                  (art (ly:music-property m 'articulations))
+                                  (res (ly:music-deep-copy chord)))
+                              ;; transfer duration of skip to all elements with duration
+                              (for-some-music
+                               (lambda (c)
+                                 (and (ly:duration? (ly:music-property c 'duration))
+                                      (begin
+                                       (set! (ly:music-property c 'duration) dur)
+                                       #t)))
+                               res)
+                              ;; transfer articulations of skip to all relevant targets
+                              (for-some-music
+                               (lambda (c)
+                                 (let ((prop
+                                        (cond ((music-is-of-type? c 'event-chord) 'elements)
+                                              ((music-is-of-type? c 'rhythmic-event) 'articulations)
+                                              (else #f))))
+                                   (and prop
+                                        (begin
+                                         (set! (ly:music-property c prop)
+                                               (append (ly:music-property c prop)
+                                                       art))
+                                         #t))))
+                               res)
+                              res)))
+                     (ly:music-deep-copy pattern)))))
 
-strumTwoBis = #(define-music-function
-                (long1 short1 bass short2 long2 short2bis next)
-                (ly:music? ly:music? ly:music? ly:music? ly:music? ly:music? ly:music?)
-                #{
-                  \arpeggioArrowDown
-                  #long1 #short1    r8 #bass #short2
-                  #long2 #short2bis r8.      #next
-                #})
+%%%%%%%%%%%%%%%%%%%%%%%
 
+strumOne     = \rhythmTemplate     { r8.     s16 r8   s8       r8. s16  r8  s8 }
+strumOneHalf = \rhythmTemplate     { r8.     s16 r8   s8       }
+strumTwoInit = \rhythmTemplate     { s8.     s16 r8.      s16~ s8. s16  r8. }
+strumTwo     = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16  r8. }
+strumTwoHalf = \rhythmTemplate {s16~ s8.     s16 r8.      }
+strumTwoEnd  = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16~ s4     }
 
 % couplet
 
@@ -264,7 +282,7 @@ couplet = {
 coupletStrum = {
   \voiceOne
   \strumOne { <fis' c'' d''>16 }                     |
-  \strumTwo { <f'   b'  d''>16 } { <e' bes' d''>16 } |
+  \strumOneHalf { <f'   b'  d''>16 } \strumOneHalf { <e' bes' d''>16 } |
 }
 
 % refrain
@@ -301,99 +319,45 @@ refrain = {
 
 refrainStrum =  {
   \voiceOne
-  \strumOne { <f' bes' d''>16 }                       |
-  \strumOne { <e' bes' dis''>16 }                     |
-  \strumOne { <a' cis'' e''>16 }                      |
-  \strumOne { <a' d'' f''>16 }                        |
-  \strumOne { <bes' d'' fis''>16 }                    |
-  \strumOne { <e' bes' cis'' g''>16 }                 |
-  \strumOne { <eeses' c'' ges'' aes''>16 }            |
-  \strumOne { <d' b' f'' a''>16 }                     |
+  \strumOne { <f' bes' d''> }                                          |
+  \strumOne { <e' bes' dis''> }                                        |
+  \strumOne { <a' cis'' e''> }                                         |
+  \strumOne { <a' d'' f''> }                                           |
+  \strumOne { <bes' d'' fis''> }                                       |
+  \strumOne { <e' bes' cis'' g''> }                                    |
+  \strumOne { <eeses' c'' ges'' aes''> }                               |
+  \strumOne { <d' b' f'' a''> }                                        |
 
-  \strumOne { <d' bes' f'' a''>16 }                   |
-  \strumOne { <e' bes' dis'' aes''>16 }               |
-  \strumOne { <e' a' cis'' g'' >16 }                  |
-  \strumOne { <a' d'' fis''>16 }                      |
-  \strumOne { <bes d' g' d'' f''>16 }                 |
-  \strumTwo { <g' d'' e''>16  }  {<g' cis'' e''>16 }  |
-  \strumOne { <c' ges' bes' d'' >16 }                 |
-  \strumTwo { <b f' a' d'' >16 }  {<e' bes' d'' >16 } |
-}|
+  \strumOne { <d' bes' f'' a''> }                                      |
+  \strumOne { <e' bes' dis'' aes''> }                                  |
+  \strumOne { <e' a' cis'' g'' > }                                     |
+  \strumOne { <a' d'' fis''> }                                         |
+  \strumOne { <bes d' g' d'' f''> }                                    |
+  \strumOneHalf  { <g' d'' e''>  } \strumOneHalf {<g' cis'' e''> }     |
+  \strumOne { <c' ges' bes' d'' > }                                    |
+  \strumOneHalf { <b f' a' d'' > } \strumOneHalf {<e' bes' d'' > }     |
+}
 
 % refrain
 refrainStrunBis =  {
   \voiceOne
-  \strumOneBis { <f'     bes'  d''         >8.}
-               { <f'     bes'  d''         >16~}
-               { g16 }
-               { <e'     bes'  dis''       >16~}
-  \strumOneBis { <e'     bes'  dis''       >8.}
-               { <e'     bes'  dis''       >16~}
-               { c'16 }
-               { <a'     cis'' e''         >16~}
-  \strumOneBis { <a'     cis'' e''         >8.}
-               { <a'     cis'' e''         >16~}
-               { f16 }
-               { <a'     d''   f''         >16~}
-  \strumOneBis { <a'     d''   f''         >8.}
-               { <a'     d''   f''         >16~}
-               { bes16 }
-               { <bes'   d''   fis''       >16~}
-  \strumOneBis { <bes'   d''   fis''       >8.}
-               { <bes'   d''   fis''       >16~}
-               { e16 }
-               { <e'     bes'  cis'' g''   >16~}
-  \strumOneBis { <e'     bes'  cis'' g''   >8.}
-               { <e'     bes'  cis'' g''   >16~}
-               { a16 }
-               { <eeses' c''   ges'' aes'' >16~}
-  \strumOneBis { <eeses' c''   ges'' aes'' >8.}
-               { <eeses' c''   ges'' aes'' >16~}
-               { aes16 }
-               { <d'     b'    f''   a''   >16~}
-  \strumOneBis { <d'     b'    f''   a''   >8.}
-               { <d'     b'    f''   a''   >16~}
-               { g16 }
-               { <d'     bes'  f''   a''   >16~}
-  \strumOneBis { <d'     bes'  f''   a''   >8.}
-               { <d'     bes'  f''   a''   >16~}
-               { g16 }
-               { <e'     bes'  dis'' aes'' >16~}
-  \strumOneBis { <e'     bes'  dis'' aes'' >8.}
-               { <e'     bes'  dis'' aes'' >16~}
-               { c'16 }
-               { <e'     a'    cis'' g''   >16~}
-  \strumOneBis { <e'     a'    cis'' g''   >8.}
-               { <e'     a'    cis'' g''   >16~}
-               { f16 }
-               { <a'     d''         fis'' >16~}
-  \strumOneBis { <a'     d''         fis'' >8.}
-               { <a'     d''         fis'' >16~}
-               { bes16 }
-               { <bes d'     g'  d'' f''   >16~}
-  \strumOneBis { <bes d'     g'  d'' f''   >8.}
-               { <bes d'     g'  d'' f''   >16~}
-               { e16 }
-               { <e' g'  d''   e''         >16~}
-  \strumTwoBis { <e' g'  d''   e''         >8.}
-               { <e' g'  d''   e''         >16~}
-               { a16 }
-               { <e' g'  cis'' e''         >16~}
-               { <e' g'  cis'' e''         >8.}
-               { <e' g'  cis'' e''         >16}
-               { <c'     ges'  bes' d''    >16~}
-  \strumOneBis { <c'     ges'  bes' d''    >8.}
-               { <c'     ges'  bes' d''    >16~}
-               { aes16 }
-               { <b      f'    a' d''      >16~}
-  \strumTwoBis { <b      f'    a' d''      >8.}
-               { <b      f'    a' d''      >16~}
-               { g16 }
-               { <e'     bes'  d''         >16~}
-               { <e'     bes'  d''         >8.}
-               { <e'     bes'  d''         >16}
-               { <gis'   d''   gis''       >16~}
-}
+  \strumTwoInit { <f'     bes'  d''         >}
+  \strumTwo     { <e'     bes'  dis''       >}
+  \strumTwo     { <a'     cis'' e''         >}
+  \strumTwo     { <a'     d''   f''         >}
+  \strumTwo     { <bes'   d''   fis''       >}
+  \strumTwo     { <e'     bes'  cis'' g''   >}
+  \strumTwo     { <eeses' c''   ges'' aes'' >}
+  \strumTwo     { <d'     b'    f''   a''   >}
+  \strumTwo     { <d'     bes'  f''   a''   >}
+  \strumTwo     { <e'     bes'  dis'' aes'' >}
+  \strumTwo     { <e'     a'    cis'' g''   >}
+  \strumTwo     { <a'     d''         fis'' >}
+  \strumTwo     { <bes d'     g'  d'' f''   >}
+  \strumTwoHalf { <e' g'  d''   e''         >} \strumTwoHalf { <e' g'  cis'' e'' >}
+  \strumTwo     { <c'     ges'  bes' d''    >}
+  \strumTwoHalf { <b      f'    a' d''      >} \strumTwoHalf { <e'     bes'  d'' >}
+} 
 
 refrainBasse =  {
   \voiceTwo
@@ -441,8 +405,8 @@ refrainBasseSimple = {
 
 codaStrum = {
   \arpeggioArrowUp
-  \strumOne { <gis' d'' gis''>16 }
-  \strumOne { <gis' d'' gis''>16 }
+  \strumOne { <gis' d'' gis''> }
+  \strumOne { <gis' d'' gis''> }
   <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
@@ -450,8 +414,8 @@ codaStrum = {
 
 codaStrumBis = {
   \arpeggioArrowUp
-  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { <gis' d'' gis''>16~ }
-  \strumOneBis { <gis' d'' gis''>8. } { <gis' d'' gis''>16~} { d'16 } { r16 }
+  \strumTwo    { <gis' d'' gis''> } 
+  \strumTwoEnd { <gis' d'' gis''> } 
   <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
@@ -711,25 +675,13 @@ codaBasse = {
           <fis' c''  d''>16~
           |
         }
-        \break
         \repeat volta 8 {
-
           {
             \voiceOne
-            <fis' c''  d''>8.     <fis' c''  d''>16
-            a'8 \rest         d16 <fis' c''  d''>16~
-
-            <fis' c''  d''>8.     <fis' c''  d''>16
-            a'8. \rest            <f'   b'   d''>16~
-
-            |
-
-            <f'   b'   d''>8.     <f'   b'   d''>16
-            a'8 \rest         d16 <e'   bes' d''>16~
-
-            <e'   bes' d''>8.     <e'   bes' d''>16
-            \partial 8. a'8. \rest
-
+            \strumTwoInit {<fis' c''  d''>}
+            \strumTwoHalf {<f'   b'   d''>}   
+            \strumTwoHalf {<e'   bes' d''>} 
+            % \partial 8. r8.
           }
         }
         \alternative {
@@ -737,7 +689,8 @@ codaBasse = {
             \partial 16 <fis' c''  d''>16\laissezVibrer
           }
           {
-            \partial 16 <f'   bes' d''>16~
+            \key d \minor
+            \partial 16 <f' bes' d''>16~
           }
         }
         \break
@@ -792,10 +745,10 @@ codaBasse = {
     \time 4/4
     indent = #0
     \override LyricText.self-alignment-X = #LEFT
+    \accidentalStyle modern-voice-cautionary
     % \override Lyrics.LyricText.font-size = #-1
   }
-  %{
-  %}
+
   \midi {
     \tempo 4 = 70
   }
