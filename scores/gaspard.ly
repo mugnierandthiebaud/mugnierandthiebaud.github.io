@@ -108,7 +108,7 @@ arpege = {
         Ils ne l'ont pas trou -- vé ma -- lin.
       }
     }
-    \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitarre" } \transpose c' c \relative e'' {
+    \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose c' c \relative e'' {
 
       \key e \major
       <<
