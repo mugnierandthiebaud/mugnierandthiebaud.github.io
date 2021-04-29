@@ -256,8 +256,8 @@ strumTwoEnd  = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16~ s4     }
 
 coupletBasse = {
   \voiceTwo
-  <d a>2-\reSept        <d a>                |
-  <d a>-\solSeptReBasse <d a>-\doNeufReBasse |
+  <d a>2-\reSept         <d a>                |
+  <d a>- \solSeptReBasse <d a>-\doNeufReBasse |
 }
 
 coupletBasseSimple = {
@@ -269,13 +269,13 @@ coupletBasseSimple = {
 couplet = {
   \voiceOne
   \arpeggioArrowUp
-  <fis' c'' d''>1\arpeggio                       |
-  <f' b' d''>2\arpeggio <e' bes' d''>2\arpeggio  |
+  <fis' c'' d''>1\arpeggio                         |
+  <f'   b'  d''>2\arpeggio <e' bes' d''>2\arpeggio |
 }
 
 coupletStrum = {
   \voiceOne
-  \strumOne { <fis' c'' d''> }                     |
+  \strumOne     { <fis' c'' d''> }                                 |
   \strumOneHalf { <f'   b'  d''> } \strumOneHalf { <e' bes' d''> } |
 }
 
@@ -283,95 +283,96 @@ coupletStrum = {
 
 refrain = {
   \voiceOne
-  <f' bes' d''>1\arpeggio                           |
-  <e' bes' dis''>\arpeggio                          |
-  <a' cis'' e''>\arpeggio                           |
-  <a' d'' f''>\arpeggio                             |
-  <bes' d'' fis''>\arpeggio                         |
-  <e' bes' cis'' g''>\arpeggio                      |
-  <eeses' c'' ges'' aes''>\arpeggio                 |
-  <d' b' f'' a''>\arpeggio                          |
-              
-  <d' bes' f'' a''>\arpeggio                        |
-  <e' bes' dis'' aes''>\arpeggio                    |
-  <e' a' cis'' g'' >\arpeggio                       |
-  <a' d'' fis''>\arpeggio                           |
-  <bes d' g' d'' f''>\arpeggio                      |
+  <f'     bes'  d''           >1 \arpeggio |
+  <e'     bes'  dis''         >  \arpeggio |
+  <a'     cis'' e''           >  \arpeggio |
+  <a'     d''   f''           >  \arpeggio |
+  <bes'   d''   fis''         >  \arpeggio |
+  <e'     bes'  cis'' g''     >  \arpeggio |
+  <eeses' c''   ges'' aes''   >  \arpeggio |
+  <d'     b'    f''   a''     >  \arpeggio |
+%              
+  <d'     bes'  f''   a''     >  \arpeggio |
+  <e'     bes'  dis'' aes''   >  \arpeggio |
+  <e'     a'    cis'' g''     >  \arpeggio |
+  <a'     d''   fis''         >  \arpeggio |
+  <bes    d'    g'    d'' f'' >  \arpeggio |
   <<              
     {              
       \voiceTwo              
-      <g' e''>1\arpeggio                            |
+      <g' e''>1 \arpeggio |
     }              
     \new Voice {              
       \voiceOne              
-      d''2. cis''4                                  |
+      d''2. cis''4        |
     }              
   >>              
-  <c' ges' bes' d'' >1\arpeggio                     |
-  <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio |
+  <c' ges' bes' d'' >1 \arpeggio                          |
+  <b  f'   a'   d'' >2 \arpeggio <e' bes' d'' >2\arpeggio |
 }
 
 refrainStrum =  {
   \voiceOne
-  \strumOne { <f' bes' d''> }                                          |
-  \strumOne { <e' bes' dis''> }                                        |
-  \strumOne { <a' cis'' e''> }                                         |
-  \strumOne { <a' d'' f''> }                                           |
-  \strumOne { <bes' d'' fis''> }                                       |
-  \strumOne { <e' bes' cis'' g''> }                                    |
-  \strumOne { <eeses' c'' ges'' aes''> }                               |
-  \strumOne { <d' b' f'' a''> }                                        |
-
-  \strumOne { <d' bes' f'' a''> }                                      |
-  \strumOne { <e' bes' dis'' aes''> }                                  |
-  \strumOne { <e' a' cis'' g'' > }                                     |
-  \strumOne { <a' d'' fis''> }                                         |
-  \strumOne { <bes d' g' d'' f''> }                                    |
-  \strumOneHalf  { <g' d'' e''>  } \strumOneHalf {<g' cis'' e''> }     |
-  \strumOne { <c' ges' bes' d'' > }                                    |
-  \strumOneHalf { <b f' a' d'' > } \strumOneHalf {<e' bes' d'' > }     |
+  \strumOne     { <f'     bes'  d''           > }                                  |
+  \strumOne     { <e'     bes'  dis''         > }                                  |
+  \strumOne     { <a'     cis'' e''           > }                                  |
+  \strumOne     { <a'     d''   f''           > }                                  |
+  \strumOne     { <bes'   d''   fis''         > }                                  |
+  \strumOne     { <e'     bes'  cis'' g''     > }                                  |
+  \strumOne     { <eeses' c''   ges'' aes''   > }                                  |
+  \strumOne     { <d'     b'    f'' a''       > }                                  |
+%
+  \strumOne     { <d'     bes'  f''   a''     > }                                  |
+  \strumOne     { <e'     bes'  dis'' aes''   > }                                  |
+  \strumOne     { <e'     a'    cis'' g''     > }                                  |
+  \strumOne     { <a'     d''   fis''         > }                                  |
+  \strumOne     { <bes    d'    g'    d'' f'' > }                                  |
+  \strumOneHalf { <g'     d''   e''           > } \strumOneHalf {<g' cis'' e''> }  |
+  \strumOne     { <c'     ges'  bes' d''      > }                                  |
+  \strumOneHalf { <b      f'    a'   d''      > } \strumOneHalf {<e' bes' d'' > }  |
 }
 
 % refrain
 refrainStrunBis =  {
   \voiceOne
-  \strumTwoInit { <f'     bes'  d''         >}
-  \strumTwo     { <e'     bes'  dis''       >}
-  \strumTwo     { <a'     cis'' e''         >}
-  \strumTwo     { <a'     d''   f''         >}
-  \strumTwo     { <bes'   d''   fis''       >}
-  \strumTwo     { <e'     bes'  cis'' g''   >}
-  \strumTwo     { <eeses' c''   ges'' aes'' >}
-  \strumTwo     { <d'     b'    f''   a''   >}
-  \strumTwo     { <d'     bes'  f''   a''   >}
-  \strumTwo     { <e'     bes'  dis'' aes'' >}
-  \strumTwo     { <e'     a'    cis'' g''   >}
-  \strumTwo     { <a'     d''         fis'' >}
-  \strumTwo     { <bes d'     g'  d'' f''   >}
-  \strumTwoHalf { <e' g'  d''   e''         >} \strumTwoHalf { <e' g'  cis'' e'' >}
-  \strumTwo     { <c'     ges'  bes' d''    >}
-  \strumTwoHalf { <b      f'    a' d''      >} \strumTwoHalf { <e'     bes'  d'' >}
+  \strumTwoInit { <f'     bes'  d''           >}
+  \strumTwo     { <e'     bes'  dis''         >}
+  \strumTwo     { <a'     cis'' e''           >}
+  \strumTwo     { <a'     d''   f''           >}
+  \strumTwo     { <bes'   d''   fis''         >}
+  \strumTwo     { <e'     bes'  cis'' g''     >}
+  \strumTwo     { <eeses' c''   ges'' aes''   >}
+  \strumTwo     { <d'     b'    f''   a''     >}
+%
+  \strumTwo     { <d'     bes'  f''   a''     >}
+  \strumTwo     { <e'     bes'  dis'' aes''   >}
+  \strumTwo     { <e'     a'    cis'' g''     >}
+  \strumTwo     { <a'     d''   fis''         >}
+  \strumTwo     { <bes    d'    g'    d'' f'' >}
+  \strumTwoHalf { <e'     g'    d''   e''     >} \strumTwoHalf { <e' g' cis'' e'' >}
+  \strumTwo     { <c'     ges'  bes'  d''     >}
+  \strumTwoHalf { <b      f'    a'    d''     >} \strumTwoHalf { <e'    bes'  d'' >}
 } 
 
 refrainBasse =  {
   \voiceTwo
-  g2-\solMineurSept               g               |
-  c'-\doSeptNeufDieze             c'              |
-  f-\faQuinteAugm                 f               |
-  bes-\siSeptMaj                  bes             |
-  e-\miMinSeptQuinteDimNeufDieze  e               |
-  a-\laSeptNeufBemol              a               |
-  aes-\laBemolSeptQuinteDim       aes             |
-  g-\solSept                      g               |
-
-  g-\solMinNeuf                   g               |
-  c'-\doSeptNeufDiezeQuinteAugm   c'              |
-  f-\faQuinteAugmBis              f               |
-  bes-\siSeptMajQuinteAugm        bes             |
-  e-\miMinSeptQuinteDimNeufBemol  e               |
-  a2-\laSeptSusQuatre             a4~ a4-\laSept  |
-  aes2-\laBemolNeufOnze           aes             |
-  g-\solNeuf                      c'-\doNeuf      |
+  g2-  \solMineurSept               g              |
+  c'-  \doSeptNeufDieze             c'             |
+  f-   \faQuinteAugm                f              |
+  bes- \siSeptMaj                   bes            |
+  e-   \miMinSeptQuinteDimNeufDieze e              |
+  a-   \laSeptNeufBemol             a              |
+  aes- \laBemolSeptQuinteDim        aes            |
+  g-   \solSept                     g              |
+%
+  g-   \solMinNeuf                  g              |
+  c'-  \doSeptNeufDiezeQuinteAugm   c'             |
+  f-   \faQuinteAugmBis             f              |
+  bes- \siSeptMajQuinteAugm         bes            |
+  e-   \miMinSeptQuinteDimNeufBemol e              |
+  a2-  \laSeptSusQuatre             a4~ a4-\laSept |
+  aes2-\laBemolNeufOnze             aes            |
+  g-   \solNeuf                     c'-\doNeuf     |
 }
 
 refrainBasseSimple = {
@@ -384,7 +385,7 @@ refrainBasseSimple = {
   a   a    |
   as  as   |
   g   g    |
-
+%
   g   g    |
   c'  c'   |
   f   f    |
@@ -722,7 +723,9 @@ codaStrumBis = {
     >>
     % end of part III
     %}
+
   }
+
 
   \layout {
     \clef "treble_8"
