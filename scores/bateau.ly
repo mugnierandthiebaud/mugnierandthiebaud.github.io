@@ -208,12 +208,6 @@ reSeptOnzeDieze             = \markup \fret-diag "o;o;4-2;5-4;3-1;4-3;"
 
 %% http://lsr.di.unimi.it/LSR/Item?id=465
 
-%LSR This snippet was contributed by Jay Anderson
-%=> http://comments.gmane.org/gmane.comp.gnu.lilypond.general/37271
-%LSR upgraded by Harm on Feb.2014 for v2.18 
-%LSR upgraded by David Kastrup on Feb.2014 for v2.18 
-%=> http://lilypond.1069038.n5.nabble.com/LSR-v-2-18-quot-Easy-Rhythm-Template-Creation-quot-does-not-compile-tt159397.html#a159859
-
 rhythmTemplate =
 #(define-scheme-function (parser location pattern) (ly:music?)
    (define-music-function (parser location chord) (ly:music?)
@@ -281,39 +275,39 @@ couplet = {
 
 coupletStrum = {
   \voiceOne
-  \strumOne { <fis' c'' d''>16 }                     |
-  \strumOneHalf { <f'   b'  d''>16 } \strumOneHalf { <e' bes' d''>16 } |
+  \strumOne { <fis' c'' d''> }                     |
+  \strumOneHalf { <f'   b'  d''> } \strumOneHalf { <e' bes' d''> } |
 }
 
 % refrain
 
 refrain = {
   \voiceOne
-  <f' bes' d''>1\arpeggio             |
-  <e' bes' dis''>\arpeggio            |
-  <a' cis'' e''>\arpeggio             |
-  <a' d'' f''>\arpeggio               |
-  <bes' d'' fis''>\arpeggio           |
-  <e' bes' cis'' g''>\arpeggio        |
-  <eeses' c'' ges'' aes''>\arpeggio   |
-  <d' b' f'' a''>\arpeggio            |
-
-  <d' bes' f'' a''>\arpeggio          |
-  <e' bes' dis'' aes''>\arpeggio      |
-  <e' a' cis'' g'' >\arpeggio         |
-  <a' d'' fis''>\arpeggio             |
-  <bes d' g' d'' f''>\arpeggio        |
-  <<
-    {
-      \voiceTwo
-      <g' e''>1\arpeggio              |
-    }
-    \new Voice {
-      \voiceOne
-      d''2. cis''4                    |
-    }
-  >>
-  <c' ges' bes' d'' >1\arpeggio       |
+  <f' bes' d''>1\arpeggio                           |
+  <e' bes' dis''>\arpeggio                          |
+  <a' cis'' e''>\arpeggio                           |
+  <a' d'' f''>\arpeggio                             |
+  <bes' d'' fis''>\arpeggio                         |
+  <e' bes' cis'' g''>\arpeggio                      |
+  <eeses' c'' ges'' aes''>\arpeggio                 |
+  <d' b' f'' a''>\arpeggio                          |
+              
+  <d' bes' f'' a''>\arpeggio                        |
+  <e' bes' dis'' aes''>\arpeggio                    |
+  <e' a' cis'' g'' >\arpeggio                       |
+  <a' d'' fis''>\arpeggio                           |
+  <bes d' g' d'' f''>\arpeggio                      |
+  <<              
+    {              
+      \voiceTwo              
+      <g' e''>1\arpeggio                            |
+    }              
+    \new Voice {              
+      \voiceOne              
+      d''2. cis''4                                  |
+    }              
+  >>              
+  <c' ges' bes' d'' >1\arpeggio                     |
   <b f' a' d'' >2\arpeggio <e' bes' d'' >2\arpeggio |
 }
 
@@ -403,13 +397,8 @@ refrainBasseSimple = {
 
 % coda
 
-codaStrum = {
-  \arpeggioArrowUp
-  \strumOne { <gis' d'' gis''> }
-  \strumOne { <gis' d'' gis''> }
-  <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
-  \arpeggio
-  \laissezVibrer
+codaBasse = {
+  \repeat unfold 4 <d a d'>2
 }
 
 codaStrumBis = {
@@ -419,10 +408,6 @@ codaStrumBis = {
   <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
-}
-
-codaBasse = {
-  \repeat unfold 4 <d a d'>2
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -681,7 +666,6 @@ codaBasse = {
             \strumTwoInit {<fis' c''  d''>}
             \strumTwoHalf {<f'   b'   d''>}   
             \strumTwoHalf {<e'   bes' d''>} 
-            % \partial 8. r8.
           }
         }
         \alternative {
