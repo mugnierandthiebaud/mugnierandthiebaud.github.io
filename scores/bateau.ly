@@ -760,6 +760,7 @@ codaStrumBis = {
     \context {
       \Voice
       \consists "Staff_performer"
-    }  }
+    }
+  }
 }
 
