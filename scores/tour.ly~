@@ -1,4 +1,4 @@
-\version "2.19"
+\version "2.22"
 
 \header {
   title = #"Chanson de la plus haute tour"
@@ -14,12 +14,12 @@
 
 melodyCouplet = {
   \repeat unfold 7 r2.
-  r2 b4
+  r4. b4.
   b2.~
   b4. b4.
   b2.~
   b4. b4.
-  b2 b4~
+  b4. b4.~
   b4 b4 b4
   b2.
   r2.
@@ -159,22 +159,8 @@ bassRefrain = {
         \melodyCouplet
         \melodyRefrain 
         \repeat unfold #8 r2. 
-        \repeat unfold #7 b2.
-        r2. 
+        \repeat unfold #8 b2. 
         \melodyRefrain 
-        
-        \repeat unfold #2 {
-          g2.~
-          g
-          g~
-          g4.
-          g  
-          e2.
-          r
-          r
-          r
-        }
-        r
       }
     }
     \new Lyrics  \lyricsto "one" {
@@ -189,10 +175,10 @@ bassRefrain = {
         Et la soif mal -- saine
         Ob -- scur -- cit mes veines.
 
-        Qu’ -- il vien -- ne, qu’ -- il vien -- ne,  
-        "Le temps" dont "on s’é" -- prenne.
+        Qu’ -- il vien -- ne, qu’ -- il vien -- ne,
+        "Le temps" dont on s’é -- prenne.
 
-        m -- m -- m -- m -- m -- m -- m 
+        m -- m -- m -- m -- m -- m -- m -- m 
 
         Tel -- le la pr -- ai -- rie
         À l’ou -- bli li -- vrée,
@@ -201,12 +187,8 @@ bassRefrain = {
         Au bour -- don fa -- rouche
         Des "_" sa -- les mouches.
 
-        Qu’ -- il vien -- ne, qu’ -- il vien -- ne,  
-        "Le temps" dont "on s’é" -- prenne.
-
-        "Le temps" dont "on s’é" -- prenne.
-
-        "Le temps" dont "on s’é" -- prenne.
+        Qu’ -- il vien -- ne, qu’ -- il vien -- ne,
+        "Le temps" dont on s’é -- prenne.
       }
     }
     \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose c' c {
@@ -219,27 +201,23 @@ bassRefrain = {
             \acuteCouplet
             \acuteRefrain
           }
-          \alternative {
-            { 
-              <b f a b e>2.~
-              <b f a b e>2.
-              <b f a b e>2.~
-              <b f a b e>2.
-            }
-            {
-              {<fis b c e      >2.~ <fis b c e      >2.}
-              {<eis a b e      >2.~ <eis a b e      >2.}
-              {<e bes' dis g   >2.~ <e bes' dis g   >2.}
-              {<ees a d g      >2.~ <ees a d g      >2.}
-              {<fis a c e      >2.~ <fis a c e      >2.}
-              {<f a b e        >2.~ <f a b e        >2.}
-              {<e ais dis g    >2.~ <e ais dis g    >2.}
-              {<dis a' cisis g'>2.~ <dis a' cisis g'>2.}
-
-              \repeat unfold 2 {<b e a b e>2.~
-                                <b e a b e>2.}
-              <b e a b e>2.
-            }
+              \alternative {
+                { 
+                  <b f a b e>2.~
+                 <b f a b e>2.
+                  <b f a b e>2.~
+                   <b f a b e>2.
+                   }
+                   {
+                  <fis b c e>2.
+                 <eis a b e>2.
+                  <e bes dis g>2.
+                   <ees a d g >2.
+                  <b e a b e>2.~
+                 <b e a b e>2.
+                  <b e a b e>2.~
+                 <b e a b e>2.
+                   }
 
           }
         }
@@ -252,12 +230,9 @@ bassRefrain = {
           \alternative {
             { e e e e }
             { 
-              gis, gis cis cis 
-              c    c   f,  f 
-              d'   d   g,  g   
-              fis  fis b   b
-              e,   e   e   e  
-              e
+              gis cis c   f 
+              e   g   fis b 
+              e   e   e   e  
             }
           }
         }
