@@ -1,4 +1,10 @@
-\version "2.19"
+\version "2.22"
+
+%{
+%}
+\paper {
+  page-count = #3
+}
 
 \header {
   title = #"Chanson de la plus haute tour"
@@ -15,14 +21,14 @@
 melodyCouplet = {
   \repeat unfold 7 r2.
   r2 b4
-  b2.~
-  b4. b4.
-  b2.~
-  b4. b4.
-  b2 b4~
-  b4 b4 b4
   b2.
-  r2.
+  r2 b4
+  b2.
+  r2 b4
+  b2 b4~
+  b4 b b
+  b2.
+  r
 }
 acuteCouplet = {
   \repeat unfold 2  {
@@ -44,7 +50,8 @@ bassCouplet = {
 % refrain %%%%%%%%%%%%%%%%%%
 
 melodyRefrain = {
-  e4. e
+  % ein 
+  e4. e 
   d2.
   e4. e
   b2.
@@ -72,39 +79,80 @@ melodyRefrain = {
   b4. a
   gis fis
   a g 
-  fis e
+  fis e4 e8
   g2.~
   g
   g~
-  g4.
-  g  
+  g4
+  g 
+  g 
   e2.
   r
   r
+}
+melodyRefrainZwei = {
+  % ein 
+  e4. e
+  d2.
+  e2.
+  b2.
+  d4. d
+  c c
+  b2.
+  r
+  e
+  b'
+  fis4. fis
+  a2.~
+  a
+  g4. g
+  g g
+  fis2.
+  r
+  e4. e
+  b2.
+  e
+  b
+  e2.
+  g2~ g8 g8 
+  b2.
+  r
+  b4. a
+  gis fis
+  a g 
+  fis e4 e8
+  g2.~
+  g
+  g~
+  g4
+  g 
+  g 
+  e2.
+  r
   r
 }
-acuteRefrain = {
-  { r8 g    <c  e>  g  <c e>  g    }
-  { r8 fis  <c' d>  fis,  <c' d>  fis, }
-  { r8 fis  <b e>  fis  <b e>  fis }
-  { r8 e  <g  b>  e  <g  b>  e }
-  { r8 g    <c  d>  g  <c d>  g    }
-  { r8 fis  <b c>  fis  <b c>  fis }
-  { r8 fis  <a b>  fis  <a b>  fis }
-  { r8 e  <g  b>  e  <g  b>  e }
-  { r8 g    <c  e>  g  <c e>  g    }
-  { r8 c    <ees fis b>  c  <ees fis b>  c    }
-  { r8 e,  <bes' cis fis>  e,  <bes' cis fis> e,   }
-  \repeat unfold 2 { r8 b'    < e a>  b  <e a>  b    }
+acuteRefrain = {   
+  { r8 g    <c       e  >  g    <c       e  >  g    }
+  { r8 fis  <c'      d  >  fis, <c'      d  >  fis, }
+  { r8 fis  <b       e  >  fis  <b       e  >  fis  }
+  { r8 e    <g       b  >  e    <g       b  >  e    }
+  { r8 g    <c       d  >  g    <c       d  >  g    }
+  { r8 fis  <b       c  >  fis  <b       c  >  fis  }
+  { r8 fis  <a       b  >  fis  <a       b  >  fis  }
+  { r8 e    <g       b  >  e    <g       b  >  e    }
+  { r8 g    <c       e  >  g    <c       e  >  g    }
+  { r8 ees' <c  fis  b  >  ees  <c  fis  b  >  ees  }
+  { r8 bes  <e, cis' fis>  bes' <e, cis' fis>  bes' }
+  \repeat unfold 2 { r8 b    < e a>  b  <e a>  b    }
   \repeat unfold 2 { r8 bes    < d g>  bes    < d g> bes   }
   { r8 a    < cis fis>  a    < cis fis> a   }
   { r8 a    < cis fis>  a    < dis fis> a   }
   \repeat unfold 2 { r8 e   <b' e>  e,    <b' e>  e,    
                      r8 e   <b' b>  e,    <b' b>  e,    }
-  { r8 ais   <e b' e>  ais   <b  e>  ais   }
-  { r8 a     <ees b' g'>  a    <es b' g'>   a   }
-  { <d, gis c f b>2.~}
-  { <d gis c f b>2.}
+  { r8 e   <ais b e > e   <ais b e > e   }
+  { r8 ees <a   b g'> ees <a   b g'> ees }
+  { r8 gis  \tuplet 3/2 {  d8 c' gis   f' c b'~ }  }   
+  { <d,, gis c f b>2.}
   { r8 c'  <gis' b>  c,  <g' a>   c,  }
   { r8 c  <f aes>  c  <e fis>   c  }
   { r8 b  <fis' a>  b,  <f' g>   b,  }
@@ -136,7 +184,7 @@ bassRefrain = {
   f
   fis
   f
-  e~
+  e
   e
   a
   d
@@ -151,28 +199,35 @@ bassRefrain = {
 \score {
 
   <<
-    \new Staff \with { midiInstrument = #"viola" instrumentName = #"Chant" } \relative e' {
+    \new Staff \with { midiInstrument = #"clarinet" instrumentName = #"Chant" } \relative e' {
       
       \key e \minor
       \new Voice = "one" {
         \tempo 4 = 140
         \melodyCouplet
-        \melodyRefrain 
+        \melodyRefrain
+        r2. 
         \repeat unfold #8 r2. 
         \repeat unfold #7 b2.
         r2. 
-        \melodyRefrain 
+        \melodyRefrainZwei 
+        r2 
         
         \repeat unfold #2 {
+          e4
           g2.~
           g
           g~
-          g4.
+          g4
+          g  
           g  
           e2.
           r
           r
-          r
+        }
+        \alternative {
+          { r2 }
+          { r2. }
         }
         r
       }
@@ -189,24 +244,24 @@ bassRefrain = {
         Et la soif mal -- saine
         Ob -- scur -- cit mes veines.
 
-        Qu’ -- il vien -- ne, qu’ -- il vien -- ne,  
-        "Le temps" dont "on s’é" -- prenne.
+        Qu’i -- l vien -- ne, qu’i -- l vien -- ne,  
+        Le temps dont on s’é -- prenne.
 
         m -- m -- m -- m -- m -- m -- m 
 
-        Tel -- le la pr -- ai -- rie
+        Tel -- le la prai -- -- rie
         À l’ou -- bli li -- vrée,
         Gran -- die, et fleu -- rie
         D’en -- cens et d’i -- vraies,
         Au bour -- don fa -- rouche
-        Des "_" sa -- les mouches.
+        Des sa -- les mouches.
 
-        Qu’ -- il vien -- ne, qu’ -- il vien -- ne,  
-        "Le temps" dont "on s’é" -- prenne.
+        Qu’i -- l vien -- ne, qu’i -- l vien -- ne,  
+        Le temps dont on s’é -- prenne.
 
-        "Le temps" dont "on s’é" -- prenne.
+        Le temps dont on s’é -- prenne.
 
-        "Le temps" dont "on s’é" -- prenne.
+        Le temps dont on s’é -- prenne.
       }
     }
     \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose c' c {
@@ -217,6 +272,7 @@ bassRefrain = {
           \voiceOne
           \repeat unfold 2 {
             \acuteCouplet
+            \bar "||"
             \acuteRefrain
           }
           \alternative {
@@ -225,20 +281,21 @@ bassRefrain = {
               <b f a b e>2.
               <b f a b e>2.~
               <b f a b e>2.
+              \bar "||"
             }
             {
               {<fis b c e      >2.~ <fis b c e      >2.}
               {<eis a b e      >2.~ <eis a b e      >2.}
               {<e bes' dis g   >2.~ <e bes' dis g   >2.}
               {<ees a d g      >2.~ <ees a d g      >2.}
-              {<fis a c e      >2.~ <fis a c e      >2.}
+              {<fis b c e      >2.~ <fis b c e      >2.}
               {<f a b e        >2.~ <f a b e        >2.}
               {<e ais dis g    >2.~ <e ais dis g    >2.}
               {<dis a' cisis g'>2.~ <dis a' cisis g'>2.}
 
               \repeat unfold 2 {<b e a b e>2.~
                                 <b e a b e>2.}
-              <b e a b e>2.
+              <b e a b e>2.\fermata
             }
 
           }
@@ -250,9 +307,9 @@ bassRefrain = {
             \bassRefrain
           }
           \alternative {
-            { e e e e }
+            { e, e e e }
             { 
-              gis, gis cis cis 
+              gis gis cis cis 
               c    c   f,  f 
               d'   d   g,  g   
               fis  fis b   b
