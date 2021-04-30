@@ -284,14 +284,14 @@ bassRefrain = {
               \bar "||"
             }
             {
-              {<fis b c e      >2.~ <fis b c e      >2.}
-              {<eis a b e      >2.~ <eis a b e      >2.}
-              {<e bes' dis g   >2.~ <e bes' dis g   >2.}
-              {<ees a d g      >2.~ <ees a d g      >2.}
-              {<fis b c e      >2.~ <fis b c e      >2.}
-              {<f a b e        >2.~ <f a b e        >2.}
-              {<e ais dis g    >2.~ <e ais dis g    >2.}
-              {<dis a' cisis g'>2.~ <dis a' cisis g'>2.}
+              {<fis aisis bis   e  >2.~ <fis aisis bis   e >2.}
+              {<eis a     b     e  >2.~ <eis a     b     e >2.}
+              {<e   bes'  dis   g  >2.~ <e   bes'  dis   g >2.}
+              {<ees a     d     g  >2.~ <ees a     d     g >2.}
+              {<fis b     c     e  >2.~ <fis b     c     e >2.}
+              {<f   a     b     e  >2.~ <f   a     b     e >2.}
+              {<e   ais   dis   g  >2.~ <e   ais   dis   g >2.}
+              {<dis a'    cisis g' >2.~ <dis a'    cisis g'>2.}
 
               \repeat unfold 2 {<b e a b e>2.~
                                 <b e a b e>2.}
