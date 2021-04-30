@@ -1,4 +1,4 @@
-\version "2.19"
+\version "2.22"
 
 \header {
   title = #"Chanson de la plus haute tour"
@@ -10,17 +10,18 @@
   \vspace #1
 }
 
+% couplet %%%%%%%%%%%%%%%%%%
+
 melodyCouplet = {
-\partial 4 b4
-b2.
-r2 b4
-b2.
-r2
-b4
-b2 b4~
-b4 b4 b4
-b2.
-r2.
+\partial 4. b4.
+ b2.~
+ b4. b4.
+ b2.~
+ b4. b4.
+ b4. b4.~
+ b4 b4 b4
+ b2.
+ r2.
 }
 acuteCouplet = {
   \repeat unfold 2 { r8 e'  <g  b>  e    <g  b>  e    }
@@ -35,6 +36,8 @@ fis fis
 e e 
 }
 
+% refrain %%%%%%%%%%%%%%%%%%
+
 melodyRefrain = {
 e4. e
 d2.
@@ -47,31 +50,33 @@ r2.
 e2.
 b'2.
 fis4. fis
-a a~
+a2.~
 a2.
-g2 g4
-g2 g4
+g4. g4.
+g4. g4.
 fis2.
 r2.
-e2 e4
+e4. e4.
 b2.
 e2.
 b2.
-e2 e4
-g2 g4 
+e4. e4.
+g4. g4. 
 b2.
 r2.
 b4. a
 gis fis
 a g 
-fis e4 e8
-g2.
-r
+fis e
+g2.~
 g
-r4
+g~
+g4
 g g  
-e2.~
-e
+e2.
+r
+r
+r
 }
 acuteRefrain = {
   { r8 g    <c  e>  g  <c e>  g    }
@@ -101,6 +106,8 @@ acuteRefrain = {
   { r8 b  <dis fis>  b  <d e>   b  }
   \repeat unfold 2 { r8 ais   < e dis' g>  ais   <e  dis' g>  ais    }
   \repeat unfold 2 { r8 a   < dis, cisis' g'>  a'  <dis,  cisis' g'>  a'   }
+  { <b f a b e>2.~}
+  { <b f a b e>2.}
   { <b f a b e>2.~}
   { <b f a b e>2.}
 }
@@ -153,7 +160,9 @@ e
       \new Voice = "one" {
         \tempo 4 = 140
         \melodyCouplet
-        \melodyRefrain
+        \melodyRefrain 
+        \repeat unfold #8 r2. 
+        \melodyRefrain 
       }
     }
     \new Lyrics  \lyricsto "one" {
@@ -163,23 +172,23 @@ Le temps dont on s’é -- prenne.
 
 J’ai tant fait pa -- ti -- ence
 Qu’à ja -- mais j’ou -- blie.
-Crain -- tes et sou -- ffran-- ces
+Crain -- tes et souf -- frances
 Aux cieux sont par -- ties.
 Et la soif mal -- saine
 Ob -- scur -- cit mes veines.
 
-Qu’ -- il vie -- nne, qu’ -- il vie -- nne,
-Le temps dont on s’é -- prenne.
+Qu’ -- il vien -- ne, qu’ -- il vien -- ne,
+"Le temps" dont on s’é -- prenne.
 
-Telle la prairie
-À l’oubli livrée,
-Grandie, et fleurie
-D’encens et d’ivraies,
-Au bourdon farouche
-Des sales mouches.
+Tel -- le la pr -- ai -- rie
+À l’ou -- bli li -- vrée,
+Gran -- die, et fleu -- rie
+D’en -- cens et d’i -- vraies,
+Au bour -- don fa -- rouche
+Des "_" sa -- les mouches.
 
-Qu’il vienne, qu’il vienne,
-Le temps dont on s’éprenne.
+Qu’ -- il vien -- ne, qu’ -- il vien -- ne,
+"Le temps" dont on s’é -- prenne.
       }
     }
     \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose c' c {
@@ -188,15 +197,19 @@ Le temps dont on s’éprenne.
       <<
         \new Voice = "couplet" \relative e  {
           \voiceOne
-          \hideNotes \partial 4 r4 \unHideNotes
-          \acuteCouplet
-          \acuteRefrain
+          \hideNotes \partial 4. r4. \unHideNotes
+          \repeat unfold 2 {
+            \acuteCouplet
+            \acuteRefrain
+          }
         }
         \new Voice = "bass" \relative e  {
           \voiceTwo
-          \hideNotes \partial 4 r4 \unHideNotes
-          \bassCouplet        
-          \bassRefrain
+          \hideNotes \partial 4. r4. \unHideNotes
+          \repeat unfold 2 {
+            \bassCouplet
+            \bassRefrain
+          }
         }
       >>
     }
