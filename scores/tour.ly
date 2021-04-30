@@ -153,12 +153,12 @@ acuteRefrain = {
   { r8 ees <a   b g'> ees <a   b g'> ees }
   { r8 gis  \tuplet 3/2 {  d8 c' gis   f' c b'~ }  }   
   { <d,, gis c f b>2.}
-  { r8 c'  <gis' b>  c,  <g' a>   c,  }
-  { r8 c  <f aes>  c  <e fis>   c  }
-  { r8 b  <fis' a>  b,  <f' g>   b,  }
-  { r8 b  <dis fis>  b  <d e>   b  }
-  \repeat unfold 2 { r8 ais   < e dis' g>  ais   <e  dis' g>  ais    }
-  \repeat unfold 2 { r8 a   < dis, cisis' g'>  a'  <dis,  cisis' g'>  a'   }
+  { r8 c' <gis b' >  c  <g a' >  c  }
+  { r8 c  <f   aes>  c  <e fis>  c  }
+  { r8 b  <fis a' >  b  <f g' >  b  }
+  { r8 b  <dis fis>  b  <d e  >  b  }
+  \repeat unfold 2 { r8 e,    < ais    dis   g >  e <ais    dis   g >  e  }
+  \repeat unfold 2 { r8 dis < a' cisis g'>  dis,  <a' cisis g'>  dis,   }
 }
 bassRefrain = {
   a2.
@@ -277,14 +277,14 @@ bassRefrain = {
           }
           \alternative {
             { 
-              <b f a b e>2.~
-              <b f a b e>2.
-              <b f a b e>2.~
-              <b f a b e>2.
+              <b f' a b e>2.~
+              <b f' a b e>2.
+              <b f' a b e>2.~
+              <b f' a b e>2.
               \bar "||"
             }
             {
-              {<fis aisis bis   e  >2.~ <fis aisis bis   e >2.}
+              {<fis' aisis bis   e  >2.~ <fis aisis bis   e >2.}
               {<eis a     b     e  >2.~ <eis a     b     e >2.}
               {<e   bes'  dis   g  >2.~ <e   bes'  dis   g >2.}
               {<ees a     d     g  >2.~ <ees a     d     g >2.}
