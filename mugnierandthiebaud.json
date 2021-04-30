@@ -239,7 +239,8 @@
       "date": "2015",
       "text": "Chanson de la plus haute tour",
       "duration": "5:09",
-      "bpm": "70",
+      "bpm": "140",
+      "score": true,
       "watch": [
         {
           "url": "https://youtu.be/7lKeQ91LtFk",
