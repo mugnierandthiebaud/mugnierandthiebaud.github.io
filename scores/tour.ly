@@ -3,7 +3,7 @@
 \header {
   title = #"Chanson de la plus haute tour"
   composer = #"Musique de Christophe Thiebaud"
-  poet = #"Poème d'Arthur Rimbaud"
+  poet = #"Poème de Arthur Rimbaud"
 }
 
 \markup {
