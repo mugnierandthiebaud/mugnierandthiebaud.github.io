@@ -259,7 +259,7 @@ bassRefrain = {
         Et la soif mal -- saine
         Ob -- scur -- cit mes veines.
 
-        Qu’i -- l vien -- ne, qu’i -- l vien -- \override LyricText.self-alignment-X = #LEFT ne,_Le 
+        Qu’i -- il vien -- ne, qu’i -- il vien -- \override LyricText.self-alignment-X = #LEFT ne,_Le 
         temps dont on s’é -- prenne.
 
         m -- m -- m 
@@ -271,7 +271,7 @@ bassRefrain = {
         Au bour -- don fa -- rouche
         Des sales mouches.
 
-        Qu’i -- l vien -- ne, qu’i -- l vien -- ne,  
+        Qu’i -- il vien -- ne, qu’i -- il vien -- ne,  
         Le temps dont on s'é -- prenne.
 
         Le temps dont on s'é -- prenne.
