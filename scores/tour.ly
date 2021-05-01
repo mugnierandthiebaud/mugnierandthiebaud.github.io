@@ -1,9 +1,9 @@
 \version "2.22"
 
+%{
 \paper {
   page-count = #2
 }
-%{
 %}
 
 #(set-global-staff-size 17)
@@ -91,9 +91,6 @@ melodyRefrain = {
   | g         
   | g~        
   | g4  g  g  
-  | e2.       
-  | R2.       
-  | R2.       
 }
 melodyRefrainZwei = {
   % 8 bars
@@ -133,9 +130,6 @@ melodyRefrainZwei = {
   | g         
   | g~        
   | g4  g  g  
-  | e2.       
-  | R2.       
-  | R2.       
 }
 
 acuteRefrain = {   
@@ -205,7 +199,7 @@ bassRefrain = {
 \score {
 
   <<
-    \new Staff \with { midiInstrument = #"clarinet" instrumentName = #"Chant" } \transpose e d \relative e'' {
+    \new Staff \with { midiInstrument = #"clarinet" instrumentName = #"Chant" } %{ \transpose e' g %} \relative e' {
       
       \key e \minor
       \clef #"treble"
@@ -214,21 +208,26 @@ bassRefrain = {
         \tempo 4 = 140
         \time 3/4
 
-        % { first part
+        %{ -  first part
         \melodyCouplet
         \melodyRefrain
+        | e2.       
+        | R2.       
+        | R2.       
         | R2.
-        % }          
-        \pageBreak
-        % { second part
+         - %}          
+        %{ -  second part
         \repeat unfold #8 { | R2. }
         | b2.~ | b2. 
         | b2.~ | b2.
         | b2.~ | b2.~ | b2.
         | R2.
         \melodyRefrainZwei 
-        % }          
-        % { coda
+         - %}         
+        % { -  coda
+        | e2.       
+        | R2.       
+        | R2.       
         | r2 
         \repeat unfold #2 {
           e4
@@ -245,6 +244,7 @@ bassRefrain = {
           { | R2. }
         }
         | R2.
+        %} 
       }
     }
     \new Lyrics  \lyricsto "one" {
@@ -279,7 +279,7 @@ bassRefrain = {
         Le temps dont on s'é -- prenne.
       }
     }
-    \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose e' d {
+    \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose e' e %{ g %} {
 
       \key e \minor
       \clef #"treble_8"
@@ -287,26 +287,26 @@ bassRefrain = {
       <<
         \new Voice = "couplet" \relative e'  {
           \voiceOne
-          % { first part
+          %{ -  first part
           \acuteCouplet
           \bar "||"
           \acuteRefrain
           { 
-            | <b f' a b e>2.~
-            | <b f' a b e>2.
-            | <b f' a b e>2.~
-            | <b f' a b e>2.
+            | \tuplet 8/6 { r4 f8 b, a' f b a }
+            | <b, f' a b e>2.~
+            | <b  f' a b e>2.~
+            | <b  f' a b e>2.
             \bar "||"
           }
-          % }          
-          % { second part
+           - %}          
+          %{ -  second part
           \acuteCouplet
           \bar "||"
           \acuteRefrain
-          % }          
-          % { coda
+          - %}          
+          % { -  coda
           {
-            { | <fis aisis bis   e     >2.~ | <fis aisis bis   e     >2. }
+            { | \tuplet 8/6 { r4 bis'8 fis aisis bis e bis }| <fis aisis bis   e     >2. } 
             { | <eis a     b     disis >2.~ | <eis a     b     disis >2. }
             { | <e   bes'  dis   g     >2.~ | <e   bes'  dis   g     >2. }
             { | <ees a     d     g     >2.~ | <ees a     d     g     >2. }
@@ -320,19 +320,20 @@ bassRefrain = {
             | <b e a b e>2.\fermata 
             |
           }
+          %} 
         }
         \new Voice = "bass" \relative e  {
           \voiceTwo
-          % { first part
+          %{ -  first part
           \bassCouplet
           \bassRefrain
           { | e, | e | e | e }
-          % }          
-          % { second part
+           - %}          
+          %{ -  second part
           \bassCouplet
           \bassRefrain
-          % }          
-          % { coda
+           - %}          
+          % { -  coda
           { 
             | gis | gis 
             | cis | cis 
@@ -347,6 +348,7 @@ bassRefrain = {
             | e
             |
           }
+          %} 
         }
       >>
     }
