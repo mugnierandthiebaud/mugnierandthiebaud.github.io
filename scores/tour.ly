@@ -137,33 +137,31 @@ melodyRefrainZwei = {
 }
 
 acuteRefrain = {   
-  { r8 g    <c       e  >  g    <c       e  >  g    }
-  { r8 fis  <c'      d  >  fis, <c'      d  >  fis, }
-  { r8 fis  <b       e  >  fis  <b       e  >  fis  }
-  { r8 e    <g       b  >  e    <g       b  >  e    }
-  { r8 g    <c       d  >  g    <c       d  >  g    }
-  { r8 fis  <b       c  >  fis  <b       c  >  fis  }
-  { r8 fis  <a       b  >  fis  <a       b  >  fis  }
-  { r8 e    <g       b  >  e    <g       b  >  e    }
-  { r8 g    <c       e  >  g    <c       e  >  g    }
-  { r8 ees' <c  fis  b  >  ees  <c  fis  b  >  ees  }
-  { r8 bes  <e, cis' fis>  bes' <e, cis' fis>  bes' }
-  \repeat unfold 2 { r8 b    < e a>  b    <e a>  b    }
-  \repeat unfold 2 { r8 bes  < d g>  bes  < d g> bes  }
-  { r8 a    < cis fis>  a    < cis fis> a   }
-  { r8 a    < cis fis>  a    < dis fis> a   }
-  \repeat unfold 2 { r8 e   <b' e>  e,    <b' e>  e,    
-                     r8 e   <b' b>  e,    <b' b>  e,    }
-  { r8 e   <ais b e > e   <ais b e > e   }
-  { r8 ees <a   b g'> ees <a   b g'> ees }
-  { \tuplet 8/6 {  r4 gis8 d c' gis   f' c }  }   
-  { <d, gis c f b>2.}
-  { r8 c' <gis b' >  c  <g a' >  c  }
-  { r8 c  <f   aes>  c  <e fis>  c  }
-  { r8 b  <fis a' >  b  <f g' >  b  }
-  { r8 b  <dis fis>  b  <d e  >  b  }
-  \repeat unfold 2 { r8 e,  < ais dis   g >  e    <ais dis   g >  e    }
-  \repeat unfold 2 { r8 dis < a'  cisis g'>  dis, <a'  cisis g'>  dis, }
+  { r8 g   <c    e        >  g    <c    e        >  g    }
+  { r8 fis <c'   d        >  fis, <c'   d        >  fis, }
+  { r8 fis <b    e        >  fis  <b    e        >  fis  }
+  { r8 e   <g    b        >  e    <g    b        >  e    }
+  { r8 g   <c    d        >  g    <c    d        >  g    }
+  { r8 fis <b    c        >  fis  <b    c        >  fis  }
+  { r8 fis <a    b        >  fis  <a    b        >  fis  }
+  { r8 e   <g    b        >  e    <g    b        >  e    }
+  { r8 g   <c    e        >  g    <c    e        >  g    }
+  { r8 c   <ees  fis   b  >  c    <ees  fis   b  >  c    }
+  { r8 e,  <bes' cis   fis>  e,   <bes' cis   fis>  e,   } \repeat unfold 2 {
+    r8 b'  <e    a        >  b    <e    a        >  b    } \repeat unfold 2 {
+    r8 bes <d    g        >  bes  <d    g        >  bes  }
+  { r8 a   <cis  fis      >  a    <cis  fis      >  a    }
+  { r8 a   <cis  fis      >  a    <dis  fis      >  a    } \repeat unfold 2 { 
+    r8 e   <b'   e        >  e,   <b'   e        >  e,    
+    r8 e   <b'   b        >  e,   <b'   b        >  e,   }
+  { r8 e   <ais  b     e  >  e    <ais  b     e  >  e    }
+  { r8 ees <a    b     g' >  ees  <a    b     g' >  ees  } { \tuplet 8/6 {  r4 gis8 d c' gis   f' c }  <d, gis c f b>2. }
+  { r8 c'  <gis  b'       >  c    <g    a'       >  c    }
+  { r8 c   <f    aes      >  c    <e    fis      >  c    }
+  { r8 b   <fis  a'       >  b    <f    g'       >  b    }
+  { r8 b   <dis  fis      >  b    <d    e        >  b    } \repeat unfold 2 {
+    r8 e,  <ais  dis   g  >  e    <ais  dis   g  >  e    } \repeat unfold 2 { 
+    r8 dis <a'   cisis g' >  dis, <a'   cisis g' >  dis, }
 }
 bassRefrain = {
   a2.
@@ -204,9 +202,11 @@ bassRefrain = {
 \score {
 
   <<
-    \new Staff \with { midiInstrument = #"clarinet" instrumentName = #"Chant" } \relative e' {
+    \new Staff \with { midiInstrument = #"clarinet" instrumentName = #"Chant" } \transpose e d \relative e'' {
       
       \key e \minor
+      \clef #"treble"
+
       \new Voice = "one" {
         \tempo 4 = 140
         \time 3/4
@@ -218,7 +218,9 @@ bassRefrain = {
         % }          
         % { second part
         \repeat unfold #8 R2.
-        \repeat unfold #7 b2.
+        b2.~ b2. 
+        b2.~ b2.
+        b2.~ b2.~ b2.
         R2.
         \melodyRefrainZwei 
         % }          
@@ -258,7 +260,7 @@ bassRefrain = {
         Qu’i -- l vien -- ne, qu’i -- l vien -- \override LyricText.self-alignment-X = #LEFT ne,_Le 
         temps dont on s’é -- prenne.
 
-        m -- m -- m -- m -- m -- m -- m 
+        m -- m -- m 
 
         Tel -- le la prai -- -- rie
         À l’ou -- bli li -- vrée,
@@ -275,9 +277,11 @@ bassRefrain = {
         Le temps dont on s'é -- prenne.
       }
     }
-    \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose c' c {
+    \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } \transpose e' d {
 
       \key e \minor
+      \clef #"treble_8"
+
       <<
         \new Voice = "couplet" \relative e'  {
           \voiceOne
@@ -300,14 +304,14 @@ bassRefrain = {
           % }          
           % { coda
           {
-            {<fis aisis bis   e  >2.~ <fis aisis bis   e >2.}
-            {<eis a     b     e  >2.~ <eis a     b     e >2.}
-            {<e   bes'  dis   g  >2.~ <e   bes'  dis   g >2.}
-            {<ees a     d     g  >2.~ <ees a     d     g >2.}
-            {<fis b     c     e  >2.~ <fis b     c     e >2.}
-            {<f   a     b     e  >2.~ <f   a     b     e >2.}
-            {<e   ais   dis   g  >2.~ <e   ais   dis   g >2.}
-            {<dis a'    cisis g' >2.~ <dis a'    cisis g'>2.}
+            {<fis aisis bis   e     >2.~ <fis aisis bis   e     >2.}
+            {<eis a     b     disis >2.~ <eis a     b     disis >2.}
+            {<e   bes'  dis   g     >2.~ <e   bes'  dis   g     >2.}
+            {<ees a     d     g     >2.~ <ees a     d     g     >2.}
+            {<fis b     c     e     >2.~ <fis b     c     e     >2.}
+            {<f   a     b     e     >2.~ <f   a     b     e     >2.}
+            {<e   ais   dis   g     >2.~ <e   ais   dis   g     >2.}
+            {<dis a'    cisis g'    >2.~ <dis a'    cisis g'    >2.}
 
             \repeat unfold 2 {<b e a b e>2.~
                               <b e a b e>2.}
@@ -345,7 +349,6 @@ bassRefrain = {
   >>
 
   \layout {
-    \clef #"treble_8"
     \time 3/4
     \accidentalStyle modern-voice-cautionary
   }
