@@ -206,7 +206,7 @@ bassRefrain = \relative e {
 
       \new Staff \with { midiInstrument = #"clarinet" instrumentName = #"Chant" } \relative b {
 
-        %{ \transpose e g %} {
+        \transpose e g {
           \key e \minor
           \clef #"treble"
 
@@ -229,7 +229,7 @@ bassRefrain = \relative e {
 
         \pageBreak
 
-        %{ \transpose e gis %} {
+        \transpose e gis {
           \key e \minor
           \clef #"treble"
 
@@ -308,7 +308,7 @@ bassRefrain = \relative e {
       }
       \new Staff \with { midiInstrument = #"acoustic guitar (nylon)" instrumentName = #"Guitare" } {
 
-        \transpose e' e %{ g %} {
+        \transpose e' g {
 
           \key e \minor
           \clef #"treble_8"
@@ -342,7 +342,7 @@ bassRefrain = \relative e {
 
         \pageBreak
 
-        \transpose e' e %{ gis %} {
+        \transpose e' gis %{ e %} {
           \key e \minor
           \clef #"treble_8"
 
