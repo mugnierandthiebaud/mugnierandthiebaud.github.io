@@ -148,8 +148,8 @@ acuteRefrain = {
   { r8 g    <c       e  >  g    <c       e  >  g    }
   { r8 ees' <c  fis  b  >  ees  <c  fis  b  >  ees  }
   { r8 bes  <e, cis' fis>  bes' <e, cis' fis>  bes' }
-  \repeat unfold 2 { r8 b    < e a>  b  <e a>  b    }
-  \repeat unfold 2 { r8 bes    < d g>  bes    < d g> bes   }
+  \repeat unfold 2 { r8 b    < e a>  b    <e a>  b    }
+  \repeat unfold 2 { r8 bes  < d g>  bes  < d g> bes  }
   { r8 a    < cis fis>  a    < cis fis> a   }
   { r8 a    < cis fis>  a    < dis fis> a   }
   \repeat unfold 2 { r8 e   <b' e>  e,    <b' e>  e,    
@@ -162,8 +162,8 @@ acuteRefrain = {
   { r8 c  <f   aes>  c  <e fis>  c  }
   { r8 b  <fis a' >  b  <f g' >  b  }
   { r8 b  <dis fis>  b  <d e  >  b  }
-  \repeat unfold 2 { r8 e,    < ais    dis   g >  e <ais    dis   g >  e  }
-  \repeat unfold 2 { r8 dis < a' cisis g'>  dis,  <a' cisis g'>  dis,   }
+  \repeat unfold 2 { r8 e,  < ais dis   g >  e    <ais dis   g >  e    }
+  \repeat unfold 2 { r8 dis < a'  cisis g'>  dis, <a'  cisis g'>  dis, }
 }
 bassRefrain = {
   a2.
