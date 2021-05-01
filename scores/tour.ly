@@ -1,9 +1,9 @@
 \version "2.22"
 
-%{
 \paper {
   page-count = #2
 }
+%{
 %}
 
 #(set-global-staff-size 17)
@@ -14,9 +14,11 @@
   poet = #"Poème de Arthur Rimbaud"
 }
 
+%{}
 \markup {
   \vspace #1
 }
+%}
 
 % couplet (16 bars) %%%%%%%%%%%%%%%%%%
 melodyCouplet = {
@@ -208,22 +210,23 @@ bassRefrain = {
         \tempo 4 = 140
         \time 3/4
 
-        %{ -  first part
+        % { -  first part
         \melodyCouplet
         \melodyRefrain
         | e2.       
         | R2.       
         | R2.       
         | R2.
-         - %}          
-        %{ -  second part
+        % - }          
+        \pageBreak
+        % { -  second part
         \repeat unfold #8 { | R2. }
         | b2.~ | b2. 
         | b2.~ | b2.
         | b2.~ | b2.~ | b2.
         | R2.
         \melodyRefrainZwei 
-         - %}         
+        % - }         
         % { -  coda
         | e2.       
         | R2.       
@@ -287,35 +290,39 @@ bassRefrain = {
       <<
         \new Voice = "couplet" \relative e'  {
           \voiceOne
-          %{ -  first part
+          % { -  first part
           \acuteCouplet
           \bar "||"
           \acuteRefrain
           { 
-            | \tuplet 8/6 { r4 f8 b, a' f b a }
-            | <b, f' a b e>2.~
-            | <b  f' a b e>2.~
-            | <b  f' a b e>2.
+            | <b f' a b e>2.~ % | \tuplet 8/6 { r4 f8 b, a' f b a }
+            | <b f' a b e>2.
+            | <b f' a b e>2.~
+            | <b f' a b e>2.
             \bar "||"
           }
-           - %}          
-          %{ -  second part
+          % - }          
+          \pageBreak
+          % { -  second part
           \acuteCouplet
           \bar "||"
           \acuteRefrain
-          - %}          
+          % - }          
           % { -  coda
           {
-            { | \tuplet 8/6 { r4 bis'8 fis aisis bis e bis }| <fis aisis bis   e     >2. } 
-            { | <eis a     b     disis >2.~ | <eis a     b     disis >2. }
-            { | <e   bes'  dis   g     >2.~ | <e   bes'  dis   g     >2. }
-            { | <ees a     d     g     >2.~ | <ees a     d     g     >2. }
-            { | <fis b     c     e     >2.~ | <fis b     c     e     >2. }
-            { | <f   a     b     e     >2.~ | <f   a     b     e     >2. }
-            { | <e   ais   dis   g     >2.~ | <e   ais   dis   g     >2. }
-            { | <dis a'    cisis g'    >2.~ | <dis a'    cisis g'    >2. }
+            |  <fis aisis bis   e     >2.~  | <fis aisis bis   e     >2. % \tuplet 8/6 { r4 bis'8 fis  aisis bis e  bis  } 
+            |  <eis a     b     disis >2.~  | <eis a     b     disis >2.
+            |  <e   bes'  dis   g     >2.~  | <e   bes'  dis   g     >2. % \tuplet 8/6 { r4 bes'8 e,   dis'  bes g' bes, } 
+            |  <ees a     d     g     >2.~  | <ees a     d     g     >2.
+            |  <fis b     c     e     >2.~  | <fis b     c     e     >2.
+            |  <f   a     b     e     >2.~  | <f   a     b     e     >2.
+            |  <e   ais   dis   g     >2.~  | <e   ais   dis   g     >2. % \tuplet 8/6 { r4 ais8  e    dis'  ais g' dis  }
+            |  <dis a'    cisis g'    >2.~  | <dis a'    cisis g'    >2.
 
-            \repeat unfold 2 { | <b e a b e>2.~
+            \tuplet 8/6 { r8 e  b a' e  b' a e' } 
+            \tuplet 8/6 { b e  a, b e, a  b, e  } 
+
+            \repeat unfold 1 { | <b e a b e>2.~
                                | <b e a b e>2. }
             | <b e a b e>2.\fermata 
             |
@@ -324,27 +331,28 @@ bassRefrain = {
         }
         \new Voice = "bass" \relative e  {
           \voiceTwo
-          %{ -  first part
+          % { -  first part
           \bassCouplet
           \bassRefrain
-          { | e, | e | e | e }
-           - %}          
-          %{ -  second part
+          { | e, | e | e~ | e }
+          % - }          
+          \pageBreak
+          % { -  second part
           \bassCouplet
           \bassRefrain
-           - %}          
+          % - }          
           % { -  coda
           { 
-            | gis | gis 
-            | cis | cis 
-            | c   | c   
-            | f,  | f 
-            | d'  | d   
-            | g,  | g   
-            | fis | fis 
-            | b   | b
-            | e,  | e   
-            | e   | e  
+            | gis  | gis 
+            | cis~ | cis 
+            | c    | c   
+            | f,~  | f 
+            | d'   | d   
+            | g,~  | g   
+            | fis  | fis 
+            | b~   | b
+            | e,~  | e   
+            | e    | e  
             | e
             |
           }
