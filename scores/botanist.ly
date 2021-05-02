@@ -1,4 +1,5 @@
-\version "2.29"
+\version "2.22"
+
 %{
 \paper {
   page-count = #2
@@ -57,9 +58,11 @@ reexpositionPartTwoUpper = {
 developmentUpper = {
   \key a \minor
   <<
-    \new Voice \relative a' { 
+    \new Voice \relative a'' { 
       \voiceOne
-      | s1
+      \repeat unfold #2 {| a8 a,4 a8~ a a4 a8 }
+      \repeat unfold #2 s1
+      
       \bar "||"
     }
     \new Voice \relative a { 
@@ -72,13 +75,33 @@ developmentUpper = {
 expositionBisPartThreeUpper = {
   \key a \major
   <<
-    \new Voice \relative a' { 
+    \new Voice \relative a'' { 
       \voiceOne
-      | s1
-      \bar "||"
+      | b2 a
+      | <a cis>4. d,8 gis cis4 b8
+      | <a, d a'>2 <gis d' gis>4 r16 e'32 fis gis a b cis
+      | <b d>2 a4. cis8
+      | <b e>2 a4 r16 fis32 gis a b cis d
+      | <e, e'>2~ <e e'>8 <e e'>4 <d d'>8
+      | <d fis cis'>2 <d gis b>4 r16 e32 fis gis a b cis
+      | <b, d>2~ <b d>4. cis8
+      | <e b' e>2 <a, e' a>4 r16 d32 e fis gis a b 
+      | <cis, cis'>2. b8 b'
+      | <d, a'>8 a~ a4 <gis d' gis>4 gis8 d' 
+      | \bar "||"
     }
-    \new Voice \relative a { 
+    \new Voice \relative a' { 
       \voiceTwo 
+      | s2 s8 a cis e
+      | s1
+      | s1
+      | s1
+      | s1
+      | s2 a,4 b
+      | s1
+      | s2 <cis a'>4 s4
+      | s1
+      | s4 fis2 s4
       | s1
     }
   >>
@@ -298,12 +321,16 @@ developmentLower = {
   <<
     \new Voice \relative a { 
       \voiceOne
-      | s1
+      \repeat unfold 8 {| s1}
+      | e2 e2
+      | 
       \bar "||"
     }
-    \new Voice \relative a,, { 
+    \new Voice \relative a { 
       \voiceTwo 
-      | s1
+      \repeat unfold 2 {| a4 a2 a4}
+      \repeat unfold 11 {| a8 a4 a8~ a8 a4 a8 }
+      
     }
   >>
 }
@@ -316,11 +343,34 @@ expositionBisPartThreeLower = {
   <<
     \new Voice \relative a { 
       \voiceTwo  
-      | s1
-
+      | fis8 cis' e fis~ fis2
+      | b,8 fis' a2 a4
+      | e,8 b' d fis e, b' d4
+      \clef treble
+      | a8 e' gis b cis a e4
+      | cis8 e b' e~ e a, e4
+      \clef bass
+      | d,8 a' d fis r2
+      | e,8 b' d fis e, b' d4
+      \clef treble
+      | a8 e' gis b~ b a e4
+      | fis,8 b cis e fis e cis4
+      \clef bass
+      | b,8 fis' a b d fis~ fis4
+      | e,4 b'8 d~ d e~ e4 
     }
     \new Voice \relative a,, { 
       \voiceOne 
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
       | s1
       \bar "||"
     }
