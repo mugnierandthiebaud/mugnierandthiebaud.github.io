@@ -25,30 +25,32 @@ reexpositionPartOneUpper = {
   \new Voice { 
     \key a \major
     
-    | \tupletUp \voiceTwo 
-    | \tuplet 3/2 { <e''   b''    >8 b'    <e''   b''   >}  \tuplet 3/2 { b'     <e''   b''    > b'     } \voiceOne
-    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <e''   a''    >  a'    } \voiceTwo
-    | \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }
-    | \tuplet 3/2 { <d''   a''    >  a'    <d''   a''   >}  \tuplet 3/2 { a'     <d''   a''    > a'     } \voiceOne
-    \tuplet 3/2 { <d''   gis''  >  gis'  <d''   gis'' >}  \tuplet 3/2 { gis'   <d''   gis''  > gis'   } \voiceTwo
-    | \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    } 
-    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a''   cis''' > cis''  }
-    | \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     } 
-    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     } 
-    | \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { e''    <a''   e'''   > e''    } 
-    \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    } 
-    | \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
-    \tuplet 3/2 { <fis'' b''    >  b'    <fis'' b''   >}  \tuplet 3/2 { b'     <fis'' b''    > b'     }
-    | \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    }
-    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a'' cis''' > cis''  }
-    | \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     } 
-    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     } 
-    | \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }
-    | \tuplet 3/2 { a''  d'' a' }  \tuplet 3/2 { d' a d' }  \tuplet 3/2 { a'  d'' a' }  a''4
-    | \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis d' }  \tuplet 3/2 { gis'  d'' gis' }  gis''4
-    | \tuplet 3/2 { a''8  e'' a' }  \tuplet 3/2 { a' e' a } s2
+    \tupletUp \voiceTwo     | 
+
+    \tuplet 3/2 { <e''   b''    >8 b'    <e''   b''   >}  \tuplet 3/2 { b'     <e''   b''    > b'     } \voiceOne
+    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <e''   a''    >  a'    } \voiceTwo  | 
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
+    \tuplet 3/2 { <d''   a''    >  a'    <d''   a''   >}  \tuplet 3/2 { a'     <d''   a''    > a'     } \voiceOne
+    \tuplet 3/2 { <d''   gis''  >  gis'  <d''   gis'' >}  \tuplet 3/2 { gis'   <d''   gis''  > gis'   } \voiceTwo  | 
+    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    } 
+    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            | 
+    \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     }             
+    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
+    \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { e''    <a''   e'''   > e''    }             
+    \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    }            | 
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis'' b''    >  b'    <fis'' b''   >}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
+    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    }
+    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            | 
+    \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     }             
+    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
+
+    \tuplet 3/2 { a''     d'' a'   }  \tuplet 3/2 { d' a   d' }  \tuplet 3/2 { a'   d'' a'   }  a''4   | 
+    \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis d' }  \tuplet 3/2 { gis' d'' gis' }  gis''4 | 
+    \tuplet 3/2 { a''8    e'' a'   }  \tuplet 3/2 { a' e'  a  }  s2                                    |
     \bar "||"
   }
 }
