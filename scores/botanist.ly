@@ -56,18 +56,47 @@ reexpositionPartTwoUpper = {
 }
 
 developmentUpper = {
-  \key a \minor
-  <<
+  % \key a \minor
+  <<  %{%}
     \new Voice \relative a'' { 
       \voiceOne
-      \repeat unfold #2 {| a8 a,4 a8~ a a4 a8 }
-      \repeat unfold #2 s1
-      
-      \bar "||"
-    }
-    \new Voice \relative a { 
+      | a8\p a,4 a8~ a a4 a8 
+      | a'8  a,4 a8~ a a4 a8 
+      \repeat unfold #2 s1 
+    
+        \clef bass
+      | a,,,8 a'            r4 r \clef treble r8             a'''16      c,
+      | d8   f              r4 r              r8             f16         gis,
+      | b'8  e,,            r4 r              r8             b''16       e,
+      | e'8  a,,            r4 r \clef bass   r8             e,16        a,
+      | a'8  a,,            r4 r \clef treble r8             fis'''''16  dis
+      | a'8  b,,            r4 r              r8             fis''16     b,
+      | b'8  e,,,           r4 r              r8             gis''16     e
+      | g8   a,,            r4 r \clef bass   r8 \ottava #-1 
+                                                             e,,16       a,
+      | a'8  d,, \ottava #0 
+                            r4 r \clef treble r8 \ottava #1  
+                                                             f'''''16     d
+      | d'8  d,             r4 r              r8             f16          gis,
+      | b'8  e,, \ottava #0 
+                            r4 r \clef bass   r8             b,,16        e,
+      | e'8  a,,            r4 r2
+    
+      % \bar "||"
+    }  
+    \new Voice \transpose g a \relative g { 
       \voiceTwo 
-      | s1
+      \key g \minor
+      \repeat unfold #14 {| s1} 
+      %{
+      | g8  g'  r4 r r8 g'16   bes, | c8  ees  r4 r r8 ees16 fis, 
+      | a'8 d,, r4 r r8 a'16   d,   | d'8 g,,  r4 r r8 d''16 g,  
+      | g'8 g,, r4 r r8 e''16  cis  | g'8 a,,  r4 r r8 e''16 a,    
+      | a'8 d,, r4 r r8 fis'16 d    | f8  g,,  r4 r r8 d''16 g,   
+      | g'8 c,, r4 r r8 ees'16 c    | c'8  c,  r4 r r8 ees16 fis,
+      | a'8 d,, r4 r r8 a''16  d,   | d'8  g,, r4 r2
+      %}
+
     }
   >>
 }
@@ -319,17 +348,23 @@ developmentLower = {
   \clef bass
   \key a \minor
   <<
-    \new Voice \relative a { 
+    \new Voice \relative a' { 
       \voiceOne
       \repeat unfold 8 {| s1}
       | e2 e2
-      | 
-      \bar "||"
+      | <dis fis>2 <dis fis>2
+      | <d f>2 <d f>2
+      | <c e>2 <c e>2
+      | <b dis>2 <b dis>2
+      | <bes d>2 <bes d>2
+      | c2 c2
+      | s1
+      % \bar "||"
     }
     \new Voice \relative a { 
       \voiceTwo 
       \repeat unfold 2 {| a4 a2 a4}
-      \repeat unfold 11 {| a8 a4 a8~ a8 a4 a8 }
+      \repeat unfold 14 {| a8 a4 a8~ a8 a4 a8 }
       
     }
   >>
