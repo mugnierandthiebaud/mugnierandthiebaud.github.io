@@ -1,5 +1,6 @@
 \version "2.22"
 
+
 %{
 \paper {
   page-count = #2
@@ -38,35 +39,41 @@ reexpositionPartOneUpper = {
 reexpositionPartTwoUpper = {
   \key c \minor
   <<
-    \new Voice \relative ees' { 
+    \new Voice \relative c { 
       \voiceOne
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      \key a \major
+      | <f' f,>4 <f' c' f>2 <ees c' ees>4
+      | <g c g'>2~ <g c g'>4. <f c' f>8
+      | <ees aes ees'>2 <d aes' d>2
+      | <aes' bes ees aes>2 <g bes ees g>4 <g bes ees g>4
+      | <aes  ees' aes>2 <bes ees bes'>4 \tupletUp \tuplet 3/2 { g,16 bes ees g bes ees }
+      | <bes ees bes'>2 <bes, ees bes'>4 <aes' ees' aes>4
+      | <g ees' g>2 <f d' f>4 \tupletUp \tuplet 3/2 { d16 f aes b d f }
+      | <aes, ees' aes>2 <aes, ees' aes>4. <g' ees' g>8
+      | <f c' f>2 <g c g'>4 \tupletUp \tuplet 3/2 { g,16 c g' g c g' }
+      | <g, c g'>2 <g, c g'>4. <f' c' f >8 
+      | <ees aes ees'>2 <ees, aes ees'>4. <d' d'>8
+      | <des g des'>2 <aes aes'>2
+      | <bes f' bes>2 <b f' b>2 
+      % \key a \major
       | s1
       | s1
       \bar "||"
     }
-    \new Voice \relative ees' { 
+    \new Voice \relative c { 
       \voiceTwo 
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
+      | s4 <f' g c>2 <ees g bes>4
+      | r4 <bes c ees g>2 <aes c ees f>4
+      | r4 <bes ees aes>4 <bes d aes'>2
+      | r4 <bes ees aes>4 <bes ees g>4 s4
+      | r4 <bes ees f aes>4 <bes ees g>4 s4
+      | r4 <ees bes' c>2 <ees aes c>4
+      | r4 <aes, ees' g>4 <aes d f>4 s4
+      | r4 <bes ees aes>4 <bes ees aes>4 <bes ees g>4 
+      | r4 <g c f>4 <g c g'>4 s4
+      | r4 <bes c ees g>4 <aes bes c ees>4 <bes c ees f>4 
+      | r4 <aes c ees>4 <f aes c>4 <aes c ees>4 
+      | r4 <g des f>4 <aes des f>2
+      | r4 <bes des f>4 <b des f>2
     }
   >>
 }
@@ -80,7 +87,7 @@ developmentUpper = {
       | a'8  a,4 a8~ a a4 a8 
       \repeat unfold #2 s1 
     
-        \clef bass
+      \clef bass
       | a,,,8 a'            r4 r \clef treble r8             a'''16      c,
       | d8   f              r4 r              r8             f16         gis,
       | b'8  e,,            r4 r              r8             b''16       e,
@@ -88,14 +95,10 @@ developmentUpper = {
       | a'8  a,,            r4 r \clef treble r8             fis'''''16  dis
       | a'8  b,,            r4 r              r8             fis''16     b,
       | b'8  e,,,           r4 r              r8             gis''16     e
-      | g8   a,,            r4 r \clef bass   r8 \ottava #-1 
-                                                             e,,16       a,
-      | a'8  d,, \ottava #0 
-                            r4 r \clef treble r8 \ottava #1  
-                                                             f'''''16     d
-      | d'8  d,             r4 r              r8             f16          gis,
-      | b'8  e,, \ottava #0 
-                            r4 r \clef bass   r8             b,,16        e,
+      | g8   a,,            r4 r \clef bass   r8 \ottava #-1 e,,16       a,
+      | a'8  d,, \ottava #0 r4 r \clef treble r8 \ottava #1  f'''''16    d
+      | d'8  d,             r4 r              r8             f16         gis,
+      | b'8  e,, \ottava #0 r4 r \clef bass   r8             b,,16       e,
       | e'8  a,,            r4 r2
     
       % \bar "||"
@@ -104,7 +107,8 @@ developmentUpper = {
       \voiceTwo 
       \key g \minor
       \repeat unfold #14 {| s1} 
-      %{
+      % VERBATIM FROM MOZART SCORE ; JUST FOR CONTROL ; UNCOMMENT ONLY IF YOU KNOW WHAT YOU ARE DOING
+      %{ 
       | g8  g'  r4 r r8 g'16   bes, | c8  ees  r4 r r8 ees16 fis, 
       | a'8 d,, r4 r r8 a'16   d,   | d'8 g,,  r4 r r8 d''16 g,  
       | g'8 g,, r4 r r8 e''16  cis  | g'8 a,,  r4 r r8 e''16 a,    
@@ -620,6 +624,7 @@ expositionPartOneLower = {
     }
   >>
 }
+
 
 \score{
 
