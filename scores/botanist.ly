@@ -41,6 +41,13 @@ reexpositionPartTwoUpper = {
     \new Voice \relative ees' { 
       \voiceOne
       | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
       \key a \major
       | s1
       | s1
@@ -48,6 +55,15 @@ reexpositionPartTwoUpper = {
     }
     \new Voice \relative ees' { 
       \voiceTwo 
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
       | s1
       | s1
       | s1
@@ -327,14 +343,37 @@ reexpositionPartTwoLower = {
 
 
   <<
-    \new Voice \relative ees { 
+    \new Voice \relative c' { 
       \voiceTwo  
-      | s1
-      | s1
+      | <c,,  c,  >2. c'8 c,
+      | <f    f,  >2. f'8 f,
+      | <bes  bes,>2. \tupletUp \tuplet 3/2 { bes8  f   bes, }
+      | <ees  ees,>2. \tupletUp \tuplet 3/2 { ees'8 bes ees, }
+      | <g    g,  >2. \tupletUp \tuplet 3/2 { g'8   ees g,   }
+      | <c    c,  >2  <ees bes' c>
+      | <b    b,  >2. \tupletUp \tuplet 3/2 { b'8   f   b,   }
+      | <bes  bes,>1
+      | <a    a,  >2. \tupletUp \tuplet 3/2 { a'8   c,  a    }
+      | <aes  aes,>1
+      | <des, des,>1
+      | <des  des,>1
+      | <des  des,>1
       | s1
     }
     \new Voice \relative ees, { 
       \voiceOne 
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
       | s1
       \key a \major
       | s1
