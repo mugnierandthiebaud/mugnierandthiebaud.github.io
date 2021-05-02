@@ -5,7 +5,7 @@
 }
 %}
 
-#(set-global-staff-size 16)
+% #(set-global-staff-size 16)
 
 \header {
   title = #"Après “Les filles du botaniste”"
@@ -17,12 +17,156 @@
   \vspace #1
 }
 
-partTwoUpper = {
+% UPPER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+reexpositionPartOneUpper = {
+  \key a \major
+  <<
+    \new Voice \relative a' { 
+      \voiceOne
+      | s1
+      \bar "||"
+    }
+    \new Voice \relative a { 
+      \voiceTwo 
+      | s1
+    }
+  >>
+}
+
+reexpositionPartTwoUpper = {
   \key c \minor
   <<
     \new Voice \relative ees' { 
       \voiceOne
-      | <f g ees'>2. g'4
+      | s1
+      \key a \major
+      | s1
+      | s1
+      \bar "||"
+    }
+    \new Voice \relative ees' { 
+      \voiceTwo 
+      | s1
+      | s1
+      | s1
+    }
+  >>
+}
+
+developmentUpper = {
+  \key a \minor
+  <<
+    \new Voice \relative a' { 
+      \voiceOne
+      | s1
+      \bar "||"
+    }
+    \new Voice \relative a { 
+      \voiceTwo 
+      | s1
+    }
+  >>
+}
+
+expositionBisPartThreeUpper = {
+  \key a \major
+  <<
+    \new Voice \relative a' { 
+      \voiceOne
+      | s1
+      \bar "||"
+    }
+    \new Voice \relative a { 
+      \voiceTwo 
+      | s1
+    }
+  >>
+}
+
+expositionBisPartTwoUpper = {
+  \key c \minor
+  <<
+    \new Voice \relative c'' { 
+      \voiceOne
+      | <d g d'>2         <c c'>
+      | <bes ees g bes>   < aes aes'>
+      | <c g' c>          < bes bes'>
+      | <aes bes ees aes> <g g'>
+      | <f bes f'>        <ees bes' ees>
+      | <bes' ees bes'>   <aes aes'>
+      | <aes d f aes>     <g ees' g>
+      | <aes ees' aes>~   <aes ees' aes>4. <g ees' g>8
+      | <f g c f>2        <ees g c ees>
+      | <g c g'>~         <g c g'>4. <f f'>8
+      | <ees aes c ees>2~ <ees aes c ees>4. <des aes' des>8
+      | <des g des'>2     aes'
+      | <des, g bes des>  <aes' b>4 r16 d32 ees f g aes bes
+      |
+      \bar "||"
+    }
+    \new Voice \relative c' { 
+      \voiceTwo 
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+    }
+  >>
+}
+
+expositionBisPartOneUpper = {
+  \key a \major
+  <<
+    \new Voice \relative a' { 
+      \voiceOne
+      | cis1\mf
+      | cis2.. b8
+      | <d, a' b>2 gis4 d8 b'
+      | d2 cis 
+      | b4 e, a e' 
+      | <e fis>2. d4
+      | <d, fis cis'>2 <b d fis b>
+      | <e d' e>2 s4 d'8 cis
+      | <b e>4 e,8 gis <e a e'>4 e8 a
+      | cis2~ cis8 fis, cis' b 
+      | a2~ a8 d, a' aes 
+      \key c \minor
+      | g2 b,8 d g4
+      \bar "||"
+    }
+    \new Voice \relative a { 
+      \voiceTwo 
+      | r4 r8 cis~ <cis gis'>4 a'      
+      | <d, a'>4. d8~ d4 d
+      | s1
+      | <a' e'>2 e4 e
+      | <a e'>2 s2
+      | fis  fis
+      | s1
+      | s2 e8 gis s4
+      | s1
+      | s1
+      | s1
+    }
+  >>
+}
+
+expositionPartTwoUpper = {
+  \key c \minor
+  <<
+    \new Voice \relative ees' { 
+      \voiceOne
+      | <f g ees'>2.\mp g'4
       | <bes, c ees g>2. f8 f'
       | <f, bes ees>2 <d d'>
       | <aes' aes'>2. <g g'>4
@@ -55,9 +199,9 @@ partTwoUpper = {
 
 }
 
-partOneUpper = {
+expositionPartOneUpper = {
   \key a \major
-  \time 4/4
+
 
   <<
     \new Voice \relative a' { 
@@ -104,7 +248,168 @@ partOneUpper = {
   
 }
 
-partTwoLower = {
+% LOWER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+reexpositionPartOneLower = {
+  \clef bass
+  \key a \major
+
+
+  <<
+    \new Voice \relative a { 
+      \voiceTwo  
+      | s1
+
+    }
+    \new Voice \relative a,, { 
+      \voiceOne 
+      | s1
+      \bar "||"
+    }
+  >>
+}
+
+reexpositionPartTwoLower = {
+  \clef bass
+  \key c \minor
+
+
+  <<
+    \new Voice \relative ees { 
+      \voiceTwo  
+      | s1
+      | s1
+      | s1
+    }
+    \new Voice \relative ees, { 
+      \voiceOne 
+      | s1
+      \key a \major
+      | s1
+      | s1
+      \bar "||"
+    }
+  >>
+}
+
+developmentLower = {
+  \clef bass
+  \key a \minor
+  <<
+    \new Voice \relative a { 
+      \voiceOne
+      | s1
+      \bar "||"
+    }
+    \new Voice \relative a,, { 
+      \voiceTwo 
+      | s1
+    }
+  >>
+}
+
+expositionBisPartThreeLower = {
+  \clef bass
+  \key a \major
+
+
+  <<
+    \new Voice \relative a { 
+      \voiceTwo  
+      | s1
+
+    }
+    \new Voice \relative a,, { 
+      \voiceOne 
+      | s1
+      \bar "||"
+    }
+  >>
+}
+
+expositionBisPartTwoLower = {
+  \clef bass
+  \key c \minor
+
+
+  <<
+    \new Voice \relative c { 
+      \voiceOne
+      | r4 <bes' ees g>2 <bes ees g>4
+      | r4 <aes bes c ees>2 <aes bes c ees>4
+      | r4 <f bes ees>2 <f bes d>4
+      | r4 <aes bes ees>2 <g bes ees>4
+      | r4 <aes bes ees>2 <g bes ees>4
+      | r4 <bes c ees>2 <aes c ees>4
+      | r4 <f aes d>2 <f aes ees'>4
+      | r4 <g c f>2 <g c ees>4
+      | r4 <g c f>2 <g c ees>4
+      | r4 <g c f>2 <g c ees>4
+      | r4 <f aes c>2 <f aes des>4
+      | r4 <f  g  b>2 <f  aes  b>4
+      | r4 <f  g  bes>2 <f  aes  b>4
+    }
+    \new Voice \relative c,, { 
+      \voiceTwo 
+      | <c' c'>1
+      | <f, f'>1
+      | <bes bes'>1
+      | <ees ees'>1
+      | <g, g'>1
+      | <c c'>1
+      | <b b'>1
+      | <bes bes'>1
+      | <a a'>1
+      | <aes aes'>1
+      | <des des'>1
+      | <des des'>1
+      | <des des'>1
+      \bar "||"
+    }
+  >>
+}
+
+expositionBisPartOneLower = {
+  \key a \major
+  \clef bass
+  <<
+    \new Voice \relative a, { 
+      \voiceTwo 
+      | fis8 cis' e4 fis8 a4 a8
+      | b,8 fis' a4 a8 b r4
+      | e,,8 b' e a gis b~ b4
+      | a,8 e' a d cis2
+      | r8 cis,4 a' b8~ b4
+      | r8 \autoBeamOff d, \autoBeamOn fis <a d>4 d4 d8 
+      | a8 e, b' e a2
+      | a,8 e' b' d~ d2
+      | cis,8 e b'4 cis,8 a'~ a4
+      | d,8 a' b cis d2
+      | g,,8 d' fis a b2
+      | g,8 d' f a~ a2
+    }
+    \new Voice \relative a { 
+      \voiceOne
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      \key c \minor
+      | s1
+      \bar "||"
+
+    }
+  >>
+}
+
+expositionPartTwoLower = {
   \key c \minor
   \clef bass
   <<
@@ -139,17 +444,14 @@ partTwoLower = {
       | r8 \autoBeamOff f~ \autoBeamOn f aes~ aes4. aes8
       \key a \major
       | r8 \autoBeamOff gis \autoBeamOn b4 s2
-
-
-
     }
   >>
 }
 
-partOneLower = {
+expositionPartOneLower = {
   \clef bass
   \key a \major
-  \time 4/4
+
 
   <<
     \new Voice \relative a { 
@@ -195,7 +497,6 @@ partOneLower = {
   >>
 }
 
-
 \score{
 
   \header {
@@ -205,12 +506,24 @@ partOneLower = {
     \set PianoStaff.instrumentName = #"Piano  "
     \new Staff = "RH"  {
       \tempo 4 = 90
-      \partOneUpper
-      \partTwoUpper
+      \expositionPartOneUpper
+      \expositionPartTwoUpper
+      \expositionBisPartOneUpper
+      \expositionBisPartTwoUpper
+      \expositionBisPartThreeUpper
+      \developmentUpper
+      \reexpositionPartTwoUpper
+      \reexpositionPartOneUpper
     }
     \new Staff = "LH" {
-      \partOneLower
-      \partTwoLower
+      \expositionPartOneLower
+      \expositionPartTwoLower
+      \expositionBisPartOneLower
+      \expositionBisPartTwoLower
+      \expositionBisPartThreeLower
+      \developmentLower
+      \reexpositionPartTwoLower
+      \reexpositionPartOneLower
     }
   >>
   \layout{
