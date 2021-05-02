@@ -24,14 +24,24 @@
 reexpositionPartOneUpper = {
   \key a \major
   <<
-    \new Voice \relative a' { 
+    \new Voice \relative a'' { 
       \voiceOne
+      \tupletUp 
+      | \tuplet 3/2 { <e b'>8\mf b  <e b'>}  \tuplet 3/2 { b  <e  b'> b  }
+        \tuplet 3/2 { <e a>8     a, <e' a>}  \tuplet 3/2 { a, <e' a>  a, }
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
+      | s1
       | s1
       \bar "||"
-    }
-    \new Voice \relative a { 
-      \voiceTwo 
-      | s1
     }
   >>
 }
@@ -54,9 +64,6 @@ reexpositionPartTwoUpper = {
       | <ees aes ees'>2 <ees, aes ees'>4. <d' d'>8
       | <des g des'>2 <aes aes'>2
       | <bes f' bes>2 <b f' b>2 
-      % \key a \major
-      | s1
-      | s1
       \bar "||"
     }
     \new Voice \relative c { 
@@ -328,15 +335,22 @@ reexpositionPartOneLower = {
 
 
   <<
-    \new Voice \relative a { 
+    \new Voice \relative a, { 
       \voiceTwo  
-      | s1
-
-    }
-    \new Voice \relative a,, { 
-      \voiceOne 
-      | s1
-      \bar "||"
+      | fis8 e' fis a e' a, fis e
+      | b, d' fis a d a fis d
+      | e, d' fis b d b gis e
+      | a, e' b' d e d b e,
+      | cis, e' a b e b a e
+      | d, fis' a d e d a fis
+      | e, fis' a b d b a fis
+      | a, e' a b e b a e
+      | fis, e' fis a e' a, fis e
+      | b, d' fis a d a fis d
+      | e, d' fis b d2 
+      | e,,8 d' gis b d2
+      | a,8 e' a4 a,2 
+      \bar "|."
     }
   >>
 }
@@ -362,26 +376,6 @@ reexpositionPartTwoLower = {
       | <des, des,>1
       | <des  des,>1
       | <des  des,>1
-      | s1
-    }
-    \new Voice \relative ees, { 
-      \voiceOne 
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      \key a \major
-      | s1
-      | s1
       \bar "||"
     }
   >>
@@ -624,7 +618,6 @@ expositionPartOneLower = {
     }
   >>
 }
-
 
 \score{
 
