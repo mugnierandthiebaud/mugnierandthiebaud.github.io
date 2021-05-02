@@ -1,4 +1,4 @@
-\version "2.22"
+\version "2.22.1"
 
 %{
 \paper {
