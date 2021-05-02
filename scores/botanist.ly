@@ -25,12 +25,21 @@ reexpositionPartOneUpper = {
   \key a \major
   <<
     \new Voice \relative a'' { 
+      
+      | \voiceTwo
+      \tupletUp 
+      \tuplet 3/2 { <e b'>8\mf b  <e b'>}  \tuplet 3/2 { b  <e  b'> b  }
       \voiceOne
       \tupletUp 
-      | \tuplet 3/2 { <e b'>8\mf b  <e b'>}  \tuplet 3/2 { b  <e  b'> b  }
-        \tuplet 3/2 { <e a>8     a, <e' a>}  \tuplet 3/2 { a, <e' a>  a, }
-      | s1
-      | s1
+      \tuplet 3/2 { <e a>     a, <e' a>}  \tuplet 3/2 { a, <e' a>  a, }
+      | \voiceTwo
+      \tupletUp 
+      \tuplet 3/2 { <fis'  cis'>  cis  <fis cis'>}  \tuplet 3/2 { cis  <fis  cis'> cis   }
+      \tuplet 3/2 { <fis   cis'>  cis  <fis cis'>}  \tuplet 3/2 { b,   <fis' b   > b,    }
+      | \tuplet 3/2 { <d     a'  >  a    <d   a'  >}  \tuplet 3/2 { a    <d    a'  > a     }
+      \tuplet 3/2 { <d     gis >  gis, <d'  gis >}  \tuplet 3/2 { gis, <d'   gis > gis,  }
+      | \tuplet 3/2 { <a'    d   >  d,   <a'  d   >}  \tuplet 3/2 { d,    <a'   d   > d,   }
+      \tuplet 3/2 { <a'    d   >  d,   <a'  d   >}  \tuplet 3/2 { cis,  <a'   cis > cis, }
       | s1
       | s1
       | s1
