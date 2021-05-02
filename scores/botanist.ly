@@ -1,6 +1,5 @@
 \version "2.22"
 
-
 %{
 \paper {
   page-count = #2
@@ -23,36 +22,35 @@
 
 reexpositionPartOneUpper = {
   \key a \major
-  <<
-    \new Voice \relative a'' { 
-      
-      | \voiceTwo
-      \tupletUp 
-      \tuplet 3/2 { <e b'>8\mf b  <e b'>}  \tuplet 3/2 { b  <e  b'> b  }
-      \voiceOne
-      \tupletUp 
-      \tuplet 3/2 { <e a>     a, <e' a>}  \tuplet 3/2 { a, <e' a>  a, }
-      | \voiceTwo
-      \tupletUp 
-      \tuplet 3/2 { <fis'  cis'>  cis  <fis cis'>}  \tuplet 3/2 { cis  <fis  cis'> cis   }
-      \tuplet 3/2 { <fis   cis'>  cis  <fis cis'>}  \tuplet 3/2 { b,   <fis' b   > b,    }
-      | \tuplet 3/2 { <d     a'  >  a    <d   a'  >}  \tuplet 3/2 { a    <d    a'  > a     }
-      \tuplet 3/2 { <d     gis >  gis, <d'  gis >}  \tuplet 3/2 { gis, <d'   gis > gis,  }
-      | \tuplet 3/2 { <a'    d   >  d,   <a'  d   >}  \tuplet 3/2 { d,    <a'   d   > d,   }
-      \tuplet 3/2 { <a'    d   >  d,   <a'  d   >}  \tuplet 3/2 { cis,  <a'   cis > cis, }
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      \bar "||"
-    }
-  >>
+  \new Voice { 
+    \key a \major
+    
+    | \tupletUp \voiceTwo 
+    | \tuplet 3/2 { <e''   b''    >8 b'    <e''   b''   >}  \tuplet 3/2 { b'     <e''   b''    > b'     } \voiceOne
+    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <e''   a''    >  a'    } \voiceTwo
+    | \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }
+    | \tuplet 3/2 { <d''   a''    >  a'    <d''   a''   >}  \tuplet 3/2 { a'     <d''   a''    > a'     } \voiceOne
+    \tuplet 3/2 { <d''   gis''  >  gis'  <d''   gis'' >}  \tuplet 3/2 { gis'   <d''   gis''  > gis'   } \voiceTwo
+    | \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    } 
+    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a''   cis''' > cis''  }
+    | \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     } 
+    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     } 
+    | \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { e''    <a''   e'''   > e''    } 
+    \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    } 
+    | \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis'' b''    >  b'    <fis'' b''   >}  \tuplet 3/2 { b'     <fis'' b''    > b'     }
+    | \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    }
+    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a'' cis''' > cis''  }
+    | \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     } 
+    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     } 
+    | \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }
+    | \tuplet 3/2 { a''  d'' a' }  \tuplet 3/2 { d' a d' }  \tuplet 3/2 { a'  d'' a' }  a''4
+    | \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis d' }  \tuplet 3/2 { gis'  d'' gis' }  gis''4
+    | \tuplet 3/2 { a''8  e'' a' }  \tuplet 3/2 { a' e' a } s2
+    \bar "||"
+  }
 }
 
 reexpositionPartTwoUpper = {
@@ -115,7 +113,7 @@ developmentUpper = {
       | a'8  d,, \ottava #0 r4 r \clef treble r8 \ottava #1  f'''''16    d
       | d'8  d,             r4 r              r8             f16         gis,
       | b'8  e,, \ottava #0 r4 r \clef bass   r8             b,,16       e,
-      | e'8  a,,            r4 r2
+      | e'8  a,,            r4 r \clef treble r8\ff          <g'' g'>16 <fis fis'> 
     
       % \bar "||"
     }  
