@@ -193,22 +193,6 @@ expositionBisPartTwoUpper = {
       |
       \bar "||"
     }
-    \new Voice \relative c' { 
-      \voiceTwo 
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-    }
   >>
 }
 
@@ -517,7 +501,9 @@ expositionBisPartOneLower = {
       | cis,8 e b'4 cis,8 a'~ a4
       | d,8 a' b cis d2
       | g,,8 d' fis a b2
+      \key c \minor
       | g,8 d' f a~ a2
+      \bar "||"
     }
     \new Voice \relative a { 
       \voiceOne
@@ -532,10 +518,7 @@ expositionBisPartOneLower = {
       | s1
       | s1
       | s1
-      \key c \minor
       | s1
-      \bar "||"
-
     }
   >>
 }
