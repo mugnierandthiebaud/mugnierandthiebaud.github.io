@@ -4,7 +4,7 @@
 
 3 Un couple marche dans un tunnel. Larme.
 
-4 Une typesse casse un verre par mégarde. Après réflexion, elle laisse trainer un bout de verre exprès alors qu'une autre typesse marche pieds nus, pas par méchanceté pure, mais parce que elle est pas contente car l'autre lui a fait une vacherie avant. Ordinary Wickedness.
+4 Une typesse casse un verre par mégarde. Après réflexion, elle laisse trainer un bout de verre exprès alors qu'une autre typesse marche pieds nus, pas par méchanceté pure, mais parce que elle est pas contente car l'autre lui a fait une vacherie avant. Wickedness.
 
 5 Un type fait du bronzing sur sa terrasse. Bonne pensée du matin.
 
