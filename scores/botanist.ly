@@ -89,7 +89,7 @@ expositionBisPartTwoUpper = {
   <<
     \new Voice \relative c'' { 
       \voiceOne
-      | <d g d'>2         <c c'>
+      | <d g d'>2\f       <c c'>
       | <bes ees g bes>   < aes aes'>
       | <c g' c>          < bes bes'>
       | <aes bes ees aes> <g g'>
@@ -500,7 +500,7 @@ expositionPartOneLower = {
 \score{
 
   \header {
-    opus = \markup {\italic "À Kitty Lam."}
+    opus = \markup {\italic "A Kitty Lam."}
   }
   \new PianoStaff <<
     \set PianoStaff.instrumentName = #"Piano  "
