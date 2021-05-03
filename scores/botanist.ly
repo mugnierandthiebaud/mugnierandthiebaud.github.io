@@ -127,7 +127,9 @@ developmentRightHand = {
                                                              f'''''16    d
       | d'8  d,             r4 r              r8             f16         gis,
       | b'8  e,, \ottava #0 r4 r \clef bass   r8             b,,16       e,
-      | e'8  a,,            r4 r \clef treble r8\ff          <g'' g'>16 <fis fis'>
+      | e'8  a,,            r4 r \clef treble 
+      \override Voice.NoteHead.color = #(x11-color 'black)
+                                              r8\ff          <g'' g'>16 <fis fis'>
     }
     % VERBATIM FROM MOZART SCORE ; JUST FOR CONTROL ; UNCOMMENT ONLY IF YOU KNOW WHAT YOU ARE DOING
     %{
