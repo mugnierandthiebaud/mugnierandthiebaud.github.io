@@ -283,23 +283,24 @@ expositionPartOneUpper = {
   <<
     \new Voice \relative a' { 
       \voiceOne
+      % \override Voice.NoteHead.color = #(x11-color 'red3)
       % http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
-      \repeat unfold #2 {
-        | <a c>4(
-        << { \change Staff = "LH" \hideNotes f,,8) f''8 \unHideNotes \change Staff = "RH"  }
-           \new Voice { \voiceThree 
-                        r4
-           }
-        >> \oneVoice
-      
+      {
+        \repeat unfold #2 {
+          | <a c>4(
+          << 
+            { \change Staff = "LH" \hideNotes a,,8) a''8 \unHideNotes \change Staff = "RH"  }
+            \new Voice { \voiceTwo d4\rest }
+          >> \oneVoice
+        }
+        \alternative { 
+          {<a c>2}
+          {<a c>4 <gis b>}
+        }
       }
-      \alternative { 
-        {<a c>2}
-        {<a c>4 <gis b>}
-      }
-      \voiceOne
-      | <a c>4 r <a c>2 
-      | <a c>4 r <a c> <gis b>
+
+      % | <a c>4 r <a c>2 
+      % | <a c>4 r <a c> <gis b>
       %
       | <a cis>1
       | cis2~ cis4. b8
@@ -623,18 +624,20 @@ expositionPartOneLower = {
   \new PianoStaff <<
     \set PianoStaff.instrumentName = #"Piano  "
     \new Staff = "RH"  {
+      \tempo 4 = 87
+
       % enforce creation of all contexts at this point of time 
       % cf . http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
-      <>
-      \tempo 4 = 87
-                  \expositionPartOneUpper       \bar "||"  
-                  \expositionPartTwoUpper       \bar "||" 
-      \pageBreak  \expositionBisPartOneUpper    \bar "||" 
-                  \expositionBisPartTwoUpper    \bar "||" 
-      \pageBreak  \expositionBisPartThreeUpper  
-                  \developmentUpper             \bar "||" 
-      \pageBreak  \reexpositionPartTwoUpper     \bar "||" 
-                  \reexpositionPartOneUpper     \bar "|."
+      <> 
+
+      \expositionPartOneUpper       \bar "||"  
+      \expositionPartTwoUpper       \bar "||" \pageBreak
+      \expositionBisPartOneUpper    \bar "||" 
+      \expositionBisPartTwoUpper    \bar "||" \pageBreak
+      \expositionBisPartThreeUpper  
+      \developmentUpper             \bar "||" \pageBreak
+      \reexpositionPartTwoUpper     \bar "||" 
+      \reexpositionPartOneUpper     \bar "|."
     }
     \new Dynamics {
       | s1-\p                      % prologue, expositionPartOne
@@ -653,17 +656,17 @@ expositionPartOneLower = {
       \repeat unfold #12 { | s1}   %  
       | s1-\mf                     % reexpositionPartOne 
       \repeat unfold #12 { | s1}   %  
-      | s1-"QWE!!!!!!!!!"          % hurlement de joie
+      s1-\markup { \center-column { "The" "End" } }       % hurlement de joie
     }
     \new Staff = "LH" {
-                  \expositionPartOneLower       \bar "||" 
-                  \expositionPartTwoLower       \bar "||" 
-      \pageBreak  \expositionBisPartOneLower    \bar "||" 
-                  \expositionBisPartTwoLower    \bar "||" 
-      \pageBreak  \expositionBisPartThreeLower  
-                  \developmentLower             \bar "||" 
-      \pageBreak  \reexpositionPartTwoLower     \bar "||" 
-                  \reexpositionPartOneLower     \bar "|."
+      \expositionPartOneLower       \bar "||" 
+      \expositionPartTwoLower       \bar "||" 
+      \expositionBisPartOneLower    \bar "||" 
+      \expositionBisPartTwoLower    \bar "||" 
+      \expositionBisPartThreeLower  
+      \developmentLower             \bar "||" 
+      \reexpositionPartTwoLower     \bar "||" 
+      \reexpositionPartOneLower     \bar "|."
     }
   >>
   \layout{
@@ -674,4 +677,3 @@ expositionPartOneLower = {
     \tempo 4 = 87
   }
 }
-
