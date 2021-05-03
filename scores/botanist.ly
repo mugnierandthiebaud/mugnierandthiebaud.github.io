@@ -26,7 +26,8 @@ reexpositionPartOneUpper = {
     \key a \major
     
     \tupletUp \voiceTwo     | 
-
+    \once \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \mark "Legato"
     \tuplet 3/2 { <e''   b''    >8 b'    <e''   b''   >}  \tuplet 3/2 { b'     <e''   b''    > b'     } \voiceOne
     \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <e''   a''    >  a'    } \voiceTwo  | 
     \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
@@ -47,10 +48,13 @@ reexpositionPartOneUpper = {
     \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
     \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
     \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
-
-    \tuplet 3/2 { a''     d'' a'   }  \tuplet 3/2 { d' a   d' }  \tuplet 3/2 { a'   d'' a'   }  a''4   | 
-    \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis d' }  \tuplet 3/2 { gis' d'' gis' }  gis''4 | 
-    \tuplet 3/2 { a''8    e'' a'   }  \tuplet 3/2 { a' e'  a  }  s2                                    |
+    \voiceOne
+    \dimTextDecresc
+    \override TextSpanner.bound-details.left.text = "rallentando"
+  
+    \tuplet 3/2 { a''\>     d'' a'   }  \tuplet 3/2 { d' a   d' }  \tuplet 3/2 { a'   d'' a'   }  a''4     | 
+    \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis\startTextSpan d' }  \tuplet 3/2 { gis' d'' gis' }  gis''4\p\! | 
+    \tuplet 3/2 { a''8    e'' a'   }  \tuplet 3/2 { a' e'  a\stopTextSpan  }   s2                                        |
   }
 }
 
@@ -60,18 +64,18 @@ reexpositionPartTwoUpper = {
     \new Voice \relative c { 
       \voiceOne
       | <f' f,>4 <f' c' f>2 <ees c' ees>4
-      | <g c g'>2~ <g c g'>4. <f c' f>8
+      | <g c g'\tenuto>2~ <g c g'>4. <f c' f>8
       | <ees aes ees'>2 <d aes' d>2
-      | <aes' bes ees aes>2 <g bes ees g>4 <g bes ees g>4
-      | <aes  ees' aes>2 <bes ees bes'>4 \tupletUp \tuplet 3/2 { g,16 bes ees g bes ees }
+      | <aes' bes ees aes\tenuto>2 <g bes ees g>4 <g bes ees g>4
+      | <aes  ees' aes>2 <bes ees bes'>4 \tupletUp \tuplet 3/2 { g,16\( bes ees } \tuplet 3/2 { g bes ees\) }
       | <bes ees bes'>2 <bes, ees bes'>4 <aes' ees' aes>4
-      | <g ees' g>2 <f d' f>4 \tupletUp \tuplet 3/2 { d16 f aes b d f }
+      | <g ees' g>2 <f d' f>4 \tupletUp \tuplet 3/2 { d16\( f aes } \tuplet 3/2 { b d f\) }
       | <aes, ees' aes>2 <aes, ees' aes>4. <g' ees' g>8
-      | <f c' f>2 <g c g'>4 \tupletUp \tuplet 3/2 { g,16 c g' g c g' }
+      | <f c' f>2 <g c g'>4 \tupletUp \tuplet 3/2 { g,16\( c g' } \tuplet 3/2 { g c g'\) }
       | <g, c g'>2 <g, c g'>4. <f' c' f >8 
       | <ees aes ees'>2 <ees, aes ees'>4. <d' d'>8
-      | <des g des'>2 <aes aes'>2
-      | <bes f' bes>2 <b f' b>2 
+      | <des g des'>2\> <aes aes'>2
+      | <bes f' bes>2 <b f' b>2\!
     }
     \new Voice \relative c { 
       \voiceTwo 
@@ -86,7 +90,7 @@ reexpositionPartTwoUpper = {
       | r4 <g c f>4 <g c g'>4 s4
       | r4 <bes c ees g>4 <aes bes c ees>4 <bes c ees f>4 
       | r4 <aes c ees>4 <f aes c>4 <aes c ees>4 
-      | r4 <g des f>4 <aes des f>2
+      | r4 <g des' f>4 <aes des f>2
       | r4 <bes des f>4 <b des f>2
     }
   >>
@@ -97,39 +101,41 @@ developmentUpper = {
   <<  %{%}
     \new Voice \relative a'' { 
       \voiceOne
-      | a8\p a,4 a8~ a a4 a8 
-      | a'8  a,4 a8~ a a4 a8 
+      | a8  a,4 a8~ a a4 a8 
       \repeat unfold #2 s1 
     
       \clef bass
-      | a,,,8 a'            r4 r \clef treble r8             a'''16      c,
+      | a,,,8^\markup { \italic \bold "Très sec" }^\f
+             a'             r4 r \clef treble r8             a'''16      c,
       | d8   f              r4 r              r8             f16         gis,
       | b'8  e,,            r4 r              r8             b''16       e,
       | e'8  a,,            r4 r \clef bass   r8             e,16        a,
       | a'8  a,,            r4 r \clef treble r8             fis'''''16  dis
       | a'8  b,,            r4 r              r8             fis''16     b,
       | b'8  e,,,           r4 r              r8             gis''16     e
-      | g8   a,,            r4 r \clef bass   r8 \ottava #-1 e,,16       a,
-      | a'8  d,, \ottava #0 r4 r \clef treble r8 \ottava #1  f'''''16    d
+      | g8   a,,            r4 r \clef bass   r8 \ottava #-1 \set Staff.ottavation = \markup \bold \concat{ "8" \tiny "va bassa" }
+                                                             e,,16       a,
+      | a'8  d,, \ottava #0 r4 r \clef treble r8 \ottava #1  \set Staff.ottavation = \markup \bold \concat {"8" \tiny \raise #0.7"va" }
+                                                             f'''''16    d
       | d'8  d,             r4 r              r8             f16         gis,
       | b'8  e,, \ottava #0 r4 r \clef bass   r8             b,,16       e,
       | e'8  a,,            r4 r \clef treble r8\ff          <g'' g'>16 <fis fis'> 
     }  
+    % VERBATIM FROM MOZART SCORE ; JUST FOR CONTROL ; UNCOMMENT ONLY IF YOU KNOW WHAT YOU ARE DOING
+    %{ 
     \new Voice \transpose g a \relative g { 
       \voiceTwo 
       \key g \minor
-      \repeat unfold #14 {| s1} 
-      % VERBATIM FROM MOZART SCORE ; JUST FOR CONTROL ; UNCOMMENT ONLY IF YOU KNOW WHAT YOU ARE DOING
-      %{ 
+      \partial 2.. s2..
+      \repeat unfold #13 {| s1} 
       | g8  g'  r4 r r8 g'16   bes, | c8  ees  r4 r r8 ees16 fis, 
       | a'8 d,, r4 r r8 a'16   d,   | d'8 g,,  r4 r r8 d''16 g,  
       | g'8 g,, r4 r r8 e''16  cis  | g'8 a,,  r4 r r8 e''16 a,    
       | a'8 d,, r4 r r8 fis'16 d    | f8  g,,  r4 r r8 d''16 g,   
       | g'8 c,, r4 r r8 ees'16 c    | c'8  c,  r4 r r8 ees16 fis,
       | a'8 d,, r4 r r8 a''16  d,   | d'8  g,, r4 r2
-      %}
-
     }
+    %}
   >>
 }
 
@@ -138,17 +144,21 @@ expositionBisPartThreeUpper = {
   <<
     \new Voice \relative a'' { 
       \voiceOne
-      | b?2 a
-      | <a cis>4. d,8 gis cis4 b8
-      | <a, d a'>2 <gis d' gis>4 r16 e'32 fis gis a b cis
-      | <b d>2 a4. cis8
-      | <b e>2 a4 r16 fis32 gis a b cis d
+      | b?2\( a
+      | <a cis>4.\) d,8 gis cis4 b8
+      | <a, d a'>2\( <gis d' gis>4\) r16 e'32 fis gis a b cis
+      | <b d>2\( a4. cis8
+      | <b e>2 a4\) r16 fis32 gis a b cis d
       | <e, e'>2~ <e e'>8 <e e'>4 <d d'>8
-      | <d fis cis'>2 <d gis b>4 r16 e32 fis gis a b cis
+      | <d fis cis'>2\( <d gis b>4\) r16 e32 fis gis a b cis
       | <b, d>2~ <b d>4. cis8
       | <e b' e>2 <a, e' a>4 r16 d32 e fis gis a b 
-      | <cis, cis'>2. b8 b'
+      | <cis, cis'>2.\( b8 b'
       | <d, a'>8 a~ a4 <gis d' gis>4 gis8 d' 
+      \bar "||"
+      % first bar of development
+      \key a \minor
+      | a'8\p\) a,4 a8~ a a4 a8 
     }
     \new Voice \relative a' { 
       \voiceTwo 
@@ -163,6 +173,8 @@ expositionBisPartThreeUpper = {
       | s1
       | s4 fis2 s4
       | s1
+      % first bar of development
+      | s1
     }
   >>
 }
@@ -172,19 +184,19 @@ expositionBisPartTwoUpper = {
   <<
     \new Voice \relative c'' { 
       \voiceOne
-      | <d g d'>2\f       <c c'>
-      | <bes ees g bes>   < aes aes'>
-      | <c g' c>          < bes bes'>
-      | <aes bes ees aes> <g g'>
-      | <f bes f'>        <ees bes' ees>
-      | <bes' ees bes'>   <aes aes'>
-      | <aes d f aes>     <g ees' g>
-      | <aes ees' aes>~   <aes ees' aes>4. <g ees' g>8
-      | <f g c f>2        <ees g c ees>
-      | <g c g'>~         <g c g'>4. <f f'>8
-      | <ees aes c ees>2~ <ees aes c ees>4. <des aes' des>8
-      | <des g des'>2     aes'
-      | <des, g bes des>  <aes' b>4 r16 d32 ees f g aes bes!
+      | <d g d'>2\f\(          <c c'>
+      | <bes ees g bes>        < aes aes'>\)
+      | <c g' c>\(             < bes bes'>
+      | <aes bes ees aes>      <g g'>\)
+      | <f bes f'>\(           <ees bes' ees>
+      | <bes'\tenuto ees bes'> <aes aes'>\)
+      | <aes d f aes>\(        <g ees' g>
+      | <aes ees' aes>~        <aes ees' aes>4. <g ees' g>8\)
+      | <f g c f>2\(           <ees g c ees>
+      | <g c g'>~              <g c g'>4. <f f'>8\)
+      | <ees aes c ees>2~\(    <ees aes c ees>4. <des aes' des>8
+      | <des g des'>2\)        aes'
+      | <des, g bes des>       <aes' b>4 r16 d32 ees f g aes bes!
       |
     }
   >>
@@ -198,14 +210,14 @@ expositionBisPartOneUpper = {
       | cis1\mf
       | cis2.. b8
       | <d, a' b>2 gis4 d8 b'
-      | d2 cis 
-      | b4 e, a e' 
-      | <e fis>2. d4
-      | <d, fis cis'>2 <b d fis b>
+      | d2\tenuto\( cis\) 
+      | b4\< e, a e'\!
+      | <e\tenuto fis>2.\(  d4
+      | <d, fis cis'>2 <b d fis b>\)
       | <e d' e>2 s4 d'8 cis
       | <b e>4 e,8 gis <e a e'>4 e8 a
-      | cis2~ cis8 fis, cis' b 
-      | a2~ a8 d, a' aes 
+      | cis2~\( cis8 fis, cis' b 
+      | a2~ a8 d, a' aes\)
       \key c \minor
       | g2 b,8 d g4
     }
@@ -351,13 +363,13 @@ reexpositionPartTwoLower = {
       \voiceTwo  
       | <c,,  c,  >2. c'8 c,
       | <f    f,  >2. f'8 f,
-      | <bes  bes,>2. \tupletUp \tuplet 3/2 { bes8  f   bes, }
-      | <ees  ees,>2. \tupletUp \tuplet 3/2 { ees'8 bes ees, }
-      | <g    g,  >2. \tupletUp \tuplet 3/2 { g'8   ees g,   }
+      | <bes  bes,>2. \tupletUp \tuplet 3/2 { bes8    f   bes,   }
+      | <ees  ees,>2. \tupletUp \tuplet 3/2 { ees'8   bes ees,   }
+      | <g    g,  >2. \tupletUp \tuplet 3/2 { g'8\(   ees g,\)   }
       | <c    c,  >2  <ees bes' c>
-      | <b    b,  >2. \tupletUp \tuplet 3/2 { b'8   f   b,   }
+      | <b    b,  >2. \tupletUp \tuplet 3/2 { b'8\(   f   b,\)   }
       | <bes  bes,>1
-      | <a    a,  >2. \tupletUp \tuplet 3/2 { a'8   c,  a    }
+      | <a    a,  >2. \tupletUp \tuplet 3/2 { a'8\(   c,  a\)    }
       | <aes  aes,>1
       | <des, des,>1
       | <des  des,>1
@@ -368,11 +380,10 @@ reexpositionPartTwoLower = {
 
 developmentLower = {
   \clef bass
-  \key a \minor
   <<
     \new Voice \relative a' { 
       \voiceOne
-      \repeat unfold 8 {| s1}
+      \repeat unfold 7 {| s1}
       | e2 e2
       | <dis fis>2 <dis fis>2
       | <d f>2 <d f>2
@@ -384,8 +395,11 @@ developmentLower = {
     }
     \new Voice \relative a { 
       \voiceTwo 
-      \repeat unfold 2 {| a4 a2 a4}
-      \repeat unfold 14 {| a8 a4 a8~ a8 a4 a8 }
+      | a4 a2 a4
+      \repeat unfold 2 {| a8 a4 a8~ a8 a4 a8 } 
+      | a8_\markup { \italic sempre \dynamic p } a4 a8~ a8 a4 a8
+      \repeat unfold 10 {| a8 a4 a8~ a8 a4 a8 }
+      | a8 a4 a8~ a8 a8 r4
       
     }
   >>
@@ -414,20 +428,9 @@ expositionBisPartThreeLower = {
       \clef bass
       | b,8 fis' a b d fis~ fis4
       | e,4 b'8 d~ d e~ e4 
-    }
-    \new Voice \relative a,, { 
-      \voiceOne 
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
-      | s1
+      % first bar of development
+      \key a \minor
+      | a,4 a2 a4
     }
   >>
 }
@@ -610,7 +613,7 @@ expositionPartOneLower = {
       \expositionPartTwoUpper       \bar "||"
       \expositionBisPartOneUpper    \bar "||"
       \expositionBisPartTwoUpper    \bar "||"
-      \expositionBisPartThreeUpper  \bar "||"
+      \expositionBisPartThreeUpper  
       \developmentUpper             \bar "||"
       \reexpositionPartTwoUpper     \bar "||"
       \reexpositionPartOneUpper     \bar "|."
@@ -620,7 +623,7 @@ expositionPartOneLower = {
       \expositionPartTwoLower       \bar "||"
       \expositionBisPartOneLower    \bar "||"
       \expositionBisPartTwoLower    \bar "||"
-      \expositionBisPartThreeLower  \bar "||"
+      \expositionBisPartThreeLower  
       \developmentLower             \bar "||"
       \reexpositionPartTwoLower     \bar "||"
       \reexpositionPartOneLower     \bar "|."
@@ -628,6 +631,7 @@ expositionPartOneLower = {
   >>
   \layout{
     \accidentalStyle modern-voice-cautionary
+    \override TupletBracket.bracket-visibility = ##t
   }
   \midi{
     \tempo 4 = 90
