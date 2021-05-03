@@ -1,18 +1,12 @@
 \version "2.22.1"
 
 %{
+%}
 \paper {
   page-count = #4
 }
-%}
 
-#(set-global-staff-size 18)
-
-\header {
-  title = #"Après “Les filles du botaniste”"
-  composer = #"Musique de Christophe Thiebaud"
-  poet = #"Arrangement de Benoît Urbain"
-}
+#(set-global-staff-size 19)
 
 \markup {
   \vspace #1
@@ -97,6 +91,7 @@ reexpositionPartTwoRightHand = {
   >>
 }
 
+
 developmentRightHand = {
   % \key a \minor
   <<  %{%}
@@ -107,14 +102,17 @@ developmentRightHand = {
       \repeat unfold #2 s1
 
       \clef bass
-      \override Voice.NoteHead.color = #(x11-color 'red3)
+      \override Voice.NoteHead.color = #(x11-color 'tomato2)
       %
-      | a,,,8^\markup { \italic \bold "Très sec" }^\f
+      | 
+      \footnote #'(-3 . 0) \markup { \with-color #(x11-color 'tomato2) "Verbatim from violin part of measure 44 of Domine Jesu from Mozart's Requiem"  } 
+      a,,,8^\markup { \italic \bold "Très sec" }^\f
              a'             r4 r \clef treble r8             a'''16      c,
       | d8   f              r4 r              r8             f16         gis,
       | b'8  e,,            r4 r              r8             b''16       e,
       | e'8  a,,            r4 r \clef bass   r8             
       \override Voice.NoteHead.color = #(x11-color 'green4)
+      \footnote #'(-1 . 3) \markup { \with-color #(x11-color 'green4) "Süssmayr's completion" }
                                                              e,16        a,
       $
       | a'8  a,,            r4 r \clef treble r8             fis'''''16  dis
@@ -637,67 +635,73 @@ expositionPartOneLeftHand = {
   >>
 }
 
-\score{
-
+\book {
   \header {
-    opus = \markup {\italic "A Kitty Lam."}
+    title = #"Après “Les filles du botaniste”"
+    composer = #"Musique de Christophe Thiebaud"
+    poet = #"Arrangement de Benoît Urbain"
+    dedication = \markup {\italic "A Kitty Lam"}
+    % tagline = "tagline goes at the bottom of the last page"
+    % instrument = "Piano"
   }
+  \score{
 
-  \new PianoStaff <<
-    \set PianoStaff.instrumentName = #"Piano  "
-    \new Staff = "RightHand"  {
+    \new PianoStaff <<
+      \set PianoStaff.instrumentName = #"Piano  "
+      \new Staff = "RightHand"  {
+        \tempo 4 = 86
+
+        % enforce creation of all contexts at this point of time
+        % cf . http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
+        <>
+
+        \expositionPartOneRightHand     \bar "||"
+        \expositionPartTwoRightHand     \bar "||" \pageBreak
+        \expositionBisPartOneRightHand  \bar "||"
+        \expositionBisPartTwoRightHand  \bar "||" \pageBreak
+        \expositionTerPartOneRightHand
+        \developmentRightHand           \bar "||" \pageBreak
+        \reexpositionPartTwoRightHand   \bar "||"
+        \reexpositionPartOneRightHand   \bar "|."
+      }
+      \new Dynamics {
+        s1-\p                  % prologue, expositionPartOne
+        \repeat unfold #13 s1  %
+        s1-\mp                 % expositionPartTwo
+        \repeat unfold #11 s1  %
+        s1-\mf                 % expositionBisPartOne
+        \repeat unfold #11 s1  %
+        s1-\f                  % expositionBisPartTwo
+        \repeat unfold #12 s1  %
+        s1-\mf                 % expositionTerPartOne
+        \repeat unfold #11 s1  %
+        s1-\p                  % development
+        \repeat unfold #14 s1  %
+        s1-\f                  % reexpositionPartTwo
+        \repeat unfold #12 s1  %
+        s1-\mf                 % reexpositionPartOne
+        \repeat unfold #12 s1  %
+        % s1-\markup { \center-column { "The" "End" } } % hurlement de joie
+      }
+      \new Staff = "LeftHand" {
+        \expositionPartOneLeftHand     \bar "||"
+        \expositionPartTwoLeftHand     \bar "||"
+        \expositionBisPartOneLeftHand  \bar "||"
+        \expositionBisPartTwoLeftHand  \bar "||"
+        \expositionTerPartOneLeftHand
+        \developmentLeftHand           \bar "||"
+        \reexpositionPartTwoLeftHand   \bar "||"
+        \reexpositionPartOneLeftHand   \bar "|."
+      }
+    >>
+
+    \layout{
+      \accidentalStyle modern-voice-cautionary
+      \override TupletBracket.bracket-visibility = ##t
+    }
+
+    \midi{
       \tempo 4 = 86
-
-      % enforce creation of all contexts at this point of time
-      % cf . http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
-      <>
-
-      \expositionPartOneRightHand     \bar "||"
-      \expositionPartTwoRightHand     \bar "||" \pageBreak
-      \expositionBisPartOneRightHand  \bar "||"
-      \expositionBisPartTwoRightHand  \bar "||" \pageBreak
-      \expositionTerPartOneRightHand
-      \developmentRightHand           \bar "||" \pageBreak
-      \reexpositionPartTwoRightHand   \bar "||"
-      \reexpositionPartOneRightHand   \bar "|."
     }
-    \new Dynamics {
-      s1-\p                  % prologue, expositionPartOne
-      \repeat unfold #13 s1  %
-      s1-\mp                 % expositionPartTwo
-      \repeat unfold #11 s1  %
-      s1-\mf                 % expositionBisPartOne
-      \repeat unfold #11 s1  %
-      s1-\f                  % expositionBisPartTwo
-      \repeat unfold #12 s1  %
-      s1-\mf                 % expositionTerPartOne
-      \repeat unfold #11 s1  %
-      s1-\p                  % development
-      \repeat unfold #14 s1  %
-      s1-\f                  % reexpositionPartTwo
-      \repeat unfold #12 s1  %
-      s1-\mf                 % reexpositionPartOne
-      \repeat unfold #12 s1  %
-      s1-\markup { \center-column { "The" "End" } } % hurlement de joie
-    }
-    \new Staff = "LeftHand" {
-      \expositionPartOneLeftHand     \bar "||"
-      \expositionPartTwoLeftHand     \bar "||"
-      \expositionBisPartOneLeftHand  \bar "||"
-      \expositionBisPartTwoLeftHand  \bar "||"
-      \expositionTerPartOneLeftHand
-      \developmentLeftHand           \bar "||"
-      \reexpositionPartTwoLeftHand   \bar "||"
-      \reexpositionPartOneLeftHand   \bar "|."
-    }
-  >>
-
-  \layout{
-    \accidentalStyle modern-voice-cautionary
-    \override TupletBracket.bracket-visibility = ##t
-  }
-
-  \midi{
-    \tempo 4 = 86
   }
 }
