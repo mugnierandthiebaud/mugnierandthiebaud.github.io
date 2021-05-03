@@ -302,6 +302,7 @@ expositionPartOneUpper = {
       % | <a c>4 r <a c>2 
       % | <a c>4 r <a c> <gis b>
       %
+      \voiceOne
       | <a cis>1
       | cis2~ cis4. b8
       | <d, a' b>2. gis4
