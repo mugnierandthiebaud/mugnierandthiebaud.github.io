@@ -51,7 +51,6 @@ reexpositionPartOneUpper = {
     \tuplet 3/2 { a''     d'' a'   }  \tuplet 3/2 { d' a   d' }  \tuplet 3/2 { a'   d'' a'   }  a''4   | 
     \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis d' }  \tuplet 3/2 { gis' d'' gis' }  gis''4 | 
     \tuplet 3/2 { a''8    e'' a'   }  \tuplet 3/2 { a' e'  a  }  s2                                    |
-    \bar "||"
   }
 }
 
@@ -73,7 +72,6 @@ reexpositionPartTwoUpper = {
       | <ees aes ees'>2 <ees, aes ees'>4. <d' d'>8
       | <des g des'>2 <aes aes'>2
       | <bes f' bes>2 <b f' b>2 
-      \bar "||"
     }
     \new Voice \relative c { 
       \voiceTwo 
@@ -116,8 +114,6 @@ developmentUpper = {
       | d'8  d,             r4 r              r8             f16         gis,
       | b'8  e,, \ottava #0 r4 r \clef bass   r8             b,,16       e,
       | e'8  a,,            r4 r \clef treble r8\ff          <g'' g'>16 <fis fis'> 
-    
-      % \bar "||"
     }  
     \new Voice \transpose g a \relative g { 
       \voiceTwo 
@@ -142,7 +138,7 @@ expositionBisPartThreeUpper = {
   <<
     \new Voice \relative a'' { 
       \voiceOne
-      | b2 a
+      | b?2 a
       | <a cis>4. d,8 gis cis4 b8
       | <a, d a'>2 <gis d' gis>4 r16 e'32 fis gis a b cis
       | <b d>2 a4. cis8
@@ -153,7 +149,6 @@ expositionBisPartThreeUpper = {
       | <e b' e>2 <a, e' a>4 r16 d32 e fis gis a b 
       | <cis, cis'>2. b8 b'
       | <d, a'>8 a~ a4 <gis d' gis>4 gis8 d' 
-      | \bar "||"
     }
     \new Voice \relative a' { 
       \voiceTwo 
@@ -189,9 +184,8 @@ expositionBisPartTwoUpper = {
       | <g c g'>~         <g c g'>4. <f f'>8
       | <ees aes c ees>2~ <ees aes c ees>4. <des aes' des>8
       | <des g des'>2     aes'
-      | <des, g bes des>  <aes' b>4 r16 d32 ees f g aes bes
+      | <des, g bes des>  <aes' b>4 r16 d32 ees f g aes bes!
       |
-      \bar "||"
     }
   >>
 }
@@ -214,7 +208,6 @@ expositionBisPartOneUpper = {
       | a2~ a8 d, a' aes 
       \key c \minor
       | g2 b,8 d g4
-      \bar "||"
     }
     \new Voice \relative a { 
       \voiceTwo 
@@ -238,20 +231,19 @@ expositionPartTwoUpper = {
   <<
     \new Voice \relative ees' { 
       \voiceOne
-      | <f g ees'>2.\mp g'4
-      | <bes, c ees g>2. f8 f'
+      | <f g ees'>2.\(\mp g'4
+      | <bes, c ees g>2.\) f8 f'
       | <f, bes ees>2 <d d'>
-      | <aes' aes'>2. <g g'>4
-      | f'2. ees4
-      | <bes bes'>2. aes8 aes'
-      | g2 f 
-      | aes2. f4 
+      | <aes' aes'\tenuto>2.\( <g g'>4
+      | f'2.\) ees4
+      | <bes bes'\tenuto>2. aes8 aes'
+      | g2\( f 
+      | aes2.\) <ees g\(>4 
       | <c f>2 ees
       | <c g g'>2. f4
-      | ees2~ ees4 d 
+      | ees2~ ees4. d!8
       \key a \major
-      | <gis, b cis>4. gis8 b4 cis
-      \bar "||"
+      | <gis, b cis\)>4. gis8 b4 cis
     }
     \new Voice \relative ees' { 
       \voiceTwo 
@@ -281,20 +273,21 @@ expositionPartOneUpper = {
       % \override Voice.NoteHead.color = #(x11-color 'red3)
       | <a c>4\p r <a c>2 
       | <a c>4 r <a c> <gis b>
+      %
       | <a cis>1
       | cis2~ cis4. b8
       | <d, a' b>2. gis4
       %
-      | <d' e>2~ <d e>4. cis8
+      \override TieColumn.tie-configuration = #'((4 . 1) (1 . -1))
+      | <d'\tenuto e>2~ <d e>4. cis8
       | <a b e>2 <cis, a'>2
-      | <a' e' fis>2 d4 fis,8 d'8
+      | <a' e'\tenuto\( fis>2 d4\) fis,8 d'8
       | <cis d>4 b <a d>8 d, gis4
-      | <gis d' e>2. cis,8 cis'
+      | <gis d'\tenuto e>2. cis,8 cis'
       %
       | <b cis>4. e,8 a2
-      | <cis d>2 a4. b8
-      | <fis a d>2~ <fis a d>4 aes4
-      \key c \minor
+      | <cis\tenuto d>2 a4. b8
+      | <fis a d>2~ <fis a d>4. aes8
       | <f g d'>2. s4
     }
     \new Voice \relative a { 
@@ -369,7 +362,6 @@ reexpositionPartTwoLower = {
       | <des, des,>1
       | <des  des,>1
       | <des  des,>1
-      \bar "||"
     }
   >>
 }
@@ -389,7 +381,6 @@ developmentLower = {
       | <bes d>2 <bes d>2
       | c2 c2
       | s1
-      % \bar "||"
     }
     \new Voice \relative a { 
       \voiceTwo 
@@ -437,7 +428,6 @@ expositionBisPartThreeLower = {
       | s1
       | s1
       | s1
-      \bar "||"
     }
   >>
 }
@@ -479,7 +469,6 @@ expositionBisPartTwoLower = {
       | <des des'>1
       | <des des'>1
       | <des des'>1
-      \bar "||"
     }
   >>
 }
@@ -503,7 +492,6 @@ expositionBisPartOneLower = {
       | g,,8 d' fis a b2
       \key c \minor
       | g,8 d' f a~ a2
-      \bar "||"
     }
     \new Voice \relative a { 
       \voiceOne
@@ -590,7 +578,7 @@ expositionPartOneLower = {
       \voiceOne 
       | s1
       | s1
-      \bar "||"
+      %
       | r8 \autoBeamOff cis' \autoBeamOn e fis a2 
       | r8 fis a2.
       | r8 \autoBeamOff b,   \autoBeamOn e d' a4 gis
@@ -604,9 +592,7 @@ expositionPartOneLower = {
       | r8 \autoBeamOff a    \autoBeamOn b2.
       | r8 \autoBeamOff a    \autoBeamOn cis d~ d2
       | r8 \autoBeamOff d,   \autoBeamOn fis g d'2
-      \key c \minor
-      | r4 d, f g
-      \bar "||"
+      | r4 d,\< f g\!
     }
   >>
 }
@@ -620,28 +606,27 @@ expositionPartOneLower = {
     \set PianoStaff.instrumentName = #"Piano  "
     \new Staff = "RH"  {
       \tempo 4 = 90
-      \expositionPartOneUpper
-      \expositionPartTwoUpper
-      \expositionBisPartOneUpper
-      \expositionBisPartTwoUpper
-      \expositionBisPartThreeUpper
-      \developmentUpper
-      \reexpositionPartTwoUpper
-      \reexpositionPartOneUpper
+      \expositionPartOneUpper       \bar "||"
+      \expositionPartTwoUpper       \bar "||"
+      \expositionBisPartOneUpper    \bar "||"
+      \expositionBisPartTwoUpper    \bar "||"
+      \expositionBisPartThreeUpper  \bar "||"
+      \developmentUpper             \bar "||"
+      \reexpositionPartTwoUpper     \bar "||"
+      \reexpositionPartOneUpper     \bar "|."
     }
     \new Staff = "LH" {
-      \expositionPartOneLower
-      \expositionPartTwoLower
-      \expositionBisPartOneLower
-      \expositionBisPartTwoLower
-      \expositionBisPartThreeLower
-      \developmentLower
-      \reexpositionPartTwoLower
-      \reexpositionPartOneLower
+      \expositionPartOneLower       \bar "||"
+      \expositionPartTwoLower       \bar "||"
+      \expositionBisPartOneLower    \bar "||"
+      \expositionBisPartTwoLower    \bar "||"
+      \expositionBisPartThreeLower  \bar "||"
+      \developmentLower             \bar "||"
+      \reexpositionPartTwoLower     \bar "||"
+      \reexpositionPartOneLower     \bar "|."
     }
   >>
   \layout{
-
     \accidentalStyle modern-voice-cautionary
   }
   \midi{
