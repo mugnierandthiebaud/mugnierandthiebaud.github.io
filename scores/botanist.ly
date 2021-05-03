@@ -2,11 +2,11 @@
 
 %{
 \paper {
-  page-count = #2
+  page-count = #4
 }
 %}
 
-% #(set-global-staff-size 16)
+#(set-global-staff-size 18)
 
 \header {
   title = #"Après “Les filles du botaniste”"
@@ -25,36 +25,37 @@ reexpositionPartOneUpper = {
   \new Voice { 
     \key a \major
     
-    \tupletUp \voiceTwo     | 
+    \voiceTwo     | 
     \once \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \override TupletBracket.bracket-visibility = ##f
     \mark "Legato"
-    \tuplet 3/2 { <e''   b''    >8 b'    <e''   b''   >}  \tuplet 3/2 { b'     <e''   b''    > b'     } \voiceOne
-    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <e''   a''    >  a'    } \voiceTwo  | 
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
-    \tuplet 3/2 { <d''   a''    >  a'    <d''   a''   >}  \tuplet 3/2 { a'     <d''   a''    > a'     } \voiceOne
-    \tuplet 3/2 { <d''   gis''  >  gis'  <d''   gis'' >}  \tuplet 3/2 { gis'   <d''   gis''  > gis'   } \voiceTwo  | 
-    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    } 
-    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            | 
-    \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     }             
-    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
-    \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { e''    <a''   e'''   > e''    }             
-    \tuplet 3/2 { <a''   e'''   >  e''   <a''   e'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    }            | 
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
-    \tuplet 3/2 { <fis'' b''    >  b'    <fis'' b''   >}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
-    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { d''    <a''   d'''   > d''    }
-    \tuplet 3/2 { <a''   d'''   >  d''   <a''   d'''  >}  \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            | 
-    \tuplet 3/2 { <e''   b''    >  b'    <e''   b''   >}  \tuplet 3/2 { b'     <b''   e''    > b'     }             
-    \tuplet 3/2 { <e''   a''    >  a'    <e''   a''   >}  \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
-    \tuplet 3/2 { <fis'' cis''' >  cis'' <fis'' cis'''>}  \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
+    \tuplet 3/2 { <e''    b''    >8 b'    <e''   b''   >} \tuplet 3/2 { b'     <e''   b''    > b'     } \voiceOne
+    \tuplet 3/2 { <e''    a''    >  a'    <e''   a''   >} \tuplet 3/2 { a'     <e''   a''    >  a'    } \voiceTwo  | 
+    \tuplet 3/2 { <fis''  cis''' >  cis'' <fis'' cis'''>} \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis''  cis''' >  cis'' <fis'' cis'''>} \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
+    \tuplet 3/2 { <d''    a''    >  a'    <d''   a''   >} \tuplet 3/2 { a'     <d''   a''    > a'     } \voiceOne
+    \tuplet 3/2 { <d''    gis''  >  gis'  <d''   gis'' >} \tuplet 3/2 { gis'   <d''   gis''  > gis'   } \voiceTwo  | 
+    \tuplet 3/2 { <a''    d'''   >  d''   <a''   d'''  >} \tuplet 3/2 { d''    <a''   d'''   > d''    } 
+    \tuplet 3/2 { <a''    d'''   >  d''   <a''   d'''  >} \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            | 
+    \tuplet 3/2 { <e''    b''    >  b'    <e''   b''   >} \tuplet 3/2 { b'     <b''   e''    > b'     }             
+    \tuplet 3/2 { <e''    a''    >  a'    <e''   a''   >} \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
+    \tuplet 3/2 { <a''    e'''   >  e''   <a''   e'''  >} \tuplet 3/2 { e''    <a''   e'''   > e''    }             
+    \tuplet 3/2 { <a''    e'''   >  e''   <a''   e'''  >} \tuplet 3/2 { d''    <a''   d'''   > d''    }            | 
+    \tuplet 3/2 { <fis''  cis''' >  cis'' <fis'' cis'''>} \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis''  b''    >  b'    <fis'' b''   >} \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
+    \tuplet 3/2 { <a''    d'''   >  d''   <a''   d'''  >} \tuplet 3/2 { d''    <a''   d'''   > d''    }
+    \tuplet 3/2 { <a''    d'''   >  d''   <a''   d'''  >} \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            | 
+    \tuplet 3/2 { <e''    b''    >  b'    <e''   b''   >} \tuplet 3/2 { b'     <b''   e''    > b'     }             
+    \tuplet 3/2 { <e''    a''    >  a'    <e''   a''   >} \tuplet 3/2 { a'     <a''   e''    > a'     }            | 
+    \tuplet 3/2 { <fis''  cis''' >  cis'' <fis'' cis'''>} \tuplet 3/2 { cis''  <fis'' cis''' > cis''  }
+    \tuplet 3/2 { <fis''  cis''' >  cis'' <fis'' cis'''>} \tuplet 3/2 { b'     <fis'' b''    > b'     }            | 
     \voiceOne
     \dimTextDecresc
     \override TextSpanner.bound-details.left.text = "rallentando"
   
-    \tuplet 3/2 { a''\>     d'' a'   }  \tuplet 3/2 { d' a   d' }  \tuplet 3/2 { a'   d'' a'   }  a''4     | 
-    \tuplet 3/2 { gis''8  d'' gis' }  \tuplet 3/2 { d' gis\startTextSpan d' }  \tuplet 3/2 { gis' d'' gis' }  gis''4\p\! | 
-    \tuplet 3/2 { a''8    e'' a'   }  \tuplet 3/2 { a' e'  a\stopTextSpan  }   s2                                        |
+    \tuplet 3/2 { a''\>   d'' a'   } \tuplet 3/2 { d' a                 d'            } \tuplet 3/2 { a'   d'' a'   }  a''4       | 
+    \tuplet 3/2 { gis''8  d'' gis' } \tuplet 3/2 { d' gis\startTextSpan d'            } \tuplet 3/2 { gis' d'' gis' }  gis''4\p\! | 
+    \tuplet 3/2 { a''8    e'' a'   } \tuplet 3/2 { a' e'               a\stopTextSpan } s2                                                   |
   }
 }
 
@@ -184,7 +185,7 @@ expositionBisPartTwoUpper = {
   <<
     \new Voice \relative c'' { 
       \voiceOne
-      | <d g d'>2\f\(          <c c'>
+      | <d g d'>2\(            <c c'>
       | <bes ees g bes>        < aes aes'>\)
       | <c g' c>\(             < bes bes'>
       | <aes bes ees aes>      <g g'>\)
@@ -207,7 +208,7 @@ expositionBisPartOneUpper = {
   <<
     \new Voice \relative a' { 
       \voiceOne
-      | cis1\mf
+      | cis1
       | cis2.. b8
       | <d, a' b>2 gis4 d8 b'
       | d2\tenuto\( cis\) 
@@ -243,7 +244,7 @@ expositionPartTwoUpper = {
   <<
     \new Voice \relative ees' { 
       \voiceOne
-      | <f g ees'>2.\(\mp g'4
+      | <f g ees'>2.\( g'4
       | <bes, c ees g>2.\) f8 f'
       | <f, bes ees>2 <d d'>
       | <aes' aes'\tenuto>2.\( <g g'>4
@@ -283,7 +284,7 @@ expositionPartOneUpper = {
     \new Voice \relative a' { 
       \voiceOne
       % \override Voice.NoteHead.color = #(x11-color 'red3)
-      | <a c>4\p r <a c>2 
+      | <a c>4 r <a c>2 
       | <a c>4 r <a c> <gis b>
       %
       | <a cis>1
@@ -608,25 +609,44 @@ expositionPartOneLower = {
   \new PianoStaff <<
     \set PianoStaff.instrumentName = #"Piano  "
     \new Staff = "RH"  {
-      \tempo 4 = 90
-      \expositionPartOneUpper       \bar "||"
-      \expositionPartTwoUpper       \bar "||"
-      \expositionBisPartOneUpper    \bar "||"
-      \expositionBisPartTwoUpper    \bar "||"
-      \expositionBisPartThreeUpper  
-      \developmentUpper             \bar "||"
-      \reexpositionPartTwoUpper     \bar "||"
-      \reexpositionPartOneUpper     \bar "|."
+      \tempo 4 = 87
+                  \expositionPartOneUpper       \bar "||"  
+      %{\break %} \expositionPartTwoUpper       \bar "||" 
+      \pageBreak  \expositionBisPartOneUpper    \bar "||" 
+      %{\break %} \expositionBisPartTwoUpper    \bar "||" 
+      \pageBreak  \expositionBisPartThreeUpper  
+                  \developmentUpper             \bar "||" 
+      \pageBreak  \reexpositionPartTwoUpper     \bar "||" 
+      %{\break %} \reexpositionPartOneUpper     \bar "|."
+    }
+    \new Dynamics {
+      | s1-\p                      % prologue, expositionPartOne
+      \repeat unfold #13 { | s1}   %  
+      | s1-\mp                     % expositionPartTwo 
+      \repeat unfold #11 { | s1}   %  
+      | s1-\mf                     % expositionBisPartOne 
+      \repeat unfold #11 { | s1}   %  
+      | s1-\f                      % expositionBisPartTwo 
+      \repeat unfold #12 { | s1}   %  
+      | s1-\mf                     % expositionBisPartThree 
+      \repeat unfold #11 { | s1}   %  
+      | s1-\p                      % development
+      \repeat unfold #14 { | s1}   %  
+      | s1-\f                      % reexpositionPartTwo 
+      \repeat unfold #12 { | s1}   %  
+      | s1-\mf                     % reexpositionPartOne 
+      \repeat unfold #12 { | s1}   %  
+      | s1-"QWE!!!!!!!!!"          % hurlement de joie
     }
     \new Staff = "LH" {
-      \expositionPartOneLower       \bar "||"
-      \expositionPartTwoLower       \bar "||"
-      \expositionBisPartOneLower    \bar "||"
-      \expositionBisPartTwoLower    \bar "||"
-      \expositionBisPartThreeLower  
-      \developmentLower             \bar "||"
-      \reexpositionPartTwoLower     \bar "||"
-      \reexpositionPartOneLower     \bar "|."
+                  \expositionPartOneLower       \bar "||" 
+      %{\break %} \expositionPartTwoLower       \bar "||" 
+      \pageBreak  \expositionBisPartOneLower    \bar "||" 
+      %{\break %} \expositionBisPartTwoLower    \bar "||" 
+      \pageBreak  \expositionBisPartThreeLower  
+                  \developmentLower             \bar "||" 
+      \pageBreak  \reexpositionPartTwoLower     \bar "||" 
+      %{\break %} \reexpositionPartOneLower     \bar "|."
     }
   >>
   \layout{
@@ -634,7 +654,7 @@ expositionPartOneLower = {
     \override TupletBracket.bracket-visibility = ##t
   }
   \midi{
-    \tempo 4 = 90
+    \tempo 4 = 87
   }
 }
 
