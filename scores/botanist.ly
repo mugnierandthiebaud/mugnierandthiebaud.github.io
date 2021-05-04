@@ -667,7 +667,7 @@ myPageBreak = { %{ \pageBreak %} }
     \new PianoStaff <<
       \set PianoStaff.instrumentName = #"Piano  "
       \new Staff = "RightHand"  {
-        \tempo 4 = 86
+        \tempo "Moderato Cantabile" 4 = 86
 
         % enforce creation of all contexts at this point of time
         % cf . http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
@@ -714,7 +714,6 @@ myPageBreak = { %{ \pageBreak %} }
     >>
 
     \midi{
-      \tempo 4 = 86
     }
   }
 }
