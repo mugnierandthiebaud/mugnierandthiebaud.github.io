@@ -1,17 +1,5 @@
 \version "2.22.1"
 
-%{
-%}
-\paper {
-  page-count = #4
-}
-
-#(set-global-staff-size 19)
-
-\markup {
-  \vspace #1
-}
-
 % RIGHT HAND %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 reexpositionPartOneRightHand = {
@@ -635,16 +623,46 @@ expositionPartOneLeftHand = {
   >>
 }
 
+% SCORE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%{
+%}
+
+\paper {
+  % page-count = #4
+  % page-breaking = #ly:minimal-breaking
+  min-systems-per-page = #4 
+  markup-markup-spacing = #'((basic-distance . 10) (padding . 0.5))
+}
+
+#(set-global-staff-size 20)
+
+\markup {
+  \vspace #1
+}
+
+myPageBreak = { %{ \pageBreak %} }
+
+
 \book {
   \header {
-    title = #"Après “Les filles du botaniste”"
+    title = \markup {#"Après" \italic "Les filles du botaniste"}
     composer = #"Musique de Christophe Thiebaud"
     poet = #"Arrangement de Benoît Urbain"
-    dedication = \markup {\italic "A Kitty Lam"}
-    % tagline = "tagline goes at the bottom of the last page"
-    % instrument = "Piano"
+    %{dedication%} opus = \markup {\italic #"A Kitty Lam."}
+    % tagline = #"tagline goes at the bottom of the last page"
+    % instrument = #"Piano"
   }
   \score{
+
+    \layout{
+      \accidentalStyle modern-voice-cautionary
+      \override TupletBracket.bracket-visibility = ##t
+      \context {
+        \Score
+        \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/10)
+      }      
+    }
 
     \new PianoStaff <<
       \set PianoStaff.instrumentName = #"Piano  "
@@ -655,13 +673,13 @@ expositionPartOneLeftHand = {
         % cf . http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
         <>
 
-        \expositionPartOneRightHand     \bar "||"
-        \expositionPartTwoRightHand     \bar "||" \pageBreak
-        \expositionBisPartOneRightHand  \bar "||"
-        \expositionBisPartTwoRightHand  \bar "||" \pageBreak
-        \expositionTerPartOneRightHand
-        \developmentRightHand           \bar "||" \pageBreak
-        \reexpositionPartTwoRightHand   \bar "||"
+        \expositionPartOneRightHand     \bar "||" \myPageBreak
+        \expositionPartTwoRightHand     \bar "||" \myPageBreak
+        \expositionBisPartOneRightHand  \bar "||" \myPageBreak
+        \expositionBisPartTwoRightHand  \bar "||" \myPageBreak
+        \expositionTerPartOneRightHand            \myPageBreak
+        \developmentRightHand           \bar "||" \myPageBreak
+        \reexpositionPartTwoRightHand   \bar "||" \myPageBreak
         \reexpositionPartOneRightHand   \bar "|."
       }
       \new Dynamics {
@@ -694,11 +712,6 @@ expositionPartOneLeftHand = {
         \reexpositionPartOneLeftHand   \bar "|."
       }
     >>
-
-    \layout{
-      \accidentalStyle modern-voice-cautionary
-      \override TupletBracket.bracket-visibility = ##t
-    }
 
     \midi{
       \tempo 4 = 86
