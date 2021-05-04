@@ -245,168 +245,168 @@ rhythmTemplate =
 
 %%%%%%%%%%%%%%%%%%%%%%%
 
-strumOne     = \rhythmTemplate     { r8.     s16 r8   s8       r8. s16 r8  s8 }
-strumOneHalf = \rhythmTemplate     { r8.     s16 r8   s8       }
-strumTwoInit = \rhythmTemplate     { s8.     s16 r8.      s16~ s8. s16 r8. }
-strumTwo     = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16 r8. }
-strumTwoHalf = \rhythmTemplate {s16~ s8.     s16 r8.      }
-strumTwoEnd  = \rhythmTemplate {s16~ s8.     s16 r8.      s16~ s8. s16 r4     }
+strumOne     = \rhythmTemplate     { | r8.     s16 r8    s8     r8.     s16 r8    s8    }
+strumOneHalf = \rhythmTemplate     {   r8.     s16 r8    s8     }
+strumTwoInit = \rhythmTemplate     { | s8.     s16 r8.     s16~ s8.     s16 r8.     }
+strumTwo     = \rhythmTemplate {s16~ | s8.     s16 r8.     s16~ s8.     s16 r8.     }
+strumTwoHalf = \rhythmTemplate {s16~   s8.     s16 r8.     }
+strumTwoEnd  = \rhythmTemplate {s16~ | s8.     s16 r8.     s16~ s8.     s16 r4          }
 
 % couplet
 
-coupletBasse = {
-  \voiceTwo
-  <d a>2-\reSept         <d a>                |
-  <d a>- \solSeptReBasse <d a>-\doNeufReBasse |
-}
-
 coupletBasseSimple = {
   \voiceTwo
-  <d a>2 <d a> |
-  <d a>  <d a> |
+  | <d a>2 <d a>
+  | <d a>  <d a>
+}
+
+coupletBasseWithFretDiagnams = {
+  \voiceTwo
+  | <d a>2-\reSept         <d a>               
+  | <d a>- \solSeptReBasse <d a>-\doNeufReBasse
 }
 
 couplet = {
   \voiceOne
   \arpeggioArrowUp
-  <fis' c'' d''>1\arpeggio                         |
-  <f'   b'  d''>2\arpeggio <e' bes' d''>2\arpeggio |
+  | <fis' c'' d''>1\arpeggio                        
+  | <f'   b'  d''>2\arpeggio <e' bes' d''>2\arpeggio
 }
 
 coupletStrum = {
   \voiceOne
-  \strumOne     { <fis' c'' d''> }                                 |
-  \strumOneHalf { <f'   b'  d''> } \strumOneHalf { <e' bes' d''> } |
+  | \strumOne     { <fis' c'' d''> }                                
+  | \strumOneHalf { <f'   b'  d''> } \strumOneHalf { <e' bes' d''> }
 }
 
 % refrain
 
 refrain = {
   \voiceOne
-  <f'     bes'  d''           >1 \arpeggio |
-  <e'     bes'  dis''         >  \arpeggio |
-  <a'     cis'' e''           >  \arpeggio |
-  <a'     d''   f''           >  \arpeggio |
-  <bes'   d''   fis''         >  \arpeggio |
-  <e'     bes'  cis'' g''     >  \arpeggio |
-  <eeses' c''   ges'' aes''   >  \arpeggio |
-  <d'     b'    f''   a''     >  \arpeggio |
-%              
-  <d'     bes'  f''   a''     >  \arpeggio |
-  <e'     bes'  dis'' aes''   >  \arpeggio |
-  <e'     a'    cis'' g''     >  \arpeggio |
-  <a'     d''   fis''         >  \arpeggio |
-  <bes    d'    g'    d'' f'' >  \arpeggio |
-  <<              
+  | <f'     bes'  d''           >1 \arpeggio
+  | <e'     bes'  dis''         >  \arpeggio
+  | <a'     cis'' e''           >  \arpeggio
+  | <a'     d''   f''           >  \arpeggio
+  | <bes'   d''   fis''         >  \arpeggio
+  | <e'     bes'  cis'' g''     >  \arpeggio
+  | <eeses' c''   ges'' aes''   >  \arpeggio
+  | <d'     b'    f''   a''     >  \arpeggio
+  %              
+  | <d'     bes'  f''   a''     >  \arpeggio
+  | <e'     bes'  dis'' aes''   >  \arpeggio
+  | <e'     a'    cis'' g''     >  \arpeggio
+  | <a'     d''   fis''         >  \arpeggio
+  | <bes    d'    g'    d'' f'' >  \arpeggio
+  | <<              
     {              
       \voiceTwo              
-      <g' e''>1 \arpeggio |
+      <g' e''>1 \arpeggio
     }              
     \new Voice {              
       \voiceOne              
-      d''2. cis''4        |
+      d''2. cis''4
     }              
   >>              
-  <c' ges' bes' d'' >1 \arpeggio                          |
-  <b  f'   a'   d'' >2 \arpeggio <e' bes' d'' >2\arpeggio |
+  | <c' ges' bes' d'' >1 \arpeggio                         
+  | <b  f'   a'   d'' >2 \arpeggio <e' bes' d'' >2\arpeggio
 }
 
 refrainStrum =  {
   \voiceOne
-  \strumOne     { <f'     bes'  d''           > }                                  |
-  \strumOne     { <e'     bes'  dis''         > }                                  |
-  \strumOne     { <a'     cis'' e''           > }                                  |
-  \strumOne     { <a'     d''   f''           > }                                  |
-  \strumOne     { <bes'   d''   fis''         > }                                  |
-  \strumOne     { <e'     bes'  cis'' g''     > }                                  |
-  \strumOne     { <eeses' c''   ges'' aes''   > }                                  |
-  \strumOne     { <d'     b'    f'' a''       > }                                  |
-%
-  \strumOne     { <d'     bes'  f''   a''     > }                                  |
-  \strumOne     { <e'     bes'  dis'' aes''   > }                                  |
-  \strumOne     { <e'     a'    cis'' g''     > }                                  |
-  \strumOne     { <a'     d''   fis''         > }                                  |
-  \strumOne     { <bes    d'    g'    d'' f'' > }                                  |
-  \strumOneHalf { <g'     d''   e''           > } \strumOneHalf {<g' cis'' e''> }  |
-  \strumOne     { <c'     ges'  bes' d''      > }                                  |
-  \strumOneHalf { <b      f'    a'   d''      > } \strumOneHalf {<e' bes' d'' > }  |
+  | \strumOne     { <f'     bes'  d''           > }
+  | \strumOne     { <e'     bes'  dis''         > }
+  | \strumOne     { <a'     cis'' e''           > }
+  | \strumOne     { <a'     d''   f''           > }
+  | \strumOne     { <bes'   d''   fis''         > }
+  | \strumOne     { <e'     bes'  cis'' g''     > }
+  | \strumOne     { <eeses' c''   ges'' aes''   > }
+  | \strumOne     { <d'     b'    f'' a''       > }
+  %
+  | \strumOne     { <d'     bes'  f''   a''     > }                                 
+  | \strumOne     { <e'     bes'  dis'' aes''   > }                                 
+  | \strumOne     { <e'     a'    cis'' g''     > }                                 
+  | \strumOne     { <a'     d''   fis''         > }                                 
+  | \strumOne     { <bes    d'    g'    d'' f'' > }                                 
+  | \strumOneHalf { <g'     d''   e''           > } \strumOneHalf {<g' cis'' e''> } 
+  | \strumOne     { <c'     ges'  bes' d''      > }                                 
+  | \strumOneHalf { <b      f'    a'   d''      > } \strumOneHalf {<e' bes' d'' > } 
 }
 
 % refrain
 refrainStrunBis =  {
   \voiceOne
-  \strumTwoInit { <f'     bes'  d''           >}
-  \strumTwo     { <e'     bes'  dis''         >}
-  \strumTwo     { <a'     cis'' e''           >}
-  \strumTwo     { <a'     d''   f''           >}
-  \strumTwo     { <bes'   d''   fis''         >}
-  \strumTwo     { <e'     bes'  cis'' g''     >}
-  \strumTwo     { <eeses' c''   ges'' aes''   >}
-  \strumTwo     { <d'     b'    f''   a''     >}
-%
-  \strumTwo     { <d'     bes'  f''   a''     >}
-  \strumTwo     { <e'     bes'  dis'' aes''   >}
-  \strumTwo     { <e'     a'    cis'' g''     >}
-  \strumTwo     { <a'     d''   fis''         >}
-  \strumTwo     { <bes    d'    g'    d'' f'' >}
-  \strumTwoHalf { <e'     g'    d''   e''     >} \strumTwoHalf { <e' g' cis'' e'' >}
-  \strumTwo     { <c'     ges'  bes'  d''     >}
-  \strumTwoHalf { <b      f'    a'    d''     >} \strumTwoHalf { <e'    bes'  d'' >}
+  | \strumTwoInit { <f'     bes'  d''           >}
+  \strumTwo       { <e'     bes'  dis''         >}
+  \strumTwo       { <a'     cis'' e''           >}
+  \strumTwo       { <a'     d''   f''           >}
+  \strumTwo       { <bes'   d''   fis''         >}
+  \strumTwo       { <e'     bes'  cis'' g''     >}
+  \strumTwo       { <eeses' c''   ges'' aes''   >}
+  \strumTwo       { <d'     b'    f''   a''     >}
+%  
+  \strumTwo       { <d'     bes'  f''   a''     >}
+  \strumTwo       { <e'     bes'  dis'' aes''   >}
+  \strumTwo       { <e'     a'    cis'' g''     >}
+  \strumTwo       { <a'     d''   fis''         >}
+  \strumTwo       { <bes    d'    g'    d'' f'' >}
+  \strumTwoHalf   { <e'     g'    d''   e''     >} \strumTwoHalf { <e' g' cis'' e'' >}
+  \strumTwo       { <c'     ges'  bes'  d''     >}
+  \strumTwoHalf   { <b      f'    a'    d''     >} \strumTwoHalf { <e'    bes'  d'' >}
 } 
 
-refrainBasse =  {
+refrainBasseWithFretDiagnams =  {
   \voiceTwo
-  g2-  \solMineurSept               g              |
-  c'-  \doSeptNeufDieze             c'             |
-  f-   \faQuinteAugm                f              |
-  bes- \siSeptMaj                   bes            |
-  e-   \miMinSeptQuinteDimNeufDieze e              |
-  a-   \laSeptNeufBemol             a              |
-  aes- \laBemolSeptQuinteDim        aes            |
-  g-   \solSept                     g              |
-%
-  g-   \solMinNeuf                  g              |
-  c'-  \doSeptNeufDiezeQuinteAugm   c'             |
-  f-   \faQuinteAugmBis             f              |
-  bes- \siSeptMajQuinteAugm         bes            |
-  e-   \miMinSeptQuinteDimNeufBemol e              |
-  a2-  \laSeptSusQuatre             a4~ a4-\laSept |
-  aes2-\laBemolNeufOnze             aes            |
-  g-   \solNeuf                     c'-\doNeuf     |
+  | g2-  \solMineurSept               g  
+  | c'-  \doSeptNeufDieze             c' 
+  | f-   \faQuinteAugm                f  
+  | bes- \siSeptMaj                   bes
+  | e-   \miMinSeptQuinteDimNeufDieze e  
+  | a-   \laSeptNeufBemol             a  
+  | aes- \laBemolSeptQuinteDim        aes
+  | g-   \solSept                     g  
+  %
+  | g-   \solMinNeuf                  g             
+  | c'-  \doSeptNeufDiezeQuinteAugm   c'            
+  | f-   \faQuinteAugmBis             f             
+  | bes- \siSeptMajQuinteAugm         bes           
+  | e-   \miMinSeptQuinteDimNeufBemol e             
+  | a2-  \laSeptSusQuatre             a4~ a4-\laSept
+  | aes2-\laBemolNeufOnze             aes           
+  | g-   \solNeuf                     c'-\doNeuf    
 }
 
 refrainBasseSimple = {
   \voiceTwo
-  g2  g    |
-  c'  c'   |
-  f   f    |
-  bes bes  |
-  e   e    |
-  a   a    |
-  as  as   |
-  g   g    |
+  | g2  g    
+  | c'  c'   
+  | f   f    
+  | bes bes  
+  | e   e    
+  | a   a    
+  | as  as   
+  | g   g    
 %
-  g   g    |
-  c'  c'   |
-  f   f    |
-  bes bes  |
-  e   e    |
-  a   a    |
-  as  as   |
-  g   c'   |
+  | g   g    
+  | c'  c'   
+  | f   f    
+  | bes bes  
+  | e   e    
+  | a   a    
+  | as  as   
+  | g   c'   
 }
 
 % coda
 
 codaBasse = {
-  \repeat unfold 4 <d a d'>2
+  | \repeat unfold 4 { <d a d'>2 }
 }
 
 codaStrumBis = {
   \arpeggioArrowUp
   \strumTwo    { <gis' d'' gis''> } 
   \strumTwoEnd { <gis' d'' gis''> } 
-  <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
+  | <d a fis' c'' d'' gis''>1-\reSeptOnzeDieze
   \arpeggio
   \laissezVibrer
 }
@@ -441,29 +441,29 @@ codaStrumBis = {
       % {
       \new ChordNames {
         \chordmode {
-          d1:7                  |
-          g2:7/d        c:9/d   |
+          | d1:7                  
+          | g2:7/d        c:9/d   
 
-          g1:m7                 |
-          c:7.9+                |
-          f:7+.5+               |
-          bes:7+                |
-          e:m7.5-.9             |
-          a:7.9-                |
-          aes:7.5-              |
-          g:7.9                 |
+          | g1:m7                 
+          | c:7.9+                
+          | f:7+.5+               
+          | bes:7+                
+          | e:m7.5-.9             
+          | a:7.9-                
+          | aes:7.5-              
+          | g:7.9                 
 
-          g:m7.9                |
-          c:7.9+.13-            |
-          f:7+.5+.9             |
-          bes:7+.5+             |
-          e:m7.5-.9-            |
-          a2.:7sus4     a4:7    |
-          aes1:7.9.11+          |
-          g2:9          c:9     |
+          | g:m7.9                
+          | c:7.9+.13-            
+          | f:7+.5+.9             
+          | bes:7+.5+             
+          | e:m7.5-.9-            
+          | a2.:7sus4     a4:7    
+          | aes1:7.9.11+          
+          | g2:9          c:9     
 
-          d1:7                  |
-          g2:7/d        c:9/d   |
+          | d1:7                  
+          | g2:7/d        c:9/d   
         }
       }
       %}
@@ -474,16 +474,16 @@ codaStrumBis = {
         \key g \major
         \bar ".|:"
         \mark \markup {\tiny  "4x"}
-        \repeat volta 4 \coupletBasse
+        \repeat volta 4 \coupletBasseWithFretDiagnams
         \break
 
         \key d \minor
-        \refrainBasse
+        \refrainBasseWithFretDiagnams
         \break
 
         \key g \major
         \bar ".|:"
-        \repeat volta 2 \coupletBasse
+        \repeat volta 2 \coupletBasseWithFretDiagnams
         \break
       }
       \new Voice = "accordsI" {
@@ -548,14 +548,14 @@ codaStrumBis = {
               \voiceOne
               \key g \major
               \clef treble
-              f8. d16~ d4  r4        g16 f g a |
-              f8. d16~ d4  r2                  |
-              f8. d16~ d4  r4        g16 f g a |
-              f2           r2                  |
-              f8. d16~ d4  r4        g16 f g a |
-              f8. d16~ d4  r2                  |
-              f8. d16~ d4  r4        g16 f g a |
-              f2           r8 d'16 a g   f d8  |
+              | f8. d16~ d4  r4        g16 f g a 
+              | f8. d16~ d4  r2                  
+              | f8. d16~ d4  r4        g16 f g a 
+              | f2           r2                  
+              | f8. d16~ d4  r4        g16 f g a 
+              | f8. d16~ d4  r2                  
+              | f8. d16~ d4  r4        g16 f g a 
+              | f2           r8 d'16 a g   f d8  
             }
           }
           \repeat unfold 4 \coupletBasseSimple
@@ -572,14 +572,14 @@ codaStrumBis = {
               \voiceOne
               \key d \minor
               \clef treble
-              f8. d16~ d4  r4        g16 f g a |
-              f8. d16~ d4  r2                  |
-              f2           r4        g16 f g a |
-              f2           r2                  |
-              f8. d16~ d4  r4        g16 f g a |
-              f2           r8 d'16 a g   f d8  |
-              f2           r4        g16 f g a |
-              f8. d16~ d4  r2                  |
+              | f8. d16~ d4  r4        g16 f g a 
+              | f8. d16~ d4  r2                  
+              | f2           r4        g16 f g a 
+              | f2           r2                  
+              | f8. d16~ d4  r4        g16 f g a 
+              | f2           r8 d'16 a g   f d8  
+              | f2           r4        g16 f g a 
+              | f8. d16~ d4  r2                  
             }
           }
           \key d \minor
@@ -649,7 +649,7 @@ codaStrumBis = {
         \coupletBasseSimple
         \break
 
-        \repeat volta 8 {<d a>2 <d a> | <d a> <d a>4 \hideNotes r8. \unHideNotes }
+        \repeat volta 8 { | <d a>2 <d a> | <d a> <d a>4 \hideNotes r8. \unHideNotes }
         \alternative {
           { \hideNotes r16 \unHideNotes }
           { \hideNotes r16 \unHideNotes }
@@ -669,7 +669,7 @@ codaStrumBis = {
         \couplet
         {
           \voiceOne
-          <fis' c'' d''>1 \arpeggio
+          | <fis' c'' d''>1 \arpeggio
           |
           <f' b' d''>2 \arpeggio
           <e' bes' d''>4.. \arpeggio
@@ -679,6 +679,7 @@ codaStrumBis = {
         \repeat volta 8 {
           {
             \voiceOne
+            |
             \strumTwoInit {<fis' c''  d''>}
             \strumTwoHalf {<f'   b'   d''>}   
             \strumTwoHalf {<e'   bes' d''>} 
@@ -740,7 +741,6 @@ codaStrumBis = {
     %}
 
   }
-
 
   \layout {
     \clef "treble_8"
