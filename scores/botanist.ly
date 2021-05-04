@@ -46,35 +46,35 @@ reexpositionPartTwoRightHand = {
   <<
     \new Voice \relative c {
       \voiceOne
-      | <f' f,>4 <f' c' f>2 <ees c' ees>4
-      | <g c g'\tenuto>2~ <g c g'>4. <f c' f>8
-      | <ees aes ees'>2 <d aes' d>2
-      | <aes' bes ees aes\tenuto>2 <g bes ees g>4 <g bes ees g>4
-      | <aes  ees' aes>2 <bes ees bes'>4 \tupletUp \tuplet 3/2 { g,16\( bes ees } \tuplet 3/2 { g bes ees\) }
-      | <bes ees bes'>2 <bes, ees bes'>4 <aes' ees' aes>4
-      | <g ees' g>2 <f d' f>4 \tupletUp \tuplet 3/2 { d16\( f aes } \tuplet 3/2 { b d f\) }
-      | <aes, ees' aes>2 <aes, ees' aes>4. <g' ees' g>8
-      | <f c' f>2 <g c g'>4 \tupletUp \tuplet 3/2 { g,16\( c g' } \tuplet 3/2 { g c g'\) }
-      | <g, c g'>2 <g, c g'>4. <f' c' f >8
-      | <ees aes ees'>2 <ees, aes ees'>4. <d' d'>8
-      | <des g des'>2\> <aes aes'>2
-      | <bes f' bes>2 <b f' b>2\!
+      | <f'   f,>4 <f' c' f                              >2 <ees  c'   ees        >4
+      | <g    c    g'\tenuto      >2~  <g    c    g'                >4. <f c' f   >8
+      | <ees  aes  ees'           >2   <d    aes' d                               >2
+      | <aes' bes  ees aes\tenuto >2   <g    bes  ees g  >4 <g    bes  ees  g     >4
+      | <aes  ees' aes            >2   <bes  ees  bes'   >4 \tupletUp \tuplet 3/2 { g,16\( bes ees } \tuplet 3/2 { g bes ees\) }
+      | <bes  ees  bes'           >2   <bes, ees  bes'   >4 <aes' ees' aes        >4
+      | <g    ees' g              >2   <f    d'   f      >4 \tupletUp \tuplet 3/2 { d16\(  f   aes } \tuplet 3/2 { b d   f\)   }   
+      | <aes, ees' aes            >2   <aes, ees' aes    >4. <g'  ees' g          >8
+      | <f    c'   f              >2   <g    c    g'     >4 \tupletUp \tuplet 3/2 { g,16\( c   g'  } \tuplet 3/2 { g c   g'\)  }
+      | <g,   c    g'             >2   <g,   c    g'     >4. <f'  c'   f          >8
+      | <ees  aes  ees'           >2   <ees, aes  ees'   >4. <d'  d'              >8
+      | <des  g    des'           >2\> <aes  aes'                                 >2
+      | <bes  f'   bes            >2   <b    f'   b                               >2\!
     }
     \new Voice \relative c {
       \voiceTwo
-      | s4 <f' g c>2 <ees g bes>4
-      | r4 <bes c ees g>2 <aes c ees f>4
-      | r4 <bes ees aes>4 <bes d aes'>2
-      | r4 <bes ees aes>4 <bes ees g>4 s4
-      | r4 <bes ees f aes>4 <bes ees g>4 s4
-      | r4 <ees bes' c>2 <ees aes c>4
-      | r4 <aes, ees' g>4 <aes d f>4 s4
-      | r4 <bes ees aes>4 <bes ees aes>4 <bes ees g>4
-      | r4 <g c f>4 <g c g'>4 s4
-      | r4 <bes c ees g>4 <aes bes c ees>4 <bes c ees f>4
-      | r4 <aes c ees>4 <f aes c>4 <aes c ees>4
-      | r4 <g des' f>4 <aes des f>2
-      | r4 <bes des f>4 <b des f>2
+      | s4 <f'   g    c                       >2 <ees g bes  >4
+      | r4 <bes  c    ees g                   >2 <aes c ees f>4
+      | r4 <bes  ees  aes    >4 <bes d   aes'                >2
+      | r4 <bes  ees  aes    >4 <bes ees g    >4 s4
+      | r4 <bes  ees  f   aes>4 <bes ees g    >4 s4
+      | r4 <ees  bes' c                       >2 <ees aes c  >4
+      | r4 <aes, ees' g      >4 <aes d   f    >4 s4
+      | r4 <bes  ees  aes    >4 <bes ees aes  >4 <bes ees g  >4
+      | r4 <g    c    f      >4 <g   c   g'   >4 s4
+      | r4 <bes  c    ees g  >4 <aes bes c ees>4 <bes c ees f>4
+      | r4 <aes  c    ees    >4 <f   aes c    >4 <aes c ees  >4
+      | r4 <g    des' f      >4 <aes des f                   >2
+      | r4 <bes  des  f      >4 <b   des f                   >2
     }
   >>
 }
