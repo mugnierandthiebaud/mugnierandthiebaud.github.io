@@ -1,5 +1,6 @@
 \version "2.22.1"
 
+
 % #(set-global-staff-size 16)
 
 %{
@@ -9,32 +10,30 @@
 %}
 
 textOne = \lyricmode {
-  "① Par les soirs bleus d’été, j’irai dans les sentiers, " " "
-  "Picoté par les blés, fouler l’herbe menue: " " "
-} textOneAndAHalf = \lyricmode {
-  "Rêveur, j’en sentirai la fraîcheur à mes pieds. " " "
-  "Je laisserai le vent baigner ma tête nue. " " "
+  "① Par" "les soirs" bleus d’é -- té, j’i -- rai dans les sen -- tiers, 
+  Pi -- coté par les blés, fou -- ler l’her -- be me -- nue:
+  Rêveur, j’en sen -- ti -- rai la fraî -- cheur à mes pieds. 
+  Je laisse -- rai le vent bai -- gner ma tête nue.
 } textTwo = \lyricmode {
-  "② Je ne parlerai pas, je ne penserai rien: " " "
-  "Mais l’amour infini me montera dans l’âme, " " "
-} textTwoAndAHalf = \lyricmode {
-  "Et j’irai loin, bien loin, comme un bohémien, " " "
-  "Par la Nature, – heureux comme avec une femme. " " "
+  "② Je" "ne par" -- le -- rai pas, je ne pen -- se -- rai rien:
+  "Mais l’a" -- mour in -- fi -- ni me mon -- te -- ra dans l’âme,
+  "Et j’i" -- rai loin, bien loin, comme un bo -- hé -- mi -- en,
+  "Par la" Nature, "- heu" -- reux comme a -- vec un -- e femme.
 }
 
 #(define-markup-command
   (fret-diag layout props chord)
   (markup?) (
-    interpret-markup layout props #{
-      \markup {
-        \hspace #13
-        \override #'(fret-diagram-details . ((number-type . roman-lower) (finger-code . in-dot) (barre-type . straight))) {
-          \fret-diagram-terse #chord
-        }
-      }
-    #}
+              interpret-markup layout props #{
+                \markup {
+                  \hspace #13
+                  \override #'(fret-diagram-details . ((number-type . roman-lower) (finger-code . in-dot) (barre-type . straight))) {
+                    \fret-diagram-terse #chord
+                  }
+                }
+              #}
+              )
   )
-)
 
 reSept                      = \markup \fret-diag "o;o;4-2;5-4;3-1;x;"
 solSeptReBasse              = \markup \fret-diag "o;o;3-1;4-4;3-2;x;"
@@ -90,8 +89,8 @@ coupletBasseSimple = \relative c {
   | bes1 | bes1
   | c    | c
   | a    | a
-  | d,   | d
-   
+  | d    | d
+  
 }
 
 coupletBasseWithFretDiagnams = \relative c {
@@ -99,16 +98,16 @@ coupletBasseWithFretDiagnams = \relative c {
   | bes1^\reSept | bes1^\reSept 
   | c^\reSept    | c^\reSept 
   | a^\reSept    | a^\reSept 
-  | d,^\reSept   | d,^\reSept 
-   
+  | d^\reSept    | d^\reSept 
+  
 }
 
 coupletStrum = \relative c {
   \voiceOne
   | \strumOne     { <f g bes c> }                                
   | \strumOneHalf { <f g bes c> } \strumOneHalf { <e g bes c> } 
-  | \strumOne     { <g a c   e> }                                
-  | \strumOneHalf { <g a c   e> } \strumOneHalf { <f a c   f> } 
+  | \strumOne     { <e g a   c > }                                
+  | \strumOneHalf { <e g a   c > } \strumOneHalf { <f g a c> } 
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,73 +123,59 @@ coupletStrum = \relative c {
 }
 
 \score {
+  <<
+    \new Staff = "melodie" \relative bes''{
+    \time 2/2
+    \tempo 4 = 104
 
-  \new Staff = "main" {
+        \new Voice = "melodie" {
+          | f2      e4   d8 e8~ | e8 d4. bes4 bes  
+          | f'2     e4   d8 e8~ | e1
+          | f 2     e4   d8 e8~ | e8 d4. a4   a   
+          | f'2     e4   d8 a8~ | a1
+          | f'2     e4   d8 e8~ | e8 d4. bes4 bes  
+          | f'2     e4   d8 e8~ | e1 
+          | f 2     e4   d8 e8~ | e8 d4. a4   c  
+          | f2      e4   d8 d8~ | d1
+        }
+    }
+    \new Lyrics \lyricsto "melodie" {
+      <<
+        \textOne 
+        \new Lyrics {
+          \set associatedVoice = "melodie"
+          \textTwo
+        }
+      >>
+    }
 
-    %{
-    \set Staff.midiInstrument = "acoustic guitar (nylon)"
-    \set Voice.midiInstrument = "acoustic guitar (nylon)"
-    \set ChordNames.midiInstrument = "acoustic guitar (nylon)"
-    %}
-    \tempo 4 = 108
+    \new PianoStaff <<
+      \set PianoStaff.instrumentName = #"Piano  "
+      \new Staff = "RightHand"  {
+        \key d \minor
+        \new Voice = "accords" {
+          \set midiInstrument = "honky-tonk"
+          \voiceOne
 
-    % { part I
-    <<
-      %{
-      \new ChordNames {
-        \chordmode {
-          | bes1:6   | bes:6         
-          | c:sus4   | c:7
-          | a:m7     | a:m7        
-          | d:m7sus4 | d:m7 
+          \repeat unfold 4 \coupletStrum
         }
       }
-      %}
-      \new Voice = "basseI" {
-        \set midiInstrument = "synth bass 2"
-        \voiceTwo
-
+      \new Staff = "LeftHand"  {
+        \clef bass
         \key d \minor
-        \repeat volta 4 \coupletBasseSimple
-        \break
-      }
-      \new Voice = "accordsI" {
-        \set midiInstrument = "honky-tonk"
-        \voiceOne
+        \new Voice = "basse" {
+          \set midiInstrument = "synth bass 2"
+          \voiceTwo
 
-        \repeat volta 4 \coupletStrum
-      }
-      \new Lyrics \lyricsto "basseI" {
-        <<
-          \textOne
-          \new Lyrics {
-            \set associatedVoice = "basseI"
-            \textOneAndAHalf
-          }
-          \new Lyrics {
-            \set associatedVoice = "basseI"
-            \textTwo
-          }
-          \new Lyrics {
-            \set associatedVoice = "basseI"
-            \textTwoAndAHalf
-          }
-        >>
+          \repeat unfold 4 \coupletBasseSimple
+          \break
+        }
       }
     >>
-    % end of part I
-    %}
 
-
-  }
+  >>
 
   \layout {
-    \clef "treble_8"
-    \time 2/2
-    indent = #0
-    \override LyricText.self-alignment-X = #LEFT
-    \accidentalStyle modern-voice-cautionary
-    % \override Lyrics.LyricText.font-size = #-1
   }
 
   \midi {
