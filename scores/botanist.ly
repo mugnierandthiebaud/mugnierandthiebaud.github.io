@@ -643,27 +643,7 @@ expositionPartOneLeftHand = {
 
 myPageBreak = { %{ \pageBreak %} }
 
-
-\book {
-  \header {
-    title = \markup {#"Après" \italic "Les filles du botaniste"}
-    composer = #"Musique de Christophe Thiebaud"
-    poet = #"Arrangement de Benoît Urbain"
-    %{dedication%} opus = \markup {\italic #"A Kitty Lam."}
-    % tagline = #"tagline goes at the bottom of the last page"
-    % instrument = #"Piano"
-  }
-  \score{
-
-    \layout{
-      \accidentalStyle modern-voice-cautionary
-      \override TupletBracket.bracket-visibility = ##t
-      \context {
-        \Score
-        \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/10)
-      }      
-    }
-
+theMusic = {
     \new PianoStaff <<
       \set PianoStaff.instrumentName = #"Piano  "
       \new Staff = "RightHand"  {
@@ -712,8 +692,37 @@ myPageBreak = { %{ \pageBreak %} }
         \reexpositionPartOneLeftHand   \bar "|."
       }
     >>
+}
+
+\book {
+
+  \header {
+    title = \markup {#"Après" \italic "Les filles du botaniste"}
+    composer = #"Musique de Christophe Thiebaud"
+    poet = #"Arrangement de Benoît Urbain"
+    %{dedication%} opus = \markup {\italic #"A Kitty Lam."}
+    % tagline = #"tagline goes at the bottom of the last page"
+    % instrument = #"Piano"
+  }
+
+  \score {
+    \theMusic
+
+    \layout{
+      \accidentalStyle modern-voice-cautionary
+      \override TupletBracket.bracket-visibility = ##t
+      \context {
+        \Score
+        \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/10)
+      }      
+    }
+  }
+
+  \score{
+    \unfoldRepeats \theMusic
 
     \midi{
     }
   }
+
 }
