@@ -93,14 +93,14 @@ developmentRightHand = {
       \override Voice.NoteHead.color = #(x11-color 'blue)
       %
       | 
-      \footnote #'(-3 . 0) \markup { \with-color #(x11-color 'blue) "Verbatim [~to the nearest octave] from bar 44, violin, Domine Jesu, Requiem, Mozart"  } 
+      \footnote #'(-3 . 0) \markup { \with-color #(x11-color 'blue) "Verbatim (~modulo octave) from bar 44, Violin part, Domine Jesu, Requiem, Mozart"  } 
       a,,,8^\markup { \italic \bold "Très sec" }^\f
              a'             r4 r \clef treble r8             a'''16      c,
       | d8   f              r4 r              r8             f16         gis,
       | b'8  e,,            r4 r              r8             b''16       e,
       | e'8  a,,            r4 r \clef bass   r8             
       \override Voice.NoteHead.color = #(x11-color 'blue4)
-      \footnote #'(-1 . 3) \markup { \with-color #(x11-color 'blue4) "Followed by Süssmayr's completion" }
+      \footnote #'(-1 . 3) \markup { \with-color #(x11-color 'blue4) "Süssmayr's completion" }
                                                              e,16        a,
       $
       | a'8  a,,            r4 r \clef treble r8             fis'''''16  dis
@@ -704,7 +704,7 @@ theMusic = {
   \header {
     title = \markup {#"Après" \italic "Les filles du botaniste"}
     composer = #"Musique de Christophe Thiebaud"
-    poet = #"Arrangement de Benoît Urbain"
+    arranger = #"Arrangement de Benoît Urbain"
     dedication = #"A Kitty Lam"
     % tagline = #"tagline goes at the bottom of the last page"
     instrument = #"Piano"
