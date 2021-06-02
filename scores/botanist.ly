@@ -62,8 +62,8 @@ reexpositionPartTwoRightHand = {
     }
     \new Voice \relative c {
       \voiceTwo
-      | s4 <f'   g    c                       >2 <ees g bes  >4
-      | r4 <bes  c    ees g                   >2 <aes c ees f>4
+      | s4 <f'   g    c                       >4 <ees g bes  >2
+      | r4 <bes  c    ees g                   >4 <aes c ees f>2
       | r4 <bes  ees  aes    >4 <bes d   aes'                >2
       | r4 <bes  ees  aes    >4 <bes ees g    >4 s4
       | r4 <bes  ees  f   aes>4 <bes ees g    >4 s4
@@ -90,17 +90,17 @@ developmentRightHand = {
       \repeat unfold #2 s1
 
       \clef bass
-      \override Voice.NoteHead.color = #(x11-color 'tomato2)
+      \override Voice.NoteHead.color = #(x11-color 'blue)
       %
       | 
-      \footnote #'(-3 . 0) \markup { \with-color #(x11-color 'tomato2) "Verbatim from violin part of measure 44 of Domine Jesu from Mozart's Requiem"  } 
+      \footnote #'(-3 . 0) \markup { \with-color #(x11-color 'blue) "Verbatim [~to the nearest octave] from bar 44, violin, Domine Jesu, Requiem, Mozart"  } 
       a,,,8^\markup { \italic \bold "Très sec" }^\f
              a'             r4 r \clef treble r8             a'''16      c,
       | d8   f              r4 r              r8             f16         gis,
       | b'8  e,,            r4 r              r8             b''16       e,
       | e'8  a,,            r4 r \clef bass   r8             
-      \override Voice.NoteHead.color = #(x11-color 'green4)
-      \footnote #'(-1 . 3) \markup { \with-color #(x11-color 'green4) "Süssmayr's completion" }
+      \override Voice.NoteHead.color = #(x11-color 'blue4)
+      \footnote #'(-1 . 3) \markup { \with-color #(x11-color 'blue4) "Followed by Süssmayr's completion" }
                                                              e,16        a,
       $
       | a'8  a,,            r4 r \clef treble r8             fis'''''16  dis
@@ -645,14 +645,15 @@ myPageBreak = { %{ \pageBreak %} }
 
 theMusic = {
     \new PianoStaff <<
-      \set PianoStaff.instrumentName = #"Piano  "
+      % \set PianoStaff.instrumentName = #"Piano  "
       \new Staff = "RightHand"  {
         \tempo "Moderato Cantabile" 4 = 86
 
         % enforce creation of all contexts at this point of time
         % cf . http://lilypond.org/doc/v2.22/Documentation/notation/common-notation-for-keyboards#changing-staff-manually
         <>
-
+        %{ 
+        %}
         \expositionPartOneRightHand     \bar "||" \myPageBreak
         \expositionPartTwoRightHand     \bar "||" \myPageBreak
         \expositionBisPartOneRightHand  \bar "||" \myPageBreak
@@ -663,6 +664,8 @@ theMusic = {
         \reexpositionPartOneRightHand   \bar "|."
       }
       \new Dynamics {
+        %{ 
+        %}
         s1-\p                  % prologue, expositionPartOne
         \repeat unfold #13 s1  %
         s1-\mp                 % expositionPartTwo
@@ -682,6 +685,8 @@ theMusic = {
         % s1-\markup { \center-column { "The" "End" } } % hurlement de joie
       }
       \new Staff = "LeftHand" {
+        %{ 
+        %}
         \expositionPartOneLeftHand     \bar "||"
         \expositionPartTwoLeftHand     \bar "||"
         \expositionBisPartOneLeftHand  \bar "||"
@@ -700,15 +705,16 @@ theMusic = {
     title = \markup {#"Après" \italic "Les filles du botaniste"}
     composer = #"Musique de Christophe Thiebaud"
     poet = #"Arrangement de Benoît Urbain"
-    %{dedication%} opus = \markup {\italic #"A Kitty Lam."}
+    dedication = #"A Kitty Lam"
     % tagline = #"tagline goes at the bottom of the last page"
-    % instrument = #"Piano"
+    instrument = #"Piano"
   }
 
   \score {
     \theMusic
 
     \layout{
+      indent = #0
       \accidentalStyle modern-voice-cautionary
       \override TupletBracket.bracket-visibility = ##t
       \context {
