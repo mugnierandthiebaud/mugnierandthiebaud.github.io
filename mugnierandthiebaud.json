@@ -9,6 +9,7 @@
 
   "order": [
     "sensation",
+    "ciaconna",
     "gaspard",
     "botanist",
     "romantik",
@@ -52,6 +53,17 @@
         }
       ],
       "markdown": "https://www.poetica.fr/poeme-1906/arthur-rimbaud-le-bateau-ivre/"
+    },
+    "ciaconna": {
+      "text": "Ain't No Ciaconna",
+      "duration": "0:43",
+      "watch": [
+        {
+          "url": "https://youtu.be/gwPqswsfbUY",
+          "id": "gwPqswsfbUY",
+          "title": "Ain't No Ciaconna"
+        }
+      ]
     },
     "dancing": {
       "date": "2020-03-25",
@@ -113,7 +125,7 @@
       ],
       "markdown": "https://www.poetica.fr/poeme-646/arthur-rimbaud-bonne-pensee-du-matin/"
     },
-    "gaspard" : {
+    "gaspard": {
       "date": "2021",
       "text": "O Vous Tous !",
       "duration": "3:45",
@@ -227,7 +239,7 @@
       "text": "Après “Les filles du botaniste”",
       "duration": "4:55",
       "bpm": "87",
-      "score" : true,
+      "score": true,
       "watch": [
         {
           "url": "https://youtu.be/Zic-5mBlXKY",
@@ -382,22 +394,22 @@
           "title": "BWV 1006 (w/o 'a') with some borrowings from BWV 29 - 2020"
         }
       ]
-    },
-    "some_other_bach": {
-      "text": "JS Bach",
-      "duration": "",
-      "watch": [
-        {
-          "url": "https://youtu.be/p9Cc4amUnHw",
-          "id": "p9Cc4amUnHw",
-          "title": "Largo from sonata #3 in C major BWV 1005 for solo violin - 2020"
-        },
-        {
-          "url": "https://youtu.be/UWXZn5jskEM",
-          "id": "UWXZn5jskEM",
-          "title": "Goldberg Variations BWV988 - Variatio 18. Canone alla Sexta."
-        }
-      ]
     }
+  },
+  "some_other_bach": {
+    "text": "JS Bach",
+    "duration": "",
+    "watch": [
+      {
+        "url": "https://youtu.be/p9Cc4amUnHw",
+        "id": "p9Cc4amUnHw",
+        "title": "Largo from sonata #3 in C major BWV 1005 for solo violin - 2020"
+      },
+      {
+        "url": "https://youtu.be/UWXZn5jskEM",
+        "id": "UWXZn5jskEM",
+        "title": "Goldberg Variations BWV988 - Variatio 18. Canone alla Sexta."
+      }
+    ]
   }
 }
