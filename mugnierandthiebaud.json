@@ -165,6 +165,7 @@
       "text": "Nous Partirons",
       "duration": "2:00",
       "bpm": "88",
+      "markdown": true,
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/nous-partirons",
