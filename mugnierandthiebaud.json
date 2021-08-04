@@ -9,6 +9,7 @@
 
   "order": [
     "sensation",
+    "partirons",
     "ciaconna",
     "gaspard",
     "botanist",
@@ -156,6 +157,19 @@
           "url": "https://soundcloud.com/christophe-thiebaud/matsubaba_cantata",
           "id": "962293678",
           "title": "Le 'vrai' Matsubaba, dans sa version de 2021"
+        }
+      ]
+    },
+    "partirons": {
+      "date": "1984",
+      "text": "Nous Partirons",
+      "duration": "2:00",
+      "bpm": "88",
+      "listen": [
+        {
+          "url": "https://soundcloud.com/christophe-thiebaud/nous-partirons",
+          "id": "1099581535",
+          "title": "Version de 2021"
         }
       ]
     },
