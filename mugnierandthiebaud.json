@@ -10,7 +10,7 @@
   "order": [
     "sensation",
     "partirons",
-    "ciaconna",
+    "ciaccona",
     "gaspard",
     "botanist",
     "romantik",
@@ -55,14 +55,14 @@
       ],
       "markdown": "https://www.poetica.fr/poeme-1906/arthur-rimbaud-le-bateau-ivre/"
     },
-    "ciaconna": {
-      "text": "Ain't No Ciaconna",
+    "ciaccona": {
+      "text": "Ain't No Ciaccona",
       "duration": "0:43",
       "watch": [
         {
           "url": "https://youtu.be/gwPqswsfbUY",
           "id": "gwPqswsfbUY",
-          "title": "Ain't No Ciaconna"
+          "title": "Ain't No Ciaccona"
         }
       ]
     },
@@ -165,14 +165,21 @@
       "text": "Nous Partirons",
       "duration": "2:00",
       "bpm": "88",
-      "markdown": true,
+      "watch": [
+        {
+          "url": "https://youtu.be/8VOp8qk9-a4",
+          "id": "8VOp8qk9-a4",
+          "title": "Tel Reverdy à Solesme (…)"
+        }
+      ],
       "listen": [
         {
           "url": "https://soundcloud.com/christophe-thiebaud/nous-partirons",
           "id": "1099581535",
           "title": "Version de 2021"
         }
-      ]
+      ],
+      "markdown": true
     },
     "poux": {
       "date": "2015",
