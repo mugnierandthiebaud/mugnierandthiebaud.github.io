@@ -67,56 +67,56 @@ Nous conduisent<br>
 (couplets ad lib)
 
 Nous partirons<br>
-je te le dis<br>
+Je te le dis<br>
 Lundi, mardi<br>
 Ou mercredi<br>
 
 Jeudi, vendredi<br>
-ou même samedi<br>
+Ou même samedi<br>
 Le matin, à minuit<br>
-ou à midi<br>
+Ou à midi<br>
 
 Nous partirons<br>
 Je te le dis<br>
 Sur les chemins<br>
-main dans la main<br>
+Main dans la main<br>
 
 A travers champs<br>
 Bois et marais<br>
 Bravant les vents<br>
-et les marées<br>
+Et les marées<br>
 
 Les tempêtes<br>
-et les ouragans<br>
-baisseront la tête<br>
+Et les ouragans<br>
+Baisseront la tête<br>
 En nous voyant<br>
 
 Sous nos pieds<br>
 La pierre des sentiers<br>
-se fera douce<br>
-comme de la mousse<br>
+Se fera douce<br>
+Comme de la mousse<br>
 
 Et la nuit<br>
 Tel un manteau de soie<br>
-revêtira<br>
-Nos épaules transies<br>
+Revêtira<br>
+Nos épaules nues<br>
 
 Et nous n'aurons<br>
-plus peur de rien<br>
-traverserons<br>
-tous les ravins<br>
+Plus peur de rien<br>
+Traverserons<br>
+Tous les ravins<br>
 
 Déjouerons<br>
-tous les complots<br>
-dériverons<br>
-au gré des flots<br>
+Tous les complots<br>
+Dériverons<br>
+Au gré des flots<br>
 
 La lumière<br>
-de l'univers<br>
-éclairera<br>
-notre chemin<br>
+De l'univers<br>
+Éclairera<br>
+Notre chemin<br>
 
 Les étoiles<br>
-et les comètes<br>
-seront les voiles<br>
-de notre goélette
+Et les comètes<br>
+Seront les voiles<br>
+De notre goélette
