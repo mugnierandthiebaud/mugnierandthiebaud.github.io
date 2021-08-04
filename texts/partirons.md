@@ -73,7 +73,7 @@ Ou mercredi<br>
 
 Jeudi, vendredi<br>
 ou même samedi<br>
-La matin, à minuit<br>
+Le matin, à minuit<br>
 ou à midi<br>
 
 Nous partirons<br>
