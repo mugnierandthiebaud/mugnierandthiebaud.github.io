@@ -1,5 +1,5 @@
 <style>
-    h1 {
+    h2 {
         text-align: center;
     }
     td {
@@ -9,11 +9,13 @@
     }
 </style>
 
-|   	| <h1>Féminin</h1>  	|  <h1>Masculin</h1> 	|
+<h2>tokyo 2020 > sports collectifs > demi-finales (le 5 août 2021, à 10 du matin)</h2>
+
+|   	| <h2>Féminin</h2>  	|  <h2>Masculin</h2> 	|
 |---	|---	|---	|
-| <h1>Basket</h1>  	| ![](/jo/basketballW.png) | ![](/jo/basketballM.png) |
-| <h1>Hand</h1>  	| ![](/jo/handballW.png) | ![](/jo/handballM.png) |
-| <h1>Volley</h1>  	| ![](/jo/volleyballW.png) | ![](/jo/volleyballM.png) |
+| <h2>Basket</h2>  	| ![](/jo/basketballW.png) | ![](/jo/basketballM.png) |
+| <h2>Hand</h2>  	| ![](/jo/handballW.png) | ![](/jo/handballM.png) |
+| <h2>Volley</h2>  	| ![](/jo/volleyballW.png) | ![](/jo/volleyballM.png) |
 
 🇫🇷 5
 🇺🇸 3
