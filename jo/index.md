@@ -9,7 +9,13 @@
     }
 </style>
 
-<h2>tokyo 2020 > sports collectifs > demi-finales (le 5 août 2021, à 10 du matin)</h2>
+# tokyo 2020 > sports collectifs 
+
+## finales
+
+work in progress
+
+## demi-finales
 
 |   	| <h2>Féminin</h2>  	|  <h2>Masculin</h2> 	|
 |---	|---	|---	|
