@@ -31,12 +31,14 @@ reexpositionPartOneRightHand = {
     \tuplet 3/2 { <e''    a''    >  a'    <e''   a''   >} \tuplet 3/2 { a'     <a''   e''    > a'     }            |
 	  <cis''' cis''>4 dis'16 fis' a' cis'' fis''2  |
 	  <cis'''' cis'''>4 dis''16 fis'' a'' cis''' fis'''2  |
+	  <fis''' fis''>4 e'16 fis' a' cis'' e''2  |
+	  <fis'''' fis'''>4 e''16 fis'' a'' cis''' e'''2  |
     \voiceOne
     \dimTextDecresc
     \override TextSpanner.bound-details.left.text = "rallentando"
-    \tuplet 3/2 { a''8\>   d'' a'   } \tuplet 3/2 { d' a                 d'            } \tuplet 3/2 { a'   d'' a'   }  a''4       |
-    \tuplet 3/2 { gis''8  d'' gis' } \tuplet 3/2 { d' gis\startTextSpan d'            } \tuplet 3/2 { gis' d'' gis' }  gis''4\p\! |
-    \tuplet 3/2 { a''8    e'' a'   } \tuplet 3/2 { a' e'               a\stopTextSpan } s2                                        |
+    \tuplet 3/2 { a''8\>  dis'' a'   } \tuplet 3/2 { dis' a                 dis'           } \tuplet 3/2 { a'   dis'' a'   }  a''4       |
+    \tuplet 3/2 { a''8  d''   a' } \tuplet 3/2 { d'   a\startTextSpan d'             } \tuplet 3/2 { gis' d''   gis' }  gis''4\p\! |
+    \tuplet 3/2 { a''8    e''   a'   } \tuplet 3/2 { a'   e'                a\stopTextSpan } s2                                        |
   }
 }
 
@@ -59,10 +61,12 @@ reexpositionPartOneLeftHand = {
       | e, fis' a b d b a fis
       | a, e' a b e b a e
       | cis, e' fis a e' a, fis e
-      | dis,16 cis' fis a~ a4~ a2
-      | dis,16 cis' fis a~ a4~ a2
-      | e,,,8 d' fis b d2
-      | e,,8 d' gis b d2
+      | dis,16 cis' a' cis~ cis4~ cis2
+      | dis,16 cis' a' cis~ cis4~ cis2
+      | d,,,16   cis' a' cis~ cis4~ cis2
+      | d,16   cis' a' cis~ cis4~ cis2
+      | dis,,,8  cis' fis a cis2
+      | e,,8 d' fis a d2
       | a,8 e' a4 a,2
       \bar "|."
     }
@@ -95,8 +99,11 @@ theMusic = {
         %}
         s1-\mf                 % reexpositionPartOne
         \repeat unfold #8 s1  %
-        s1-\f                 
-        s1-\p
+        s1-\mf                 
+        s1-\pp
+        s1-\mf                  
+        s1-\pp
+        s1-\mf
         % s1-\markup { \center-column { "The" "End" } } % hurlement de joie
       }
       \new Staff = "LeftHand" {
@@ -110,7 +117,8 @@ theMusic = {
 \book {
 
   \header {
-    title = \markup {#"Après" \italic "Les filles du botaniste"}
+    title = \markup {#"Après" \italic "Les filles du botaniste" }
+    subtitle = \markup { \normal-text "(fin différente)"}
   }
 
   \score {
