@@ -103,7 +103,7 @@ theMusic = {
         s1-\pp
         s1-\mf                  
         s1-\pp
-        s1-\mf
+        s1-\mp
         % s1-\markup { \center-column { "The" "End" } } % hurlement de joie
       }
       \new Staff = "LeftHand" {
