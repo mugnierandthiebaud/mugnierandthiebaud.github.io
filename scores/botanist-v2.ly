@@ -29,15 +29,13 @@ reexpositionPartOneRightHand = {
     \tuplet 3/2 { <a''    d'''   >  d''   <a''   d'''  >} \tuplet 3/2 { cis''  <a''   cis''' > cis''  }            |
     \tuplet 3/2 { <e''    b''    >  b'    <e''   b''   >} \tuplet 3/2 { b'     <b''   e''    > b'     }            %
     \tuplet 3/2 { <e''    a''    >  a'    <e''   a''   >} \tuplet 3/2 { a'     <a''   e''    > a'     }            |
-	  <cis''' cis''>4 dis'16 fis' a' cis'' fis''2  |
-	  <cis'''' cis'''>4 dis''16 fis'' a'' cis''' fis'''2  |
-	  <fis''' fis''>4 e'16 fis' a' cis'' e''2  |
-	  <fis'''' fis'''>4 e''16 fis'' a'' cis''' e'''2  |
+               	  <cis''' cis''  >4 dis'16 fis' a' cis'' fis''2  |      <cis'''' cis'''>4 dis''16 fis'' a'' cis''' fis'''2  |
+	                <fis''' fis''  >4 e'16 fis' a' cis'' e''2      |      <fis'''' fis'''>4 e''16 fis'' a'' cis''' e'''2  |
     \voiceOne
     \dimTextDecresc
     \override TextSpanner.bound-details.left.text = "rallentando"
     \tuplet 3/2 { a''8\>  dis'' a'   } \tuplet 3/2 { dis' a                 dis'           } \tuplet 3/2 { a'   dis'' a'   }  a''4       |
-    \tuplet 3/2 { a''8  d''   a' } \tuplet 3/2 { d'   a\startTextSpan d'             } \tuplet 3/2 { gis' d''   gis' }  gis''4\p\! |
+    \tuplet 3/2 { a''8    d''   a'   } \tuplet 3/2 { d'   a\startTextSpan   d'             } \tuplet 3/2 { gis' d''   gis' }  gis''4\p\! |
     \tuplet 3/2 { a''8    e''   a'   } \tuplet 3/2 { a'   e'                a\stopTextSpan } s2                                        |
   }
 }
